@@ -1,7 +1,6 @@
 import { Navbar } from "@/components/chrome/Navbar";
 import { Footer } from "@/components/chrome/Footer";
 import { Hero } from "@/components/sections/Hero";
-import { Marquee } from "@/components/sections/Marquee";
 import { ScrollCinema } from "@/components/sections/ScrollCinema";
 import { AboutTabs } from "@/components/sections/AboutTabs";
 import { ServicesExplorer } from "@/components/sections/ServicesExplorer";
@@ -29,7 +28,6 @@ export default function Home() {
       </a>
       <main>
         <Hero />
-        <Marquee />
         <ScrollCinema />
         <AboutTabs />
         <ServicesExplorer />

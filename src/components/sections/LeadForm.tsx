@@ -4,7 +4,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { contact, site } from "@/content/site";
 import { Button } from "@/components/ui/Button";
-import { MediaFrame } from "@/components/media/MediaFrame";
+import { SectionFrame } from "@/components/ui/SectionFrame";
 import { leadSchema, type LeadResponse } from "@/lib/validation/lead";
 import { cn } from "@/lib/cn";
 
@@ -80,82 +80,74 @@ export function LeadForm() {
         value={values[id as keyof typeof values]}
         onChange={(e) => set(id, e.target.value)}
         className={cn(
-          "mt-2 w-full border-b border-line bg-transparent py-3 text-[16px] outline-none transition-colors focus:border-leaf",
+          "mt-1 w-full border-b border-line bg-transparent py-2 text-[15px] outline-none transition-colors focus:border-leaf",
           errors[id] && "border-red-700",
         )}
         {...extra}
       />
-      {errors[id] ? <span className="mt-1 block text-[13px] text-red-800">{errors[id]}</span> : null}
+      {errors[id] ? <span className="mt-1 block text-[12px] text-red-800">{errors[id]}</span> : null}
     </label>
   );
 
   return (
-    <section id="contact" className="bg-paper px-5 py-24 md:px-8 md:py-32">
-      <div className="mx-auto grid max-w-[1440px] gap-16 lg:grid-cols-[0.9fr_1.1fr]">
+    <SectionFrame id="contact" className="bg-paper">
+      <div className="grid min-h-0 flex-1 items-center gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
         <div>
           <p className="meta text-leaf">{contact.eyebrow}</p>
-          <h2 className="display mt-5 max-w-[12ch] text-[clamp(2.4rem,5.5vw,4.8rem)]">
+          <h2 className="display mt-3 max-w-[12ch] text-[clamp(1.8rem,4.2vw,3.4rem)] leading-[0.96]">
             {contact.heading}
           </h2>
-          <p className="mt-6 max-w-md text-[17px] leading-relaxed text-muted">{contact.text}</p>
-          <MediaFrame
-            src={contact.image}
-            alt={contact.alt}
-            className="mt-10 hidden aspect-[4/5] max-w-md lg:block"
-            sizes="(min-width: 1024px) 28vw, 100vw"
-            kenBurns
-            parallax
-          />
+          <p className="mt-4 max-w-md text-[15px] leading-relaxed text-muted">{contact.text}</p>
         </div>
 
-        <form onSubmit={onSubmit} noValidate className="grid gap-6">
-          <div className="grid gap-6 md:grid-cols-2">
+        <form onSubmit={onSubmit} noValidate className="grid gap-4">
+          <div className="grid gap-4 md:grid-cols-2">
             {field("name", "Name", { autoComplete: "name" })}
             {field("company", "Company", { autoComplete: "organization" })}
             {field("email", "Email", { type: "email", autoComplete: "email" })}
             {field("phone", "Phone", { type: "tel", autoComplete: "tel" })}
+            {field("city", "City (optional)", { autoComplete: "address-level2" })}
+            <label className="block">
+              <span className="meta text-muted">Space type</span>
+              <select
+                name="spaceType"
+                value={values.spaceType}
+                onChange={(e) => set("spaceType", e.target.value)}
+                className={cn(
+                  "mt-1 w-full border-b border-line bg-paper py-2 text-[15px] outline-none focus:border-leaf",
+                  errors.spaceType && "border-red-700",
+                )}
+              >
+                <option value="">I need services for…</option>
+                {contact.spaceTypes.map((opt) => (
+                  <option key={opt.value} value={opt.value}>
+                    {opt.label}
+                  </option>
+                ))}
+              </select>
+              {errors.spaceType ? (
+                <span className="mt-1 block text-[12px] text-red-800">{errors.spaceType}</span>
+              ) : null}
+            </label>
           </div>
-          {field("city", "City (optional)", { autoComplete: "address-level2" })}
-          <label className="block">
-            <span className="meta text-muted">Space type</span>
-            <select
-              name="spaceType"
-              value={values.spaceType}
-              onChange={(e) => set("spaceType", e.target.value)}
-              className={cn(
-                "mt-2 w-full border-b border-line bg-paper py-3 text-[16px] outline-none focus:border-leaf",
-                errors.spaceType && "border-red-700",
-              )}
-            >
-              <option value="">I need services for…</option>
-              {contact.spaceTypes.map((opt) => (
-                <option key={opt.value} value={opt.value}>
-                  {opt.label}
-                </option>
-              ))}
-            </select>
-            {errors.spaceType ? (
-              <span className="mt-1 block text-[13px] text-red-800">{errors.spaceType}</span>
-            ) : null}
-          </label>
           <label className="block">
             <span className="meta text-muted">Message</span>
             <textarea
               name="message"
-              rows={4}
+              rows={2}
               value={values.message}
               onChange={(e) => set("message", e.target.value)}
               className={cn(
-                "mt-2 w-full resize-none border-b border-line bg-transparent py-3 text-[16px] outline-none focus:border-leaf",
+                "mt-1 w-full resize-none border-b border-line bg-transparent py-2 text-[15px] outline-none focus:border-leaf",
                 errors.message && "border-red-700",
               )}
             />
             {errors.message ? (
-              <span className="mt-1 block text-[13px] text-red-800">{errors.message}</span>
+              <span className="mt-1 block text-[12px] text-red-800">{errors.message}</span>
             ) : null}
           </label>
 
-          <div className="flex flex-wrap items-center gap-4 pt-2">
+          <div className="flex flex-wrap items-center gap-4 pt-1">
             <Button type="submit" magnetic arrow={false} disabled={status === "loading"}>
               {status === "loading" ? "Sending…" : contact.submit}
             </Button>
@@ -189,6 +181,6 @@ export function LeadForm() {
           </AnimatePresence>
         </form>
       </div>
-    </section>
+    </SectionFrame>
   );
 }

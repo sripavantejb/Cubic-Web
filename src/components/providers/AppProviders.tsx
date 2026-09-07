@@ -43,7 +43,7 @@ export function AppProviders({ children }: { children: ReactNode }) {
     const el = document.querySelector(target);
     if (!el) return;
     if (lenisRef.current) {
-      lenisRef.current.scrollTo(el as HTMLElement, { offset: -72 });
+      lenisRef.current.scrollTo(el as HTMLElement, { offset: 0 });
       return;
     }
     el.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });

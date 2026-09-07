@@ -133,6 +133,32 @@ body {
   will-change: transform, opacity;
 }
 
+.section-screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
+.section-screen-inner {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .section-screen {
+    height: 100svh;
+    max-height: 100svh;
+    overflow: hidden;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html,
   body {

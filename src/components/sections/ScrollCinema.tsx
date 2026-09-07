@@ -5,7 +5,7 @@ import { ScrollVideo } from "@/components/media/ScrollVideo";
 
 export function ScrollCinema() {
   return (
-    <div id="story">
+    <div id="story" className="contents">
       <ScrollVideo src={cinema.video} poster={cinema.poster} beats={cinema.beats} />
     </div>
   );

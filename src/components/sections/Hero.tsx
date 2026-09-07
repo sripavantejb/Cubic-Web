@@ -7,6 +7,7 @@ import { hero } from "@/content/site";
 import { Button } from "@/components/ui/Button";
 import { HeroPulse } from "@/components/visuals/HeroPulse";
 import Magnet from "@/components/Magnet";
+import { Marquee } from "@/components/sections/Marquee";
 import { gsap, useGSAP } from "@/animations/gsap-register";
 import { useApp } from "@/components/providers/AppProviders";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
@@ -52,7 +53,7 @@ export function Hero() {
     <section
       id="top"
       ref={root}
-      className="relative isolate min-h-svh overflow-hidden bg-paper text-ink"
+      className="section-screen relative isolate overflow-hidden bg-paper text-ink"
     >
       <div className="pointer-events-none absolute inset-y-0 left-0 w-[min(72%,40rem)]" aria-hidden>
         <Image
@@ -91,9 +92,9 @@ export function Hero() {
         </p>
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-svh max-w-[1440px] flex-col px-5 pt-24 pb-8 md:px-8 lg:max-w-none lg:px-[max(2rem,calc((100vw-1440px)/2+2rem))]">
-        <div className="flex max-w-xl flex-1 flex-col justify-center py-6 lg:max-w-[34rem] lg:py-10 xl:max-w-[38rem]">
-          <div className="mb-6 flex items-center gap-4">
+      <div className="relative z-10 mx-auto flex min-h-0 flex-1 max-w-[1440px] flex-col px-5 pt-24 pb-14 md:px-8 lg:max-w-none lg:px-[max(2rem,calc((100vw-1440px)/2+2rem))]">
+        <div className="flex max-w-xl flex-1 flex-col justify-center py-4 lg:max-w-[34rem] lg:py-6 xl:max-w-[38rem]">
+          <div className="mb-4 flex items-center gap-4">
             <span className="h-px w-9 bg-ink/30" />
             <p className="meta text-[0.68rem] text-ink/70">{hero.tag}</p>
           </div>
@@ -106,11 +107,11 @@ export function Hero() {
             ))}
           </h1>
 
-          <p className="mt-6 max-w-lg text-[16px] leading-relaxed text-muted md:text-[17px]">
+          <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-muted md:text-[16px]">
             {hero.lede}
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          <div className="mt-6 flex flex-wrap items-center gap-3">
             <Magnet padding={40} magnetStrength={3.4} disabled={!desktop || reduced} wrapperClassName="hero-cta">
               <Button
                 href={hero.primary.href}
@@ -139,7 +140,7 @@ export function Hero() {
             </Magnet>
           </div>
 
-          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
+          <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-3">
             {hero.features.map((item) => {
               const Icon = featureIcons[item.icon];
               return (
@@ -155,7 +156,7 @@ export function Hero() {
 
           <button
             type="button"
-            className="hero-scroll mt-12 flex items-center gap-3 self-start text-muted lg:mt-16"
+            className="hero-scroll mt-8 flex items-center gap-3 self-start text-muted lg:mt-10"
             aria-label="Scroll to explore"
             onClick={() => scrollTo("#about")}
           >
@@ -170,7 +171,7 @@ export function Hero() {
           </button>
         </div>
 
-        <div className="hero-visual relative mt-8 aspect-[4/5] overflow-hidden sm:aspect-[16/11] lg:hidden">
+        <div className="hero-visual relative mt-4 hidden aspect-[16/11] max-h-[28vh] overflow-hidden sm:max-lg:block">
           <Image
             src={hero.visual}
             alt={hero.visualAlt}
@@ -184,6 +185,9 @@ export function Hero() {
             <HeroPulse live={live} />
           </div>
         </div>
+      </div>
+      <div className="absolute inset-x-0 bottom-0 z-10">
+        <Marquee />
       </div>
     </section>
   );

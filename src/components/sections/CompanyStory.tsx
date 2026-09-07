@@ -1,54 +1,82 @@
 "use client";
 
+import { useRef } from "react";
 import { story } from "@/content/site";
-import { SectionFrame } from "@/components/ui/SectionFrame";
 import { MediaFrame } from "@/components/media/MediaFrame";
+import { gsap, useGSAP } from "@/animations/gsap-register";
+import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 
 export function CompanyStory() {
+  const root = useRef<HTMLElement>(null);
+  const reduced = usePrefersReducedMotion();
+
+  useGSAP(
+    () => {
+      if (reduced) return;
+      gsap.from(".story-word", {
+        autoAlpha: 0,
+        y: 40,
+        duration: 1.1,
+        ease: "power3.out",
+        scrollTrigger: { trigger: root.current, start: "top 75%" },
+      });
+      gsap.from(".story-copy", {
+        autoAlpha: 0,
+        y: 20,
+        stagger: 0.1,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: { trigger: ".story-copy", start: "top 85%" },
+      });
+    },
+    { scope: root, dependencies: [reduced] },
+  );
+
   return (
-    <SectionFrame className="overflow-hidden bg-moss text-paper">
-      <div className="grid min-h-0 flex-1 gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+    <section ref={root} className="section-x section-y overflow-x-clip bg-moss text-paper">
+      <div className="mx-auto grid max-w-[1440px] gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end lg:gap-12">
         <div>
-          <p className="font-deva text-[clamp(3.2rem,10vw,7.5rem)] leading-[0.85] tracking-tight">
+          <p className="story-word font-deva max-w-full text-[clamp(3.25rem,22vw,14rem)] leading-[0.85] tracking-tight">
             {story.coreWord}
           </p>
-          <p className="meta mt-3 text-mist">{story.coreCaption}</p>
-          <p className="meta mt-8 text-mist/80">{story.eyebrow}</p>
-          <h2 className="display mt-3 max-w-[16ch] text-[clamp(1.5rem,3.2vw,2.6rem)]">
+          <p className="meta mt-6 text-mist">{story.coreCaption}</p>
+          <p className="meta mt-10 text-mist/80 md:mt-16">{story.eyebrow}</p>
+          <h2 className="story-copy display mt-4 max-w-[16ch] text-[clamp(1.75rem,8vw,4.4rem)] md:mt-5">
             {story.heading}
           </h2>
-          <div className="mt-5 max-w-2xl space-y-3">
+          <div className="mt-6 max-w-2xl space-y-4 md:mt-10 md:space-y-5">
             {story.paragraphs.map((p) => (
-              <p key={p.slice(0, 24)} className="text-[14px] leading-relaxed text-mist/90 md:text-[15px]">
+              <p key={p.slice(0, 24)} className="story-copy text-[15px] leading-relaxed text-mist/90 md:text-[17px]">
                 {p}
               </p>
             ))}
           </div>
         </div>
-        <div className="grid min-h-0 grid-cols-2 grid-rows-[1.1fr_0.9fr] gap-3">
+        <div className="grid grid-cols-2 gap-3">
           <MediaFrame
             src={story.images[0].src}
             alt={story.images[0].alt}
-            className="col-span-2 min-h-0"
+            className="col-span-2 aspect-[16/9]"
             sizes="(min-width: 1024px) 40vw, 100vw"
+            parallax
             kenBurns
           />
           <MediaFrame
             src={story.images[1].src}
             alt={story.images[1].alt}
-            className="min-h-0"
+            className="aspect-[3/4]"
             sizes="20vw"
             kenBurns
           />
           <MediaFrame
             src={story.images[2].src}
             alt={story.images[2].alt}
-            className="min-h-0"
+            className="aspect-[3/4]"
             sizes="20vw"
             kenBurns
           />
         </div>
       </div>
-    </SectionFrame>
+    </section>
   );
 }

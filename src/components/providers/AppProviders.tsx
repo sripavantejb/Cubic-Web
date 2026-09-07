@@ -17,11 +17,16 @@ import { gsap, registerGsap, ScrollTrigger } from "@/animations/gsap-register";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import { Grain } from "@/components/chrome/Grain";
 import { PageLoader } from "@/components/chrome/PageLoader";
+import { ContactPopup } from "@/components/chrome/ContactPopup";
+import { WhatsAppChat } from "@/components/chrome/WhatsAppChat";
 
 type AppContextValue = {
   ready: boolean
   completeLoader: () => void
   scrollTo: (target: string) => void
+  contactOpen: boolean
+  openContact: () => void
+  closeContact: () => void
 };
 
 const AppContext = createContext<AppContextValue | null>(null);
@@ -35,23 +40,45 @@ export function useApp() {
 export function AppProviders({ children }: { children: ReactNode }) {
   const reduced = usePrefersReducedMotion();
   const [ready, setReady] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
   const lenisRef = useRef<Lenis | null>(null);
 
   const completeLoader = useCallback(() => setReady(true), []);
+  const openContact = useCallback(() => {
+    try {
+      sessionStorage.setItem("hazel-contact-seen", "1");
+    } catch {
+      /* ignore */
+    }
+    setContactOpen(true);
+  }, []);
+  const closeContact = useCallback(() => setContactOpen(false), []);
 
   const scrollTo = useCallback((target: string) => {
+    if (target === "#contact") {
+      openContact();
+      return;
+    }
     const el = document.querySelector(target);
     if (!el) return;
     if (lenisRef.current) {
-      lenisRef.current.scrollTo(el as HTMLElement, { offset: 0 });
+      lenisRef.current.scrollTo(el as HTMLElement, { offset: -72 });
       return;
     }
     el.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
-  }, [reduced]);
+  }, [reduced, openContact]);
 
   useGSAP(() => {
     registerGsap();
     if (reduced) return;
+
+    const touch = window.matchMedia("(pointer: coarse)").matches || "ontouchstart" in window;
+    if (touch) {
+      ScrollTrigger.normalizeScroll(true);
+      return () => {
+        ScrollTrigger.normalizeScroll(false);
+      };
+    }
 
     const lenis = new Lenis({
       duration: 1.15,
@@ -75,8 +102,8 @@ export function AppProviders({ children }: { children: ReactNode }) {
   }, { dependencies: [ready] });
 
   const value = useMemo(
-    () => ({ ready, completeLoader, scrollTo }),
-    [ready, completeLoader, scrollTo],
+    () => ({ ready, completeLoader, scrollTo, contactOpen, openContact, closeContact }),
+    [ready, completeLoader, scrollTo, contactOpen, openContact, closeContact],
   );
 
   return (
@@ -84,6 +111,8 @@ export function AppProviders({ children }: { children: ReactNode }) {
       <Grain />
       <PageLoader onComplete={completeLoader} />
       {children}
+      <ContactPopup />
+      <WhatsAppChat />
     </AppContext.Provider>
   );
 }

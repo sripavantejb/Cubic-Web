@@ -1,5 +1,4 @@
 import { footer, site } from "@/content/site";
-import { SectionFrame } from "@/components/ui/SectionFrame";
 
 const columns = [
   { heading: "Company", links: footer.company.slice(0, 3) },
@@ -15,8 +14,8 @@ const columns = [
 
 export function Footer() {
   return (
-    <SectionFrame as="footer" className="bg-ink text-paper">
-      <div className="flex min-h-0 flex-1 flex-col justify-between gap-8">
+    <footer className="bg-ink text-paper">
+      <div className="section-x mx-auto max-w-[1440px] pt-10 pb-[max(1rem,env(safe-area-inset-bottom))] md:pt-12 md:pb-5">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
           <p className="flex max-w-[22rem] items-start gap-3 text-[14px] leading-relaxed text-paper/80">
             <span
@@ -28,7 +27,7 @@ export function Footer() {
             Hazel is the green facility home India has been searching for.
           </p>
 
-          <div className="grid grid-cols-3 gap-6 sm:gap-12 lg:gap-16">
+          <div className="grid grid-cols-2 gap-8 min-[480px]:grid-cols-3 min-[480px]:gap-6 sm:gap-12 lg:gap-16">
             {columns.map((col) => (
               <div key={col.heading}>
                 <p className="meta mb-4 text-mist/55">{col.heading}</p>
@@ -49,8 +48,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="relative">
-          <p className="display pb-[0.08em] text-[clamp(3.2rem,14vw,10rem)] leading-none tracking-[-0.06em] text-paper/80">
+        <div className="relative mt-10 overflow-x-clip pr-[0.28em] md:mt-12">
+          <p className="display pb-[0.08em] text-[clamp(2.8rem,22vw,14.5rem)] leading-none tracking-[-0.06em] text-paper/80">
             <span className="relative inline-block">
               HAZEL
               <span
@@ -66,6 +65,6 @@ export function Footer() {
           {site.name}. {footer.copyright}
         </p>
       </div>
-    </SectionFrame>
+    </footer>
   );
 }

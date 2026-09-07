@@ -36,24 +36,24 @@ export function DashboardPreview({ mode }: { mode: Mode }) {
   const stats = panels[mode];
 
   return (
-    <div className="relative overflow-hidden border border-white/10 bg-[#0b140e] p-5 text-paper shadow-[0_30px_80px_rgba(0,0,0,0.35)] md:p-6">
-      <div className="mb-5 flex items-center justify-between">
+    <div className="relative overflow-hidden border border-white/10 bg-[#0b140e] p-4 text-paper shadow-[0_30px_80px_rgba(0,0,0,0.35)] sm:p-5 md:p-6">
+      <div className="mb-5 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="meta text-mist">HazelAI · {mode}</p>
-        <p className="rounded-full border border-white/10 px-2 py-1 font-mono text-[10px] tracking-wider text-lime uppercase">
+        <p className="max-w-full rounded-full border border-white/10 px-2 py-1 font-mono text-[10px] tracking-wider text-lime uppercase">
           {hazelAI.demoNote}
         </p>
       </div>
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-2 gap-2 sm:gap-3">
         {stats.map((s) => (
           <motion.div
             key={s.label}
             layout
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            className="border border-white/10 bg-white/5 p-4"
+            className="border border-white/10 bg-white/5 p-3 sm:p-4"
           >
             <p className="text-[12px] text-mist/80">{s.label}</p>
-            <p className="display mt-2 text-[2rem] leading-none">{s.value}</p>
+            <p className="display mt-2 text-[clamp(1.5rem,8vw,2rem)] leading-none">{s.value}</p>
             <p className="mt-1 font-mono text-[10px] tracking-wider text-sprout uppercase">{s.unit}</p>
           </motion.div>
         ))}

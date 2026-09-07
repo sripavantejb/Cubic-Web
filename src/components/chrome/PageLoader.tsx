@@ -145,7 +145,7 @@ export function PageLoader({ onComplete }: Props) {
         </span>
       </div>
 
-      <div className="loader-panel relative flex h-full flex-col px-6 py-10 md:px-12 md:py-12">
+      <div className="loader-panel relative flex h-full flex-col px-[max(1.5rem,env(safe-area-inset-left))] pt-[max(2.5rem,env(safe-area-inset-top))] pr-[max(1.5rem,env(safe-area-inset-right))] pb-[max(2.5rem,env(safe-area-inset-bottom))] md:px-12 md:py-12">
         <div className="flex items-start justify-between gap-6">
           <div>
             <SplitText
@@ -192,7 +192,7 @@ export function PageLoader({ onComplete }: Props) {
           </p>
         </div>
 
-        <div className="flex items-end justify-between gap-8">
+        <div className="flex items-end justify-between gap-4 sm:gap-8">
           <div className="space-y-1 font-mono text-[11px] tracking-[0.14em] text-mist/80 md:text-[12px]">
             {STATUS.map((line, i) => (
               <p key={line} className="flex gap-2">

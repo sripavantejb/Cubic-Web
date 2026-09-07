@@ -9,9 +9,9 @@ export function Marquee() {
   const row = [...marqueeItems, ...marqueeItems];
 
   return (
-    <section aria-hidden className="overflow-hidden border-y border-line bg-moss py-4 text-paper">
+    <section aria-hidden className="overflow-hidden border-y border-line bg-moss py-3 text-paper sm:py-4">
       <div
-        className={`flex w-max items-center gap-10 whitespace-nowrap ${reduced ? "" : "animate-marquee hover:[animation-play-state:paused]"}`}
+        className={`flex w-max items-center gap-6 whitespace-nowrap sm:gap-10 ${reduced ? "" : "animate-marquee hover:[animation-play-state:paused]"}`}
       >
         {row.map((item, i) => (
           <span key={`${item.tag}-${i}`} className="meta flex items-center gap-4 text-mist">

@@ -64,8 +64,8 @@ const Magnet: React.FC<MagnetProps> = ({
   return (
     <div
       ref={magnetRef}
-      className={wrapperClassName}
-      style={{ position: 'relative', display: 'inline-block' }}
+      className={['inline-block', wrapperClassName].filter(Boolean).join(' ')}
+      style={{ position: 'relative' }}
       {...props}
     >
       <div

@@ -47,7 +47,7 @@ export function Button({
   );
 
   const classes = cn(
-    "group inline-flex items-center gap-2 rounded-full px-6 py-3 text-[15px] font-medium tracking-[-0.02em] transition-[background-color,color,transform] duration-300",
+    "group inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-3 text-[15px] font-medium tracking-[-0.02em] transition-[background-color,color,transform] duration-300 sm:px-6",
     variant === "primary" &&
       "bg-leaf text-paper hover:bg-sprout",
     variant === "secondary" &&

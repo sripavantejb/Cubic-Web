@@ -1,3 +1,7 @@
+const WHATSAPP_NUMBER = "910000000000";
+const WHATSAPP_MESSAGE =
+  "Hello Hazel India, I'd like a free facility audit for my space.";
+
 export const site = {
   name: "Hazel India",
   url: "https://hazelindia.com",
@@ -8,6 +12,11 @@ export const site = {
   phone: "+91 00000 00000",
   phoneHref: "tel:+910000000000",
   emailHref: "mailto:hello@hazelindia.com",
+  whatsapp: {
+    number: WHATSAPP_NUMBER,
+    message: WHATSAPP_MESSAGE,
+    href: `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`,
+  },
   tagline: "Green facility care · since 2022",
   footerBlurb:
     "India's first AI-native, sustainability-first facility management company. Cleaner spaces, greener planet, valued people — everywhere.",

@@ -12,6 +12,7 @@ if (typeof window !== "undefined") {
 export function registerGsap() {
   if (typeof window === "undefined") return;
   gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
+  ScrollTrigger.config({ ignoreMobileResize: true });
 }
 
 export { gsap, ScrollTrigger, SplitText, useGSAP };

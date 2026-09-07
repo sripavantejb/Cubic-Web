@@ -39,6 +39,11 @@ html {
   scroll-behavior: auto;
 }
 
+html,
+body {
+  max-width: 100%;
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);
@@ -64,11 +69,17 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-sans), system-ui, sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.6;
   letter-spacing: -0.011em;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
 }
 
 ::selection {
@@ -89,6 +100,29 @@ body {
   font-weight: 500;
   letter-spacing: -0.045em;
   line-height: 0.92;
+  overflow-wrap: break-word;
+}
+
+.section-x {
+  padding-left: max(1.25rem, env(safe-area-inset-left));
+  padding-right: max(1.25rem, env(safe-area-inset-right));
+}
+
+.section-y {
+  padding-top: 5.75rem;
+  padding-bottom: 4.75rem;
+}
+
+@media (min-width: 768px) {
+  .section-x {
+    padding-left: max(2rem, env(safe-area-inset-left));
+    padding-right: max(2rem, env(safe-area-inset-right));
+  }
+
+  .section-y {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
 }
 
 .meta {
@@ -133,29 +167,23 @@ body {
   will-change: transform, opacity;
 }
 
-.section-screen {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 100svh;
+.whatsapp-chat-pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55);
+  animation: whatsapp-pulse 2.4s ease-out infinite;
 }
 
-.section-screen-inner {
-  display: flex;
-  flex: 1 1 auto;
-  min-height: 0;
-  width: 100%;
-  max-width: 1440px;
-  margin-inline: auto;
-  flex-direction: column;
-  justify-content: center;
-}
-
-@media (min-width: 1024px) {
-  .section-screen {
-    height: 100svh;
-    max-height: 100svh;
-    overflow: hidden;
+@keyframes whatsapp-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
   }
 }
 

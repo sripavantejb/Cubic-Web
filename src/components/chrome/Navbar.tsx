@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
-import { faq, hazelAI, nav, pricing, problem, site, solutions } from "@/content/site";
+import { faq, hazelAI, nav, pricing, problem, site, siteWalkthrough, trustStrip } from "@/content/site";
 import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/Button";
 import { useApp } from "@/components/providers/AppProviders";
@@ -17,17 +17,8 @@ const appleEase = [0.32, 0.08, 0.24, 1] as const;
 const IFM_KEY = "ifm";
 
 const panels: Record<string, Panel> = {
-  "#solutions": {
-    eyebrow: "Services",
-    heading: solutions.heading,
-    items: solutions.items.map((item) => ({
-      label: item.title,
-      href: item.href,
-      text: item.text,
-    })),
-  },
   "#problem": {
-    eyebrow: "Why Hazel",
+    eyebrow: problem.eyebrow,
     heading: problem.heading,
     items: problem.pains.map((pain) => ({
       label: pain.title,
@@ -35,26 +26,51 @@ const panels: Record<string, Panel> = {
       text: pain.text,
     })),
   },
+  "#trust": {
+    eyebrow: trustStrip.eyebrow,
+    heading: trustStrip.heading,
+    items: [
+      ...trustStrip.today.items.map((item) => ({
+        label: `${item.value} · ${item.label}`,
+        href: "#trust",
+        text: "note" in item && item.note ? item.note : trustStrip.today.label,
+      })),
+      ...trustStrip.ahead.items.map((item) => ({
+        label: `${item.value} · ${item.label}`,
+        href: "#trust",
+        text: trustStrip.ahead.label,
+      })),
+    ],
+  },
   "#ai": {
-    eyebrow: "HazelAI",
-    heading: "Predict. Sense. Prove. Serve.",
+    eyebrow: hazelAI.eyebrow,
+    heading: hazelAI.heading,
     items: hazelAI.states.map((state) => ({
-      label: state.title,
+      label: `${state.label} — ${state.title}`,
       href: "#ai",
       text: state.text,
     })),
   },
+  "#walkthrough": {
+    eyebrow: siteWalkthrough.eyebrow,
+    heading: siteWalkthrough.heading,
+    items: siteWalkthrough.weeks.map((week) => ({
+      label: `${week.label} · ${week.title}`,
+      href: "#walkthrough",
+      text: week.text,
+    })),
+  },
   "#pricing": {
-    eyebrow: "Engagement",
+    eyebrow: pricing.eyebrow,
     heading: pricing.heading,
     items: pricing.models.map((model) => ({
       label: model.title,
       href: "#pricing",
-      text: model.bestFor,
+      text: `Best for: ${model.bestFor}. ${model.text}`,
     })),
   },
   "#faq": {
-    eyebrow: "FAQ",
+    eyebrow: faq.eyebrow,
     heading: faq.heading,
     items: faq.items.slice(0, 6).map((item) => ({
       label: item.q,
@@ -200,7 +216,7 @@ export function Navbar() {
             <span className="truncate text-[14px] font-medium tracking-tight md:text-[15px]">{site.name}</span>
           </Link>
 
-          <nav className="hidden items-center gap-1 lg:flex xl:gap-2" aria-label="Primary">
+          <nav className="hidden min-w-0 items-center gap-0.5 lg:flex xl:gap-1" aria-label="Primary">
             {desktopLinks.map((link) => {
               const isOn = active === link.href;
               return (
@@ -216,7 +232,7 @@ export function Navbar() {
                     go(link.href);
                   }}
                   className={cn(
-                    "rounded-full px-3 py-2 text-[13.5px] leading-none font-medium tracking-[-0.01em] whitespace-nowrap transition-colors",
+                    "rounded-full px-2.5 py-2 text-[13px] leading-none font-medium tracking-[-0.01em] whitespace-nowrap transition-colors xl:px-3 xl:text-[13.5px]",
                     isOn ? "bg-hero-ink/5 text-hero-ink" : "text-hero-ink/70 hover:text-hero-ink",
                   )}
                 >
@@ -233,7 +249,7 @@ export function Navbar() {
               onFocus={() => openPanel(IFM_KEY)}
               onClick={() => setActive(ifmOpen ? null : IFM_KEY)}
               className={cn(
-                "inline-flex items-center gap-1 rounded-full px-3 py-2 text-[13.5px] leading-none font-medium tracking-[-0.01em] whitespace-nowrap transition-colors",
+                "inline-flex items-center gap-1 rounded-full px-2.5 py-2 text-[13px] leading-none font-medium tracking-[-0.01em] whitespace-nowrap transition-colors xl:px-3 xl:text-[13.5px]",
                 ifmOpen ? "bg-hero-ink/5 text-hero-ink" : "text-hero-ink/70 hover:text-hero-ink",
               )}
             >

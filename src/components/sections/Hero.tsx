@@ -26,6 +26,10 @@ const CTA =
 const CTA_ARROW =
   "hidden size-4 transition-transform duration-300 group-hover:translate-x-0.5 min-[600px]:block";
 
+const ROTATING = hero.headlineRotating;
+// Keep accent swaps inside the first ~75% of the pin so they finish before wide copy fades.
+const ROTATE_WINDOW = 0.72;
+
 export function Hero() {
   const track = useRef<HTMLDivElement>(null);
   const root = useRef<HTMLElement>(null);
@@ -76,6 +80,28 @@ export function Hero() {
             },
           });
           timeline.to(film, { progress: 1, duration: 1, onUpdate: () => scrubber.setProgress(film.progress) }, 0);
+
+          // Accent line cycles with the tour: Better India → workplaces → communities → …
+          const lines = gsap.utils.toArray<HTMLElement>(".hero-rotate-line", section);
+          if (lines.length > 1) {
+            gsap.set(lines, { autoAlpha: 0, y: 14 });
+            gsap.set(lines[0], { autoAlpha: 1, y: 0 });
+
+            const step = ROTATE_WINDOW / lines.length;
+            const fade = Math.min(0.08, step * 0.45);
+
+            for (let i = 0; i < lines.length - 1; i++) {
+              const at = (i + 1) * step;
+              timeline.to(lines[i], { autoAlpha: 0, y: -12, duration: fade }, at - fade);
+              timeline.fromTo(
+                lines[i + 1],
+                { autoAlpha: 0, y: 14 },
+                { autoAlpha: 1, y: 0, duration: fade },
+                at - fade,
+              );
+            }
+          }
+
           // The copy holds still while the film plays. Full screen, it and its wash then ease
           // away so the tour's final view plays clean before the next section slides over.
           // Stacked above the film, the copy simply stays put.
@@ -115,6 +141,8 @@ export function Hero() {
     { scope: root, dependencies: [ready] },
   );
 
+  const longestAccent = ROTATING.reduce((a, b) => (a.length >= b.length ? a : b));
+
   return (
     <div id="top" ref={track} className="hero-track">
       <section
@@ -132,14 +160,30 @@ export function Hero() {
             id="hero-title"
             className="hero-reveal hero-title mt-4 leading-none font-semibold tracking-[-0.035em] motion-safe:opacity-0 min-[600px]:mt-5 wide:mt-6"
           >
-            {hero.headline.map((line, i) => (
-              <span
-                key={line}
-                className={cn("block whitespace-nowrap", i === hero.headline.length - 1 && "text-leaf-bright")}
-              >
+            {hero.headline.map((line) => (
+              <span key={line} className="block whitespace-nowrap">
                 {line}
               </span>
             ))}
+            <span className="relative block text-leaf-bright">
+              {/* Holds height for the longest rotating line so the layout doesn't jump. */}
+              <span className="invisible block whitespace-nowrap" aria-hidden="true">
+                {longestAccent}
+              </span>
+              {ROTATING.map((line, i) => (
+                <span
+                  key={line}
+                  className={cn(
+                    "hero-rotate-line absolute inset-x-0 top-0 whitespace-nowrap",
+                    i === 0 ? "opacity-100" : "opacity-0",
+                    i !== 0 && "motion-reduce:hidden",
+                  )}
+                  aria-hidden={i !== 0}
+                >
+                  {line}
+                </span>
+              ))}
+            </span>
           </h1>
 
           <p className="hero-reveal mt-3.5 max-w-[30rem] text-[16px] leading-[1.6] text-hero-ink/70 motion-safe:opacity-0 min-[600px]:mt-5 wide:mt-6 wide:text-[clamp(1.0625rem,1.25vw,1.1875rem)] short:hidden">

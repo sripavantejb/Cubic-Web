@@ -24,9 +24,10 @@ export const site = {
 
 export const nav = {
   links: [
-    { label: "Services", href: "#solutions" },
     { label: "Why Hazel", href: "#problem" },
+    { label: "Transparency", href: "#trust" },
     { label: "HazelAI", href: "#ai" },
+    { label: "How it works", href: "#walkthrough" },
     { label: "Pricing", href: "#pricing" },
     { label: "FAQ", href: "#faq" },
   ],
@@ -78,7 +79,15 @@ export const nav = {
 
 export const hero = {
   eyebrow: "AI-Powered Integrated Facility Management",
-  headline: ["Smarter facilities.", "Cleaner spaces.", "Better India."],
+  headline: ["Smarter facilities.", "Cleaner spaces."],
+  // Scrubs with the hero film: one accent at a time while the section is pinned.
+  headlineRotating: [
+    "Better India.",
+    "Better workplaces.",
+    "Better communities.",
+    "Better development.",
+    "Better tomorrow.",
+  ],
   lede: "Complete facility management solutions combining people, technology and sustainable operations.",
   primary: { label: "Explore Our Services", href: "#solutions" },
   secondary: { label: "Get a Free Audit", href: "#contact" },
@@ -911,7 +920,9 @@ export const footer = {
   ],
   company: [
     { label: "Why Hazel", href: "#problem" },
+    { label: "Transparency", href: "#trust" },
     { label: "HazelAI Platform", href: "#ai" },
+    { label: "How it works", href: "#walkthrough" },
     { label: "Pricing", href: "#pricing" },
     { label: "FAQ", href: "#faq" },
     { label: "Contact", href: "#contact" },

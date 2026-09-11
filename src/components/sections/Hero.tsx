@@ -79,28 +79,52 @@ export function Hero() {
               onRefresh: () => scrubber.setProgress(film.progress),
             },
           });
-          timeline.to(film, { progress: 1, duration: 1, onUpdate: () => scrubber.setProgress(film.progress) }, 0);
+          timeline.to(film, { progress: 1, duration: 1 }, 0);
 
-          // Accent line cycles with the tour: Better India → workplaces → communities → …
+          // Accent line: smooth eased crossfade when scroll crosses each beat (not scrub-tied,
+          // so slow or fast scrolling still gets a polished dissolve).
           const lines = gsap.utils.toArray<HTMLElement>(".hero-rotate-line", section);
+          let accentIndex = 0;
           if (lines.length > 1) {
-            gsap.set(lines, { autoAlpha: 0, y: 14 });
-            gsap.set(lines[0], { autoAlpha: 1, y: 0 });
-
-            const step = ROTATE_WINDOW / lines.length;
-            const fade = Math.min(0.08, step * 0.45);
-
-            for (let i = 0; i < lines.length - 1; i++) {
-              const at = (i + 1) * step;
-              timeline.to(lines[i], { autoAlpha: 0, y: -12, duration: fade }, at - fade);
-              timeline.fromTo(
-                lines[i + 1],
-                { autoAlpha: 0, y: 14 },
-                { autoAlpha: 1, y: 0, duration: fade },
-                at - fade,
-              );
-            }
+            gsap.set(lines, { autoAlpha: 0, y: 22, filter: "blur(10px)" });
+            gsap.set(lines[0], { autoAlpha: 1, y: 0, filter: "blur(0px)" });
           }
+
+          const swapAccent = (next: number) => {
+            if (lines.length < 2 || next === accentIndex || next < 0 || next >= lines.length) return;
+            const prev = accentIndex;
+            accentIndex = next;
+
+            gsap.to(lines[prev], {
+              autoAlpha: 0,
+              y: -18,
+              filter: "blur(8px)",
+              duration: 0.55,
+              ease: "power2.inOut",
+              overwrite: "auto",
+            });
+            gsap.fromTo(
+              lines[next],
+              { autoAlpha: 0, y: 22, filter: "blur(10px)" },
+              {
+                autoAlpha: 1,
+                y: 0,
+                filter: "blur(0px)",
+                duration: 0.65,
+                ease: "power3.out",
+                overwrite: "auto",
+              },
+            );
+          };
+
+          timeline.eventCallback("onUpdate", () => {
+            scrubber.setProgress(film.progress);
+            if (lines.length > 1) {
+              const p = Math.min(1, film.progress / ROTATE_WINDOW);
+              const next = Math.min(lines.length - 1, Math.floor(p * lines.length));
+              swapAccent(next);
+            }
+          });
 
           // The copy holds still while the film plays. Full screen, it and its wash then ease
           // away so the tour's final view plays clean before the next section slides over.
@@ -113,6 +137,8 @@ export function Hero() {
           scrubber.setProgress(film.progress);
 
           return () => {
+            timeline.eventCallback("onUpdate", null);
+            if (lines.length) gsap.killTweensOf(lines);
             scrubber.destroy();
             gsap.killTweensOf(video);
             gsap.set(video, { clearProps: "opacity,visibility" });
@@ -165,7 +191,7 @@ export function Hero() {
                 {line}
               </span>
             ))}
-            <span className="relative block text-leaf-bright">
+            <span className="relative block overflow-hidden pb-[0.06em] text-leaf-bright">
               {/* Holds height for the longest rotating line so the layout doesn't jump. */}
               <span className="invisible block whitespace-nowrap" aria-hidden="true">
                 {longestAccent}
@@ -174,7 +200,7 @@ export function Hero() {
                 <span
                   key={line}
                   className={cn(
-                    "hero-rotate-line absolute inset-x-0 top-0 whitespace-nowrap",
+                    "hero-rotate-line absolute inset-x-0 top-0 will-change-[transform,opacity,filter] whitespace-nowrap",
                     i === 0 ? "opacity-100" : "opacity-0",
                     i !== 0 && "motion-reduce:hidden",
                   )}

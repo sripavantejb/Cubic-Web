@@ -517,21 +517,29 @@ export const problem = {
       icon: "ClipboardList",
       title: "No proof of work",
       text: "You pay for cleaning with no record it happened.",
+      image: "/images/process-prove.jpg",
+      alt: "Checklist and proof of completed facility work",
     },
     {
       icon: "Wrench",
       title: "Reactive maintenance",
       text: "Breakdowns show up as emergencies, not warnings.",
+      image: "/images/machine-plumb.jpg",
+      alt: "Facility mechanical systems needing proactive care",
     },
     {
       icon: "TrendingDown",
       title: "No sustainability data",
       text: "ESG reporting means chasing five vendors for numbers.",
+      image: "/images/planet.jpg",
+      alt: "Green canopy representing missing sustainability metrics",
     },
     {
       icon: "RefreshCw",
       title: "Staff churn",
       text: "A new, untrained team every few months.",
+      image: "/images/people.jpg",
+      alt: "Facility team members at work",
     },
   ],
   transition:
@@ -541,6 +549,8 @@ export const problem = {
 export const trustStrip = {
   eyebrow: "Transparency",
   heading: "Where we are — and where we're headed.",
+  image: "/images/architecture-2.jpg",
+  alt: "Managed commercial building exterior in Hyderabad",
   today: {
     label: "Where we are today",
     items: [
@@ -578,21 +588,29 @@ export const siteWalkthrough = {
       label: "Week 1",
       title: "Baseline audit",
       text: "Water, waste, and air readings before we start.",
+      image: "/images/process-audit.jpg",
+      alt: "Baseline facility audit in progress",
     },
     {
       label: "Week 2",
       title: "Sensors & team live",
       text: "Dashboard goes live; staff matched and onboarded.",
+      image: "/images/sensors.jpg",
+      alt: "Sensors and monitoring equipment on a live site",
     },
     {
       label: "Week 3–4",
       title: "Predictive scheduling",
       text: "Fixed routines give way to demand-led work.",
+      image: "/images/intelligence.jpg",
+      alt: "Operations intelligence guiding facility schedules",
     },
     {
       label: "Day 30",
       title: "First proof report",
       text: "Carbon & quality report, benchmarked against your baseline.",
+      image: "/images/office-2.jpg",
+      alt: "Managed office floor after the first month",
     },
   ],
   cta: {
@@ -605,12 +623,16 @@ export const siteWalkthrough = {
 export const pricing = {
   eyebrow: "Engagement",
   heading: "Choose the model that fits your space",
+  image: "/images/office.jpg",
+  alt: "Commercial workspace suited to managed facility coverage",
   models: [
     {
       id: "per-visit",
       title: "Per-Visit",
       text: "For smaller homes and one-off deep cleans. Pay per service, no long-term commitment.",
       bestFor: "Apartments, small offices",
+      image: "/images/residential.jpg",
+      alt: "Residential interior suited to per-visit cleaning",
     },
     {
       id: "managed",
@@ -618,12 +640,16 @@ export const pricing = {
       text: "Monthly or annual coverage for ongoing housekeeping, MEP, and platform access. Staffing and scheduling handled end-to-end.",
       bestFor: "Offices, tech parks, gated communities",
       featured: true,
+      image: "/images/interior.jpg",
+      alt: "Managed commercial interior under ongoing coverage",
     },
     {
       id: "industrial",
       title: "Custom Industrial",
       text: "Scoped to your site's machinery, compliance, and water treatment needs, with a dedicated account team.",
       bestFor: "Factories, warehouses, labs",
+      image: "/images/industrial.jpg",
+      alt: "Industrial facility for custom site programs",
     },
   ],
   footnote:
@@ -633,6 +659,8 @@ export const pricing = {
 export const faq = {
   eyebrow: "FAQ",
   heading: "Straight answers before you buy.",
+  image: "/images/interior.jpg",
+  alt: "Calm interior of a professionally managed space",
   items: [
     {
       q: "How long is a typical contract?",

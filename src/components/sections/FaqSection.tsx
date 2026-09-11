@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { faq } from "@/content/site";
 import { cn } from "@/lib/cn";
+import { MediaFrame } from "@/components/media/MediaFrame";
 import { AnimatedContent, BlurText, FadeContent } from "@/components/react-bits";
 
 export function FaqSection() {
@@ -21,6 +22,15 @@ export function FaqSection() {
             text={faq.heading}
             className="mt-3 max-w-[12ch] text-[clamp(1.85rem,4vw,3.25rem)] leading-[1.05] font-semibold tracking-[-0.03em] text-hero-ink"
           />
+          <FadeContent delay={0.12} className="mt-8 hidden lg:block">
+            <MediaFrame
+              src={faq.image}
+              alt={faq.alt}
+              className="aspect-[4/5] rounded-[24px]"
+              sizes="32vw"
+              kenBurns
+            />
+          </FadeContent>
         </div>
 
         <FadeContent delay={0.08}>

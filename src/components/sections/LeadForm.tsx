@@ -2,6 +2,7 @@
 
 import { contact } from "@/content/site";
 import { Button } from "@/components/ui/Button";
+import { MediaFrame } from "@/components/media/MediaFrame";
 import { useApp } from "@/components/providers/AppProviders";
 import { AnimatedContent, FadeContent } from "@/components/react-bits";
 
@@ -10,7 +11,7 @@ export function LeadForm() {
 
   return (
     <section id="contact" className="section-x bg-paper py-16 md:py-20">
-      <div className="mx-auto flex max-w-[1440px] flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+      <div className="mx-auto grid max-w-[1440px] gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-14">
         <FadeContent>
           <div>
             <p className="meta text-leaf">{contact.eyebrow}</p>
@@ -18,19 +19,29 @@ export function LeadForm() {
               {contact.heading}
             </h2>
             <p className="mt-3 max-w-md text-[15px] leading-relaxed text-muted">{contact.text}</p>
+            <div className="mt-7">
+              <Button
+                href="#contact"
+                magnetic
+                onClick={(e) => {
+                  e.preventDefault();
+                  openContact();
+                }}
+              >
+                {contact.submit}
+              </Button>
+            </div>
           </div>
         </FadeContent>
-        <AnimatedContent delay={0.1} distance={24}>
-          <Button
-            href="#contact"
-            magnetic
-            onClick={(e) => {
-              e.preventDefault();
-              openContact();
-            }}
-          >
-            {contact.submit}
-          </Button>
+
+        <AnimatedContent delay={0.1} distance={28}>
+          <MediaFrame
+            src={contact.image}
+            alt={contact.alt}
+            className="aspect-[16/11] rounded-[24px] md:aspect-[5/3]"
+            sizes="(min-width: 1024px) 42vw, 100vw"
+            kenBurns
+          />
         </AnimatedContent>
       </div>
     </section>

@@ -13,7 +13,24 @@
   --muted: #5e6f62;
   --line: rgba(31, 61, 43, 0.14);
   --glow: rgba(93, 176, 117, 0.28);
+  --mint: #e7f3eb;
+  --mint-2: #f3f9f4;
+  --hero-ink: #11231b;
+  /* Action palette: warm yellow for primary actions (charcoal text), light green for
+     secondary actions and surfaces, a fresher green for large accents. */
+  --sun: #f5c542;
+  --sun-deep: #e9b227;
+  --leaf-soft: #ddf2e4;
+  --leaf-soft-2: #cdebd7;
+  --leaf-line: #b8dfc4;
+  --leaf-bright: #2f9a5c;
 }
+
+/* Landscape-ish screens get the two-column hero (copy left, film right);
+   portrait screens put the copy above the film. Keep in sync with WIDE in Hero.tsx. */
+@custom-variant wide (@media (min-width: 768px) and (min-aspect-ratio: 5/4));
+@custom-variant short (@media (max-height: 560px));
+@custom-variant phone-short (@media (max-width: 767px) and (max-height: 700px));
 
 @theme inline {
   --color-ink: var(--ink);
@@ -27,6 +44,15 @@
   --color-charcoal: var(--charcoal);
   --color-muted: var(--muted);
   --color-line: var(--line);
+  --color-mint: var(--mint);
+  --color-mint-2: var(--mint-2);
+  --color-sun: var(--sun);
+  --color-sun-deep: var(--sun-deep);
+  --color-leaf-soft: var(--leaf-soft);
+  --color-leaf-soft-2: var(--leaf-soft-2);
+  --color-leaf-line: var(--leaf-line);
+  --color-leaf-bright: var(--leaf-bright);
+  --color-hero-ink: var(--hero-ink);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-deva: var(--font-deva);
@@ -155,6 +181,121 @@ body {
 
   .lenis.lenis-smooth {
   scroll-behavior: auto;
+}
+
+/* Scroll room for the pinned hero: one screen of hero plus the scrub length. Reserved here
+   rather than added by ScrollTrigger at runtime, so the page is the same height before and
+   after hydration and the browser can restore the scroll position on reload. */
+.hero-track {
+  height: 360svh; /* 260svh of scrub for the 10s tour */
+}
+
+@media (min-width: 768px) and (min-aspect-ratio: 5/4) {
+  .hero-track {
+    height: 420svh; /* 320svh of scrub */
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-track {
+    height: auto;
+  }
+}
+
+/* Hero layout.
+   --seam:  right edge of the copy column (the headline is capped to fit inside it).
+   --inset: copy's left edge — same grid as .section-x + max-w-[1440px] (navbar pill).
+   --film-x/y: object-position. The tour is one forward camera move, so the crop stays
+   near its line of travel; full screen it leans right, away from the copy. */
+.hero {
+  --seam: 45vw;
+  --inset: max(1.25rem, env(safe-area-inset-left));
+  --film-x: 52%;
+  --film-y: 50%;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    /* Matches section content: padding until the 1440 grid centers, then 50vw - 720px. */
+    --inset: max(2rem, env(safe-area-inset-left), calc(50vw - 720px));
+  }
+}
+
+@media (min-width: 768px) and (min-aspect-ratio: 5/4) {
+  .hero {
+    --film-x: 30%;
+  }
+}
+
+@media (min-width: 1200px) and (min-aspect-ratio: 5/4) {
+  /* Desktop: 38/62 split, locked to the 1440px grid on wider screens. */
+  .hero {
+    --seam: max(38vw, calc(50vw - 173px));
+  }
+}
+
+.hero-film {
+  object-position: var(--film-x) var(--film-y);
+}
+
+/* Headline size. In two columns it scales with the viewport but is capped by the copy
+   column's width ("Smarter facilities." is ~7.9em wide) and by height on short screens. */
+.hero-title {
+  font-size: clamp(2.5rem, 11vw, 3.25rem);
+}
+
+@media (min-width: 600px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 768px) and (min-aspect-ratio: 5/4) {
+  .hero-title {
+    font-size: clamp(
+      2rem,
+      min(1rem + 2.9vw, 7.2svh, (var(--seam) - var(--inset) - 2.5rem) / 7.9),
+      4.2rem
+    );
+  }
+}
+
+/* Stacked (portrait): the film rises out of the page beneath the copy. */
+.hero-media {
+  mask-image: linear-gradient(to bottom, transparent, #000 3.5rem);
+}
+
+@media (min-width: 768px) and (min-aspect-ratio: 5/4) {
+  .hero-media {
+    mask-image: none;
+  }
+}
+
+/* Full screen: a very light wash rising from the bottom edge, so the film settles into the
+   page the same way it meets the copy on the left. Strongest at the very edge, gone by a
+   quarter of the way up. */
+.hero-fade-bottom {
+  background: linear-gradient(
+    to top,
+    rgb(231 243 235 / 0.6) 0%,
+    rgb(231 243 235 / 0.34) 8%,
+    rgb(231 243 235 / 0.14) 16%,
+    rgb(231 243 235 / 0) 28%
+  );
+}
+
+/* Full screen: a wash of the page colour behind the copy only, fading out well before the
+   middle of the frame so the people and signage on the right stay untouched. */
+.hero-scrim {
+  background: linear-gradient(
+    90deg,
+    rgb(243 249 244 / 0.97) 0%,
+    rgb(243 249 244 / 0.95) 14%,
+    rgb(243 249 244 / 0.88) calc(var(--seam) - 10rem),
+    rgb(243 249 244 / 0.55) var(--seam),
+    rgb(243 249 244 / 0.16) calc(var(--seam) + 7rem),
+    rgb(243 249 244 / 0) calc(var(--seam) + 12rem)
+  );
 }
 
 .hero-line {

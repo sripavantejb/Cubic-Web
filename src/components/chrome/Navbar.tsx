@@ -1,35 +1,38 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, Menu, X } from "lucide-react";
-import { about, hazelAI, impact, machinery, nav, promise, services, site } from "@/content/site";
+import { ArrowRight, ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
+import { faq, hazelAI, nav, pricing, problem, site, solutions } from "@/content/site";
 import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/Button";
 import { useApp } from "@/components/providers/AppProviders";
 
 type PanelItem = { label: string; href: string; text?: string };
-type Panel = { eyebrow: string; heading: string; items: PanelItem[] };
+type Panel = { eyebrow: string; heading: string; items: PanelItem[]; exploreHref?: string };
 
 const appleEase = [0.32, 0.08, 0.24, 1] as const;
+const IFM_KEY = "ifm";
 
 const panels: Record<string, Panel> = {
-  "#about": {
-    eyebrow: "Get to know us",
-    heading: "Planet, people, intelligence.",
-    items: about.tabs.map((tab) => ({
-      label: tab.label,
-      href: "#about",
-      text: tab.title,
+  "#solutions": {
+    eyebrow: "Services",
+    heading: solutions.heading,
+    items: solutions.items.map((item) => ({
+      label: item.title,
+      href: item.href,
+      text: item.text,
     })),
   },
-  "#services": {
-    eyebrow: "What we do",
-    heading: "One partner for every space.",
-    items: services.items.map((item) => ({
-      label: item.title,
-      href: "#services",
-      text: item.text,
+  "#problem": {
+    eyebrow: "Why Hazel",
+    heading: problem.heading,
+    items: problem.pains.map((pain) => ({
+      label: pain.title,
+      href: "#problem",
+      text: pain.text,
     })),
   },
   "#ai": {
@@ -41,41 +44,50 @@ const panels: Record<string, Panel> = {
       text: state.text,
     })),
   },
-  "#impact": {
-    eyebrow: "Impact",
-    heading: "The opportunity we are building into.",
-    items: impact.stats.map((stat) => ({
-      label: `${stat.n} · ${stat.title}`,
-      href: "#impact",
-      text: stat.text,
+  "#pricing": {
+    eyebrow: "Engagement",
+    heading: pricing.heading,
+    items: pricing.models.map((model) => ({
+      label: model.title,
+      href: "#pricing",
+      text: model.bestFor,
     })),
   },
-  "#machinery": {
-    eyebrow: "Equipment",
-    heading: "Machines behind a lighter footprint.",
-    items: machinery.items.slice(0, 6).map((item) => ({
-      label: item.title,
-      href: "#machinery",
-      text: item.metricLabel,
+  "#faq": {
+    eyebrow: "FAQ",
+    heading: faq.heading,
+    items: faq.items.slice(0, 6).map((item) => ({
+      label: item.q,
+      href: "#faq",
+      text: item.a,
     })),
   },
-  "#promise": {
-    eyebrow: "Green Impact",
-    heading: promise.heading,
-    items: promise.stats.map((stat) => ({
-      label: `${stat.value}${stat.suffix} ${stat.label}`,
-      href: "#promise",
+  [IFM_KEY]: {
+    eyebrow: nav.ifm.eyebrow,
+    heading: nav.ifm.heading,
+    exploreHref: nav.ifm.overview.href,
+    items: nav.ifm.items.map((item) => ({
+      label: item.label,
+      href: item.href,
+      text: item.text,
     })),
   },
 };
 
-const desktopLinks = [...nav.links, nav.greenImpact];
+const desktopLinks = nav.links;
+
+function isPageHref(href: string) {
+  return href.startsWith("/") && !href.startsWith("/#");
+}
 
 export function Navbar() {
   const { scrollTo } = useApp();
+  const pathname = usePathname();
+  const onHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string | null>(null);
+  const [mobileIfmOpen, setMobileIfmOpen] = useState(false);
   const closeTimer = useRef<number | null>(null);
 
   useEffect(() => {
@@ -115,6 +127,8 @@ export function Navbar() {
   const go = (href: string) => {
     setOpen(false);
     setActive(null);
+    setMobileIfmOpen(false);
+    if (isPageHref(href)) return;
     scrollTo(href);
   };
 
@@ -129,9 +143,15 @@ export function Navbar() {
   };
 
   const panel = active ? panels[active] : null;
+  const ifmOpen = active === IFM_KEY;
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 p-3 pt-[max(0.75rem,env(safe-area-inset-top))] md:p-4 md:pt-[max(1rem,env(safe-area-inset-top))]">
+    <header
+      className={cn(
+        "section-x fixed inset-x-0 top-0 z-50 pt-[max(0.75rem,env(safe-area-inset-top))] pb-3 md:pt-[max(1rem,env(safe-area-inset-top))] md:pb-4",
+        open && "z-[75]",
+      )}
+    >
       <AnimatePresence>
         {panel ? (
           <motion.button
@@ -156,15 +176,21 @@ export function Navbar() {
       >
         <div
           className={cn(
-            "flex h-14 items-center gap-3 rounded-full bg-[#e7eadc]/94 pr-2 pl-3 shadow-[0_10px_40px_rgba(14,26,18,0.10)] backdrop-blur-xl md:h-16 md:gap-8 md:pr-2.5 md:pl-4",
-            scrolled && "shadow-[0_12px_48px_rgba(14,26,18,0.14)]",
+            "flex h-14 items-center gap-3 rounded-full bg-white/72 pr-2 pl-3 text-hero-ink shadow-[0_1px_2px_rgba(17,35,27,0.04),0_10px_30px_-14px_rgba(17,35,27,0.16)] ring-1 ring-hero-ink/6 backdrop-blur-md transition-[background-color,box-shadow] duration-300 md:h-16 md:gap-8 md:pr-2.5 md:pl-4",
+            scrolled && "bg-white/85 shadow-[0_1px_2px_rgba(17,35,27,0.05),0_14px_36px_-16px_rgba(17,35,27,0.22)]",
           )}
         >
-          <a
-            href="#top"
+          <Link
+            href="/"
+            aria-label={`${site.name} home`}
             onClick={(e) => {
-              e.preventDefault();
-              go("#top");
+              setOpen(false);
+              setActive(null);
+              setMobileIfmOpen(false);
+              if (onHome) {
+                e.preventDefault();
+                scrollTo("#top");
+              }
             }}
             className="flex min-w-0 shrink items-center gap-2.5"
           >
@@ -172,7 +198,7 @@ export function Navbar() {
               HI
             </span>
             <span className="truncate text-[14px] font-medium tracking-tight md:text-[15px]">{site.name}</span>
-          </a>
+          </Link>
 
           <nav className="hidden items-center gap-1 lg:flex xl:gap-2" aria-label="Primary">
             {desktopLinks.map((link) => {
@@ -190,14 +216,30 @@ export function Navbar() {
                     go(link.href);
                   }}
                   className={cn(
-                    "rounded-full px-3 py-2 text-[13px] leading-none font-medium tracking-[-0.01em] whitespace-nowrap transition-colors",
-                    isOn ? "bg-ink/6 text-ink" : "text-ink/80 hover:text-leaf",
+                    "rounded-full px-3 py-2 text-[13.5px] leading-none font-medium tracking-[-0.01em] whitespace-nowrap transition-colors",
+                    isOn ? "bg-hero-ink/5 text-hero-ink" : "text-hero-ink/70 hover:text-hero-ink",
                   )}
                 >
                   {link.label}
                 </a>
               );
             })}
+
+            <button
+              type="button"
+              aria-haspopup="true"
+              aria-expanded={ifmOpen}
+              onMouseEnter={() => openPanel(IFM_KEY)}
+              onFocus={() => openPanel(IFM_KEY)}
+              onClick={() => setActive(ifmOpen ? null : IFM_KEY)}
+              className={cn(
+                "inline-flex items-center gap-1 rounded-full px-3 py-2 text-[13.5px] leading-none font-medium tracking-[-0.01em] whitespace-nowrap transition-colors",
+                ifmOpen ? "bg-hero-ink/5 text-hero-ink" : "text-hero-ink/70 hover:text-hero-ink",
+              )}
+            >
+              {nav.ifm.label}
+              <ChevronDown className={cn("size-3.5 transition-transform duration-200", ifmOpen && "rotate-180")} />
+            </button>
           </nav>
 
           <div className="ml-auto hidden items-center gap-5 lg:flex">
@@ -208,7 +250,10 @@ export function Navbar() {
                 e.preventDefault();
                 go(nav.cta.href);
               }}
-              className="!py-2.5 !text-[13px]"
+              className="h-11 !py-0 !text-[13.5px]"
+              arrow={
+                <ArrowRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+              }
             >
               {nav.cta.label}
             </Button>
@@ -216,7 +261,7 @@ export function Navbar() {
 
           <button
             type="button"
-            className="ml-auto flex size-11 shrink-0 items-center justify-center rounded-full border border-line lg:hidden"
+            className="ml-auto flex size-11 shrink-0 items-center justify-center rounded-full border border-hero-ink/10 lg:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
@@ -235,7 +280,7 @@ export function Navbar() {
               transition={{ duration: 0.38, ease: appleEase }}
               className="absolute inset-x-0 top-full z-20 hidden pt-2 lg:block"
             >
-              <div className="overflow-hidden rounded-[24px] bg-[#e7eadc]/96 shadow-[0_18px_50px_rgba(14,26,18,0.14)] backdrop-blur-xl">
+              <div className="overflow-hidden rounded-[24px] bg-white/92 text-hero-ink shadow-[0_18px_50px_-20px_rgba(17,35,27,0.25)] ring-1 ring-hero-ink/6 backdrop-blur-md">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={active}
@@ -250,33 +295,59 @@ export function Navbar() {
                         <p className="meta text-leaf">{panel.eyebrow}</p>
                         <p className="display mt-2 max-w-[22ch] text-[clamp(1.4rem,2.4vw,2.1rem)]">{panel.heading}</p>
                       </div>
-                      <button
-                        type="button"
-                        onClick={() => go(active!)}
-                        className="mb-1 hidden items-center gap-1 text-[13px] font-medium text-ink/70 hover:text-leaf xl:flex"
-                      >
-                        Explore
-                        <ArrowUpRight className="size-3.5" />
-                      </button>
+                      {panel.exploreHref ? (
+                        <Link
+                          href={panel.exploreHref}
+                          onClick={() => setActive(null)}
+                          className="mb-1 hidden items-center gap-1 text-[13px] font-medium text-ink/70 hover:text-leaf xl:flex"
+                        >
+                          {nav.ifm.overview.label}
+                          <ArrowUpRight className="size-3.5" />
+                        </Link>
+                      ) : (
+                        <button
+                          type="button"
+                          onClick={() => go(active!)}
+                          className="mb-1 hidden items-center gap-1 text-[13px] font-medium text-ink/70 hover:text-leaf xl:flex"
+                        >
+                          Explore
+                          <ArrowUpRight className="size-3.5" />
+                        </button>
+                      )}
                     </div>
                     <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-2 xl:grid-cols-3">
                       {panel.items.map((item) => (
                         <li key={item.label}>
-                          <a
-                            href={item.href}
-                            onClick={(e) => {
-                              e.preventDefault();
-                              go(item.href);
-                            }}
-                            className="group block rounded-xl py-1.5 transition-colors hover:text-leaf"
-                          >
-                            <span className="block text-[15px] font-medium tracking-tight">{item.label}</span>
-                            {item.text ? (
-                              <span className="mt-1 block max-w-[36ch] text-[12px] leading-snug text-muted group-hover:text-ink/60">
-                                {item.text}
-                              </span>
-                            ) : null}
-                          </a>
+                          {isPageHref(item.href) ? (
+                            <Link
+                              href={item.href}
+                              onClick={() => setActive(null)}
+                              className="group block rounded-xl py-1.5 transition-colors hover:text-leaf"
+                            >
+                              <span className="block text-[15px] font-medium tracking-tight">{item.label}</span>
+                              {item.text ? (
+                                <span className="mt-1 block max-w-[36ch] text-[12px] leading-snug text-muted group-hover:text-ink/60">
+                                  {item.text}
+                                </span>
+                              ) : null}
+                            </Link>
+                          ) : (
+                            <a
+                              href={item.href}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                go(item.href);
+                              }}
+                              className="group block rounded-xl py-1.5 transition-colors hover:text-leaf"
+                            >
+                              <span className="block text-[15px] font-medium tracking-tight">{item.label}</span>
+                              {item.text ? (
+                                <span className="mt-1 block max-w-[36ch] text-[12px] leading-snug text-muted group-hover:text-ink/60">
+                                  {item.text}
+                                </span>
+                              ) : null}
+                            </a>
+                          )}
                         </li>
                       ))}
                     </ul>
@@ -327,6 +398,45 @@ export function Navbar() {
                   {link.label}
                 </motion.a>
               ))}
+
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.05 * desktopLinks.length, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <button
+                  type="button"
+                  aria-expanded={mobileIfmOpen}
+                  onClick={() => setMobileIfmOpen((v) => !v)}
+                  className="display flex w-full items-center justify-between py-2 text-left text-[clamp(1.65rem,8vw,3rem)] leading-[1.05]"
+                >
+                  {nav.ifm.label}
+                  <ChevronDown className={cn("size-6 shrink-0 transition-transform", mobileIfmOpen && "rotate-180")} />
+                </button>
+                {mobileIfmOpen ? (
+                  <div className="mb-4 space-y-1">
+                    <Link
+                      href={nav.ifm.overview.href}
+                      onClick={() => setOpen(false)}
+                      className="block rounded-xl py-2 text-[15px] font-medium text-mist"
+                    >
+                      {nav.ifm.overview.label}
+                    </Link>
+                    {nav.ifm.items.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={() => setOpen(false)}
+                        className="block rounded-xl py-2"
+                      >
+                        <span className="block text-[15px] font-medium text-paper">{item.label}</span>
+                        <span className="mt-1 block text-[12px] leading-snug text-paper/55">{item.text}</span>
+                      </Link>
+                    ))}
+                  </div>
+                ) : null}
+              </motion.div>
+
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -335,7 +445,6 @@ export function Navbar() {
               >
                 <Button
                   href={nav.cta.href}
-                  variant="inverse"
                   className="w-full"
                   onClick={(e) => {
                     e.preventDefault();

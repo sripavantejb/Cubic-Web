@@ -18,7 +18,6 @@ import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import { Grain } from "@/components/chrome/Grain";
 import { PageLoader } from "@/components/chrome/PageLoader";
 import { ContactPopup } from "@/components/chrome/ContactPopup";
-import { WhatsAppChat } from "@/components/chrome/WhatsAppChat";
 
 type AppContextValue = {
   ready: boolean
@@ -59,13 +58,33 @@ export function AppProviders({ children }: { children: ReactNode }) {
       openContact();
       return;
     }
+    if (target === "#top") {
+      if (lenisRef.current) {
+        lenisRef.current.scrollTo(0, { offset: 0 });
+        return;
+      }
+      gsap.to(window, {
+        duration: reduced ? 0 : 1.1,
+        ease: "power3.inOut",
+        scrollTo: { y: 0, autoKill: false },
+        overwrite: true,
+      });
+      return;
+    }
     const el = document.querySelector(target);
     if (!el) return;
     if (lenisRef.current) {
       lenisRef.current.scrollTo(el as HTMLElement, { offset: -72 });
       return;
     }
-    el.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+    // Touch devices (no Lenis): a GSAP-driven scroll. A native smooth scroll is cancelled
+    // whenever a ScrollTrigger refresh lands mid-flight, which the cinema video triggers.
+    gsap.to(window, {
+      duration: reduced ? 0 : 1.1,
+      ease: "power3.inOut",
+      scrollTo: { y: el, offsetY: 72, autoKill: false },
+      overwrite: true,
+    });
   }, [reduced, openContact]);
 
   useGSAP(() => {
@@ -101,6 +120,15 @@ export function AppProviders({ children }: { children: ReactNode }) {
     return () => window.clearTimeout(id);
   }, { dependencies: [ready] });
 
+  // Honor deep links like `/#machinery` when arriving from a service page.
+  useGSAP(() => {
+    if (!ready) return;
+    const hash = window.location.hash;
+    if (!hash || hash === "#top") return;
+    const id = window.setTimeout(() => scrollTo(hash), 120);
+    return () => window.clearTimeout(id);
+  }, { dependencies: [ready, scrollTo] });
+
   const value = useMemo(
     () => ({ ready, completeLoader, scrollTo, contactOpen, openContact, closeContact }),
     [ready, completeLoader, scrollTo, contactOpen, openContact, closeContact],
@@ -112,7 +140,6 @@ export function AppProviders({ children }: { children: ReactNode }) {
       <PageLoader onComplete={completeLoader} />
       {children}
       <ContactPopup />
-      <WhatsAppChat />
     </AppContext.Provider>
   );
 }

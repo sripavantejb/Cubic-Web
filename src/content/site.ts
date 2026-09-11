@@ -24,35 +24,147 @@ export const site = {
 
 export const nav = {
   links: [
-    { label: "About", href: "#about" },
-    { label: "What we do", href: "#services" },
+    { label: "Services", href: "#solutions" },
+    { label: "Why Hazel", href: "#problem" },
     { label: "HazelAI", href: "#ai" },
-    { label: "Impact", href: "#impact" },
-    { label: "Machinery", href: "#machinery" },
+    { label: "Pricing", href: "#pricing" },
+    { label: "FAQ", href: "#faq" },
   ],
-  greenImpact: { label: "Green Impact", href: "#promise" },
+  ifm: {
+    label: "IFM Services",
+    eyebrow: "IFM Services",
+    heading: "Integrated facility management for every space.",
+    overview: { label: "See all IFM Services", href: "/pages/ifm-services" },
+    items: [
+      {
+        label: "Housekeeping",
+        href: "/pages/housekeeping-services-in-hyderabad",
+        text: "Daily cleaning, sanitation and common-area upkeep with trained teams.",
+      },
+      {
+        label: "MEP Services",
+        href: "/pages/mechanical-electrical-plumbing-services-in-hyderabad",
+        text: "HVAC, electrical and plumbing maintenance to keep systems reliable.",
+      },
+      {
+        label: "Landscaping",
+        href: "/pages/landscaping-services-in-hyderabad",
+        text: "Native gardens, grounds care and water-conscious outdoor maintenance.",
+      },
+      {
+        label: "Pest Control Services",
+        href: "/pages/pest-control-services-in-hyderabad",
+        text: "Safe, scheduled pest management for homes, offices and industry.",
+      },
+      {
+        label: "Mailroom Services",
+        href: "/pages/mailroom-services-in-hyderabad",
+        text: "Receiving, sorting, courier coordination and parcel tracking.",
+      },
+      {
+        label: "Concierge Services",
+        href: "/pages/concierge-services-in-hyderabad",
+        text: "Front-of-house reception, visitor assistance and guest support.",
+      },
+      {
+        label: "Logistics Services",
+        href: "/pages/logistics-services-in-hyderabad",
+        text: "Material handling, receiving, dispatch and internal movement.",
+      },
+    ],
+  },
   cta: { label: "Get a Free Audit", href: "#contact" },
 } as const;
 
 export const hero = {
-  tag: "India's first AI-native green facility company",
-  headline: ["Cleaner spaces.", "Greener India.", "Smarter by design."],
-  lede: "Hazel India brings intelligent, eco-first facility management to every home, office, factory and community — powered by AI that predicts, optimises and proves a lighter footprint on the planet.",
-  primary: { label: "Get a Free Audit", href: "#contact" },
-  secondary: { label: "Watch Our Story", href: "#story" },
-  visual: "/images/hero-arch.jpg",
-  visualAlt: "Sunlit green interior with plants and calm architectural space",
-  features: [
-    { label: "AI-Powered", icon: "leaf" },
-    { label: "Sustainable", icon: "chart" },
-    { label: "Trusted Across India", icon: "shield" },
+  eyebrow: "AI-Powered Integrated Facility Management",
+  headline: ["Smarter facilities.", "Cleaner spaces.", "Better India."],
+  lede: "Complete facility management solutions combining people, technology and sustainable operations.",
+  primary: { label: "Explore Our Services", href: "#solutions" },
+  secondary: { label: "Get a Free Audit", href: "#contact" },
+  trust: [
+    { value: "2022", label: "Founded" },
+    { value: "HYD", label: "Based in Hyderabad" },
+    { value: "100%", label: "Green chemistry" },
   ],
-  video: "/video/hero.mp4",
-  poster: "/images/hero-poster.jpg",
-  stats: [
-    { value: 100, suffix: "%", label: "Green-certified chemistry" },
-    { value: 28, suffix: "", label: "States we aim to serve" },
-    { value: 24, suffix: "/7", label: "AI monitoring & dispatch" },
+  // The continuous facility tour, scrubbed by scroll position. Same 240 frames as the upload
+  // (public/Continuous_tour_of_corporate_fac…mp4, kept untouched), re-encoded with a keyframe
+  // every 4 frames so seeking stays cheap enough to show every frame while scrolling.
+  video: "/video/hazel-india-hero.mp4",
+  // The film's first frame: shown until the video can paint, and for reduced motion.
+  poster: "/images/hazel-india-hero-poster.jpg",
+} as const;
+
+export const solutions = {
+  eyebrow: "Our services",
+  heading: "Complete facility solutions.",
+  headingAccent: "One trusted partner.",
+  lede: "One accountable partner for everything your building needs — trained Hazel India teams, green-certified operations and the HazelAI platform, under a single contract.",
+  items: [
+    {
+      title: "Housekeeping & Cleaning",
+      text: "Daily upkeep, deep cleaning and sanitation with biodegradable, low-toxicity products.",
+      icon: "SprayCan",
+      image: "/images/services/housekeeping.jpg",
+      alt: "Professional housekeeping team cleaning a commercial office floor",
+      href: "/pages/housekeeping-services-in-hyderabad",
+    },
+    {
+      title: "Landscaping & Green Spaces",
+      text: "Native-first gardens, vertical greenery and grounds care that cool your premises.",
+      icon: "Trees",
+      image: "/images/services/landscaping.jpg",
+      alt: "Landscaping crew maintaining gardens at a commercial campus",
+      href: "/pages/landscaping-services-in-hyderabad",
+    },
+    {
+      title: "Mailroom & Concierge",
+      text: "Front desk, visitor handling, mail and courier management by trained hosts.",
+      icon: "ConciergeBell",
+      image: "/images/services/mailroom.jpg",
+      alt: "Organized office mailroom with sorted parcels and packages",
+      href: "/pages/mailroom-services-in-hyderabad",
+    },
+    {
+      title: "Integrated Security Services",
+      text: "Trained guarding with AI-assisted surveillance, visitor management and smart access.",
+      icon: "ShieldCheck",
+      image: "/images/services/security.jpg",
+      alt: "Security officer managing access at a modern building lobby",
+      href: "/pages/ifm-services",
+    },
+    {
+      title: "MEP Solutions",
+      text: "HVAC, plumbing, electrical and machinery upkeep with predictive maintenance.",
+      icon: "Wrench",
+      image: "/images/services/mep.jpg",
+      alt: "MEP plant room with HVAC, electrical and plumbing systems",
+      href: "/pages/mechanical-electrical-plumbing-services-in-hyderabad",
+    },
+    {
+      title: "Waste Management & Green Initiatives",
+      text: "Segregation, composting and zero-to-landfill programmes with diversion reporting.",
+      icon: "Recycle",
+      image: "/images/services/waste.jpg",
+      alt: "Color-coded recycling and waste segregation at a facility",
+      href: "/pages/ifm-services",
+    },
+    {
+      title: "Logistics & Support Services",
+      text: "Pantry, moves, inventory and on-site support staff that keep operations running.",
+      icon: "Truck",
+      image: "/images/services/logistics.jpg",
+      alt: "Facility logistics team moving materials with a pallet jack",
+      href: "/pages/logistics-services-in-hyderabad",
+    },
+    {
+      title: "Smart IFM Technology",
+      text: "Sensors, dispatch and live dashboards for air, water, energy and ESG reporting.",
+      icon: "Cpu",
+      image: "/images/services/ifm.jpg",
+      alt: "Smart facility control room with live building performance dashboards",
+      href: "/pages/ifm-services",
+    },
   ],
 } as const;
 
@@ -330,6 +442,8 @@ export const hazelAI = {
   eyebrow: "The HazelAI platform",
   heading: "Intelligence that makes clean predictable, provable and lighter on Earth.",
   lede: "Every Hazel site runs on a connected layer of sensors, dispatch and analytics — so you don't just trust that a space is cared for, you can see it.",
+  honesty:
+    "Some of what is below is live on our managed sites today; some is part of the platform we're actively rolling out through 2026. We'll always tell you which is which.",
   demoNote: "Visual demonstration — not live site data.",
   image: "/images/intelligence.jpg",
   images: ["/images/intelligence.jpg", "/images/office-2.jpg", "/images/sensors.jpg"],
@@ -342,9 +456,9 @@ export const hazelAI = {
       title: "Predictive cleaning & maintenance",
       text: "Footfall, occupancy and IoT sensors tell HazelAI where and when attention is actually needed — ending wasteful fixed schedules.",
       items: [
-        "Dynamic task routing for staff",
-        "Equipment failure flagged before breakdown",
-        "Up to 30% less water & chemical use",
+        { text: "Dynamic task routing for staff", status: "roadmap" },
+        { text: "Equipment failure flagged before breakdown", status: "roadmap" },
+        { text: "Up to 30% less water & chemical use", status: "roadmap" },
       ],
       image: "/images/office-2.jpg",
       alt: "Occupied workplace that HazelAI would schedule around",
@@ -356,9 +470,9 @@ export const hazelAI = {
       title: "Live environment monitoring",
       text: "Air quality, humidity, water reuse and energy are tracked in real time and surfaced on a single dashboard for every facility.",
       items: [
-        "AQI & CO₂ green-band alerts",
-        "Leak & wastage detection",
-        "Healthier indoor spaces, automatically",
+        { text: "AQI & CO₂ green-band alerts", status: "roadmap" },
+        { text: "Leak & wastage detection", status: "roadmap" },
+        { text: "Healthier indoor spaces, automatically", status: "roadmap" },
       ],
       image: "/images/interior.jpg",
       alt: "A healthy indoor environment under live monitoring",
@@ -370,9 +484,9 @@ export const hazelAI = {
       title: "Carbon & ESG dashboards",
       text: "Auto-generated sustainability reports turn your facility into measurable climate action you can share with stakeholders.",
       items: [
-        "Carbon, water & waste diversion metrics",
-        "Audit-ready ESG exports",
-        "Benchmarks across your portfolio",
+        { text: "Carbon, water & waste diversion metrics", status: "roadmap" },
+        { text: "Audit-ready ESG exports", status: "roadmap" },
+        { text: "Benchmarks across your portfolio", status: "roadmap" },
       ],
       image: "/images/process-prove.jpg",
       alt: "Analytics work representing audit-ready ESG proof",
@@ -384,12 +498,173 @@ export const hazelAI = {
       title: "AI concierge & instant booking",
       text: "A conversational assistant lets residents and managers request, track and rate any service — no call centre, no waiting.",
       items: [
-        "Chat & voice service requests",
-        "Live status and ETAs",
-        "Quality scoring on every job",
+        { text: "Chat & voice service requests", status: "roadmap" },
+        { text: "Live status and ETAs", status: "roadmap" },
+        { text: "Quality scoring on every job", status: "roadmap" },
       ],
       image: "/images/people-2.jpg",
       alt: "People coordinating care through a live service layer",
+    },
+  ],
+} as const;
+
+export const problem = {
+  eyebrow: "The problem",
+  heading: "Tired of hoping your space is actually clean?",
+  body: "Most facility vendors ask you to take their word for it. No proof a room was actually serviced. No warning before an AC unit fails. No real answer when your board asks for a carbon number. And every few months, a new set of untrained staff to break in all over again.",
+  pains: [
+    {
+      icon: "ClipboardList",
+      title: "No proof of work",
+      text: "You pay for cleaning with no record it happened.",
+    },
+    {
+      icon: "Wrench",
+      title: "Reactive maintenance",
+      text: "Breakdowns show up as emergencies, not warnings.",
+    },
+    {
+      icon: "TrendingDown",
+      title: "No sustainability data",
+      text: "ESG reporting means chasing five vendors for numbers.",
+    },
+    {
+      icon: "RefreshCw",
+      title: "Staff churn",
+      text: "A new, untrained team every few months.",
+    },
+  ],
+  transition:
+    "Hazel replaces guesswork with proof — one partner, one dashboard, everything accounted for.",
+} as const;
+
+export const trustStrip = {
+  eyebrow: "Transparency",
+  heading: "Where we are — and where we're headed.",
+  today: {
+    label: "Where we are today",
+    items: [
+      {
+        value: "Launching",
+        label: "First managed sites in Hyderabad",
+        note: "We're onboarding our opening wave of sites — we'll publish a live count as contracts go live.",
+      },
+      {
+        value: "100%",
+        label: "Biodegradable, low-toxicity cleaning chemistry",
+      },
+      {
+        value: "2022",
+        label: "Operating in Hyderabad since founding",
+      },
+    ],
+  },
+  ahead: {
+    label: "Where we're headed by 2030",
+    items: [
+      { value: "28", label: "States — expansion goal" },
+      { value: "24/7", label: "AI monitoring — platform rollout target" },
+      { value: "350+", label: "Sites · ~20M sq ft — regional leader vision" },
+    ],
+  },
+} as const;
+
+export const siteWalkthrough = {
+  eyebrow: "How a Hazel site starts",
+  heading: "See what a Hazel site actually looks like",
+  lede: "Here's what changes in the first 30 days on a typical site:",
+  weeks: [
+    {
+      label: "Week 1",
+      title: "Baseline audit",
+      text: "Water, waste, and air readings before we start.",
+    },
+    {
+      label: "Week 2",
+      title: "Sensors & team live",
+      text: "Dashboard goes live; staff matched and onboarded.",
+    },
+    {
+      label: "Week 3–4",
+      title: "Predictive scheduling",
+      text: "Fixed routines give way to demand-led work.",
+    },
+    {
+      label: "Day 30",
+      title: "First proof report",
+      text: "Carbon & quality report, benchmarked against your baseline.",
+    },
+  ],
+  cta: {
+    text: "Want to see this on a real site? Ask for a live walkthrough during your free audit.",
+    label: "Request a free audit",
+    href: "#contact",
+  },
+} as const;
+
+export const pricing = {
+  eyebrow: "Engagement",
+  heading: "Choose the model that fits your space",
+  models: [
+    {
+      id: "per-visit",
+      title: "Per-Visit",
+      text: "For smaller homes and one-off deep cleans. Pay per service, no long-term commitment.",
+      bestFor: "Apartments, small offices",
+    },
+    {
+      id: "managed",
+      title: "Managed Contract",
+      text: "Monthly or annual coverage for ongoing housekeeping, MEP, and platform access. Staffing and scheduling handled end-to-end.",
+      bestFor: "Offices, tech parks, gated communities",
+      featured: true,
+    },
+    {
+      id: "industrial",
+      title: "Custom Industrial",
+      text: "Scoped to your site's machinery, compliance, and water treatment needs, with a dedicated account team.",
+      bestFor: "Factories, warehouses, labs",
+    },
+  ],
+  footnote:
+    "Exact pricing depends on site size and service mix — you'll get a real quote as part of your free audit, not a guess.",
+} as const;
+
+export const faq = {
+  eyebrow: "FAQ",
+  heading: "Straight answers before you buy.",
+  items: [
+    {
+      q: "How long is a typical contract?",
+      a: "Per-visit work has no lock-in. Managed contracts are usually annual, with month-to-month options after the first term where the site plan allows.",
+    },
+    {
+      q: "Are your staff background-verified?",
+      a: "Yes when a client contract requires it — identity checks and site induction are part of onboarding. Verification depth follows the compliance standard agreed for that facility.",
+    },
+    {
+      q: "What chemicals do you use — are they safe around kids and pets?",
+      a: "All core cleaning products are biodegradable and low-toxicity. We do not currently list third-party ecolabel certifications on this site; ask during your audit for the product sheet for your space.",
+    },
+    {
+      q: "What happens if a scrubber or sensor breaks down on-site?",
+      a: "We switch to backup equipment or interim manual methods so service continuity isn't paused while the unit is repaired or replaced.",
+    },
+    {
+      q: "How fast do you respond to MEP emergencies?",
+      a: "Priority MEP calls are acknowledged the same business day during operating hours. Exact emergency SLAs are written into each managed-site agreement.",
+    },
+    {
+      q: "Can I pause or cancel service?",
+      a: "Yes. Managed contracts typically need 30 days' written notice to pause or cancel. Per-visit bookings can be changed or cancelled before the scheduled slot.",
+    },
+    {
+      q: "Do you provide ESG or carbon reports we can share with our board or tenants?",
+      a: "Yes — every managed site gets a monthly dashboard report covering water, waste, and energy metrics, exportable for audits and stakeholder reporting.",
+    },
+    {
+      q: "Which cities do you currently serve?",
+      a: "Hyderabad today. Multi-city expansion is a 2027–2030 goal, not a current operating claim.",
     },
   ],
 } as const;
@@ -600,17 +875,17 @@ export const contact = {
 
 export const footer = {
   services: [
-    { label: "Home Care", href: "#sectors" },
-    { label: "Commercial FM", href: "#sectors" },
-    { label: "Industrial", href: "#sectors" },
-    { label: "Landscaping", href: "#sectors" },
-    { label: "Waste & Sustainability", href: "#sectors" },
+    { label: "Housekeeping", href: "/pages/housekeeping-services-in-hyderabad" },
+    { label: "MEP Services", href: "/pages/mechanical-electrical-plumbing-services-in-hyderabad" },
+    { label: "Landscaping", href: "/pages/landscaping-services-in-hyderabad" },
+    { label: "IFM Services", href: "/pages/ifm-services" },
+    { label: "Logistics", href: "/pages/logistics-services-in-hyderabad" },
   ],
   company: [
-    { label: "About Us", href: "#about" },
+    { label: "Why Hazel", href: "#problem" },
     { label: "HazelAI Platform", href: "#ai" },
-    { label: "Green Pledge", href: "#pledge" },
-    { label: "Careers", href: "#contact" },
+    { label: "Pricing", href: "#pricing" },
+    { label: "FAQ", href: "#faq" },
     { label: "Contact", href: "#contact" },
   ],
   portals: [

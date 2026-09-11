@@ -17,7 +17,8 @@ type ButtonProps = {
   className?: string
   type?: "button" | "submit"
   disabled?: boolean
-  arrow?: boolean
+  /** `true` for the default arrow, `false` for none, or a custom trailing element. */
+  arrow?: React.ReactNode
   icon?: React.ReactNode
 };
 
@@ -49,9 +50,9 @@ export function Button({
   const classes = cn(
     "group inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-3 text-[15px] font-medium tracking-[-0.02em] transition-[background-color,color,transform] duration-300 sm:px-6",
     variant === "primary" &&
-      "bg-leaf text-paper hover:bg-sprout",
+      "bg-sun text-hero-ink hover:bg-sun-deep",
     variant === "secondary" &&
-      "border border-line bg-transparent text-ink hover:border-leaf/40 hover:bg-paper-2",
+      "border border-leaf-line bg-leaf-soft text-hero-ink hover:border-leaf/40 hover:bg-leaf-soft-2",
     variant === "ghost" && "px-0 text-ink hover:text-leaf",
     variant === "inverse" &&
       "bg-paper text-ink hover:bg-mist",
@@ -64,9 +65,11 @@ export function Button({
     <>
       {icon}
       <span>{children}</span>
-      {arrow ? (
+      {arrow === true ? (
         <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-      ) : null}
+      ) : (
+        arrow
+      )}
     </>
   );
 

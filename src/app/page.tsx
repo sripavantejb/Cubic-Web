@@ -1,20 +1,14 @@
 import { Navbar } from "@/components/chrome/Navbar";
 import { Footer } from "@/components/chrome/Footer";
+import { QuickActions } from "@/components/chrome/QuickActions";
 import { Hero } from "@/components/sections/Hero";
-import { Marquee } from "@/components/sections/Marquee";
-import { ScrollCinema } from "@/components/sections/ScrollCinema";
-import { AboutTabs } from "@/components/sections/AboutTabs";
-import { ServicesExplorer } from "@/components/sections/ServicesExplorer";
-import { ImpactStats } from "@/components/sections/ImpactStats";
-import { Roadmap } from "@/components/sections/Roadmap";
-import { MachineryExplorer } from "@/components/sections/MachineryExplorer";
+import { FacilitySolutions } from "@/components/sections/FacilitySolutions";
+import { ProblemAgitation } from "@/components/sections/ProblemAgitation";
+import { TrustStrip } from "@/components/sections/TrustStrip";
 import { HazelAI } from "@/components/sections/HazelAI";
-import { GreenPromise } from "@/components/sections/GreenPromise";
-import { GreenPledge } from "@/components/sections/GreenPledge";
-import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
-import { CompanyStory } from "@/components/sections/CompanyStory";
-import { Pillars } from "@/components/sections/Pillars";
-import { SectorExplorer } from "@/components/sections/SectorExplorer";
+import { SiteWalkthrough } from "@/components/sections/SiteWalkthrough";
+import { PricingModels } from "@/components/sections/PricingModels";
+import { FaqSection } from "@/components/sections/FaqSection";
 import { LeadForm } from "@/components/sections/LeadForm";
 
 export default function Home() {
@@ -22,30 +16,24 @@ export default function Home() {
     <>
       <Navbar />
       <a
-        href="#about"
+        href="#solutions"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[80] focus:bg-paper focus:px-4 focus:py-2"
       >
         Skip to content
       </a>
       <main>
         <Hero />
-        <Marquee />
-        <AboutTabs />
-        <ScrollCinema />
-        <ServicesExplorer />
-        <ImpactStats />
-        <Roadmap />
-        <MachineryExplorer />
+        <FacilitySolutions />
+        <ProblemAgitation />
+        <TrustStrip />
         <HazelAI />
-        <GreenPromise />
-        <GreenPledge />
-        <ProcessTimeline />
-        <CompanyStory />
-        <Pillars />
-        <SectorExplorer />
+        <SiteWalkthrough />
+        <PricingModels />
+        <FaqSection />
         <LeadForm />
       </main>
       <Footer />
+      <QuickActions />
     </>
   );
 }

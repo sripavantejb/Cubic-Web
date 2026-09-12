@@ -79,15 +79,7 @@ export const nav = {
 
 export const hero = {
   eyebrow: "AI-Powered Integrated Facility Management",
-  headline: ["Smarter facilities.", "Cleaner spaces."],
-  // Scrubs with the hero film: one accent at a time while the section is pinned.
-  headlineRotating: [
-    "Better India.",
-    "Better workplaces.",
-    "Better communities.",
-    "Better development.",
-    "Better tomorrow.",
-  ],
+  headline: ["Smarter facilities.", "Cleaner spaces.", "Better India."],
   lede: "Complete facility management solutions combining people, technology and sustainable operations.",
   primary: { label: "Explore Our Services", href: "#solutions" },
   secondary: { label: "Get a Free Audit", href: "#contact" },
@@ -96,9 +88,8 @@ export const hero = {
     { value: "HYD", label: "Based in Hyderabad" },
     { value: "100%", label: "Green chemistry" },
   ],
-  // The continuous facility tour, scrubbed by scroll position. Same 240 frames as the upload
-  // (public/Continuous_tour_of_corporate_fac…mp4, kept untouched), re-encoded with a keyframe
-  // every 4 frames so seeking stays cheap enough to show every frame while scrolling.
+  // Continuous facility tour (10s / 240 frames), scrubbed by scroll. 720p all-intra encode
+  // so every frame is a keyframe and seeking stays smooth while scrolling.
   video: "/video/hazel-india-hero.mp4",
   // The film's first frame: shown until the video can paint, and for reduced motion.
   poster: "/images/hazel-india-hero-poster.jpg",
@@ -632,8 +623,23 @@ export const siteWalkthrough = {
 export const pricing = {
   eyebrow: "Engagement",
   heading: "Choose the model that fits your space",
+  lede: "From a single deep clean to a full industrial program — pick the coverage that matches how your site actually runs. Every plan starts with a free facility audit.",
   image: "/images/office.jpg",
   alt: "Commercial workspace suited to managed facility coverage",
+  promises: [
+    {
+      title: "Start with a free audit",
+      text: "We walk the site first, then quote — no guessing from a brochure price list.",
+    },
+    {
+      title: "Scale without re-tendering",
+      text: "Add floors, shifts or service lines as the building grows; one accountable partner.",
+    },
+    {
+      title: "Green chemistry, always",
+      text: "Safer products and measurable water use come standard — not as an upgrade tier.",
+    },
+  ],
   models: [
     {
       id: "per-visit",
@@ -947,8 +953,11 @@ export const footer = {
   ],
   assocLabel: "Serving India since 2022 · Proudly associated with",
   assocBadges: ["IYCN", "Go Green · Live Green"],
-  copyright: "© 2026 Hazel India · Serving since 2022 · A greener tomorrow, today.",
-  bottomRight: "In association with IYCN & the Go Green · Live Green movement",
+  copyright: "© 2026 Hazel India. All rights reserved.",
+  credit: {
+    label: "Website by editcomedia.com",
+    href: "https://editcomedia.com",
+  },
   image: "/images/footer.jpg",
   alt: "City light under a quieter, greener operations layer",
 } as const;

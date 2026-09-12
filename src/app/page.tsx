@@ -1,6 +1,5 @@
 import { Navbar } from "@/components/chrome/Navbar";
 import { Footer } from "@/components/chrome/Footer";
-import { QuickActions } from "@/components/chrome/QuickActions";
 import { Hero } from "@/components/sections/Hero";
 import { FacilitySolutions } from "@/components/sections/FacilitySolutions";
 import { ProblemAgitation } from "@/components/sections/ProblemAgitation";
@@ -33,7 +32,6 @@ export default function Home() {
         <LeadForm />
       </main>
       <Footer />
-      <QuickActions />
     </>
   );
 }

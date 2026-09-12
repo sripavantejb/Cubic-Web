@@ -9,7 +9,7 @@ export function PricingModels() {
   return (
     <section id="pricing" className="section-x section-y bg-mint-2">
       <div className="mx-auto max-w-[1440px]">
-        <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-end lg:gap-14">
+        <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-start lg:gap-16">
           <div>
             <FadeContent>
               <p className="meta text-leaf">{pricing.eyebrow}</p>
@@ -19,21 +19,45 @@ export function PricingModels() {
               text={pricing.heading}
               className="mt-3 max-w-[16ch] text-[clamp(1.85rem,4vw,3.25rem)] leading-[1.05] font-semibold tracking-[-0.03em] text-hero-ink"
             />
+            <FadeContent delay={0.08} className="mt-5">
+              <p className="max-w-[36rem] text-[16px] leading-relaxed text-muted md:text-[17px]">
+                {pricing.lede}
+              </p>
+            </FadeContent>
+
+            <ul className="mt-8 max-w-[34rem] border-t border-hero-ink/10">
+              {pricing.promises.map((item, i) => (
+                <AnimatedContent key={item.title} delay={0.1 + i * 0.06} distance={24}>
+                  <li className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 border-b border-hero-ink/10 py-5">
+                    <span className="font-mono text-[11px] tracking-[0.14em] text-leaf/80">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <p className="text-[15px] font-semibold tracking-tight text-hero-ink md:text-[16px]">
+                        {item.title}
+                      </p>
+                      <p className="mt-1.5 text-[14px] leading-relaxed text-muted">{item.text}</p>
+                    </div>
+                  </li>
+                </AnimatedContent>
+              ))}
+            </ul>
           </div>
-          <FadeContent delay={0.1} className="hidden lg:block">
-            <div className="relative aspect-[16/10] overflow-hidden rounded-[24px] bg-mint">
+
+          <FadeContent delay={0.12} className="lg:sticky lg:top-28">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[24px] bg-mint sm:aspect-[5/6] lg:aspect-[4/5]">
               <Image
                 src={pricing.image}
                 alt={pricing.alt}
                 fill
-                sizes="40vw"
+                sizes="(min-width: 1024px) 36vw, 100vw"
                 className="object-cover"
               />
             </div>
           </FadeContent>
         </div>
 
-        <ul className="mt-10 grid gap-4 lg:mt-14 lg:grid-cols-3">
+        <ul className="mt-12 grid gap-4 lg:mt-16 lg:grid-cols-3">
           {pricing.models.map((model, i) => (
             <AnimatedContent key={model.id} delay={i * 0.1} distance={40} scale={0.98}>
               <li

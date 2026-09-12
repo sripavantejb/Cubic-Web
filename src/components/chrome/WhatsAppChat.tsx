@@ -1,13 +1,38 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { site } from "@/content/site";
+import { cn } from "@/lib/cn";
 
 export function WhatsAppChat() {
+  const [hidden, setHidden] = useState(false);
+
+  useEffect(() => {
+    const footer = document.querySelector("footer");
+    if (!footer) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setHidden(entry.isIntersecting),
+      // Hide as soon as the footer enters the lower part of the viewport.
+      { root: null, threshold: 0, rootMargin: "0px 0px -12% 0px" },
+    );
+
+    observer.observe(footer);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <a
       href={site.whatsapp.href}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with Hazel India on WhatsApp"
-      className="whatsapp-chat fixed z-60 flex size-14 items-center justify-center rounded-full bg-[#25d366] text-white shadow-[0_12px_32px_rgba(14,26,18,0.22)] transition-transform duration-300 hover:scale-105 focus-visible:outline-offset-4 md:size-16"
+      aria-hidden={hidden}
+      tabIndex={hidden ? -1 : undefined}
+      className={cn(
+        "whatsapp-chat fixed z-60 flex size-14 items-center justify-center rounded-full bg-[#25d366] text-white shadow-[0_12px_32px_rgba(14,26,18,0.22)] transition-[transform,opacity] duration-300 hover:scale-105 focus-visible:outline-offset-4 md:size-16",
+        hidden && "pointer-events-none translate-y-3 scale-90 opacity-0",
+      )}
       style={{
         right: "max(1.25rem, env(safe-area-inset-right))",
         bottom: "max(1.25rem, env(safe-area-inset-bottom))",

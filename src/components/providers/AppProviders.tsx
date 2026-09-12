@@ -17,15 +17,14 @@ import { gsap, registerGsap, ScrollTrigger } from "@/animations/gsap-register";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import { Grain } from "@/components/chrome/Grain";
 import { PageLoader } from "@/components/chrome/PageLoader";
-import { ContactPopup } from "@/components/chrome/ContactPopup";
+import { WhatsAppChat } from "@/components/chrome/WhatsAppChat";
+import { site } from "@/content/site";
 
 type AppContextValue = {
   ready: boolean
   completeLoader: () => void
   scrollTo: (target: string) => void
-  contactOpen: boolean
   openContact: () => void
-  closeContact: () => void
 };
 
 const AppContext = createContext<AppContextValue | null>(null);
@@ -39,25 +38,14 @@ export function useApp() {
 export function AppProviders({ children }: { children: ReactNode }) {
   const reduced = usePrefersReducedMotion();
   const [ready, setReady] = useState(false);
-  const [contactOpen, setContactOpen] = useState(false);
   const lenisRef = useRef<Lenis | null>(null);
 
   const completeLoader = useCallback(() => setReady(true), []);
   const openContact = useCallback(() => {
-    try {
-      sessionStorage.setItem("hazel-contact-seen", "1");
-    } catch {
-      /* ignore */
-    }
-    setContactOpen(true);
+    window.open(site.whatsapp.href, "_blank", "noopener,noreferrer");
   }, []);
-  const closeContact = useCallback(() => setContactOpen(false), []);
 
   const scrollTo = useCallback((target: string) => {
-    if (target === "#contact") {
-      openContact();
-      return;
-    }
     if (target === "#top") {
       if (lenisRef.current) {
         lenisRef.current.scrollTo(0, { offset: 0 });
@@ -85,7 +73,7 @@ export function AppProviders({ children }: { children: ReactNode }) {
       scrollTo: { y: el, offsetY: 72, autoKill: false },
       overwrite: true,
     });
-  }, [reduced, openContact]);
+  }, [reduced]);
 
   useGSAP(() => {
     registerGsap();
@@ -130,8 +118,8 @@ export function AppProviders({ children }: { children: ReactNode }) {
   }, { dependencies: [ready, scrollTo] });
 
   const value = useMemo(
-    () => ({ ready, completeLoader, scrollTo, contactOpen, openContact, closeContact }),
-    [ready, completeLoader, scrollTo, contactOpen, openContact, closeContact],
+    () => ({ ready, completeLoader, scrollTo, openContact }),
+    [ready, completeLoader, scrollTo, openContact],
   );
 
   return (
@@ -139,7 +127,7 @@ export function AppProviders({ children }: { children: ReactNode }) {
       <Grain />
       <PageLoader onComplete={completeLoader} />
       {children}
-      <ContactPopup />
+      <WhatsAppChat />
     </AppContext.Provider>
   );
 }

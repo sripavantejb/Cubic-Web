@@ -187,12 +187,13 @@ body {
    rather than added by ScrollTrigger at runtime, so the page is the same height before and
    after hydration and the browser can restore the scroll position on reload. */
 .hero-track {
-  height: 360svh; /* 260svh of scrub for the 10s tour */
+  /* Extra scroll room = fewer seeks per pixel of scroll = smoother scrub. */
+  height: 420svh;
 }
 
 @media (min-width: 768px) and (min-aspect-ratio: 5/4) {
   .hero-track {
-    height: 420svh; /* 320svh of scrub */
+    height: 480svh;
   }
 }
 

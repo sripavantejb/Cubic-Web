@@ -234,7 +234,16 @@ export function Footer() {
 
         <div className="mt-4 flex flex-col gap-3 border-t border-white/8 pt-5 text-[12px] text-paper/40 sm:flex-row sm:items-center sm:justify-between md:mt-6">
           <p>{footer.copyright}</p>
-          <p className="sm:text-right">{footer.bottomRight}</p>
+          <p className="sm:text-right">
+            <a
+              href={footer.credit.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-mist"
+            >
+              {footer.credit.label}
+            </a>
+          </p>
         </div>
 
         <p className="sr-only">

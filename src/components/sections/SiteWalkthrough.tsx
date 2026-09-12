@@ -1,10 +1,14 @@
 "use client";
 
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { siteWalkthrough } from "@/content/site";
 import { useApp } from "@/components/providers/AppProviders";
-import { AnimatedContent, BlurText, FadeContent } from "@/components/react-bits";
+import { BlurText, FadeContent } from "@/components/react-bits";
+import {
+  Gallery,
+  GalleryGrid,
+  GalleryImage,
+} from "@/components/ui/shared-element-gallery";
 
 export function SiteWalkthrough() {
   const { scrollTo } = useApp();
@@ -26,32 +30,20 @@ export function SiteWalkthrough() {
           </p>
         </FadeContent>
 
-        <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4">
-          {siteWalkthrough.weeks.map((week, i) => (
-            <AnimatedContent key={week.label} delay={i * 0.08} distance={36}>
-              <li className="overflow-hidden rounded-[20px] bg-mint-2">
-                <div className="relative aspect-[4/3] bg-mint">
-                  <Image
-                    src={week.image}
-                    alt={week.alt}
-                    fill
-                    sizes="(min-width: 1024px) 22vw, (min-width: 640px) 45vw, 100vw"
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-5 md:p-6">
-                  <p className="font-mono text-[11px] tracking-[0.14em] text-leaf">
-                    {String(i + 1).padStart(2, "0")} · {week.label}
-                  </p>
-                  <h3 className="mt-3 text-[17px] font-semibold tracking-tight text-hero-ink">
-                    {week.title}
-                  </h3>
-                  <p className="mt-2 text-[14px] leading-relaxed text-muted">{week.text}</p>
-                </div>
-              </li>
-            </AnimatedContent>
-          ))}
-        </ol>
+        <FadeContent delay={0.12} className="mt-10 lg:mt-14">
+          <Gallery>
+            <GalleryGrid className="lg:columns-3">
+              {siteWalkthrough.images.map((image) => (
+                <GalleryImage
+                  key={image.id}
+                  id={image.id}
+                  src={image.src}
+                  alt={image.alt}
+                />
+              ))}
+            </GalleryGrid>
+          </Gallery>
+        </FadeContent>
 
         <FadeContent delay={0.15} className="mt-10 md:mt-14">
           <div className="flex flex-col gap-4 border-t border-hero-ink/10 pt-8 md:flex-row md:items-center md:justify-between">

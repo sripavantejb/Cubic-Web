@@ -54,10 +54,10 @@ const panels: Record<string, Panel> = {
   "#walkthrough": {
     eyebrow: siteWalkthrough.eyebrow,
     heading: siteWalkthrough.heading,
-    items: siteWalkthrough.weeks.map((week) => ({
-      label: `${week.label} · ${week.title}`,
+    items: siteWalkthrough.images.slice(0, 6).map((image) => ({
+      label: image.alt,
       href: "#walkthrough",
-      text: week.text,
+      text: "Tap to expand in the site gallery.",
     })),
   },
   "#pricing": {

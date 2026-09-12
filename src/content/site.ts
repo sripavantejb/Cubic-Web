@@ -582,35 +582,67 @@ export const trustStrip = {
 export const siteWalkthrough = {
   eyebrow: "How a Hazel site starts",
   heading: "See what a Hazel site actually looks like",
-  lede: "Here's what changes in the first 30 days on a typical site:",
-  weeks: [
+  lede: "Offices, residences, plants and outdoor grounds — tap any frame to expand. Drag down to close.",
+  images: [
     {
-      label: "Week 1",
-      title: "Baseline audit",
-      text: "Water, waste, and air readings before we start.",
-      image: "/images/process-audit.jpg",
+      id: "office-lobby",
+      src: "/images/office.jpg",
+      alt: "Managed commercial office lobby",
+    },
+    {
+      id: "clean-interior",
+      src: "/images/interior.jpg",
+      alt: "Bright interior after facility care",
+    },
+    {
+      id: "residential",
+      src: "/images/residential.jpg",
+      alt: "Residential space under Hazel care",
+    },
+    {
+      id: "landscape",
+      src: "/images/landscape.jpg",
+      alt: "Maintained landscaped grounds",
+    },
+    {
+      id: "industrial",
+      src: "/images/industrial.jpg",
+      alt: "Industrial floor with green facility systems",
+    },
+    {
+      id: "sensors",
+      src: "/images/sensors.jpg",
+      alt: "On-site sensors and monitoring gear",
+    },
+    {
+      id: "office-floor",
+      src: "/images/office-2.jpg",
+      alt: "Open office floor kept ready for work",
+    },
+    {
+      id: "architecture",
+      src: "/images/architecture.jpg",
+      alt: "Contemporary building exterior",
+    },
+    {
+      id: "cleaning",
+      src: "/images/cleaning.jpg",
+      alt: "Trained team delivering site cleaning",
+    },
+    {
+      id: "interior-detail",
+      src: "/images/interior-2.jpg",
+      alt: "Detail of a finished interior space",
+    },
+    {
+      id: "residential-lounge",
+      src: "/images/residential-2.jpg",
+      alt: "Residential lounge and common area",
+    },
+    {
+      id: "audit",
+      src: "/images/process-audit.jpg",
       alt: "Baseline facility audit in progress",
-    },
-    {
-      label: "Week 2",
-      title: "Sensors & team live",
-      text: "Dashboard goes live; staff matched and onboarded.",
-      image: "/images/sensors.jpg",
-      alt: "Sensors and monitoring equipment on a live site",
-    },
-    {
-      label: "Week 3–4",
-      title: "Predictive scheduling",
-      text: "Fixed routines give way to demand-led work.",
-      image: "/images/intelligence.jpg",
-      alt: "Operations intelligence guiding facility schedules",
-    },
-    {
-      label: "Day 30",
-      title: "First proof report",
-      text: "Carbon & quality report, benchmarked against your baseline.",
-      image: "/images/office-2.jpg",
-      alt: "Managed office floor after the first month",
     },
   ],
   cta: {

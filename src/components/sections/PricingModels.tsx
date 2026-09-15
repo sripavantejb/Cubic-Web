@@ -64,7 +64,7 @@ export function PricingModels() {
                 className={cn(
                   "flex h-full flex-col overflow-hidden rounded-[24px]",
                   "featured" in model && model.featured
-                    ? "bg-moss text-paper shadow-[0_18px_40px_-20px_rgba(14,26,18,0.35)]"
+                    ? "bg-sun text-hero-ink shadow-[0_18px_40px_-20px_rgba(233,178,39,0.45)]"
                     : "bg-white text-hero-ink ring-1 ring-hero-ink/8",
                 )}
               >
@@ -77,7 +77,7 @@ export function PricingModels() {
                     className="object-cover"
                   />
                   {"featured" in model && model.featured ? (
-                    <div className="absolute inset-0 bg-moss/25" aria-hidden="true" />
+                    <div className="absolute inset-0 bg-sun/20" aria-hidden="true" />
                   ) : null}
                 </div>
                 <div className="flex flex-1 flex-col p-6 md:p-7">
@@ -85,7 +85,9 @@ export function PricingModels() {
                   <p
                     className={cn(
                       "mt-3 flex-1 text-[14px] leading-relaxed md:text-[15px]",
-                      "featured" in model && model.featured ? "text-paper/75" : "text-muted",
+                      "featured" in model && model.featured
+                        ? "text-hero-ink/70"
+                        : "text-muted",
                     )}
                   >
                     {model.text}
@@ -94,7 +96,7 @@ export function PricingModels() {
                     className={cn(
                       "mt-6 border-t pt-4 text-[12px] font-medium tracking-wide uppercase",
                       "featured" in model && model.featured
-                        ? "border-white/15 text-mist"
+                        ? "border-hero-ink/15 text-hero-ink/65"
                         : "border-hero-ink/10 text-leaf",
                     )}
                   >

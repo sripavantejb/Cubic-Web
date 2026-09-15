@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { ArrowRight, ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { footer, site } from "@/content/site";
+import { Logo } from "@/components/brand/Logo";
 import { useApp } from "@/components/providers/AppProviders";
 import { cn } from "@/lib/cn";
 
@@ -104,8 +105,8 @@ export function Footer() {
         {/* CTA band */}
         <div className="flex flex-col gap-6 border-b border-white/10 pb-10 md:flex-row md:items-end md:justify-between md:pb-12">
           <div className="max-w-[34rem]">
-            <p className="meta text-mist/70">Hazel India</p>
-            <p className="mt-3 text-[clamp(1.55rem,3.2vw,2.35rem)] leading-[1.08] font-semibold tracking-[-0.03em]">
+            <Logo className="h-14 md:h-16" />
+            <p className="mt-4 text-[clamp(1.55rem,3.2vw,2.35rem)] leading-[1.08] font-semibold tracking-[-0.03em]">
               Cleaner spaces. Greener operations. One accountable partner.
             </p>
             <p className="mt-3 text-[14px] leading-relaxed text-paper/60 md:text-[15px]">

@@ -13,40 +13,40 @@ export const servicePages = {
     sections: [
       {
         type: "text",
-        heading: "Professional House Cleaning Services in Hyderabad",
-        body: "With our all-inclusive house keeping services in Hyderabad, you can maintain clean, healthy, and well-maintained surroundings every day.\n\nTo guarantee that your business meets the highest standards of cleanliness, we send out skilled personnel with cutting-edge equipment and environmentally friendly supplies.\n\nOur personalized schedules ensure that home cleaning services in Hyderabad cause minimal disruption to your daily routine while keeping your home immaculate.",
+        heading: "Clean spaces. Reliable teams.",
+        body: "Trained Hazel housekeeping keeps workplaces hygienic every day — with eco-friendly products and schedules that fit your operations.",
       },
       {
         type: "cards",
         heading: "Why Businesses Choose Hazel India",
         items: [
           {
-            icon: "🛠️",
+            icon: "Wrench",
             title: "Reliable Facility Operations",
             text: "Keep your workplace running smoothly with trained teams, preventive maintenance, structured processes, and responsive facility support.",
           },
           {
-            icon: "💰",
+            icon: "CircleDollarSign",
             title: "Cost & Resource Efficiency",
             text: "Optimize manpower, energy, equipment, and resources to improve operational efficiency and reduce unnecessary facility costs.",
           },
           {
-            icon: "🛡️",
+            icon: "Shield",
             title: "Safety & Compliance",
             text: "Maintain safer, healthier facilities with trained personnel, preventive practices, hygiene standards, and compliance-focused operations.",
           },
           {
-            icon: "📡",
+            icon: "Radio",
             title: "Technology-Driven Management",
             text: "Gain better visibility and control through digital monitoring, preventive maintenance, service tracking, reporting, and performance insights.",
           },
           {
-            icon: "🌿",
+            icon: "Leaf",
             title: "Sustainable Operations",
             text: "Improve environmental performance through responsible waste management, resource conservation, sustainable landscaping, and energy-efficient practices.",
           },
           {
-            icon: "🧩",
+            icon: "Layers",
             title: "One Integrated Partner",
             text: "Manage multiple facility requirements through one accountable partner, with coordinated services, consistent standards, and scalable solutions across locations.",
           },
@@ -57,32 +57,32 @@ export const servicePages = {
         heading: "Our Facility Management Services",
         items: [
           {
-            icon: "🧹",
+            icon: "SprayCan",
             title: "Daily Cleaning & Housekeeping",
             text: "Routine cleaning, housekeeping, hygiene upkeep, and common-area maintenance for well-maintained facilities.",
           },
           {
-            icon: "🚻",
+            icon: "Bath",
             title: "Restroom Sanitation",
             text: "Professional restroom cleaning, sanitization, hygiene maintenance, and consumable management.",
           },
           {
-            icon: "✨",
+            icon: "Sparkles",
             title: "Floor Care & Polishing",
             text: "Professional floor cleaning, scrubbing, waxing, polishing, and surface maintenance.",
           },
           {
-            icon: "🪟",
+            icon: "AppWindow",
             title: "Window & Glass Cleaning",
             text: "Interior and exterior cleaning of windows, glass surfaces, partitions, and facades.",
           },
           {
-            icon: "🧽",
+            icon: "Sparkles",
             title: "Specialized Deep Cleaning",
             text: "Periodic deep cleaning, high-care cleaning, sanitization, and intensive facility hygiene services.",
           },
           {
-            icon: "♻️",
+            icon: "Recycle",
             title: "Waste Management",
             text: "Source segregation, waste collection, recycling, disposal, and sustainable waste management solutions.",
           },
@@ -93,32 +93,32 @@ export const servicePages = {
         heading: "Built for Every Environment",
         items: [
           {
-            icon: "🏠",
+            icon: "Home",
             title: "Residential Communities",
             text: "Facility management, housekeeping, maintenance, landscaping, pest control, and security for apartments, villas, and gated communities.",
           },
           {
-            icon: "🏢",
+            icon: "Building2",
             title: "Corporate Offices",
             text: "Complete workplace support including housekeeping, pantry, front-of-house, MEP maintenance, hygiene, and smart facility management.",
           },
           {
-            icon: "💼",
+            icon: "Briefcase",
             title: "IT Parks & Co-Working Spaces",
             text: "Integrated facility services designed for high-occupancy workplaces, including cleaning, technical maintenance, security, and indoor environment management.",
           },
           {
-            icon: "🏭",
+            icon: "Factory",
             title: "Manufacturing & Factories",
             text: "Industrial cleaning, HVAC, MEP, machinery maintenance, water treatment, waste management, and predictive maintenance solutions.",
           },
           {
-            icon: "📦",
+            icon: "Package",
             title: "Warehouses & Logistics Facilities",
             text: "Cleaning, technical upkeep, waste management, safety support, and operational facility services for warehouses and logistics environments.",
           },
           {
-            icon: "🧪",
+            icon: "FlaskConical",
             title: "Laboratories & High-Care Facilities",
             text: "Specialized cleaning, sanitation, MEP maintenance, water management, and controlled facility operations for laboratories and other high-care environments.",
           },
@@ -179,40 +179,40 @@ export const servicePages = {
     sections: [
       {
         type: "text",
-        heading: "Expert Landscapers in Hyderabad",
-        body: "Hazel India provides comprehensive landscaping services to create and maintain clean, green, and well-managed outdoor spaces.\n\nOur trained teams handle landscape maintenance, native planting, vertical gardens, grounds care, and water-conscious landscaping practices to keep your surroundings healthy and attractive.\n\nWe combine practical landscape management with sustainable solutions that help conserve resources, support biodiversity, and improve the overall environment of your property.",
+        heading: "Greener grounds. Better campuses.",
+        body: "Native landscaping, gardens, and grounds care that cool your premises and stay easy to maintain.",
       },
       {
         type: "cards",
         heading: "Why Businesses Choose Hazel India",
         items: [
           {
-            icon: "🌳",
+            icon: "Trees",
             title: "Professional Grounds Care",
             text: "Keep lawns, gardens, plants, and outdoor areas healthy and well-maintained through regular landscaping and grounds care.",
           },
           {
-            icon: "🌿",
+            icon: "Leaf",
             title: "Sustainable Landscaping",
             text: "Use native plants, resource-efficient practices, and sustainable landscape solutions to reduce water consumption and environmental impact.",
           },
           {
-            icon: "📅",
+            icon: "Calendar",
             title: "Consistent Maintenance",
             text: "Follow planned maintenance schedules for lawns, gardens, plants, trees, and other outdoor spaces throughout the year.",
           },
           {
-            icon: "💧",
+            icon: "Droplets",
             title: "Water-Efficient Solutions",
             text: "Improve water use through rainwater systems, efficient irrigation practices, and landscaping approaches designed around local conditions.",
           },
           {
-            icon: "🌱",
+            icon: "Sprout",
             title: "Healthier Green Spaces",
             text: "Create greener surroundings that improve the appearance, comfort, and environmental quality of your property.",
           },
           {
-            icon: "🧩",
+            icon: "Layers",
             title: "One Integrated Partner",
             text: "Combine landscaping with housekeeping, MEP, waste management, security, and other facility services through one coordinated partner.",
           },
@@ -223,32 +223,32 @@ export const servicePages = {
         heading: "Our Landscaping Services",
         items: [
           {
-            icon: "🌳",
+            icon: "Trees",
             title: "Landscape Maintenance",
             text: "Regular care of lawns, gardens, plants, trees, and outdoor areas to keep your property clean, healthy, and attractive.",
           },
           {
-            icon: "🌱",
+            icon: "Sprout",
             title: "Native Landscaping",
             text: "Native-first planting solutions designed to support local biodiversity while reducing maintenance and resource requirements.",
           },
           {
-            icon: "🪴",
+            icon: "Flower2",
             title: "Vertical Gardens",
             text: "Design and maintenance of vertical green spaces that add greenery to walls and compact areas while improving the visual environment.",
           },
           {
-            icon: "🌷",
+            icon: "Flower2",
             title: "Lawn & Garden Care",
             text: "Routine mowing, trimming, pruning, planting, weeding, and general garden maintenance for healthy and well-kept outdoor spaces.",
           },
           {
-            icon: "💧",
+            icon: "Droplets",
             title: "Rainwater Systems",
             text: "Landscape-focused rainwater solutions that help collect, manage, and reuse water while supporting more sustainable grounds management.",
           },
           {
-            icon: "🏞️",
+            icon: "Mountain",
             title: "Grounds Management",
             text: "Comprehensive care of outdoor areas, pathways, green spaces, and surrounding grounds to maintain a clean and welcoming property.",
           },
@@ -259,32 +259,32 @@ export const servicePages = {
         heading: "Landscaping Services for Every Space",
         items: [
           {
-            icon: "🏠",
+            icon: "Home",
             title: "Residential Communities",
             text: "Landscaping and grounds maintenance for apartments, villas, gated communities, and shared outdoor spaces.",
           },
           {
-            icon: "🏢",
+            icon: "Building2",
             title: "Corporate Offices",
             text: "Well-maintained gardens, lawns, green spaces, and outdoor areas that create a more welcoming workplace environment.",
           },
           {
-            icon: "💼",
+            icon: "Briefcase",
             title: "IT Parks & Co-Working Spaces",
             text: "Sustainable landscaping solutions for campuses and high-occupancy workplaces, including green spaces and vertical gardens.",
           },
           {
-            icon: "🏭",
+            icon: "Factory",
             title: "Manufacturing & Factories",
             text: "Grounds management and landscaping designed to maintain clean, safe, and attractive industrial surroundings.",
           },
           {
-            icon: "📦",
+            icon: "Package",
             title: "Warehouses & Logistics Facilities",
             text: "Practical landscaping and grounds care for large outdoor areas surrounding warehouses and logistics facilities.",
           },
           {
-            icon: "🏬",
+            icon: "Store",
             title: "Commercial Properties",
             text: "Professional landscape maintenance for commercial buildings and properties that need consistently clean and attractive outdoor spaces.",
           },
@@ -345,40 +345,40 @@ export const servicePages = {
     sections: [
       {
         type: "text",
-        heading: "Why Mailroom Management Services in Hyderabad",
-        body: "Efficient mailroom management keeps incoming and outgoing mail, parcels, documents, and deliveries organized, secure, and properly tracked. Our professional mailroom services in Hyderabad help businesses streamline daily operations, reduce delays, and ensure important items reach the right recipients on time.\n\nFrom receiving and sorting to distribution, dispatch, and record management, our trained teams handle every stage with accuracy and accountability.",
+        heading: "Mail and parcels, handled.",
+        body: "Organized receiving, sorting, and dispatch so documents and deliveries move without delays.",
       },
       {
         type: "cards",
         heading: "Why Businesses Choose Hazel India",
         items: [
           {
-            icon: "📬",
+            icon: "Mailbox",
             title: "Organized Mail Handling",
             text: "Manage incoming and outgoing mail, documents, parcels, and deliveries through structured mailroom processes.",
           },
           {
-            icon: "📊",
+            icon: "BarChart3",
             title: "Accurate Tracking",
             text: "Maintain clear records of received and dispatched items to improve visibility and accountability.",
           },
           {
-            icon: "🔒",
+            icon: "Lock",
             title: "Secure Handling",
             text: "Handle important documents and packages carefully with controlled processes designed to reduce loss and misplacement.",
           },
           {
-            icon: "⏱️",
+            icon: "Timer",
             title: "Timely Distribution",
             text: "Ensure mail and deliveries reach the right departments, employees, or locations without unnecessary delays.",
           },
           {
-            icon: "👷",
+            icon: "HardHat",
             title: "Professional Support",
             text: "Use trained personnel to manage routine mailroom activities consistently and efficiently.",
           },
           {
-            icon: "🧩",
+            icon: "Layers",
             title: "Integrated Facility Support",
             text: "Combine mailroom services with housekeeping, concierge, MEP, security, and other workplace services through one facility management partner.",
           },
@@ -389,32 +389,32 @@ export const servicePages = {
         heading: "Our Mailroom Services",
         items: [
           {
-            icon: "📥",
+            icon: "Inbox",
             title: "Mail Receiving",
             text: "Receive incoming letters, documents, parcels, and courier deliveries on behalf of your organization.",
           },
           {
-            icon: "📬",
+            icon: "Mailbox",
             title: "Mail Sorting & Distribution",
             text: "Sort incoming mail and distribute documents and packages to the appropriate departments or recipients.",
           },
           {
-            icon: "🛵",
+            icon: "Bike",
             title: "Courier Management",
             text: "Coordinate incoming and outgoing courier activities to support smooth and timely workplace deliveries.",
           },
           {
-            icon: "📤",
+            icon: "Send",
             title: "Outgoing Mail Handling",
             text: "Prepare, record, and dispatch outgoing documents, packages, and other business correspondence.",
           },
           {
-            icon: "📦",
+            icon: "Package",
             title: "Parcel Management",
             text: "Manage workplace parcels and deliveries with organized receiving, recording, storage, and distribution processes.",
           },
           {
-            icon: "🗂️",
+            icon: "FolderOpen",
             title: "Mailroom Records & Tracking",
             text: "Maintain records of mail and deliveries to improve accountability and provide better visibility of mailroom operations.",
           },
@@ -425,32 +425,32 @@ export const servicePages = {
         heading: "Built for Every Environment",
         items: [
           {
-            icon: "🏢",
+            icon: "Building2",
             title: "Corporate Offices",
             text: "Complete mailroom support for corporate workplaces handling regular documents, parcels, and courier deliveries.",
           },
           {
-            icon: "💼",
+            icon: "Briefcase",
             title: "IT Parks & Co-Working Spaces",
             text: "Organized mail and parcel management for high-occupancy workplaces with frequent deliveries and multiple recipients.",
           },
           {
-            icon: "🏭",
+            icon: "Factory",
             title: "Manufacturing & Factories",
             text: "Mailroom support for offices, administrative departments, production sites, and business correspondence.",
           },
           {
-            icon: "📦",
+            icon: "Package",
             title: "Warehouses & Logistics Facilities",
             text: "Structured handling of documents, internal deliveries, and workplace parcels alongside day-to-day facility operations.",
           },
           {
-            icon: "🏠",
+            icon: "Home",
             title: "Residential Communities",
             text: "Mail and parcel support for residential communities requiring organized delivery and collection management.",
           },
           {
-            icon: "🏬",
+            icon: "Store",
             title: "Commercial Facilities",
             text: "Professional mailroom operations for commercial buildings and shared workplaces with regular mail and courier activity.",
           },
@@ -511,40 +511,40 @@ export const servicePages = {
     sections: [
       {
         type: "text",
-        heading: "Comprehensive Concierge Management Services in Hyderabad",
-        body: "Hazel India provides professional concierge services that enhance the experience of employees, visitors, guests, and customers across modern facilities.\n\nOur trained concierge teams manage reception support, visitor assistance, information requests, coordination, and other front-of-house activities with professionalism and attention to detail.\n\nWe help create a welcoming first impression while ensuring everyday front-of-house operations remain organized and responsive.",
+        heading: "A better first impression.",
+        body: "Trained front-of-house hosts for reception, visitors, and day-to-day workplace support.",
       },
       {
         type: "cards",
         heading: "Why Businesses Choose Hazel India",
         items: [
           {
-            icon: "✨",
+            icon: "Sparkles",
             title: "Professional First Impressions",
             text: "Create a welcoming environment with trained concierge professionals who represent your facility with confidence and professionalism.",
           },
           {
-            icon: "🧭",
+            icon: "Compass",
             title: "Visitor Assistance",
             text: "Provide visitors and guests with helpful guidance, information, directions, and support throughout their experience.",
           },
           {
-            icon: "🏢",
+            icon: "Building2",
             title: "Smooth Front-of-House Operations",
             text: "Keep reception and visitor-facing activities organized with structured processes and responsive support.",
           },
           {
-            icon: "🤝",
+            icon: "Handshake",
             title: "Personalized Service",
             text: "Deliver attentive assistance based on the needs of your employees, visitors, guests, and facility.",
           },
           {
-            icon: "✅",
+            icon: "BadgeCheck",
             title: "Reliable Support",
             text: "Maintain consistent front-of-house service through trained personnel, defined procedures, and professional supervision.",
           },
           {
-            icon: "🧩",
+            icon: "Layers",
             title: "Integrated Facility Support",
             text: "Combine concierge services with housekeeping, mailroom, security, MEP, and other facility management services through one partner.",
           },
@@ -555,32 +555,32 @@ export const servicePages = {
         heading: "Our Concierge Services",
         items: [
           {
-            icon: "🛎️",
+            icon: "Bell",
             title: "Reception & Front Desk Support",
             text: "Professional front-desk assistance for welcoming visitors, handling basic inquiries, and supporting everyday reception activities.",
           },
           {
-            icon: "🧭",
+            icon: "Compass",
             title: "Visitor Assistance",
             text: "Guide visitors and guests with directions, information, facility guidance, and general assistance throughout their visit.",
           },
           {
-            icon: "🤝",
+            icon: "Handshake",
             title: "Guest Management",
             text: "Support guest arrivals and departures while helping create a smooth and professional visitor experience.",
           },
           {
-            icon: "ℹ️",
+            icon: "Info",
             title: "Information & Assistance",
             text: "Provide timely information and practical assistance to employees, visitors, and guests based on facility requirements.",
           },
           {
-            icon: "📅",
+            icon: "Calendar",
             title: "Appointment & Access Coordination",
             text: "Support scheduled visits and coordinate with relevant teams to help ensure smooth visitor movement and access.",
           },
           {
-            icon: "🏢",
+            icon: "Building2",
             title: "Front-of-House Coordination",
             text: "Coordinate day-to-day reception and concierge activities to maintain an organized, responsive, and welcoming environment.",
           },
@@ -591,32 +591,32 @@ export const servicePages = {
         heading: "Concierge Management for Every Facility",
         items: [
           {
-            icon: "🏢",
+            icon: "Building2",
             title: "Corporate Offices",
             text: "Professional concierge and reception support that creates a welcoming experience for employees, clients, and business visitors.",
           },
           {
-            icon: "💼",
+            icon: "Briefcase",
             title: "IT Parks & Co-Working Spaces",
             text: "Front-of-house assistance for high-occupancy workplaces with frequent visitors, meetings, and guest interactions.",
           },
           {
-            icon: "🏠",
+            icon: "Home",
             title: "Residential Communities",
             text: "Concierge support for residents and visitors, including reception assistance, information, and community front-desk coordination.",
           },
           {
-            icon: "🏬",
+            icon: "Store",
             title: "Commercial Facilities",
             text: "Professional guest and visitor assistance for commercial buildings and customer-facing environments.",
           },
           {
-            icon: "🏨",
+            icon: "Hotel",
             title: "Hotels & Hospitality Spaces",
             text: "Front-of-house support focused on welcoming guests and maintaining smooth day-to-day visitor interactions.",
           },
           {
-            icon: "🏥",
+            icon: "Hospital",
             title: "Healthcare & Institutional Facilities",
             text: "Organized reception and visitor assistance designed around the specific requirements of busy institutional environments.",
           },
@@ -672,45 +672,45 @@ export const servicePages = {
     header: {
       eyebrow: "Reliable Systems, Efficient Operations",
       heading: "MEP Services in Hyderabad",
-      description: "We keep your building's mechanical, electrical, and plumbing systems running safely, efficiently, and reliably with professional MEP maintenance and technical support.",
+      description: "HVAC, electrical, and plumbing maintenance that keeps your building safe, efficient, and reliable.",
     },
     sections: [
       {
         type: "text",
-        heading: "Mechanical Electrical Plumbing Services in Hyderabad",
-        body: "Hazel India provides comprehensive MEP services to keep essential building systems operating smoothly and efficiently.\n\nOur trained technical teams handle HVAC, electrical, plumbing, machinery upkeep, and water treatment with a focus on preventive maintenance and reliable performance.\n\nWe combine skilled technicians, structured maintenance processes, and smart monitoring to identify potential issues early and reduce unexpected breakdowns.",
+        heading: "MEP that keeps buildings running.",
+        body: "HVAC, electrical, and plumbing — maintained by trained Hazel technicians with preventive care and fast response.",
       },
       {
         type: "cards",
         heading: "Why Businesses Choose Hazel India",
         items: [
           {
-            icon: "🛠️",
+            icon: "Wrench",
             title: "Preventive Maintenance",
             text: "Identify potential equipment and system issues early through planned inspections, servicing, and preventive maintenance.",
           },
           {
-            icon: "⚙️",
+            icon: "Settings",
             title: "Reliable System Performance",
             text: "Keep HVAC, electrical, plumbing, and other essential systems operating efficiently with regular technical support and maintenance.",
           },
           {
-            icon: "🛡️",
+            icon: "Shield",
             title: "Safety & Compliance",
             text: "Maintain safer facilities through structured maintenance procedures, trained technical teams, and safety-focused operating practices.",
           },
           {
-            icon: "⚡",
+            icon: "Zap",
             title: "Faster Issue Response",
             text: "Respond quickly to technical problems with organized maintenance workflows and trained personnel ready to address operational issues.",
           },
           {
-            icon: "🔋",
+            icon: "BatteryCharging",
             title: "Energy & Resource Efficiency",
             text: "Improve equipment performance and reduce unnecessary energy and resource consumption through efficient maintenance practices.",
           },
           {
-            icon: "📡",
+            icon: "Radio",
             title: "Smart Technical Management",
             text: "Use monitoring, maintenance data, and predictive insights to improve visibility and make technical operations more proactive.",
           },
@@ -721,17 +721,17 @@ export const servicePages = {
         heading: "What we cover",
         items: [
           {
-            icon: "🌡️",
+            icon: "Thermometer",
             title: "Mechanical (HVAC) Maintenance",
             text: "Energy-efficient HVAC design, centralized air conditioning installation, ducting and air balancing, and chiller, AHU, and VRF system maintenance.",
           },
           {
-            icon: "⚡",
+            icon: "Zap",
             title: "Electrical Maintenance",
             text: "Energy audits, emergency backup and fire alarm systems, lighting and automation systems, power distribution and panel installation, and preventative maintenance.",
           },
           {
-            icon: "🚰",
+            icon: "Droplet",
             title: "Plumbing Services",
             text: "Networks for water supply and distribution, drainage, sump and sewage systems, integration of rainwater harvesting, and maintenance and operations of pump rooms.",
           },
@@ -742,32 +742,32 @@ export const servicePages = {
         heading: "Designed to Fit Any Environment",
         items: [
           {
-            icon: "🏢",
+            icon: "Building2",
             title: "Corporate Offices",
             text: "Reliable HVAC, electrical, plumbing, and technical maintenance to keep workplaces comfortable, safe, and operational.",
           },
           {
-            icon: "💼",
+            icon: "Briefcase",
             title: "IT Parks & Co-Working Spaces",
             text: "Proactive MEP maintenance for high-occupancy workplaces, supporting reliable HVAC, electrical, plumbing, and building systems.",
           },
           {
-            icon: "🏭",
+            icon: "Factory",
             title: "Manufacturing & Factories",
             text: "Comprehensive technical support for HVAC, electrical systems, machinery, water treatment, and critical industrial operations.",
           },
           {
-            icon: "📦",
+            icon: "Package",
             title: "Warehouses & Logistics Facilities",
             text: "Maintain essential electrical, HVAC, plumbing, and equipment systems to support efficient warehouse and logistics operations.",
           },
           {
-            icon: "🧪",
+            icon: "FlaskConical",
             title: "Laboratories & High-Care Facilities",
             text: "Technical maintenance focused on reliable HVAC, electrical, plumbing, water systems, and controlled facility environments.",
           },
           {
-            icon: "🏠",
+            icon: "Home",
             title: "Residential Communities",
             text: "Electrical, plumbing, HVAC, and technical maintenance services for apartments, villas, and gated communities.",
           },
@@ -828,40 +828,40 @@ export const servicePages = {
     sections: [
       {
         type: "text",
-        heading: "Reliable Pest Control Services in Hyderabad",
-        body: "Hazel India provides reliable pest control solutions for residential, commercial, industrial, and institutional properties.\n\nOur trained teams identify pest activity, assess risk areas, and apply appropriate treatment methods through reliable pest control HYD to manage common pests and help prevent recurring infestations.\n\nWe provide the best pest control services in Hyderabad with safe, systematic, and responsible pest management designed to minimize disruption to your daily operations.",
+        heading: "Safer spaces, fewer pests.",
+        body: "Planned pest management that protects hygiene and operations with minimal disruption.",
       },
       {
         type: "cards",
         heading: "Why Businesses Choose Hazel India",
         items: [
           {
-            icon: "🎯",
+            icon: "Target",
             title: "Effective Pest Management",
             text: "Identify and control pest activity with structured treatment plans designed around your property's specific requirements.",
           },
           {
-            icon: "🛡️",
+            icon: "Shield",
             title: "Preventive Protection",
             text: "Go beyond one-time treatment with regular inspections and preventive measures that help reduce recurring pest problems.",
           },
           {
-            icon: "🧴",
+            icon: "Droplets",
             title: "Safe & Responsible Practices",
             text: "Use professionally managed treatment methods with appropriate precautions to protect occupants, employees, and property.",
           },
           {
-            icon: "👷",
+            icon: "HardHat",
             title: "Trained Professionals",
             text: "Our teams follow structured procedures for inspection, treatment, monitoring, and follow-up pest management.",
           },
           {
-            icon: "🕒",
+            icon: "Clock",
             title: "Minimal Disruption",
             text: "Plan pest control activities around your operating hours and site requirements to minimize disruption to daily operations.",
           },
           {
-            icon: "🧩",
+            icon: "Layers",
             title: "Integrated Facility Support",
             text: "Combine pest control with housekeeping, landscaping, MEP, waste management, and other facility services through one coordinated partner.",
           },
@@ -872,32 +872,32 @@ export const servicePages = {
         heading: "Our Pest Control Services",
         items: [
           {
-            icon: "🔍",
+            icon: "Search",
             title: "Pest Inspection",
             text: "Thorough inspections to identify pest activity, infestations, and potential risks.",
           },
           {
-            icon: "📋",
+            icon: "ClipboardList",
             title: "Customized Treatment Plans",
             text: "Tailored pest control strategies based on your property's specific needs.",
           },
           {
-            icon: "🧴",
+            icon: "Droplets",
             title: "Safe Pest Treatments",
             text: "Effective pest control treatments designed with safety and long-term results in mind.",
           },
           {
-            icon: "🐜",
+            icon: "Bug",
             title: "Preventive Pest Control",
             text: "Proactive measures to prevent recurring infestations and protect your property.",
           },
           {
-            icon: "👁️",
+            icon: "Eye",
             title: "Regular Monitoring",
             text: "Ongoing inspections and follow-up treatments to maintain effective pest control.",
           },
           {
-            icon: "📄",
+            icon: "FileText",
             title: "Treatment Documentation",
             text: "Detailed records of inspections, treatments, and results for better pest management.",
           },
@@ -908,32 +908,32 @@ export const servicePages = {
         heading: "Pest Control Solutions for Every Environment",
         items: [
           {
-            icon: "🏠",
+            icon: "Home",
             title: "Residential Communities",
             text: "Pest control solutions for apartments, villas, gated communities, common areas, kitchens, gardens, and shared facilities.",
           },
           {
-            icon: "🏢",
+            icon: "Building2",
             title: "Corporate Offices",
             text: "Professional pest management for workspaces, cafeterias, restrooms, storage areas, and other office environments.",
           },
           {
-            icon: "💼",
+            icon: "Briefcase",
             title: "IT Parks & Co-Working Spaces",
             text: "Scheduled pest control is designed for high-occupancy workplaces while minimizing disruption to employees and visitors.",
           },
           {
-            icon: "🏭",
+            icon: "Factory",
             title: "Manufacturing & Factories",
             text: "Pest management for production areas, warehouses, utility spaces, offices, and surrounding grounds.",
           },
           {
-            icon: "📦",
+            icon: "Package",
             title: "Warehouses & Logistics Facilities",
             text: "Preventive pest control for storage and distribution environments where pest activity can affect products, equipment, and operations.",
           },
           {
-            icon: "🧪",
+            icon: "FlaskConical",
             title: "Laboratories & High-Care Facilities",
             text: "Carefully managed pest control programs designed around hygiene requirements and controlled facility environments.",
           },
@@ -994,40 +994,40 @@ export const servicePages = {
     sections: [
       {
         type: "text",
-        heading: "Integrated Logistics Management Services in Hyderabad",
-        body: "Hazel India provides professional logistics support to help businesses manage internal movement, material handling, receiving, dispatch, and day-to-day logistics activities.\n\nOur trained teams coordinate logistics processes with structured workflows, clear responsibilities, and operational discipline to keep materials and deliveries moving efficiently.\n\nWe help reduce delays, improve coordination, and allow your internal teams to focus on their core business activities.",
+        heading: "Movement without the friction.",
+        body: "Internal logistics, receiving, and dispatch support that keeps materials and deliveries on track.",
       },
       {
         type: "cards",
         heading: "Why Businesses Choose Hazel India",
         items: [
           {
-            icon: "🚚",
+            icon: "Truck",
             title: "Efficient Material Movement",
             text: "Keep materials, documents, and items moving smoothly between designated locations with organized handling and coordination.",
           },
           {
-            icon: "🧩",
+            icon: "Layers",
             title: "Better Operational Coordination",
             text: "Coordinate receiving, movement, storage, and dispatch activities through structured processes and clear responsibilities.",
           },
           {
-            icon: "👷",
+            icon: "HardHat",
             title: "Trained Logistics Teams",
             text: "Deploy trained personnel to handle routine logistics activities safely, efficiently, and according to site requirements.",
           },
           {
-            icon: "⏱️",
+            icon: "Timer",
             title: "Timely Handling",
             text: "Reduce unnecessary delays by managing internal movement, receiving, and dispatch activities through planned workflows.",
           },
           {
-            icon: "📊",
+            icon: "BarChart3",
             title: "Improved Visibility",
             text: "Maintain better control over logistics activities through organized records, tracking, and operational reporting.",
           },
           {
-            icon: "🧩",
+            icon: "Layers",
             title: "One Integrated Partner",
             text: "Combine logistics support with housekeeping, mailroom, concierge, MEP, security, and other facility management services.",
           },
@@ -1038,32 +1038,32 @@ export const servicePages = {
         heading: "Our Logistics Services",
         items: [
           {
-            icon: "📦",
+            icon: "Package",
             title: "Material Handling",
             text: "Support the safe and organized movement of materials, equipment, supplies, and other items within your facility.",
           },
           {
-            icon: "🔄",
+            icon: "RefreshCw",
             title: "Internal Logistics",
             text: "Manage the movement of materials and items between departments, work areas, storage locations, and designated points.",
           },
           {
-            icon: "📥",
+            icon: "Inbox",
             title: "Receiving & Dispatch",
             text: "Coordinate incoming materials and outgoing items to support smooth receiving, dispatch, and delivery processes.",
           },
           {
-            icon: "🚛",
+            icon: "Truck",
             title: "Loading & Unloading Support",
             text: "Provide organized manpower support for loading, unloading, and movement activities based on facility requirements.",
           },
           {
-            icon: "📊",
+            icon: "BarChart3",
             title: "Inventory Movement",
             text: "Support internal stock movement and material transfers to improve organization and operational efficiency.",
           },
           {
-            icon: "🚚",
+            icon: "Truck",
             title: "Delivery Coordination",
             text: "Coordinate scheduled deliveries, internal distribution, and movement activities to help keep daily operations on track.",
           },
@@ -1074,32 +1074,32 @@ export const servicePages = {
         heading: "Integrated Logistics Management for Every Facility",
         items: [
           {
-            icon: "🏢",
+            icon: "Building2",
             title: "Corporate Offices",
             text: "Logistics support for documents, office supplies, equipment, deliveries, and internal movement across workplace facilities.",
           },
           {
-            icon: "💼",
+            icon: "Briefcase",
             title: "IT Parks & Co-Working Spaces",
             text: "Organized movement and delivery coordination for high-occupancy workplaces with frequent internal logistics requirements.",
           },
           {
-            icon: "🏭",
+            icon: "Factory",
             title: "Manufacturing & Factories",
             text: "Material handling, internal movement, receiving, dispatch, and logistics support for production and industrial operations.",
           },
           {
-            icon: "📦",
+            icon: "Package",
             title: "Warehouses & Logistics Facilities",
             text: "Operational support for receiving, material movement, loading, unloading, dispatch, and internal logistics activities.",
           },
           {
-            icon: "🏠",
+            icon: "Home",
             title: "Residential Communities",
             text: "Support for internal movement, deliveries, supplies, and logistics activities across large residential communities.",
           },
           {
-            icon: "🏬",
+            icon: "Store",
             title: "Commercial Facilities",
             text: "Organized logistics support for equipment, supplies, deliveries, and internal movement within commercial properties.",
           },
@@ -1160,51 +1160,51 @@ export const servicePages = {
     sections: [
       {
         type: "text",
-        heading: "Reliable Integrated Facility Management Services",
-        body: "Our integrated facility management services are designed to simplify property operations and maintain high standards across every part of your facility. From daily housekeeping and building maintenance to workplace support services, our trained teams work according to your operational requirements.\n\nWhether you manage an office, commercial building, residential community, retail property, educational institution, healthcare facility, or industrial site, Hazel India can provide customized facility management solutions.",
+        heading: "One partner. Every facility need.",
+        body: "Housekeeping, MEP, landscaping, security, and more — coordinated under one accountable team.",
       },
       {
         type: "cards",
         heading: "Our Facility Management Services",
         items: [
           {
-            icon: "🧹",
+            icon: "SprayCan",
             title: "Housekeeping",
             text: "Maintain a clean, hygienic, and professional environment with our commercial housekeeping and cleaning services. Our trained housekeeping staff handles routine cleaning, sanitation, common-area maintenance, washroom cleaning, and other daily requirements.",
             href: "/pages/housekeeping-services-in-hyderabad",
           },
           {
-            icon: "🔧",
+            icon: "Wrench",
             title: "MEP Services",
             text: "Ensure your building systems operate safely and efficiently with comprehensive MEP services covering mechanical, electrical, and plumbing requirements. Our technical teams support preventive maintenance, inspections, repairs, and ongoing system upkeep to minimize disruptions and maintain facility performance.",
             href: "/pages/mechanical-electrical-plumbing-services-in-hyderabad",
           },
           {
-            icon: "🌳",
+            icon: "Trees",
             title: "Landscaping",
             text: "Well-maintained outdoor areas create a better environment for employees, visitors, customers, and residents. Our landscaping and garden maintenance services help keep green spaces clean, attractive, and properly maintained.",
             href: "/pages/landscaping-services-in-hyderabad",
           },
           {
-            icon: "🐜",
+            icon: "Bug",
             title: "Pest Control Services",
             text: "Protect your property from unwanted pests with professional pest management solutions. Regular pest control helps maintain hygiene and protects your workplace, building, equipment, and surrounding areas.",
             href: "/pages/pest-control-services-in-hyderabad",
           },
           {
-            icon: "✉️",
+            icon: "Mail",
             title: "Mailroom Services",
             text: "Our professional mailroom services help businesses manage incoming and outgoing mail, parcels, courier deliveries, and internal document distribution efficiently. Our trained staff ensures timely handling, sorting, tracking, and delivery of important packages across your facility.",
             href: "/pages/mailroom-services-in-hyderabad",
           },
           {
-            icon: "🛎️",
+            icon: "Bell",
             title: "Concierge Services",
             text: "Our concierge services provide professional front-of-house support for employees, visitors, clients, and guests. From visitor assistance and reception support to information and coordination, our team helps create a welcoming and organized workplace experience.",
             href: "/pages/concierge-services-in-hyderabad",
           },
           {
-            icon: "🚚",
+            icon: "Truck",
             title: "Logistics Services",
             text: "Our logistics services support the smooth movement of materials, documents, equipment, and other essential items within and around your facility. We help coordinate transportation, deliveries, inventory movement, and other logistical requirements to keep daily operations running efficiently.",
             href: "/pages/logistics-services-in-hyderabad",
@@ -1216,32 +1216,32 @@ export const servicePages = {
         heading: "The Hazel India Advantage",
         items: [
           {
-            icon: "🧩",
+            icon: "Layers",
             title: "Integrated Facility Management",
             text: "One partner for housekeeping, MEP, landscaping, security, pest control, waste management, and other essential facility services.",
           },
           {
-            icon: "📡",
+            icon: "Radio",
             title: "Technology-Driven Operations",
             text: "HazelAI uses predictive monitoring, smart sensors, intelligent scheduling, and real-time data to improve facility performance and service delivery.",
           },
           {
-            icon: "🌿",
+            icon: "Leaf",
             title: "Sustainability at the Core",
             text: "We use eco-conscious cleaning solutions, water-saving systems, waste-reduction practices, and resource-efficient equipment to reduce environmental impact.",
           },
           {
-            icon: "👷",
+            icon: "HardHat",
             title: "Trained & Professional Teams",
             text: "Our trained teams combine skilled human service with technology to deliver consistent, reliable, and efficient facility management.",
           },
           {
-            icon: "📊",
+            icon: "BarChart3",
             title: "Measurable Performance",
             text: "Real-time monitoring and reporting provide greater visibility into service quality, resource consumption, maintenance, and sustainability performance.",
           },
           {
-            icon: "🏢",
+            icon: "Building2",
             title: "Complete Facility Care",
             text: "From homes and offices to industrial facilities and communities, Hazel India provides tailored facility solutions designed around each property's operational needs.",
           },
@@ -1253,23 +1253,23 @@ export const servicePages = {
         intro: "Our facility management services in Hyderabad can be customized for different types of properties, including:",
         items: [
           {
-            icon: "🏠",
+            icon: "Home",
             title: "Home & Residential Care",
           },
           {
-            icon: "🏢",
+            icon: "Building2",
             title: "Commercial & Office FM",
           },
           {
-            icon: "🏭",
+            icon: "Factory",
             title: "Industrial & Technical",
           },
           {
-            icon: "🌳",
+            icon: "Trees",
             title: "Landscaping & Green Spaces",
           },
           {
-            icon: "♻️",
+            icon: "Recycle",
             title: "Waste & Sustainability",
           },
         ],
@@ -1301,22 +1301,22 @@ export const servicePages = {
         heading: "Why Choose Hazel India?",
         items: [
           {
-            icon: "🤖",
+            icon: "Bot",
             title: "AI-Powered Facility Management",
             text: "Use smart technology, predictive maintenance, and data-driven monitoring to improve facility performance and response times.",
           },
           {
-            icon: "🧩",
+            icon: "Layers",
             title: "Integrated Facility Solutions",
             text: "Manage housekeeping, MEP, landscaping, waste, security, and other facility requirements through one coordinated partner.",
           },
           {
-            icon: "🌿",
+            icon: "Leaf",
             title: "Sustainable Operations",
             text: "Reduce resource consumption, waste, and environmental impact through smarter, more sustainable facility practices.",
           },
           {
-            icon: "📊",
+            icon: "BarChart3",
             title: "Measurable Performance",
             text: "Track service quality, resource efficiency, maintenance, and operational performance with clear data and regular reporting.",
           },

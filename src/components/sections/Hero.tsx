@@ -129,7 +129,7 @@ export function Hero() {
             {hero.headline.map((line, i) => (
               <span
                 key={line}
-                className={cn("block whitespace-nowrap", i === hero.headline.length - 1 && "text-leaf-bright")}
+                className={cn("block whitespace-nowrap", i === hero.headline.length - 1 && "text-sun")}
               >
                 {line}
               </span>

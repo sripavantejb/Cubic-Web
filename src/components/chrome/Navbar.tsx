@@ -8,6 +8,7 @@ import { ArrowRight, ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 import { faq, hazelAI, nav, pricing, problem, site, siteWalkthrough, trustStrip } from "@/content/site";
 import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/Button";
+import { Logo } from "@/components/brand/Logo";
 import { useApp } from "@/components/providers/AppProviders";
 
 type PanelItem = { label: string; href: string; text?: string };
@@ -208,12 +209,9 @@ export function Navbar() {
                 scrollTo("#top");
               }
             }}
-            className="flex min-w-0 shrink items-center gap-2.5"
+            className="flex min-w-0 shrink items-center"
           >
-            <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-moss text-[11px] font-semibold tracking-tight text-paper md:size-9">
-              HI
-            </span>
-            <span className="truncate text-[14px] font-medium tracking-tight md:text-[15px]">{site.name}</span>
+            <Logo priority className="h-9 md:h-10" />
           </Link>
 
           <nav className="hidden min-w-0 items-center gap-0.5 lg:flex xl:gap-1" aria-label="Primary">
@@ -384,7 +382,7 @@ export function Navbar() {
             className="fixed inset-0 z-[70] flex flex-col overflow-y-auto bg-ink text-paper lg:hidden"
           >
             <div className="flex h-16 shrink-0 items-center justify-between px-5 pt-[env(safe-area-inset-top)] sm:h-20">
-              <span className="text-[15px] font-medium">{site.name}</span>
+              <Logo className="h-10 brightness-0 invert" />
               <button
                 type="button"
                 className="grid size-11 place-items-center"

@@ -1,46 +1,49 @@
 /** Exact service visuals for `/pages/[slug]` detail pages. */
 export const servicePageMedia = {
   "housekeeping-services-in-hyderabad": {
-    hero: "/images/services/housekeeping.jpg",
-    heroAlt: "Professional housekeeping team cleaning a commercial office floor",
-    gallery: ["/images/services/housekeeping.jpg"],
+    hero: "/images/services/housekeeping-active.jpg",
+    heroAlt: "Hazel India housekeeping staff cleaning a modern office lobby in navy and green uniforms",
+    gallery: ["/images/services/housekeeping-active.jpg"],
   },
   "landscaping-services-in-hyderabad": {
     hero: "/images/services/landscaping.jpg",
-    heroAlt: "Landscaping crew maintaining gardens at a commercial campus",
+    heroAlt: "Hazel India landscaping team in green uniforms with black trousers",
     gallery: ["/images/services/landscaping.jpg"],
   },
   "mailroom-services-in-hyderabad": {
     hero: "/images/services/mailroom.jpg",
-    heroAlt: "Organized office mailroom with sorted parcels and packages",
+    heroAlt: "Hazel India mailroom staff in green HI uniforms",
     gallery: ["/images/services/mailroom.jpg"],
   },
   "concierge-services-in-hyderabad": {
     hero: "/images/services/concierge.jpg",
-    heroAlt: "Concierge welcoming a visitor at a modern office reception",
+    heroAlt: "Hazel India concierge hosts in green HI uniforms",
     gallery: ["/images/services/concierge.jpg"],
   },
   "mechanical-electrical-plumbing-services-in-hyderabad": {
-    hero: "/images/services/mep.jpg",
-    heroAlt: "MEP plant room with HVAC, electrical and plumbing systems",
-    gallery: ["/images/services/mep.jpg"],
+    hero: "/images/services/mep-active.jpg",
+    heroAlt: "Hazel India MEP technician servicing an electrical panel in a blue HI uniform",
+    gallery: [
+      "/images/services/mep-active.jpg",
+      "/images/services/mep-plant.jpg",
+    ],
   },
   "pest-control-services-in-hyderabad": {
     hero: "/images/services/pest.jpg",
-    heroAlt: "Pest control technician treating a commercial facility",
+    heroAlt: "Hazel India pest control specialists in green HI uniforms",
     gallery: ["/images/services/pest.jpg"],
   },
   "logistics-services-in-hyderabad": {
     hero: "/images/services/logistics.jpg",
-    heroAlt: "Facility logistics team moving materials with a pallet jack",
+    heroAlt: "Hazel India logistics support staff in green HI uniforms",
     gallery: ["/images/services/logistics.jpg"],
   },
   "ifm-services": {
     hero: "/images/services/ifm.jpg",
-    heroAlt: "Smart facility control room with live building performance dashboards",
+    heroAlt: "Hazel India IFM supervisors in green HI uniforms",
     gallery: [
-      "/images/services/housekeeping.jpg",
-      "/images/services/mep.jpg",
+      "/images/services/housekeeping-active.jpg",
+      "/images/services/mep-active.jpg",
       "/images/services/landscaping.jpg",
       "/images/services/pest.jpg",
       "/images/services/mailroom.jpg",

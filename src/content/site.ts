@@ -18,6 +18,7 @@ export const site = {
     href: `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`,
   },
   tagline: "Green facility care · since 2022",
+  logo: "/brand/hazel-india-logo.png",
   footerBlurb:
     "India's first AI-native, sustainability-first facility management company. Cleaner spaces, greener planet, valued people — everywhere.",
 } as const;
@@ -105,8 +106,8 @@ export const solutions = {
       title: "Housekeeping & Cleaning",
       text: "Daily upkeep, deep cleaning and sanitation with biodegradable, low-toxicity products.",
       icon: "SprayCan",
-      image: "/images/services/housekeeping.jpg",
-      alt: "Professional housekeeping team cleaning a commercial office floor",
+      image: "/images/services/housekeeping-active.jpg",
+      alt: "Hazel India housekeeping staff cleaning a modern office lobby in navy and green uniforms",
       href: "/pages/housekeeping-services-in-hyderabad",
     },
     {
@@ -114,7 +115,7 @@ export const solutions = {
       text: "Native-first gardens, vertical greenery and grounds care that cool your premises.",
       icon: "Trees",
       image: "/images/services/landscaping.jpg",
-      alt: "Landscaping crew maintaining gardens at a commercial campus",
+      alt: "Hazel India landscaping team in green uniforms with black trousers",
       href: "/pages/landscaping-services-in-hyderabad",
     },
     {
@@ -122,7 +123,7 @@ export const solutions = {
       text: "Front desk, visitor handling, mail and courier management by trained hosts.",
       icon: "ConciergeBell",
       image: "/images/services/mailroom.jpg",
-      alt: "Organized office mailroom with sorted parcels and packages",
+      alt: "Hazel India mailroom staff in green HI uniforms",
       href: "/pages/mailroom-services-in-hyderabad",
     },
     {
@@ -130,15 +131,15 @@ export const solutions = {
       text: "Trained guarding with AI-assisted surveillance, visitor management and smart access.",
       icon: "ShieldCheck",
       image: "/images/services/security.jpg",
-      alt: "Security officer managing access at a modern building lobby",
+      alt: "Hazel India security officers in blue HI uniforms",
       href: "/pages/ifm-services",
     },
     {
       title: "MEP Solutions",
       text: "HVAC, plumbing, electrical and machinery upkeep with predictive maintenance.",
       icon: "Wrench",
-      image: "/images/services/mep.jpg",
-      alt: "MEP plant room with HVAC, electrical and plumbing systems",
+      image: "/images/services/mep-active.jpg",
+      alt: "Hazel India MEP technician servicing an electrical panel in a blue HI uniform",
       href: "/pages/mechanical-electrical-plumbing-services-in-hyderabad",
     },
     {
@@ -146,7 +147,7 @@ export const solutions = {
       text: "Segregation, composting and zero-to-landfill programmes with diversion reporting.",
       icon: "Recycle",
       image: "/images/services/waste.jpg",
-      alt: "Color-coded recycling and waste segregation at a facility",
+      alt: "Hazel India waste management team in green HI uniforms",
       href: "/pages/ifm-services",
     },
     {
@@ -154,7 +155,7 @@ export const solutions = {
       text: "Pantry, moves, inventory and on-site support staff that keep operations running.",
       icon: "Truck",
       image: "/images/services/logistics.jpg",
-      alt: "Facility logistics team moving materials with a pallet jack",
+      alt: "Hazel India logistics support staff in green HI uniforms",
       href: "/pages/logistics-services-in-hyderabad",
     },
     {
@@ -162,7 +163,7 @@ export const solutions = {
       text: "Sensors, dispatch and live dashboards for air, water, energy and ESG reporting.",
       icon: "Cpu",
       image: "/images/services/ifm.jpg",
-      alt: "Smart facility control room with live building performance dashboards",
+      alt: "Hazel India IFM supervisors in green HI uniforms",
       href: "/pages/ifm-services",
     },
   ],
@@ -835,7 +836,7 @@ export const story = {
   images: [
     { src: "/images/planet.jpg", alt: "Canopy light — the air we work to keep clean" },
     { src: "/images/water-2.jpg", alt: "Open water — the resource we measure and reuse" },
-    { src: "/images/people.jpg", alt: "People — the teams who wear the Hazel badge" },
+    { src: "/images/people.jpg", alt: "Hazel India housekeeping team in navy and green uniforms" },
   ],
   paragraphs: [
     "Hazel India began with a simple belief: the spaces we live and work in shouldn't cost the earth. Rooted in our journey with IYCN and the Go Green, Live Green movement, we set out to reinvent facility management for a country — and a planet — that needs care more than ever.",

@@ -4,7 +4,6 @@ import { Hero } from "@/components/sections/Hero";
 import { FacilitySolutions } from "@/components/sections/FacilitySolutions";
 import { ProblemAgitation } from "@/components/sections/ProblemAgitation";
 import { TrustStrip } from "@/components/sections/TrustStrip";
-import { HazelAI } from "@/components/sections/HazelAI";
 import { SiteWalkthrough } from "@/components/sections/SiteWalkthrough";
 import { PricingModels } from "@/components/sections/PricingModels";
 import { FaqSection } from "@/components/sections/FaqSection";
@@ -25,7 +24,6 @@ export default function Home() {
         <FacilitySolutions />
         <ProblemAgitation />
         <TrustStrip />
-        <HazelAI />
         <SiteWalkthrough />
         <PricingModels />
         <FaqSection />

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
-import { faq, hazelAI, nav, pricing, problem, site, siteWalkthrough, trustStrip } from "@/content/site";
+import { faq, nav, pricing, problem, site, siteWalkthrough, trustStrip } from "@/content/site";
 import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/brand/Logo";
@@ -42,15 +42,6 @@ const panels: Record<string, Panel> = {
         text: trustStrip.ahead.label,
       })),
     ],
-  },
-  "#ai": {
-    eyebrow: hazelAI.eyebrow,
-    heading: hazelAI.heading,
-    items: hazelAI.states.map((state) => ({
-      label: `${state.label} — ${state.title}`,
-      href: "#ai",
-      text: state.text,
-    })),
   },
   "#walkthrough": {
     eyebrow: siteWalkthrough.eyebrow,

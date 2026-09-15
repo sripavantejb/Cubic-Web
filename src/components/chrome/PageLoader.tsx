@@ -4,13 +4,15 @@ import dynamic from "next/dynamic";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { gsap, useGSAP } from "@/animations/gsap-register";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
-import SplitText from "@/components/SplitText";
 import DecryptedText from "@/components/DecryptedText";
 import BlurText from "@/components/BlurText";
 import Counter from "@/components/Counter";
 import CountUp from "@/components/CountUp";
+import { GradientText } from "@/components/react-bits";
 
 const LightRays = dynamic(() => import("@/components/LightRays"), { ssr: false });
+
+const HAZEL_GRADIENT = ["#f5c542", "#2f9a5c", "#5db075", "#f5c542"] as const;
 
 const STATUS = [
   "CLEANER SPACES",
@@ -149,19 +151,14 @@ export function PageLoader({ onComplete }: Props) {
       <div className="loader-panel relative flex h-full flex-col px-[max(1.5rem,env(safe-area-inset-left))] pt-[max(2.5rem,env(safe-area-inset-top))] pr-[max(1.5rem,env(safe-area-inset-right))] pb-[max(2.5rem,env(safe-area-inset-bottom))] md:px-12 md:py-12">
         <div className="flex items-start justify-between gap-6">
           <div>
-            <SplitText
-              text="HAZEL INDIA"
-              tag="p"
-              className="meta text-hero-ink/70"
-              delay={28}
-              duration={0.7}
-              splitType="chars"
-              from={{ opacity: 0, y: 18 }}
-              to={{ opacity: 1, y: 0 }}
-              threshold={0}
-              rootMargin="0px"
-              textAlign="left"
-            />
+            <GradientText
+              colors={[...HAZEL_GRADIENT]}
+              animationSpeed={4}
+              showBorder={false}
+              className="meta tracking-[0.18em]"
+            >
+              HAZEL INDIA
+            </GradientText>
             <BlurText
               text="Green facility systems · Hyderabad"
               className="mt-3 max-w-sm text-[13px] text-hero-ink/45"
@@ -176,7 +173,15 @@ export function PageLoader({ onComplete }: Props) {
           </p>
         </div>
 
-        <div className="flex flex-1 flex-col items-center justify-center">
+        <div className="flex flex-1 flex-col items-center justify-center gap-3 md:gap-4">
+          <GradientText
+            colors={[...HAZEL_GRADIENT]}
+            animationSpeed={3.5}
+            showBorder={false}
+            className="display text-[clamp(1.75rem,6vw,4.5rem)] leading-none tracking-[-0.04em] font-semibold"
+          >
+            HAZEL
+          </GradientText>
           <p className="flex items-end justify-center">
             <CountUp
               from={0}

@@ -15,6 +15,12 @@ export const servicePages = {
         type: "text",
         heading: "Clean spaces. Reliable teams.",
         body: "Trained Hazel housekeeping keeps workplaces hygienic every day — with eco-friendly products and schedules that fit your operations.",
+        highlights: [
+            "Daily cleaning & sanitation",
+            "Eco-friendly products",
+            "Trained on-site teams",
+            "Schedules that fit your ops",
+          ],
       },
       {
         type: "cards",
@@ -181,6 +187,12 @@ export const servicePages = {
         type: "text",
         heading: "Greener grounds. Better campuses.",
         body: "Native landscaping, gardens, and grounds care that cool your premises and stay easy to maintain.",
+        highlights: [
+            "Native & sustainable planting",
+            "Lawn and garden care",
+            "Water-wise irrigation",
+            "Campus grounds upkeep",
+          ],
       },
       {
         type: "cards",
@@ -347,6 +359,12 @@ export const servicePages = {
         type: "text",
         heading: "Mail and parcels, handled.",
         body: "Organized receiving, sorting, and dispatch so documents and deliveries move without delays.",
+        highlights: [
+            "Receiving & sorting",
+            "Courier coordination",
+            "Secure handling",
+            "Clear tracking records",
+          ],
       },
       {
         type: "cards",
@@ -513,6 +531,12 @@ export const servicePages = {
         type: "text",
         heading: "A better first impression.",
         body: "Trained front-of-house hosts for reception, visitors, and day-to-day workplace support.",
+        highlights: [
+            "Reception & front desk",
+            "Visitor assistance",
+            "Guest coordination",
+            "Day-to-day front-of-house support",
+          ],
       },
       {
         type: "cards",
@@ -679,6 +703,12 @@ export const servicePages = {
         type: "text",
         heading: "MEP that keeps buildings running.",
         body: "HVAC, electrical, and plumbing — maintained by trained Hazel technicians with preventive care and fast response.",
+        highlights: [
+            "HVAC & mechanical care",
+            "Electrical panels & power",
+            "Plumbing & pump rooms",
+            "Preventive maintenance plans",
+          ],
       },
       {
         type: "cards",
@@ -830,6 +860,12 @@ export const servicePages = {
         type: "text",
         heading: "Safer spaces, fewer pests.",
         body: "Planned pest management that protects hygiene and operations with minimal disruption.",
+        highlights: [
+            "Site inspections",
+            "Targeted treatments",
+            "Safe, responsible methods",
+            "Ongoing monitoring",
+          ],
       },
       {
         type: "cards",
@@ -996,6 +1032,12 @@ export const servicePages = {
         type: "text",
         heading: "Movement without the friction.",
         body: "Internal logistics, receiving, and dispatch support that keeps materials and deliveries on track.",
+        highlights: [
+            "Material handling",
+            "Receiving & dispatch",
+            "Internal distribution",
+            "Delivery coordination",
+          ],
       },
       {
         type: "cards",
@@ -1162,6 +1204,12 @@ export const servicePages = {
         type: "text",
         heading: "One partner. Every facility need.",
         body: "Housekeeping, MEP, landscaping, security, and more — coordinated under one accountable team.",
+        highlights: [
+            "Housekeeping & soft services",
+            "MEP & technical upkeep",
+            "Landscaping & grounds",
+            "Security, mail & logistics",
+          ],
       },
       {
         type: "cards",

@@ -27,7 +27,6 @@ export const nav = {
   links: [
     { label: "Why Hazel", href: "#problem" },
     { label: "Transparency", href: "#trust" },
-    { label: "HazelAI", href: "#ai" },
     { label: "How it works", href: "#walkthrough" },
     { label: "Pricing", href: "#pricing" },
     { label: "FAQ", href: "#faq" },
@@ -435,76 +434,6 @@ export const machinery = {
       image: "/images/interior.jpg",
       images: ["/images/interior.jpg", "/images/office-3.jpg", "/images/sensors.jpg"],
       alt: "Calm interior air and light as a stand-in for green-band AQI",
-    },
-  ],
-} as const;
-
-export const hazelAI = {
-  eyebrow: "The HazelAI platform",
-  heading: "Intelligence that makes clean predictable, provable and lighter on Earth.",
-  lede: "Every Hazel site runs on a connected layer of sensors, dispatch and analytics — so you don't just trust that a space is cared for, you can see it.",
-  honesty:
-    "Some of what is below is live on our managed sites today; some is part of the platform we're actively rolling out through 2026. We'll always tell you which is which.",
-  demoNote: "Visual demonstration — not live site data.",
-  image: "/images/intelligence.jpg",
-  images: ["/images/intelligence.jpg", "/images/office-2.jpg", "/images/sensors.jpg"],
-  alt: "Connected hardware representing the HazelAI sensing layer",
-  states: [
-    {
-      id: "predict",
-      num: "01",
-      label: "Predict",
-      title: "Predictive cleaning & maintenance",
-      text: "Footfall, occupancy and IoT sensors tell HazelAI where and when attention is actually needed — ending wasteful fixed schedules.",
-      items: [
-        { text: "Dynamic task routing for staff", status: "roadmap" },
-        { text: "Equipment failure flagged before breakdown", status: "roadmap" },
-        { text: "Up to 30% less water & chemical use", status: "roadmap" },
-      ],
-      image: "/images/office-2.jpg",
-      alt: "Occupied workplace that HazelAI would schedule around",
-    },
-    {
-      id: "sense",
-      num: "02",
-      label: "Sense",
-      title: "Live environment monitoring",
-      text: "Air quality, humidity, water reuse and energy are tracked in real time and surfaced on a single dashboard for every facility.",
-      items: [
-        { text: "AQI & CO₂ green-band alerts", status: "roadmap" },
-        { text: "Leak & wastage detection", status: "roadmap" },
-        { text: "Healthier indoor spaces, automatically", status: "roadmap" },
-      ],
-      image: "/images/interior.jpg",
-      alt: "A healthy indoor environment under live monitoring",
-    },
-    {
-      id: "prove",
-      num: "03",
-      label: "Prove",
-      title: "Carbon & ESG dashboards",
-      text: "Auto-generated sustainability reports turn your facility into measurable climate action you can share with stakeholders.",
-      items: [
-        { text: "Carbon, water & waste diversion metrics", status: "roadmap" },
-        { text: "Audit-ready ESG exports", status: "roadmap" },
-        { text: "Benchmarks across your portfolio", status: "roadmap" },
-      ],
-      image: "/images/process-prove.jpg",
-      alt: "Analytics work representing audit-ready ESG proof",
-    },
-    {
-      id: "serve",
-      num: "04",
-      label: "Serve",
-      title: "AI concierge & instant booking",
-      text: "A conversational assistant lets residents and managers request, track and rate any service — no call centre, no waiting.",
-      items: [
-        { text: "Chat & voice service requests", status: "roadmap" },
-        { text: "Live status and ETAs", status: "roadmap" },
-        { text: "Quality scoring on every job", status: "roadmap" },
-      ],
-      image: "/images/people-2.jpg",
-      alt: "People coordinating care through a live service layer",
     },
   ],
 } as const;
@@ -960,7 +889,6 @@ export const footer = {
   company: [
     { label: "Why Hazel", href: "#problem" },
     { label: "Transparency", href: "#trust" },
-    { label: "HazelAI Platform", href: "#ai" },
     { label: "How it works", href: "#walkthrough" },
     { label: "Pricing", href: "#pricing" },
     { label: "FAQ", href: "#faq" },

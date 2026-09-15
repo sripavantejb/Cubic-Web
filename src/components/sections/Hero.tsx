@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { gsap, useGSAP } from "@/animations/gsap-register";
 import { createVideoScrubber } from "@/animations/video-scrub";
 import { useApp } from "@/components/providers/AppProviders";
+import { GradientText } from "@/components/react-bits";
 import { cn } from "@/lib/cn";
 
 // Two-column layout. Same query as the `wide` variant in globals.css.
@@ -126,14 +127,25 @@ export function Hero() {
             id="hero-title"
             className="hero-reveal hero-title mt-4 leading-none font-semibold tracking-[-0.035em] motion-safe:opacity-0 min-[600px]:mt-5 wide:mt-6"
           >
-            {hero.headline.map((line, i) => (
-              <span
-                key={line}
-                className={cn("block whitespace-nowrap", i === hero.headline.length - 1 && "text-sun")}
-              >
-                {line}
-              </span>
-            ))}
+            {hero.headline.map((line, i) => {
+              const isAccent = i === hero.headline.length - 1;
+              return (
+                <span key={line} className="block whitespace-nowrap">
+                  {isAccent ? (
+                    <GradientText
+                      colors={["#f5c542", "#2f9a5c", "#5db075", "#f5c542"]}
+                      animationSpeed={4}
+                      showBorder={false}
+                      className="hero-gradient-text"
+                    >
+                      {line}
+                    </GradientText>
+                  ) : (
+                    line
+                  )}
+                </span>
+              );
+            })}
           </h1>
 
           <p className="hero-reveal mt-3.5 max-w-[30rem] text-[16px] leading-[1.6] text-hero-ink/70 motion-safe:opacity-0 min-[600px]:mt-5 wide:mt-6 wide:text-[clamp(1.0625rem,1.25vw,1.1875rem)] short:hidden">

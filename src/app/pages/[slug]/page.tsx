@@ -97,32 +97,60 @@ export default async function ServicePage({
             return (
               <>
                 {intro ? (
-                  <section className="lg:grid lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-14">
+                  <section className="lg:grid lg:grid-cols-[0.95fr_1.05fr] lg:items-start lg:gap-12 xl:gap-16">
                     <div className="lg:sticky lg:top-28 lg:self-start">
+                      <p className="meta text-leaf">{page.header.eyebrow || page.title}</p>
                       {intro.heading ? (
-                        <h2 className="max-w-[16ch] text-[clamp(1.5rem,2.6vw,2.15rem)] leading-[1.1] font-semibold tracking-[-0.03em] text-hero-ink">
+                        <h2 className="mt-3 max-w-[14ch] text-[clamp(1.65rem,2.8vw,2.35rem)] leading-[1.08] font-semibold tracking-[-0.03em] text-hero-ink">
                           {intro.heading}
                         </h2>
                       ) : null}
                       {"body" in intro ? (
-                        <p className="mt-4 max-w-[32rem] text-[15px] leading-relaxed text-muted md:text-[16px]">
+                        <p className="mt-4 max-w-[30rem] text-[15px] leading-relaxed text-muted md:text-[16px]">
                           {intro.body.replace(/\n{2,}/g, " ")}
                         </p>
                       ) : null}
+
+                      {"highlights" in intro && Array.isArray(intro.highlights) && intro.highlights.length > 0 ? (
+                        <ul className="mt-8 max-w-[28rem] border-t border-hero-ink/10">
+                          {intro.highlights.map((item, idx) => (
+                            <li
+                              key={item}
+                              className="grid grid-cols-[auto_1fr] items-baseline gap-x-4 border-b border-hero-ink/10 py-3.5"
+                            >
+                              <span className="font-mono text-[11px] tracking-[0.14em] text-leaf/75">
+                                {String(idx + 1).padStart(2, "0")}
+                              </span>
+                              <span className="text-[14px] font-medium tracking-tight text-hero-ink md:text-[15px]">
+                                {item}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : null}
+
+                      <div className="mt-8">
+                        <Link
+                          href="/#contact"
+                          className="inline-flex h-11 items-center justify-center rounded-full bg-sun px-5 text-[14px] font-semibold text-hero-ink transition-colors hover:bg-sun-deep"
+                        >
+                          Get a Free Audit
+                        </Link>
+                      </div>
                     </div>
 
                     {gallery.length > 0 ? (
-                      <div className="mt-8 space-y-5 lg:mt-0 lg:space-y-6">
+                      <div className="mt-10 space-y-5 lg:mt-0 lg:space-y-6">
                         {gallery.map((src, idx) => (
                           <div
                             key={`${src}-${idx}`}
-                            className="relative aspect-[4/3] overflow-hidden rounded-[22px] bg-mint shadow-[0_18px_40px_-28px_rgba(17,35,27,0.35)]"
+                            className="relative aspect-[4/5] overflow-hidden rounded-[22px] bg-mint shadow-[0_18px_40px_-28px_rgba(17,35,27,0.35)] sm:aspect-[5/6] lg:aspect-[4/5]"
                           >
                             <Image
                               src={src}
                               alt={media?.heroAlt ?? ""}
                               fill
-                              sizes="(min-width: 1024px) 48vw, 100vw"
+                              sizes="(min-width: 1024px) 46vw, 100vw"
                               className="object-cover"
                               priority={idx === 0}
                             />

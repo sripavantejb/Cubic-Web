@@ -121,8 +121,8 @@ export const solutions = {
       title: "Mailroom & Concierge",
       text: "Front desk, visitor handling, mail and courier management by trained hosts.",
       icon: "ConciergeBell",
-      image: "/images/services/mailroom.jpg",
-      alt: "Hazel India mailroom staff in green HI uniforms",
+      image: "/images/services/mailroom-active.jpg",
+      alt: "Hazel India mailroom staff sorting parcels in a green HI uniform",
       href: "/pages/mailroom-services-in-hyderabad",
     },
     {
@@ -153,8 +153,8 @@ export const solutions = {
       title: "Logistics & Support Services",
       text: "Pantry, moves, inventory and on-site support staff that keep operations running.",
       icon: "Truck",
-      image: "/images/services/logistics.jpg",
-      alt: "Hazel India logistics support staff in green HI uniforms",
+      image: "/images/services/logistics-active.jpg",
+      alt: "Hazel India logistics staff moving materials with a pallet jack in a green HI uniform",
       href: "/pages/logistics-services-in-hyderabad",
     },
     {

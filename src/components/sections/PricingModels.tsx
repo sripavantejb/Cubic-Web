@@ -57,7 +57,7 @@ export function PricingModels() {
           </FadeContent>
         </div>
 
-        <ul className="mt-12 grid gap-4 lg:mt-16 lg:grid-cols-3">
+        <ul className="mt-12 grid gap-4 lg:mt-16 lg:grid-cols-2">
           {pricing.models.map((model, i) => (
             <AnimatedContent key={model.id} delay={i * 0.1} distance={40} scale={0.98}>
               <li

@@ -8,6 +8,15 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  async redirects() {
+    return [
+      {
+        source: "/pages/concierge-services-in-hyderabad",
+        destination: "/pages/mailroom-services-in-hyderabad",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

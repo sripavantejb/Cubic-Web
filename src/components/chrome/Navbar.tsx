@@ -137,6 +137,10 @@ export function Navbar() {
     setActive(null);
     setMobileIfmOpen(false);
     if (isPageHref(href)) return;
+    if (href.startsWith("#") && !onHome) {
+      window.location.href = `/${href}`;
+      return;
+    }
     scrollTo(href);
   };
 
@@ -208,14 +212,37 @@ export function Navbar() {
           <nav className="hidden min-w-0 items-center gap-0.5 lg:flex xl:gap-1" aria-label="Primary">
             {desktopLinks.map((link) => {
               const isOn = active === link.href;
+              const hasPanel = link.href in panels;
+
+              if (isPageHref(link.href)) {
+                return (
+                  <Link
+                    key={link.href + link.label}
+                    href={link.href}
+                    onClick={() => {
+                      setOpen(false);
+                      setActive(null);
+                    }}
+                    className="rounded-full px-2.5 py-2 text-[13px] leading-none font-medium tracking-[-0.01em] whitespace-nowrap text-hero-ink/70 transition-colors hover:text-hero-ink xl:px-3 xl:text-[13.5px]"
+                  >
+                    {link.label}
+                  </Link>
+                );
+              }
+
               return (
                 <a
                   key={link.href + link.label}
-                  href={link.href}
-                  aria-expanded={isOn}
-                  aria-haspopup="true"
-                  onMouseEnter={() => openPanel(link.href)}
-                  onFocus={() => openPanel(link.href)}
+                  href={link.href.startsWith("#") ? `/${link.href}` : link.href}
+                  aria-expanded={hasPanel ? isOn : undefined}
+                  aria-haspopup={hasPanel ? "true" : undefined}
+                  onMouseEnter={() => {
+                    if (hasPanel) openPanel(link.href);
+                    else scheduleClose();
+                  }}
+                  onFocus={() => {
+                    if (hasPanel) openPanel(link.href);
+                  }}
                   onClick={(e) => {
                     e.preventDefault();
                     go(link.href);
@@ -387,22 +414,39 @@ export function Navbar() {
               className="flex flex-1 flex-col gap-1 px-5 pb-[max(2rem,env(safe-area-inset-bottom))] sm:px-6"
               aria-label="Mobile"
             >
-              {desktopLinks.map((link, i) => (
-                <motion.a
-                  key={link.href + link.label}
-                  href={link.href}
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.05 * i, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    go(link.href);
-                  }}
-                  className="display py-2 text-[clamp(1.65rem,8vw,3rem)] leading-[1.05]"
-                >
-                  {link.label}
-                </motion.a>
-              ))}
+              {desktopLinks.map((link, i) =>
+                isPageHref(link.href) ? (
+                  <motion.div
+                    key={link.href + link.label}
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.05 * i, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <Link
+                      href={link.href}
+                      onClick={() => setOpen(false)}
+                      className="display block py-2 text-[clamp(1.65rem,8vw,3rem)] leading-[1.05]"
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                ) : (
+                  <motion.a
+                    key={link.href + link.label}
+                    href={link.href.startsWith("#") ? `/${link.href}` : link.href}
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.05 * i, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      go(link.href);
+                    }}
+                    className="display py-2 text-[clamp(1.65rem,8vw,3rem)] leading-[1.05]"
+                  >
+                    {link.label}
+                  </motion.a>
+                ),
+              )}
 
               <motion.div
                 initial={{ opacity: 0, y: 16 }}

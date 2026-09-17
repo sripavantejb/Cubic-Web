@@ -30,6 +30,8 @@ export const nav = {
     { label: "How it works", href: "#walkthrough" },
     { label: "Pricing", href: "#pricing" },
     { label: "FAQ", href: "#faq" },
+    { label: "Career", href: "/careers" },
+    { label: "Contact Us", href: "#contact" },
   ],
   ifm: {
     label: "IFM Services",
@@ -58,14 +60,29 @@ export const nav = {
         text: "Safe, scheduled pest management for homes, offices and industry.",
       },
       {
-        label: "Mailroom Services",
-        href: "/pages/mailroom-services-in-hyderabad",
-        text: "Receiving, sorting, courier coordination and parcel tracking.",
+        label: "Waste Management",
+        href: "/pages/waste-management-services-in-hyderabad",
+        text: "Segregation, recycling, composting and diversion reporting.",
       },
       {
-        label: "Concierge Services",
-        href: "/pages/concierge-services-in-hyderabad",
-        text: "Front-of-house reception, visitor assistance and guest support.",
+        label: "Food & Beverage",
+        href: "/pages/food-and-beverage-services-in-hyderabad",
+        text: "Pantry, cafeteria and F&B support that keeps workplaces running.",
+      },
+      {
+        label: "Ambulance & Emergency Preparedness",
+        href: "/pages/ambulance-and-paramedic-services-in-hyderabad",
+        text: "EMS standby, ambulance response, fire/evac plans and emergency drills.",
+      },
+      {
+        label: "Employee Transportation",
+        href: "/pages/employee-transportation-services-in-hyderabad",
+        text: "Staff commute, shift shuttles and campus transport coordination.",
+      },
+      {
+        label: "Mailroom & Concierge",
+        href: "/pages/mailroom-services-in-hyderabad",
+        text: "Front desk, visitor handling, mail, courier and parcel coordination.",
       },
       {
         label: "Logistics Services",
@@ -75,6 +92,75 @@ export const nav = {
     ],
   },
   cta: { label: "Get a Free Audit", href: "#contact" },
+} as const;
+
+/** Group portrait mosaic of IFM service teams — kept in line with `nav.ifm.items`. */
+export const ifmGroup = {
+  eyebrow: "IFM Services team",
+  heading: "One group. Every service line.",
+  lede: "Hazel India’s integrated facility teams — the people behind housekeeping, technical care, soft services and emergency readiness.",
+  portraits: [
+    {
+      label: "Housekeeping",
+      href: "/pages/housekeeping-services-in-hyderabad",
+      image: "/images/services/housekeeping-active.jpg",
+      alt: "Hazel India housekeeping team in branded uniforms",
+    },
+    {
+      label: "MEP Services",
+      href: "/pages/mechanical-electrical-plumbing-services-in-hyderabad",
+      image: "/images/services/mep-active.jpg",
+      alt: "Hazel India MEP technician in a blue HI uniform",
+    },
+    {
+      label: "Landscaping",
+      href: "/pages/landscaping-services-in-hyderabad",
+      image: "/images/services/landscaping.jpg",
+      alt: "Hazel India landscaping team in green uniforms",
+    },
+    {
+      label: "Pest Control",
+      href: "/pages/pest-control-services-in-hyderabad",
+      image: "/images/services/pest-active.jpg",
+      alt: "Hazel India pest control technician on site",
+    },
+    {
+      label: "Waste Management",
+      href: "/pages/waste-management-services-in-hyderabad",
+      image: "/images/services/waste.jpg",
+      alt: "Hazel India waste management team",
+    },
+    {
+      label: "Food & Beverage",
+      href: "/pages/food-and-beverage-services-in-hyderabad",
+      image: "/images/interior.jpg",
+      alt: "Workplace hospitality and food and beverage service",
+    },
+    {
+      label: "Emergency Preparedness",
+      href: "/pages/ambulance-and-paramedic-services-in-hyderabad",
+      image: "/images/people.jpg",
+      alt: "Hazel India emergency preparedness and response team",
+    },
+    {
+      label: "Employee Transport",
+      href: "/pages/employee-transportation-services-in-hyderabad",
+      image: "/images/city.jpg",
+      alt: "Employee transportation and campus commute support",
+    },
+    {
+      label: "Mailroom & Concierge",
+      href: "/pages/mailroom-services-in-hyderabad",
+      image: "/images/services/mailroom-active.jpg",
+      alt: "Hazel India mailroom and concierge staff",
+    },
+    {
+      label: "Logistics",
+      href: "/pages/logistics-services-in-hyderabad",
+      image: "/images/services/logistics-active.jpg",
+      alt: "Hazel India logistics support staff",
+    },
+  ],
 } as const;
 
 export const hero = {
@@ -102,68 +188,84 @@ export const solutions = {
   lede: "One accountable partner for everything your building needs — trained Hazel India teams, green-certified operations and the HazelAI platform, under a single contract.",
   items: [
     {
-      title: "Housekeeping & Cleaning",
-      text: "Daily upkeep, deep cleaning and sanitation with biodegradable, low-toxicity products.",
+      title: "Housekeeping",
+      text: "Daily cleaning, sanitation and common-area upkeep with trained teams and green chemistry.",
       icon: "SprayCan",
       image: "/images/services/housekeeping-active.jpg",
       alt: "Hazel India housekeeping staff cleaning a modern office lobby in navy and green uniforms",
       href: "/pages/housekeeping-services-in-hyderabad",
     },
     {
-      title: "Landscaping & Green Spaces",
-      text: "Native-first gardens, vertical greenery and grounds care that cool your premises.",
-      icon: "Trees",
-      image: "/images/services/landscaping.jpg",
-      alt: "Hazel India landscaping team in green uniforms with black trousers",
-      href: "/pages/landscaping-services-in-hyderabad",
-    },
-    {
-      title: "Mailroom & Concierge",
-      text: "Front desk, visitor handling, mail and courier management by trained hosts.",
-      icon: "ConciergeBell",
-      image: "/images/services/mailroom-active.jpg",
-      alt: "Hazel India mailroom staff sorting parcels in a green HI uniform",
-      href: "/pages/mailroom-services-in-hyderabad",
-    },
-    {
-      title: "Integrated Security Services",
-      text: "Trained guarding with AI-assisted surveillance, visitor management and smart access.",
-      icon: "ShieldCheck",
-      image: "/images/services/security.jpg",
-      alt: "Hazel India security officers in blue HI uniforms",
-      href: "/pages/ifm-services",
-    },
-    {
-      title: "MEP Solutions",
-      text: "HVAC, plumbing, electrical and machinery upkeep with predictive maintenance.",
+      title: "MEP Services",
+      text: "HVAC, electrical and plumbing maintenance to keep building systems reliable.",
       icon: "Wrench",
       image: "/images/services/mep-active.jpg",
       alt: "Hazel India MEP technician servicing an electrical panel in a blue HI uniform",
       href: "/pages/mechanical-electrical-plumbing-services-in-hyderabad",
     },
     {
-      title: "Waste Management & Green Initiatives",
-      text: "Segregation, composting and zero-to-landfill programmes with diversion reporting.",
+      title: "Landscaping",
+      text: "Native gardens, grounds care and water-conscious outdoor maintenance.",
+      icon: "Trees",
+      image: "/images/services/landscaping.jpg",
+      alt: "Hazel India landscaping team in green uniforms with black trousers",
+      href: "/pages/landscaping-services-in-hyderabad",
+    },
+    {
+      title: "Pest Control Services",
+      text: "Safe, scheduled pest management for homes, offices, factories and communities.",
+      icon: "Bug",
+      image: "/images/services/pest-active.jpg",
+      alt: "Hazel India pest control technician treating a facility corridor in a green HI uniform",
+      href: "/pages/pest-control-services-in-hyderabad",
+    },
+    {
+      title: "Waste Management",
+      text: "Segregation, composting and diversion programmes with clear reporting.",
       icon: "Recycle",
       image: "/images/services/waste.jpg",
       alt: "Hazel India waste management team in green HI uniforms",
-      href: "/pages/ifm-services",
+      href: "/pages/waste-management-services-in-hyderabad",
     },
     {
-      title: "Logistics & Support Services",
-      text: "Pantry, moves, inventory and on-site support staff that keep operations running.",
+      title: "Food & Beverage",
+      text: "Pantry, cafeteria and F&B support that keeps workplaces running.",
+      icon: "UtensilsCrossed",
+      image: "/images/interior.jpg",
+      alt: "Workplace pantry and hospitality space ready for food and beverage service",
+      href: "/pages/food-and-beverage-services-in-hyderabad",
+    },
+    {
+      title: "Ambulance & Emergency Preparedness",
+      text: "EMS standby, ambulance response, fire and evacuation plans, and emergency drills.",
+      icon: "Ambulance",
+      image: "/images/people.jpg",
+      alt: "Trained emergency response team ready to support workplace safety",
+      href: "/pages/ambulance-and-paramedic-services-in-hyderabad",
+    },
+    {
+      title: "Employee Transportation",
+      text: "Staff commute, shift shuttles and campus transport coordination.",
+      icon: "Bus",
+      image: "/images/city.jpg",
+      alt: "Urban commute routes supporting employee transportation programmes",
+      href: "/pages/employee-transportation-services-in-hyderabad",
+    },
+    {
+      title: "Mailroom & Concierge",
+      text: "Front desk, visitor handling, mail, courier and parcel coordination.",
+      icon: "ConciergeBell",
+      image: "/images/services/mailroom-active.jpg",
+      alt: "Hazel India mailroom and concierge staff supporting workplace operations",
+      href: "/pages/mailroom-services-in-hyderabad",
+    },
+    {
+      title: "Logistics Services",
+      text: "Material handling, receiving, dispatch and internal movement.",
       icon: "Truck",
       image: "/images/services/logistics-active.jpg",
       alt: "Hazel India logistics staff moving materials with a pallet jack in a green HI uniform",
       href: "/pages/logistics-services-in-hyderabad",
-    },
-    {
-      title: "Smart IFM Technology",
-      text: "Sensors, dispatch and live dashboards for air, water, energy and ESG reporting.",
-      icon: "Cpu",
-      image: "/images/services/ifm.jpg",
-      alt: "Hazel India IFM supervisors in green HI uniforms",
-      href: "/pages/ifm-services",
     },
   ],
 } as const;
@@ -585,7 +687,7 @@ export const siteWalkthrough = {
 export const pricing = {
   eyebrow: "Engagement",
   heading: "Choose the model that fits your space",
-  lede: "From a single deep clean to a full industrial program — pick the coverage that matches how your site actually runs. Every plan starts with a free facility audit.",
+  lede: "From ongoing managed coverage to a full industrial program — pick the plan that matches how your site actually runs. Every engagement starts with a free facility audit.",
   image: "/images/office.jpg",
   alt: "Commercial workspace suited to managed facility coverage",
   promises: [
@@ -603,14 +705,6 @@ export const pricing = {
     },
   ],
   models: [
-    {
-      id: "per-visit",
-      title: "Per-Visit",
-      text: "For smaller homes and one-off deep cleans. Pay per service, no long-term commitment.",
-      bestFor: "Apartments, small offices",
-      image: "/images/residential.jpg",
-      alt: "Residential interior suited to per-visit cleaning",
-    },
     {
       id: "managed",
       title: "Managed Contract",
@@ -641,7 +735,7 @@ export const faq = {
   items: [
     {
       q: "How long is a typical contract?",
-      a: "Per-visit work has no lock-in. Managed contracts are usually annual, with month-to-month options after the first term where the site plan allows.",
+      a: "Managed contracts are usually annual, with month-to-month options after the first term where the site plan allows.",
     },
     {
       q: "Are your staff background-verified?",
@@ -661,7 +755,7 @@ export const faq = {
     },
     {
       q: "Can I pause or cancel service?",
-      a: "Yes. Managed contracts typically need 30 days' written notice to pause or cancel. Per-visit bookings can be changed or cancelled before the scheduled slot.",
+      a: "Yes. Managed contracts typically need 30 days' written notice to pause or cancel.",
     },
     {
       q: "Do you provide ESG or carbon reports we can share with our board or tenants?",
@@ -878,21 +972,49 @@ export const contact = {
   ],
 } as const;
 
-export const footer = {
-  services: [
-    { label: "Housekeeping", href: "/pages/housekeeping-services-in-hyderabad" },
-    { label: "MEP Services", href: "/pages/mechanical-electrical-plumbing-services-in-hyderabad" },
-    { label: "Landscaping", href: "/pages/landscaping-services-in-hyderabad" },
-    { label: "IFM Services", href: "/pages/ifm-services" },
-    { label: "Logistics", href: "/pages/logistics-services-in-hyderabad" },
+export const careers = {
+  eyebrow: "Careers at Hazel India",
+  heading: "Build cleaner spaces. Grow with purpose.",
+  lede: "We're hiring people who care about service quality, sustainability, and the teams behind every well-run facility. If that sounds like you, we'd like to hear from you.",
+  highlights: [
+    {
+      title: "People-first culture",
+      text: "Fair pay, clear roles, and respect for the teams who keep facilities running every day.",
+    },
+    {
+      title: "Green operations",
+      text: "Work on programmes that cut waste, protect water, and raise hygiene standards across India.",
+    },
+    {
+      title: "Room to grow",
+      text: "From site operations to supervision and specialised services — paths to build real skill.",
+    },
   ],
+  rolesHeading: "Who we look for",
+  roles: [
+    "Facility supervisors and site leads",
+    "Housekeeping and soft-services teams",
+    "MEP and technical maintenance talent",
+    "Pantry, F&B, and front-of-house hosts",
+    "Logistics, transport, and support staff",
+    "Operations, HSE, and coordination roles",
+  ],
+  ctaHeading: "Ready to apply?",
+  ctaText: "Send your resume and a short note about the role you're interested in. Our team will get back to you if there's a match.",
+  ctaLabel: "Email careers team",
+  ctaNote: "Include your preferred role, city, and years of experience in the subject line.",
+} as const;
+
+export const footer = {
+  // Kept in sync with `nav.ifm` — rendered from that list in Footer.tsx
   company: [
     { label: "Why Hazel", href: "#problem" },
     { label: "Transparency", href: "#trust" },
     { label: "How it works", href: "#walkthrough" },
     { label: "Pricing", href: "#pricing" },
     { label: "FAQ", href: "#faq" },
-    { label: "Contact", href: "#contact" },
+    { label: "Career", href: "/careers" },
+    { label: "Contact Us", href: "#contact" },
   ],
   portals: [
     {

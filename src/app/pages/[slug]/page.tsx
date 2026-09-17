@@ -8,6 +8,7 @@ import { site } from "@/content/site";
 import { Navbar } from "@/components/chrome/Navbar";
 import { Footer } from "@/components/chrome/Footer";
 import { ServiceCardIcon } from "@/components/ui/ServiceCardIcon";
+import { IfmGroupPortrait } from "@/components/sections/IfmGroupPortrait";
 
 const slugs = Object.keys(servicePages) as ServicePageSlug[];
 
@@ -139,7 +140,11 @@ export default async function ServicePage({
                       </div>
                     </div>
 
-                    {gallery.length > 0 ? (
+                    {slug === "ifm-services" ? (
+                      <div className="mt-10 lg:mt-0">
+                        <IfmGroupPortrait showCopy={false} />
+                      </div>
+                    ) : gallery.length > 0 ? (
                       <div className="mt-10 space-y-5 lg:mt-0 lg:space-y-6">
                         {gallery.map((src, idx) => (
                           <div

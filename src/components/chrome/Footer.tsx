@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ArrowRight, ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
-import { footer, site } from "@/content/site";
+import { footer, nav, site } from "@/content/site";
 import { Logo } from "@/components/brand/Logo";
 import { useApp } from "@/components/providers/AppProviders";
 import { cn } from "@/lib/cn";
@@ -12,6 +12,11 @@ import { cn } from "@/lib/cn";
 function isPageHref(href: string) {
   return href.startsWith("/") && !href.startsWith("/#");
 }
+
+const serviceLinks = [
+  { label: nav.ifm.overview.label.replace(/^See all\s+/i, ""), href: nav.ifm.overview.href },
+  ...nav.ifm.items.map(({ label, href }) => ({ label, href })),
+];
 
 function FooterLink({
   href,
@@ -22,17 +27,24 @@ function FooterLink({
   children: ReactNode
   className?: string
 }) {
-  const { scrollTo, openContact } = useApp();
+  const { scrollTo } = useApp();
 
   if (href === "#contact") {
     return (
-      <button
-        type="button"
-        onClick={openContact}
-        className={cn("text-left transition-colors hover:text-mist", className)}
+      <a
+        href="/#contact"
+        onClick={(e) => {
+          e.preventDefault();
+          if (typeof window !== "undefined" && window.location.pathname !== "/") {
+            window.location.href = "/#contact";
+            return;
+          }
+          scrollTo("#contact");
+        }}
+        className={cn("transition-colors hover:text-mist", className)}
       >
         {children}
-      </button>
+      </a>
     );
   }
 
@@ -73,11 +85,12 @@ function FooterLink({
 
 const columns = [
   { heading: "Company", links: footer.company },
-  { heading: "Services", links: footer.services },
+  { heading: "Services", links: serviceLinks },
   {
     heading: "Connect",
     links: [
-      { label: "Contact", href: "#contact" },
+      { label: "Contact Us", href: "#contact" },
+      { label: "Career", href: "/careers" },
       ...footer.social,
       ...footer.portals.slice(0, 2),
     ],

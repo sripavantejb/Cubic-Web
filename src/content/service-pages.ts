@@ -347,94 +347,94 @@ export const servicePages = {
   "mailroom-services-in-hyderabad": {
     slug: "mailroom-services-in-hyderabad",
     path: "/pages/mailroom-services-in-hyderabad",
-    title: "Mailroom Services",
+    title: "Mailroom & Concierge Services",
     visible: true,
     header: {
-      eyebrow: "Organized Mail, Smoother Workplaces",
-      heading: "Mailroom Services in Hyderabad",
-      description: "Keep your incoming and outgoing mail, parcels, and courier activities organized with reliable mailroom services designed for efficient workplace operations.",
+      eyebrow: "Front Desk to Final Delivery",
+      heading: "Mailroom & Concierge Services in Hyderabad",
+      description: "One front-of-house team for reception, visitor support, mail, parcels, and courier coordination — so workplaces stay welcoming and organised every day.",
     },
     sections: [
       {
         type: "text",
-        heading: "Mail and parcels, handled.",
-        body: "Organized receiving, sorting, and dispatch so documents and deliveries move without delays.",
+        heading: "Hospitality and mail, under one desk.",
+        body: "Trained hosts who welcome guests, manage the front desk, and keep documents and deliveries moving without friction.",
         highlights: [
-            "Receiving & sorting",
-            "Courier coordination",
-            "Secure handling",
-            "Clear tracking records",
-          ],
+          "Reception & visitor support",
+          "Mail receiving & sorting",
+          "Courier & parcel coordination",
+          "Front-of-house tracking",
+        ],
       },
       {
         type: "cards",
         heading: "Why Businesses Choose Hazel India",
         items: [
           {
-            icon: "Mailbox",
-            title: "Organized Mail Handling",
-            text: "Manage incoming and outgoing mail, documents, parcels, and deliveries through structured mailroom processes.",
+            icon: "Bell",
+            title: "Professional First Impressions",
+            text: "Trained concierge hosts who welcome visitors and represent your workplace with confidence.",
           },
           {
-            icon: "BarChart3",
-            title: "Accurate Tracking",
-            text: "Maintain clear records of received and dispatched items to improve visibility and accountability.",
+            icon: "Mailbox",
+            title: "Organized Mail Handling",
+            text: "Structured receiving, sorting, and distribution for letters, documents, parcels, and courier deliveries.",
           },
           {
             icon: "Lock",
             title: "Secure Handling",
-            text: "Handle important documents and packages carefully with controlled processes designed to reduce loss and misplacement.",
+            text: "Controlled processes for important documents and packages designed to reduce loss and misplacement.",
           },
           {
-            icon: "Timer",
-            title: "Timely Distribution",
-            text: "Ensure mail and deliveries reach the right departments, employees, or locations without unnecessary delays.",
+            icon: "Compass",
+            title: "Visitor Assistance",
+            text: "Directions, information, and guest support that keep arrivals and meetings running smoothly.",
           },
           {
             icon: "HardHat",
-            title: "Professional Support",
-            text: "Use trained personnel to manage routine mailroom activities consistently and efficiently.",
+            title: "Trained Front-of-House Teams",
+            text: "Personnel skilled in both reception hospitality and everyday mailroom operations.",
           },
           {
             icon: "Layers",
             title: "Integrated Facility Support",
-            text: "Combine mailroom services with housekeeping, concierge, MEP, security, and other workplace services through one facility management partner.",
+            text: "Combine mailroom and concierge with housekeeping, MEP, security, and other workplace services through one partner.",
           },
         ],
       },
       {
         type: "cards",
-        heading: "Our Mailroom Services",
+        heading: "Our Mailroom & Concierge Services",
         items: [
+          {
+            icon: "Bell",
+            title: "Reception & Front Desk",
+            text: "Professional desk support for welcoming visitors, handling inquiries, and day-to-day reception activities.",
+          },
+          {
+            icon: "Handshake",
+            title: "Visitor & Guest Support",
+            text: "Assistance for arrivals, directions, appointments, and a polished visitor experience.",
+          },
           {
             icon: "Inbox",
             title: "Mail Receiving",
-            text: "Receive incoming letters, documents, parcels, and courier deliveries on behalf of your organization.",
+            text: "Receive incoming letters, documents, parcels, and courier deliveries on behalf of your organisation.",
           },
           {
             icon: "Mailbox",
-            title: "Mail Sorting & Distribution",
-            text: "Sort incoming mail and distribute documents and packages to the appropriate departments or recipients.",
+            title: "Sorting & Distribution",
+            text: "Sort mail and packages and route them to the right departments, floors, or recipients.",
           },
           {
             icon: "Bike",
-            title: "Courier Management",
-            text: "Coordinate incoming and outgoing courier activities to support smooth and timely workplace deliveries.",
-          },
-          {
-            icon: "Send",
-            title: "Outgoing Mail Handling",
-            text: "Prepare, record, and dispatch outgoing documents, packages, and other business correspondence.",
-          },
-          {
-            icon: "Package",
-            title: "Parcel Management",
-            text: "Manage workplace parcels and deliveries with organized receiving, recording, storage, and distribution processes.",
+            title: "Courier Coordination",
+            text: "Coordinate incoming and outgoing courier activity so workplace deliveries stay on schedule.",
           },
           {
             icon: "FolderOpen",
-            title: "Mailroom Records & Tracking",
-            text: "Maintain records of mail and deliveries to improve accountability and provide better visibility of mailroom operations.",
+            title: "Records & Tracking",
+            text: "Maintain clear logs of mail, parcels, and front-desk handoffs for better accountability.",
           },
         ],
       },
@@ -445,226 +445,54 @@ export const servicePages = {
           {
             icon: "Building2",
             title: "Corporate Offices",
-            text: "Complete mailroom support for corporate workplaces handling regular documents, parcels, and courier deliveries.",
+            text: "Front desk hospitality plus mail and parcel support for multi-floor workplaces.",
           },
           {
             icon: "Briefcase",
             title: "IT Parks & Co-Working Spaces",
-            text: "Organized mail and parcel management for high-occupancy workplaces with frequent deliveries and multiple recipients.",
+            text: "High-footfall visitor handling and frequent delivery management across busy campuses.",
+          },
+          {
+            icon: "Home",
+            title: "Residential Communities",
+            text: "Reception assistance with parcel receiving and resident-facing front-desk coordination.",
           },
           {
             icon: "Factory",
             title: "Manufacturing & Factories",
-            text: "Mailroom support for offices, administrative departments, production sites, and business correspondence.",
-          },
-          {
-            icon: "Package",
-            title: "Warehouses & Logistics Facilities",
-            text: "Structured handling of documents, internal deliveries, and workplace parcels alongside day-to-day facility operations.",
-          },
-          {
-            icon: "Home",
-            title: "Residential Communities",
-            text: "Mail and parcel support for residential communities requiring organized delivery and collection management.",
+            text: "Admin-office mail handling and visitor support for plant and industrial campuses.",
           },
           {
             icon: "Store",
             title: "Commercial Facilities",
-            text: "Professional mailroom operations for commercial buildings and shared workplaces with regular mail and courier activity.",
-          },
-        ],
-      },
-      {
-        type: "steps",
-        heading: "From receiving to reliable delivery.",
-        items: [
-          {
-            title: "Receive",
-            text: "We receive incoming mail, documents, parcels, and courier deliveries on behalf of your facility.",
-          },
-          {
-            title: "Sort & Record",
-            text: "Items are sorted, recorded, and organized according to established mailroom procedures.",
-          },
-          {
-            title: "Distribute",
-            text: "Mail and packages are delivered to the appropriate departments, employees, or designated locations.",
-          },
-          {
-            title: "Track & Manage",
-            text: "We maintain delivery records and monitor mailroom activities to improve accountability and operational efficiency.",
-          },
-        ],
-      },
-      {
-        type: "faq",
-        heading: "Frequently Asked Questions",
-        items: [
-          {
-            q: "What does Hazel India's mailroom service include?",
-            a: "Our services include mail receiving, sorting, distribution, courier coordination, parcel management, and mailroom tracking.",
-          },
-          {
-            q: "Can Hazel India manage incoming and outgoing mail?",
-            a: "Yes. Our teams can manage both incoming and outgoing mail and courier activities based on your facility's requirements.",
-          },
-          {
-            q: "Can mailroom services be combined with other facility services?",
-            a: "Yes. Mailroom operations can be integrated with housekeeping, concierge, security, MEP, and other facility management services.",
-          },
-        ],
-      },
-    ],
-  },
-  "concierge-services-in-hyderabad": {
-    slug: "concierge-services-in-hyderabad",
-    path: "/pages/concierge-services-in-hyderabad",
-    title: "Concierge Services",
-    visible: true,
-    header: {
-      eyebrow: "Professional Service, Welcoming Experiences",
-      heading: "Concierge Services in Hyderabad",
-      description: "Create a polished and welcoming environment with professional concierge services that assist visitors, employees, and guests while keeping everyday workplace interactions smooth and organized.",
-    },
-    sections: [
-      {
-        type: "text",
-        heading: "A better first impression.",
-        body: "Trained front-of-house hosts for reception, visitors, and day-to-day workplace support.",
-        highlights: [
-            "Reception & front desk",
-            "Visitor assistance",
-            "Guest coordination",
-            "Day-to-day front-of-house support",
-          ],
-      },
-      {
-        type: "cards",
-        heading: "Why Businesses Choose Hazel India",
-        items: [
-          {
-            icon: "Sparkles",
-            title: "Professional First Impressions",
-            text: "Create a welcoming environment with trained concierge professionals who represent your facility with confidence and professionalism.",
-          },
-          {
-            icon: "Compass",
-            title: "Visitor Assistance",
-            text: "Provide visitors and guests with helpful guidance, information, directions, and support throughout their experience.",
-          },
-          {
-            icon: "Building2",
-            title: "Smooth Front-of-House Operations",
-            text: "Keep reception and visitor-facing activities organized with structured processes and responsive support.",
-          },
-          {
-            icon: "Handshake",
-            title: "Personalized Service",
-            text: "Deliver attentive assistance based on the needs of your employees, visitors, guests, and facility.",
-          },
-          {
-            icon: "BadgeCheck",
-            title: "Reliable Support",
-            text: "Maintain consistent front-of-house service through trained personnel, defined procedures, and professional supervision.",
-          },
-          {
-            icon: "Layers",
-            title: "Integrated Facility Support",
-            text: "Combine concierge services with housekeeping, mailroom, security, MEP, and other facility management services through one partner.",
-          },
-        ],
-      },
-      {
-        type: "cards",
-        heading: "Our Concierge Services",
-        items: [
-          {
-            icon: "Bell",
-            title: "Reception & Front Desk Support",
-            text: "Professional front-desk assistance for welcoming visitors, handling basic inquiries, and supporting everyday reception activities.",
-          },
-          {
-            icon: "Compass",
-            title: "Visitor Assistance",
-            text: "Guide visitors and guests with directions, information, facility guidance, and general assistance throughout their visit.",
-          },
-          {
-            icon: "Handshake",
-            title: "Guest Management",
-            text: "Support guest arrivals and departures while helping create a smooth and professional visitor experience.",
-          },
-          {
-            icon: "Info",
-            title: "Information & Assistance",
-            text: "Provide timely information and practical assistance to employees, visitors, and guests based on facility requirements.",
-          },
-          {
-            icon: "Calendar",
-            title: "Appointment & Access Coordination",
-            text: "Support scheduled visits and coordinate with relevant teams to help ensure smooth visitor movement and access.",
-          },
-          {
-            icon: "Building2",
-            title: "Front-of-House Coordination",
-            text: "Coordinate day-to-day reception and concierge activities to maintain an organized, responsive, and welcoming environment.",
-          },
-        ],
-      },
-      {
-        type: "cards",
-        heading: "Concierge Management for Every Facility",
-        items: [
-          {
-            icon: "Building2",
-            title: "Corporate Offices",
-            text: "Professional concierge and reception support that creates a welcoming experience for employees, clients, and business visitors.",
-          },
-          {
-            icon: "Briefcase",
-            title: "IT Parks & Co-Working Spaces",
-            text: "Front-of-house assistance for high-occupancy workplaces with frequent visitors, meetings, and guest interactions.",
-          },
-          {
-            icon: "Home",
-            title: "Residential Communities",
-            text: "Concierge support for residents and visitors, including reception assistance, information, and community front-desk coordination.",
-          },
-          {
-            icon: "Store",
-            title: "Commercial Facilities",
-            text: "Professional guest and visitor assistance for commercial buildings and customer-facing environments.",
+            text: "Guest-facing reception with organised document and courier workflows.",
           },
           {
             icon: "Hotel",
-            title: "Hotels & Hospitality Spaces",
-            text: "Front-of-house support focused on welcoming guests and maintaining smooth day-to-day visitor interactions.",
-          },
-          {
-            icon: "Hospital",
-            title: "Healthcare & Institutional Facilities",
-            text: "Organized reception and visitor assistance designed around the specific requirements of busy institutional environments.",
+            title: "Hospitality & Institutional Sites",
+            text: "Polished front-of-house service tuned to visitor volume and operating hours.",
           },
         ],
       },
       {
         type: "steps",
-        heading: "From welcoming guests to seamless experiences.",
+        heading: "From first welcome to final delivery.",
         items: [
           {
             title: "Understand",
-            text: "We understand your facility, visitor profile, operating hours, service expectations, and front-of-house requirements.",
+            text: "We map visitor flow, mail volume, operating hours, and front-of-house expectations for your site.",
           },
           {
             title: "Prepare",
-            text: "We establish service procedures, assign trained personnel, and prepare the concierge team for your facility.",
+            text: "Trained hosts are deployed with clear SOPs for reception, mail handling, and escalations.",
           },
           {
-            title: "Assist",
-            text: "Our team welcomes visitors, provides information, coordinates requests, and supports day-to-day front-of-house activities.",
+            title: "Operate",
+            text: "Daily concierge and mailroom routines keep guests welcomed and deliveries accounted for.",
           },
           {
-            title: "Monitor & Improve",
-            text: "We monitor service quality, gather feedback, and continuously improve the visitor experience and front-of-house operations.",
+            title: "Improve",
+            text: "We review service quality, tracking gaps, and visitor feedback to refine the operation.",
           },
         ],
       },
@@ -673,16 +501,16 @@ export const servicePages = {
         heading: "Frequently Asked Questions",
         items: [
           {
-            q: "What does Hazel India's concierge service include?",
-            a: "Our concierge services include reception support, visitor assistance, guest management, information support, coordination, and front-of-house services.",
+            q: "What does Hazel India's mailroom and concierge service include?",
+            a: "It covers reception and visitor support, mail receiving and sorting, courier coordination, parcel management, and front-of-house tracking.",
           },
           {
-            q: "Can concierge services be customized?",
-            a: "Yes. We tailor concierge services to your facility, visitor volume, operating hours, and specific service requirements.",
+            q: "Can mailroom and concierge be staffed as one team?",
+            a: "Yes. Many workplaces run both functions through a shared front-of-house team sized to visitor and delivery volume.",
           },
           {
-            q: "Can concierge services be combined with other facility services?",
-            a: "Yes. Concierge services can be integrated with housekeeping, mailroom, security, MEP, and other facility management services.",
+            q: "Can this service be combined with other facility services?",
+            a: "Yes. Mailroom and concierge integrate with housekeeping, security, MEP, F&B, and full IFM programmes.",
           },
         ],
       },
@@ -1189,6 +1017,699 @@ export const servicePages = {
       },
     ],
   },
+
+  "waste-management-services-in-hyderabad": {
+    slug: "waste-management-services-in-hyderabad",
+    path: "/pages/waste-management-services-in-hyderabad",
+    title: "Waste Management Services",
+    visible: true,
+    header: {
+      eyebrow: "Cleaner Sites, Lighter Footprints",
+      heading: "Waste Management in Hyderabad",
+      description: "Reduce landfill impact with structured segregation, recycling, composting, and diversion programmes designed for offices, campuses, factories, and communities.",
+    },
+    sections: [
+      {
+        type: "text",
+        heading: "Waste handled with accountability.",
+        body: "Source segregation, responsible disposal, and clear diversion reporting — so your facility meets hygiene and sustainability goals.",
+        highlights: [
+          "Source segregation",
+          "Recycling & composting",
+          "Vendor coordination",
+          "Diversion reporting",
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Why Businesses Choose Hazel India",
+        items: [
+          {
+            icon: "Recycle",
+            title: "Structured Segregation",
+            text: "Colour-coded streams and on-site habits that keep wet, dry, and hazardous waste separated from day one.",
+          },
+          {
+            icon: "Leaf",
+            title: "Sustainability Outcomes",
+            text: "Programmes designed to raise diversion rates and reduce landfill dependency over time.",
+          },
+          {
+            icon: "HardHat",
+            title: "Trained Waste Teams",
+            text: "Staff trained in safe handling, hygiene protocols, and facility-specific disposal rules.",
+          },
+          {
+            icon: "BarChart3",
+            title: "Measurable Reporting",
+            text: "Track volumes, diversion, and pickup cycles with reporting you can share with stakeholders.",
+          },
+          {
+            icon: "Shield",
+            title: "Compliant Handling",
+            text: "Responsible coordination for general, recyclable, and sensitive waste streams as required by site policy.",
+          },
+          {
+            icon: "Layers",
+            title: "Integrated Facility Support",
+            text: "Combine waste programmes with housekeeping, pest control, landscaping, and IFM under one partner.",
+          },
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Our Waste Management Services",
+        items: [
+          {
+            icon: "ClipboardList",
+            title: "Waste Audits",
+            text: "Baseline assessments of waste streams, bin placement, and current disposal practices.",
+          },
+          {
+            icon: "Recycle",
+            title: "Source Segregation",
+            text: "Bin systems, signage, and staff routines that keep streams clean and recoverable.",
+          },
+          {
+            icon: "Truck",
+            title: "Collection & Pickup Coordination",
+            text: "Scheduled collection with authorised vendors for recyclables, organics, and residual waste.",
+          },
+          {
+            icon: "Sprout",
+            title: "Composting Support",
+            text: "Organic waste pathways for campuses and facilities that can support composting programmes.",
+          },
+          {
+            icon: "FileText",
+            title: "Diversion Reporting",
+            text: "Clear monthly summaries of volumes diverted versus sent to landfill.",
+          },
+          {
+            icon: "RefreshCw",
+            title: "Continuous Improvement",
+            text: "Periodic reviews to reduce contamination and improve recovery rates.",
+          },
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Waste Solutions for Every Environment",
+        items: [
+          {
+            icon: "Building2",
+            title: "Corporate Offices",
+            text: "Desk-side and pantry segregation with clean common-area waste stations.",
+          },
+          {
+            icon: "Briefcase",
+            title: "IT Parks & Campuses",
+            text: "Multi-building waste logistics with consistent streams across tenants and shared areas.",
+          },
+          {
+            icon: "Factory",
+            title: "Manufacturing & Factories",
+            text: "Industrial waste coordination aligned to production floors, stores, and utility areas.",
+          },
+          {
+            icon: "Home",
+            title: "Residential Communities",
+            text: "Society-level segregation, composting support, and resident awareness routines.",
+          },
+          {
+            icon: "Package",
+            title: "Warehouses & Logistics",
+            text: "Packaging waste recovery and dock-side disposal discipline for high-volume sites.",
+          },
+          {
+            icon: "Hospital",
+            title: "High-Care Facilities",
+            text: "Careful stream handling designed around hygiene and controlled environments.",
+          },
+        ],
+      },
+      {
+        type: "steps",
+        heading: "From audit to measurable diversion.",
+        items: [
+          {
+            title: "Audit",
+            text: "We map waste streams, contamination points, and current vendor arrangements.",
+          },
+          {
+            title: "Design",
+            text: "We set segregation layouts, schedules, and roles that fit your facility operations.",
+          },
+          {
+            title: "Operate",
+            text: "Trained teams run daily collection, staging, and pickup coordination.",
+          },
+          {
+            title: "Report & Improve",
+            text: "We share diversion data and refine the programme to raise recovery over time.",
+          },
+        ],
+      },
+      {
+        type: "faq",
+        heading: "Frequently Asked Questions",
+        items: [
+          {
+            q: "What waste management services does Hazel India provide?",
+            a: "We provide waste audits, source segregation, collection coordination, composting support, and diversion reporting for facilities in Hyderabad.",
+          },
+          {
+            q: "Can waste programmes support ESG reporting?",
+            a: "Yes. We can provide monthly diversion summaries and operational data that support internal ESG and sustainability reporting.",
+          },
+          {
+            q: "Can waste management be combined with other facility services?",
+            a: "Yes. Waste programmes work best alongside housekeeping, pest control, landscaping, and full IFM contracts.",
+          },
+        ],
+      },
+    ],
+  },
+  "food-and-beverage-services-in-hyderabad": {
+    slug: "food-and-beverage-services-in-hyderabad",
+    path: "/pages/food-and-beverage-services-in-hyderabad",
+    title: "Food & Beverage Services",
+    visible: true,
+    header: {
+      eyebrow: "Hospitality That Keeps Work Moving",
+      heading: "Food & Beverage Services in Hyderabad",
+      description: "Pantry, cafeteria, and workplace F&B support that keeps employees refreshed while maintaining hygiene, hospitality standards, and smooth daily operations.",
+    },
+    sections: [
+      {
+        type: "text",
+        heading: "Workplace hospitality, done right.",
+        body: "From pantry service to cafeteria support, Hazel India runs F&B operations that feel welcoming and stay operationally tight.",
+        highlights: [
+          "Pantry & cafeteria support",
+          "Hygiene-led service",
+          "Trained hospitality staff",
+          "Shift-aligned coverage",
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Why Businesses Choose Hazel India",
+        items: [
+          {
+            icon: "UtensilsCrossed",
+            title: "Reliable F&B Operations",
+            text: "Consistent pantry and cafeteria support that employees can count on every workday.",
+          },
+          {
+            icon: "Shield",
+            title: "Hygiene First",
+            text: "Service routines designed around food-safe handling, clean counters, and tidy service areas.",
+          },
+          {
+            icon: "HardHat",
+            title: "Trained Hospitality Teams",
+            text: "Staff trained in guest service, pantry workflows, and workplace etiquette.",
+          },
+          {
+            icon: "Clock",
+            title: "Coverage That Fits Shifts",
+            text: "Service windows aligned to office hours, peaks, and multi-shift campuses.",
+          },
+          {
+            icon: "ClipboardList",
+            title: "Clear Operating Standards",
+            text: "Defined checklists for setup, replenishment, closing, and escalation.",
+          },
+          {
+            icon: "Layers",
+            title: "Integrated Facility Support",
+            text: "Combine F&B with housekeeping, waste, concierge, and IFM under one accountable partner.",
+          },
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Our Food & Beverage Services",
+        items: [
+          {
+            icon: "Coffee",
+            title: "Pantry Management",
+            text: "Tea, coffee, water, and pantry replenishment with tidy, guest-ready service points.",
+          },
+          {
+            icon: "UtensilsCrossed",
+            title: "Cafeteria Support",
+            text: "Service-line support, dining-area upkeep coordination, and meal-time hospitality.",
+          },
+          {
+            icon: "Bell",
+            title: "Meeting & Guest Service",
+            text: "Refreshment support for meetings, visitors, and executive hospitality needs.",
+          },
+          {
+            icon: "ClipboardList",
+            title: "Inventory & Replenishment",
+            text: "Stock checks and reorder routines so pantry essentials stay available.",
+          },
+          {
+            icon: "Sparkles",
+            title: "Service Area Hygiene",
+            text: "Continuous cleanliness for counters, utensils, and F&B touchpoints.",
+          },
+          {
+            icon: "Settings",
+            title: "Custom F&B Programmes",
+            text: "Manpower and service design tailored to offices, parks, and industrial campuses.",
+          },
+        ],
+      },
+      {
+        type: "cards",
+        heading: "F&B Support for Every Workplace",
+        items: [
+          {
+            icon: "Building2",
+            title: "Corporate Offices",
+            text: "Pantry hosts and refreshment support for multi-floor workplaces.",
+          },
+          {
+            icon: "Briefcase",
+            title: "IT Parks & Co-Working",
+            text: "High-footfall cafeteria and pantry coverage for dense campuses.",
+          },
+          {
+            icon: "Factory",
+            title: "Industrial Campuses",
+            text: "Shift-friendly F&B support for plant offices and staff dining areas.",
+          },
+          {
+            icon: "Hotel",
+            title: "Guest-Facing Facilities",
+            text: "Polished hospitality service for receptions, lounges, and visitor zones.",
+          },
+        ],
+      },
+      {
+        type: "steps",
+        heading: "From brief to everyday hospitality.",
+        items: [
+          {
+            title: "Understand",
+            text: "We review occupancy, service windows, menu style, and hospitality expectations.",
+          },
+          {
+            title: "Staff & Set Up",
+            text: "Trained F&B teams are deployed with clear pantry and cafeteria standards.",
+          },
+          {
+            title: "Serve Daily",
+            text: "Pantry, cafeteria, and guest service run to schedule with hygiene checkpoints.",
+          },
+          {
+            title: "Review",
+            text: "We refine coverage, stock, and service quality based on feedback and footfall.",
+          },
+        ],
+      },
+      {
+        type: "faq",
+        heading: "Frequently Asked Questions",
+        items: [
+          {
+            q: "What food and beverage services does Hazel India provide?",
+            a: "We provide pantry management, cafeteria support, meeting refreshments, inventory replenishment, and hospitality staffing for workplaces in Hyderabad.",
+          },
+          {
+            q: "Can F&B services be customized for our office?",
+            a: "Yes. We tailor staffing, service hours, and pantry workflows to your occupancy, shifts, and guest needs.",
+          },
+          {
+            q: "Can F&B be combined with other facility services?",
+            a: "Yes. Food and beverage support integrates well with housekeeping, waste management, concierge, and full IFM programmes.",
+          },
+        ],
+      },
+    ],
+  },
+  "ambulance-and-paramedic-services-in-hyderabad": {
+    slug: "ambulance-and-paramedic-services-in-hyderabad",
+    path: "/pages/ambulance-and-paramedic-services-in-hyderabad",
+    title: "Ambulance & Emergency Preparedness",
+    visible: true,
+    header: {
+      eyebrow: "When Every Second Matters",
+      heading: "Ambulance & Emergency Preparedness in Hyderabad",
+      description: "Robust emergency response for workplaces — ambulance-ready medical support, trained emergency personnel, and preparedness programmes that protect people and keep sites ready for the unexpected.",
+    },
+    sections: [
+      {
+        type: "text",
+        heading: "Always ready when emergencies strike.",
+        body: "Life-threatening situations demand immediate, decisive action. Hazel India builds workplace emergency readiness with medical response capability, clear command protocols, and practised preparedness — so your facility can act fast when it matters.",
+        highlights: [
+          "Emergency medical services",
+          "Ambulance-ready response",
+          "Fire & evacuation preparedness",
+          "Drills, training & protocols",
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Three pillars of workplace emergency readiness",
+        items: [
+          {
+            icon: "Ambulance",
+            title: "Emergency Medical Services",
+            text: "Trained emergency medical personnel, first response, and ambulance coordination so medical emergencies get prompt on-site care and hospital transfer support.",
+          },
+          {
+            icon: "Shield",
+            title: "Emergency Preparedness",
+            text: "Site emergency plans covering medical incidents, fire safety, and evacuation — with defined roles, assembly points, and escalation pathways.",
+          },
+          {
+            icon: "Radio",
+            title: "Response Coordination",
+            text: "Call handling, dispatch discipline, and communication protocols that keep responders, security, and facility teams aligned under pressure.",
+          },
+          {
+            icon: "HardHat",
+            title: "Trained Response Teams",
+            text: "Emergency personnel prepared for workplace incidents — calm under pressure, clear in procedure, and practised through regular drills.",
+          },
+          {
+            icon: "ClipboardList",
+            title: "HSE-Aligned Protocols",
+            text: "Response plans written to complement your HSE policy, site risk profile, and statutory safety requirements.",
+          },
+          {
+            icon: "Layers",
+            title: "Integrated with IFM",
+            text: "Emergency readiness delivered alongside security, facility operations, and full IFM — one accountable partner when seconds count.",
+          },
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Our Ambulance & Emergency Preparedness Services",
+        items: [
+          {
+            icon: "HeartPulse",
+            title: "On-Site Emergency Medical Standby",
+            text: "Qualified emergency medical personnel posted on campus for immediate first response during operating hours and critical shifts.",
+          },
+          {
+            icon: "Ambulance",
+            title: "Ambulance Support & Transfer Coordination",
+            text: "Ambulance-ready pathways for patient stabilisation support and coordinated transfer to appropriate medical facilities.",
+          },
+          {
+            icon: "BadgeCheck",
+            title: "First Response & Stabilisation",
+            text: "Structured first-aid and emergency care protocols for injuries, medical episodes, and workplace trauma incidents.",
+          },
+          {
+            icon: "Flame",
+            title: "Fire Safety & Evacuation Planning",
+            text: "Evacuation routes, assembly points, fire-warden roles, and site procedures designed for a fast, orderly response.",
+          },
+          {
+            icon: "Calendar",
+            title: "Emergency Drills & Training",
+            text: "Regular drills and training sessions so employees and response teams know what to do before a real emergency happens.",
+          },
+          {
+            icon: "Radio",
+            title: "Dispatch & Communication Protocols",
+            text: "Clear call handling, escalation trees, and on-site communication so the right help is mobilised without delay.",
+          },
+          {
+            icon: "FileText",
+            title: "Incident Documentation & Review",
+            text: "Records that support HSE reporting, insurance needs, post-incident review, and continuous improvement.",
+          },
+          {
+            icon: "Settings",
+            title: "Site-Specific Emergency Programmes",
+            text: "Coverage sized to your risk profile, headcount, shift pattern, and industry — from offices to industrial campuses.",
+          },
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Emergency readiness for every environment",
+        items: [
+          {
+            icon: "Building2",
+            title: "Corporate Offices",
+            text: "Medical standby, visitor-area readiness, and evacuation planning for dense multi-floor workplaces.",
+          },
+          {
+            icon: "Briefcase",
+            title: "IT Parks & Campuses",
+            text: "Campus-scale emergency plans, shared medical cover, and coordinated response across buildings.",
+          },
+          {
+            icon: "Factory",
+            title: "Manufacturing & Factories",
+            text: "Shift-aligned medical standby and preparedness for higher-risk industrial floors and plant zones.",
+          },
+          {
+            icon: "Package",
+            title: "Warehouses & Logistics",
+            text: "Emergency protocols for dock, storage, and high-movement environments with clear escalation paths.",
+          },
+          {
+            icon: "Home",
+            title: "Residential Communities",
+            text: "Emergency medical support and community readiness plans for gated societies and large campuses.",
+          },
+          {
+            icon: "Hotel",
+            title: "Events & High-Occupancy Days",
+            text: "Temporary ambulance and medical cover for town halls, conferences, and peak occupancy periods.",
+          },
+        ],
+      },
+      {
+        type: "steps",
+        heading: "From preparedness plan to proven response.",
+        items: [
+          {
+            title: "Assess risk",
+            text: "We review site hazards, occupancy, shift patterns, access routes, and existing emergency protocols.",
+          },
+          {
+            title: "Build the plan",
+            text: "We define medical standby, ambulance pathways, fire and evacuation procedures, and communication trees.",
+          },
+          {
+            title: "Deploy & drill",
+            text: "Trained teams go live, equipment and protocols are set, and drills keep everyone response-ready.",
+          },
+          {
+            title: "Respond & improve",
+            text: "During incidents we execute the plan — then review outcomes to strengthen readiness for next time.",
+          },
+        ],
+      },
+      {
+        type: "faq",
+        heading: "Frequently Asked Questions",
+        items: [
+          {
+            q: "What does Hazel India's ambulance and emergency preparedness service include?",
+            a: "It covers on-site emergency medical standby, first response, ambulance transfer coordination, fire and evacuation planning, emergency drills and training, dispatch protocols, and incident documentation for facilities in Hyderabad.",
+          },
+          {
+            q: "Is this only ambulance support, or full emergency preparedness?",
+            a: "Both. We combine ambulance-ready medical response with workplace emergency preparedness — including fire safety planning, evacuation procedures, and regular drills — similar to how leading IFM partners structure emergency readiness.",
+          },
+          {
+            q: "Can coverage run across shifts and events?",
+            a: "Yes. Standby and preparedness programmes can be planned for office hours, night shifts, plant operations, and temporary high-occupancy events.",
+          },
+          {
+            q: "Can this be part of a larger IFM contract?",
+            a: "Yes. Ambulance and emergency preparedness integrate with security, facility operations, and full IFM programmes under one accountable partner.",
+          },
+        ],
+      },
+    ],
+  },
+  "employee-transportation-services-in-hyderabad": {
+    slug: "employee-transportation-services-in-hyderabad",
+    path: "/pages/employee-transportation-services-in-hyderabad",
+    title: "Employee Transportation Services",
+    visible: true,
+    header: {
+      eyebrow: "Safer Commutes, Smoother Shifts",
+      heading: "Employee Transportation in Hyderabad",
+      description: "Staff commute, shift shuttle, and campus transport programmes that help employees arrive on time with safer, better-coordinated routes.",
+    },
+    sections: [
+      {
+        type: "text",
+        heading: "Transport that respects your roster.",
+        body: "Route planning, shift shuttles, and commute coordination designed around attendance patterns and workplace safety.",
+        highlights: [
+          "Staff commute programmes",
+          "Shift shuttle support",
+          "Route coordination",
+          "Attendance-aligned coverage",
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Why Businesses Choose Hazel India",
+        items: [
+          {
+            icon: "Bus",
+            title: "Reliable Staff Mobility",
+            text: "Commute and shuttle support that helps teams reach work on time across Hyderabad routes.",
+          },
+          {
+            icon: "Clock",
+            title: "Shift-Ready Scheduling",
+            text: "Transport windows aligned to office hours, night shifts, and staggered start times.",
+          },
+          {
+            icon: "Shield",
+            title: "Safer Travel Practices",
+            text: "Driver and vehicle coordination with attention to employee safety and site access rules.",
+          },
+          {
+            icon: "ClipboardList",
+            title: "Clear Route Planning",
+            text: "Pickup points and routes designed around employee clusters and campus gates.",
+          },
+          {
+            icon: "BarChart3",
+            title: "Operational Visibility",
+            text: "Simple tracking of trips, occupancy, and exception handling for facility teams.",
+          },
+          {
+            icon: "Layers",
+            title: "Integrated Facility Support",
+            text: "Combine transport with logistics, security, and IFM for one accountable workplace partner.",
+          },
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Our Employee Transportation Services",
+        items: [
+          {
+            icon: "Bus",
+            title: "Daily Staff Commute",
+            text: "Home-to-office and return commute programmes for regular workforce movement.",
+          },
+          {
+            icon: "Timer",
+            title: "Shift Shuttle Services",
+            text: "Dedicated shuttles for early, late, and rotating shift patterns.",
+          },
+          {
+            icon: "Compass",
+            title: "Route Design & Pickup Points",
+            text: "Practical routes and stops mapped to employee density and site access.",
+          },
+          {
+            icon: "Building2",
+            title: "Campus Transport",
+            text: "Inter-building or gate-to-facility movement for large multi-site campuses.",
+          },
+          {
+            icon: "FileText",
+            title: "Trip Coordination & Logs",
+            text: "Day-to-day coordination support with records that help operations stay organised.",
+          },
+          {
+            icon: "Settings",
+            title: "Custom Transport Programmes",
+            text: "Fleet and manpower models tailored to headcount, geography, and shift load.",
+          },
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Transport Solutions for Every Workplace",
+        items: [
+          {
+            icon: "Building2",
+            title: "Corporate Offices",
+            text: "Weekday commute support for office teams across Hyderabad corridors.",
+          },
+          {
+            icon: "Briefcase",
+            title: "IT Parks & Campuses",
+            text: "High-volume shuttle programmes for dense tech parks and shared campuses.",
+          },
+          {
+            icon: "Factory",
+            title: "Manufacturing & Factories",
+            text: "Shift transport for plant staff with early and late operating windows.",
+          },
+          {
+            icon: "Package",
+            title: "Warehouses & Logistics Hubs",
+            text: "Roster-based transport for distribution centres and multi-shift warehouses.",
+          },
+          {
+            icon: "Home",
+            title: "Residential Communities",
+            text: "Community shuttle options where employers or societies need organised mobility.",
+          },
+          {
+            icon: "Hotel",
+            title: "Events & Temporary Cover",
+            text: "Short-term transport support for offsites, audits, and peak occupancy days.",
+          },
+        ],
+      },
+      {
+        type: "steps",
+        heading: "From roster to reliable routes.",
+        items: [
+          {
+            title: "Map",
+            text: "We review headcount, shift patterns, residential clusters, and campus access points.",
+          },
+          {
+            title: "Plan",
+            text: "Routes, pickup points, and vehicle capacity are designed around your roster.",
+          },
+          {
+            title: "Operate",
+            text: "Daily commute and shuttle runs stay coordinated with site security and facility teams.",
+          },
+          {
+            title: "Optimise",
+            text: "We refine routes and timing based on occupancy, delays, and employee feedback.",
+          },
+        ],
+      },
+      {
+        type: "faq",
+        heading: "Frequently Asked Questions",
+        items: [
+          {
+            q: "What employee transportation services does Hazel India provide?",
+            a: "We provide staff commute programmes, shift shuttles, campus transport, route planning, and trip coordination for workplaces in Hyderabad.",
+          },
+          {
+            q: "Can transport be aligned to night shifts?",
+            a: "Yes. Shuttle and commute coverage can be designed for early, late, and rotating shift patterns.",
+          },
+          {
+            q: "Can employee transportation be part of IFM?",
+            a: "Yes. Transport programmes can be integrated with logistics, security, and broader facility management contracts.",
+          },
+        ],
+      },
+    ],
+  },
   "ifm-services": {
     slug: "ifm-services",
     path: "/pages/ifm-services",
@@ -1203,12 +1724,12 @@ export const servicePages = {
       {
         type: "text",
         heading: "One partner. Every facility need.",
-        body: "Housekeeping, MEP, landscaping, security, and more — coordinated under one accountable team.",
+        body: "Housekeeping, MEP, landscaping, waste, F&B, emergency preparedness, transport, mailroom & concierge, logistics and more — coordinated under one accountable team.",
         highlights: [
             "Housekeeping & soft services",
-            "MEP & technical upkeep",
-            "Landscaping & grounds",
-            "Security, mail & logistics",
+            "MEP, waste & green ops",
+            "F&B, transport & emergency preparedness",
+            "Mailroom, concierge & logistics",
           ],
       },
       {
@@ -1240,16 +1761,34 @@ export const servicePages = {
             href: "/pages/pest-control-services-in-hyderabad",
           },
           {
-            icon: "Mail",
-            title: "Mailroom Services",
-            text: "Our professional mailroom services help businesses manage incoming and outgoing mail, parcels, courier deliveries, and internal document distribution efficiently. Our trained staff ensures timely handling, sorting, tracking, and delivery of important packages across your facility.",
-            href: "/pages/mailroom-services-in-hyderabad",
+            icon: "Recycle",
+            title: "Waste Management",
+            text: "Structured segregation, recycling, composting support, and diversion reporting that help facilities reduce landfill impact and meet sustainability goals.",
+            href: "/pages/waste-management-services-in-hyderabad",
           },
           {
-            icon: "Bell",
-            title: "Concierge Services",
-            text: "Our concierge services provide professional front-of-house support for employees, visitors, clients, and guests. From visitor assistance and reception support to information and coordination, our team helps create a welcoming and organized workplace experience.",
-            href: "/pages/concierge-services-in-hyderabad",
+            icon: "UtensilsCrossed",
+            title: "Food & Beverage",
+            text: "Pantry, cafeteria, and workplace hospitality support that keeps teams refreshed with hygiene-led service standards.",
+            href: "/pages/food-and-beverage-services-in-hyderabad",
+          },
+          {
+            icon: "Ambulance",
+            title: "Ambulance & Emergency Preparedness",
+            text: "Emergency medical standby, ambulance-ready response, fire and evacuation planning, drills, and dispatch protocols — so workplaces stay ready when every second matters.",
+            href: "/pages/ambulance-and-paramedic-services-in-hyderabad",
+          },
+          {
+            icon: "Bus",
+            title: "Employee Transportation",
+            text: "Staff commute, shift shuttle, and campus transport programmes coordinated around your roster and operating hours.",
+            href: "/pages/employee-transportation-services-in-hyderabad",
+          },
+          {
+            icon: "Mail",
+            title: "Mailroom & Concierge",
+            text: "One front-of-house team for reception, visitor support, mail, parcels, and courier coordination — keeping workplaces welcoming and organised.",
+            href: "/pages/mailroom-services-in-hyderabad",
           },
           {
             icon: "Truck",

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { solutions } from "@/content/site";
 import { AnimatedContent, BlurText, FadeContent } from "@/components/react-bits";
+import { IfmGroupPortrait } from "@/components/sections/IfmGroupPortrait";
 
 /**
  * Follows the pinned hero. Its negative top margin lets the sheet rise over the film's
@@ -42,6 +43,8 @@ export function FacilitySolutions() {
             </p>
           </FadeContent>
         </div>
+
+        <IfmGroupPortrait className="mt-10 md:mt-14" />
 
         <ul className="mt-10 grid gap-5 sm:grid-cols-2 md:mt-14 lg:grid-cols-4 lg:gap-6">
           {solutions.items.map((item, i) => (

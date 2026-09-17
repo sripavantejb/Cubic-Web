@@ -12,13 +12,11 @@ export const servicePageMedia = {
   },
   "mailroom-services-in-hyderabad": {
     hero: "/images/services/mailroom-active.jpg",
-    heroAlt: "Hazel India mailroom staff sorting parcels in a green HI uniform",
-    gallery: ["/images/services/mailroom-active.jpg"],
-  },
-  "concierge-services-in-hyderabad": {
-    hero: "/images/services/concierge-active.jpg",
-    heroAlt: "Hazel India concierge assisting a visitor at reception in a green HI uniform",
-    gallery: ["/images/services/concierge-active.jpg"],
+    heroAlt: "Hazel India mailroom and concierge staff supporting workplace operations",
+    gallery: [
+      "/images/services/mailroom-active.jpg",
+      "/images/services/concierge-active.jpg",
+    ],
   },
   "mechanical-electrical-plumbing-services-in-hyderabad": {
     hero: "/images/services/mep-active.jpg",
@@ -38,17 +36,40 @@ export const servicePageMedia = {
     heroAlt: "Hazel India logistics staff moving materials with a pallet jack in a green HI uniform",
     gallery: ["/images/services/logistics-active.jpg"],
   },
+  "waste-management-services-in-hyderabad": {
+    hero: "/images/services/waste.jpg",
+    heroAlt: "Hazel India waste management team in green HI uniforms",
+    gallery: ["/images/services/waste.jpg", "/images/waste-2.jpg", "/images/waste-3.jpg"],
+  },
+  "food-and-beverage-services-in-hyderabad": {
+    hero: "/images/interior.jpg",
+    heroAlt: "Workplace pantry and hospitality space ready for food and beverage service",
+    gallery: ["/images/interior.jpg", "/images/interior-2.jpg", "/images/office-3.jpg"],
+  },
+  "ambulance-and-paramedic-services-in-hyderabad": {
+    hero: "/images/people.jpg",
+    heroAlt: "Trained emergency response team ready to support workplace safety and preparedness",
+    gallery: ["/images/people.jpg", "/images/people-2.jpg"],
+  },
+  "employee-transportation-services-in-hyderabad": {
+    hero: "/images/city.jpg",
+    heroAlt: "Urban commute routes supporting employee transportation programmes",
+    gallery: ["/images/city.jpg", "/images/city-2.jpg", "/images/services/logistics-active.jpg"],
+  },
   "ifm-services": {
     hero: "/images/services/ifm.jpg",
-    heroAlt: "Hazel India IFM supervisors in green HI uniforms",
+    heroAlt: "Hazel India IFM team — integrated facility management across every service line",
     gallery: [
       "/images/services/housekeeping-active.jpg",
       "/images/services/mep-active.jpg",
       "/images/services/landscaping.jpg",
       "/images/services/pest-active.jpg",
+      "/images/services/waste.jpg",
       "/images/services/mailroom-active.jpg",
       "/images/services/concierge-active.jpg",
       "/images/services/logistics-active.jpg",
+      "/images/services/security.jpg",
+      "/images/people.jpg",
     ],
   },
 } as const;

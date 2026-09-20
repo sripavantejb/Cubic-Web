@@ -4,11 +4,13 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useRef,
   useState,
   type ReactNode,
 } from "react";
+import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
 import { useGSAP } from "@gsap/react";
@@ -39,6 +41,7 @@ export function AppProviders({ children }: { children: ReactNode }) {
   const reduced = usePrefersReducedMotion();
   const [ready, setReady] = useState(false);
   const lenisRef = useRef<Lenis | null>(null);
+  const pathname = usePathname();
 
   const completeLoader = useCallback(() => setReady(true), []);
   const openContact = useCallback(() => {
@@ -107,6 +110,37 @@ export function AppProviders({ children }: { children: ReactNode }) {
     const id = window.setTimeout(() => ScrollTrigger.refresh(), 80);
     return () => window.clearTimeout(id);
   }, { dependencies: [ready] });
+
+  // Every route opens at the top. Clicking a link already did, but the browser
+  // restores a remembered offset on reload and on back/forward, which drops you
+  // partway down a page you have not just been reading. `scrollRestoration` is a
+  // property of the current history entry rather than the document, so each route
+  // has to opt out as it is entered.
+  //
+  // Going through ScrollTrigger rather than assigning to `history` directly: it
+  // snapshots scrollRestoration when it initialises and writes that snapshot back
+  // on every refresh, so a plain assignment gets reverted by the next refresh.
+  const firstRoute = useRef(true);
+  useEffect(() => {
+    ScrollTrigger.clearScrollMemory("manual");
+
+    // A fresh load already starts at the top, and skipping the first run leaves an
+    // incoming `/#section` deep link to resolve its own position.
+    if (firstRoute.current) {
+      firstRoute.current = false;
+      return;
+    }
+    // A hash link resolves its own position; leave it alone.
+    if (window.location.hash) return;
+
+    // Lenis drives the scroll position itself, so the window alone is not enough.
+    lenisRef.current?.scrollTo(0, { immediate: true, force: true });
+    window.scrollTo(0, 0);
+
+    // The incoming page's triggers have to measure against the reset position.
+    const id = window.requestAnimationFrame(() => ScrollTrigger.refresh());
+    return () => window.cancelAnimationFrame(id);
+  }, [pathname]);
 
   // Honor deep links like `/#machinery` when arriving from a service page.
   useGSAP(() => {

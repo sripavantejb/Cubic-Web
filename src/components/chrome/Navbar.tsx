@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
-import { faq, nav, pricing, problem, site, siteWalkthrough, trustStrip } from "@/content/site";
+import { faq, nav, problem, site, siteWalkthrough, trustStrip } from "@/content/site";
 import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/brand/Logo";
@@ -50,15 +50,6 @@ const panels: Record<string, Panel> = {
       label: image.alt,
       href: "#walkthrough",
       text: "Tap to expand in the site gallery.",
-    })),
-  },
-  "#pricing": {
-    eyebrow: pricing.eyebrow,
-    heading: pricing.heading,
-    items: pricing.models.map((model) => ({
-      label: model.title,
-      href: "#pricing",
-      text: `Best for: ${model.bestFor}. ${model.text}`,
     })),
   },
   "#faq": {

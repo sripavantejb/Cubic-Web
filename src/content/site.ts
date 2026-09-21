@@ -28,7 +28,6 @@ export const nav = {
     { label: "Why Hazel", href: "#problem" },
     { label: "Transparency", href: "#trust" },
     { label: "How it works", href: "#walkthrough" },
-    { label: "Pricing", href: "#pricing" },
     { label: "FAQ", href: "#faq" },
     { label: "Career", href: "/careers" },
     { label: "Contact Us", href: "#contact" },

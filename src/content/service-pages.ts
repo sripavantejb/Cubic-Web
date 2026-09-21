@@ -24,42 +24,6 @@ export const servicePages = {
       },
       {
         type: "cards",
-        heading: "Why Businesses Choose Hazel India",
-        items: [
-          {
-            icon: "Wrench",
-            title: "Reliable Facility Operations",
-            text: "Keep your workplace running smoothly with trained teams, preventive maintenance, structured processes, and responsive facility support.",
-          },
-          {
-            icon: "CircleDollarSign",
-            title: "Cost & Resource Efficiency",
-            text: "Optimize manpower, energy, equipment, and resources to improve operational efficiency and reduce unnecessary facility costs.",
-          },
-          {
-            icon: "Shield",
-            title: "Safety & Compliance",
-            text: "Maintain safer, healthier facilities with trained personnel, preventive practices, hygiene standards, and compliance-focused operations.",
-          },
-          {
-            icon: "Radio",
-            title: "Technology-Driven Management",
-            text: "Gain better visibility and control through digital monitoring, preventive maintenance, service tracking, reporting, and performance insights.",
-          },
-          {
-            icon: "Leaf",
-            title: "Sustainable Operations",
-            text: "Improve environmental performance through responsible waste management, resource conservation, sustainable landscaping, and energy-efficient practices.",
-          },
-          {
-            icon: "Layers",
-            title: "One Integrated Partner",
-            text: "Manage multiple facility requirements through one accountable partner, with coordinated services, consistent standards, and scalable solutions across locations.",
-          },
-        ],
-      },
-      {
-        type: "cards",
         heading: "Our Facility Management Services",
         items: [
           {
@@ -91,6 +55,42 @@ export const servicePages = {
             icon: "Recycle",
             title: "Waste Management",
             text: "Source segregation, waste collection, recycling, disposal, and sustainable waste management solutions.",
+          },
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Why Businesses Choose Hazel India",
+        items: [
+          {
+            icon: "Wrench",
+            title: "Reliable Facility Operations",
+            text: "Keep your workplace running smoothly with trained teams, preventive maintenance, structured processes, and responsive facility support.",
+          },
+          {
+            icon: "CircleDollarSign",
+            title: "Cost & Resource Efficiency",
+            text: "Optimize manpower, energy, equipment, and resources to improve operational efficiency and reduce unnecessary facility costs.",
+          },
+          {
+            icon: "Shield",
+            title: "Safety & Compliance",
+            text: "Maintain safer, healthier facilities with trained personnel, preventive practices, hygiene standards, and compliance-focused operations.",
+          },
+          {
+            icon: "Radio",
+            title: "Technology-Driven Management",
+            text: "Gain better visibility and control through digital monitoring, preventive maintenance, service tracking, reporting, and performance insights.",
+          },
+          {
+            icon: "Leaf",
+            title: "Sustainable Operations",
+            text: "Improve environmental performance through responsible waste management, resource conservation, sustainable landscaping, and energy-efficient practices.",
+          },
+          {
+            icon: "Layers",
+            title: "One Integrated Partner",
+            text: "Manage multiple facility requirements through one accountable partner, with coordinated services, consistent standards, and scalable solutions across locations.",
           },
         ],
       },
@@ -196,42 +196,6 @@ export const servicePages = {
       },
       {
         type: "cards",
-        heading: "Why Businesses Choose Hazel India",
-        items: [
-          {
-            icon: "Trees",
-            title: "Professional Grounds Care",
-            text: "Keep lawns, gardens, plants, and outdoor areas healthy and well-maintained through regular landscaping and grounds care.",
-          },
-          {
-            icon: "Leaf",
-            title: "Sustainable Landscaping",
-            text: "Use native plants, resource-efficient practices, and sustainable landscape solutions to reduce water consumption and environmental impact.",
-          },
-          {
-            icon: "Calendar",
-            title: "Consistent Maintenance",
-            text: "Follow planned maintenance schedules for lawns, gardens, plants, trees, and other outdoor spaces throughout the year.",
-          },
-          {
-            icon: "Droplets",
-            title: "Water-Efficient Solutions",
-            text: "Improve water use through rainwater systems, efficient irrigation practices, and landscaping approaches designed around local conditions.",
-          },
-          {
-            icon: "Sprout",
-            title: "Healthier Green Spaces",
-            text: "Create greener surroundings that improve the appearance, comfort, and environmental quality of your property.",
-          },
-          {
-            icon: "Layers",
-            title: "One Integrated Partner",
-            text: "Combine landscaping with housekeeping, MEP, waste management, security, and other facility services through one coordinated partner.",
-          },
-        ],
-      },
-      {
-        type: "cards",
         heading: "Our Landscaping Services",
         items: [
           {
@@ -263,6 +227,42 @@ export const servicePages = {
             icon: "Mountain",
             title: "Grounds Management",
             text: "Comprehensive care of outdoor areas, pathways, green spaces, and surrounding grounds to maintain a clean and welcoming property.",
+          },
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Why Businesses Choose Hazel India",
+        items: [
+          {
+            icon: "Trees",
+            title: "Professional Grounds Care",
+            text: "Keep lawns, gardens, plants, and outdoor areas healthy and well-maintained through regular landscaping and grounds care.",
+          },
+          {
+            icon: "Leaf",
+            title: "Sustainable Landscaping",
+            text: "Use native plants, resource-efficient practices, and sustainable landscape solutions to reduce water consumption and environmental impact.",
+          },
+          {
+            icon: "Calendar",
+            title: "Consistent Maintenance",
+            text: "Follow planned maintenance schedules for lawns, gardens, plants, trees, and other outdoor spaces throughout the year.",
+          },
+          {
+            icon: "Droplets",
+            title: "Water-Efficient Solutions",
+            text: "Improve water use through rainwater systems, efficient irrigation practices, and landscaping approaches designed around local conditions.",
+          },
+          {
+            icon: "Sprout",
+            title: "Healthier Green Spaces",
+            text: "Create greener surroundings that improve the appearance, comfort, and environmental quality of your property.",
+          },
+          {
+            icon: "Layers",
+            title: "One Integrated Partner",
+            text: "Combine landscaping with housekeeping, MEP, waste management, security, and other facility services through one coordinated partner.",
           },
         ],
       },
@@ -368,42 +368,6 @@ export const servicePages = {
       },
       {
         type: "cards",
-        heading: "Why Businesses Choose Hazel India",
-        items: [
-          {
-            icon: "Bell",
-            title: "Professional First Impressions",
-            text: "Trained concierge hosts who welcome visitors and represent your workplace with confidence.",
-          },
-          {
-            icon: "Mailbox",
-            title: "Organized Mail Handling",
-            text: "Structured receiving, sorting, and distribution for letters, documents, parcels, and courier deliveries.",
-          },
-          {
-            icon: "Lock",
-            title: "Secure Handling",
-            text: "Controlled processes for important documents and packages designed to reduce loss and misplacement.",
-          },
-          {
-            icon: "Compass",
-            title: "Visitor Assistance",
-            text: "Directions, information, and guest support that keep arrivals and meetings running smoothly.",
-          },
-          {
-            icon: "HardHat",
-            title: "Trained Front-of-House Teams",
-            text: "Personnel skilled in both reception hospitality and everyday mailroom operations.",
-          },
-          {
-            icon: "Layers",
-            title: "Integrated Facility Support",
-            text: "Combine mailroom and concierge with housekeeping, MEP, security, and other workplace services through one partner.",
-          },
-        ],
-      },
-      {
-        type: "cards",
         heading: "Our Mailroom & Concierge Services",
         items: [
           {
@@ -435,6 +399,42 @@ export const servicePages = {
             icon: "FolderOpen",
             title: "Records & Tracking",
             text: "Maintain clear logs of mail, parcels, and front-desk handoffs for better accountability.",
+          },
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Why Businesses Choose Hazel India",
+        items: [
+          {
+            icon: "Bell",
+            title: "Professional First Impressions",
+            text: "Trained concierge hosts who welcome visitors and represent your workplace with confidence.",
+          },
+          {
+            icon: "Mailbox",
+            title: "Organized Mail Handling",
+            text: "Structured receiving, sorting, and distribution for letters, documents, parcels, and courier deliveries.",
+          },
+          {
+            icon: "Lock",
+            title: "Secure Handling",
+            text: "Controlled processes for important documents and packages designed to reduce loss and misplacement.",
+          },
+          {
+            icon: "Compass",
+            title: "Visitor Assistance",
+            text: "Directions, information, and guest support that keep arrivals and meetings running smoothly.",
+          },
+          {
+            icon: "HardHat",
+            title: "Trained Front-of-House Teams",
+            text: "Personnel skilled in both reception hospitality and everyday mailroom operations.",
+          },
+          {
+            icon: "Layers",
+            title: "Integrated Facility Support",
+            text: "Combine mailroom and concierge with housekeeping, MEP, security, and other workplace services through one partner.",
           },
         ],
       },
@@ -540,6 +540,27 @@ export const servicePages = {
       },
       {
         type: "cards",
+        heading: "What we cover",
+        items: [
+          {
+            icon: "Thermometer",
+            title: "Mechanical (HVAC) Maintenance",
+            text: "Energy-efficient HVAC design, centralized air conditioning installation, ducting and air balancing, and chiller, AHU, and VRF system maintenance.",
+          },
+          {
+            icon: "Zap",
+            title: "Electrical Maintenance",
+            text: "Energy audits, emergency backup and fire alarm systems, lighting and automation systems, power distribution and panel installation, and preventative maintenance.",
+          },
+          {
+            icon: "Droplet",
+            title: "Plumbing Services",
+            text: "Networks for water supply and distribution, drainage, sump and sewage systems, integration of rainwater harvesting, and maintenance and operations of pump rooms.",
+          },
+        ],
+      },
+      {
+        type: "cards",
         heading: "Why Businesses Choose Hazel India",
         items: [
           {
@@ -571,27 +592,6 @@ export const servicePages = {
             icon: "Radio",
             title: "Smart Technical Management",
             text: "Use monitoring, maintenance data, and predictive insights to improve visibility and make technical operations more proactive.",
-          },
-        ],
-      },
-      {
-        type: "cards",
-        heading: "What we cover",
-        items: [
-          {
-            icon: "Thermometer",
-            title: "Mechanical (HVAC) Maintenance",
-            text: "Energy-efficient HVAC design, centralized air conditioning installation, ducting and air balancing, and chiller, AHU, and VRF system maintenance.",
-          },
-          {
-            icon: "Zap",
-            title: "Electrical Maintenance",
-            text: "Energy audits, emergency backup and fire alarm systems, lighting and automation systems, power distribution and panel installation, and preventative maintenance.",
-          },
-          {
-            icon: "Droplet",
-            title: "Plumbing Services",
-            text: "Networks for water supply and distribution, drainage, sump and sewage systems, integration of rainwater harvesting, and maintenance and operations of pump rooms.",
           },
         ],
       },
@@ -697,42 +697,6 @@ export const servicePages = {
       },
       {
         type: "cards",
-        heading: "Why Businesses Choose Hazel India",
-        items: [
-          {
-            icon: "Target",
-            title: "Effective Pest Management",
-            text: "Identify and control pest activity with structured treatment plans designed around your property's specific requirements.",
-          },
-          {
-            icon: "Shield",
-            title: "Preventive Protection",
-            text: "Go beyond one-time treatment with regular inspections and preventive measures that help reduce recurring pest problems.",
-          },
-          {
-            icon: "Droplets",
-            title: "Safe & Responsible Practices",
-            text: "Use professionally managed treatment methods with appropriate precautions to protect occupants, employees, and property.",
-          },
-          {
-            icon: "HardHat",
-            title: "Trained Professionals",
-            text: "Our teams follow structured procedures for inspection, treatment, monitoring, and follow-up pest management.",
-          },
-          {
-            icon: "Clock",
-            title: "Minimal Disruption",
-            text: "Plan pest control activities around your operating hours and site requirements to minimize disruption to daily operations.",
-          },
-          {
-            icon: "Layers",
-            title: "Integrated Facility Support",
-            text: "Combine pest control with housekeeping, landscaping, MEP, waste management, and other facility services through one coordinated partner.",
-          },
-        ],
-      },
-      {
-        type: "cards",
         heading: "Our Pest Control Services",
         items: [
           {
@@ -764,6 +728,42 @@ export const servicePages = {
             icon: "FileText",
             title: "Treatment Documentation",
             text: "Detailed records of inspections, treatments, and results for better pest management.",
+          },
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Why Businesses Choose Hazel India",
+        items: [
+          {
+            icon: "Target",
+            title: "Effective Pest Management",
+            text: "Identify and control pest activity with structured treatment plans designed around your property's specific requirements.",
+          },
+          {
+            icon: "Shield",
+            title: "Preventive Protection",
+            text: "Go beyond one-time treatment with regular inspections and preventive measures that help reduce recurring pest problems.",
+          },
+          {
+            icon: "Droplets",
+            title: "Safe & Responsible Practices",
+            text: "Use professionally managed treatment methods with appropriate precautions to protect occupants, employees, and property.",
+          },
+          {
+            icon: "HardHat",
+            title: "Trained Professionals",
+            text: "Our teams follow structured procedures for inspection, treatment, monitoring, and follow-up pest management.",
+          },
+          {
+            icon: "Clock",
+            title: "Minimal Disruption",
+            text: "Plan pest control activities around your operating hours and site requirements to minimize disruption to daily operations.",
+          },
+          {
+            icon: "Layers",
+            title: "Integrated Facility Support",
+            text: "Combine pest control with housekeeping, landscaping, MEP, waste management, and other facility services through one coordinated partner.",
           },
         ],
       },
@@ -869,42 +869,6 @@ export const servicePages = {
       },
       {
         type: "cards",
-        heading: "Why Businesses Choose Hazel India",
-        items: [
-          {
-            icon: "Truck",
-            title: "Efficient Material Movement",
-            text: "Keep materials, documents, and items moving smoothly between designated locations with organized handling and coordination.",
-          },
-          {
-            icon: "Layers",
-            title: "Better Operational Coordination",
-            text: "Coordinate receiving, movement, storage, and dispatch activities through structured processes and clear responsibilities.",
-          },
-          {
-            icon: "HardHat",
-            title: "Trained Logistics Teams",
-            text: "Deploy trained personnel to handle routine logistics activities safely, efficiently, and according to site requirements.",
-          },
-          {
-            icon: "Timer",
-            title: "Timely Handling",
-            text: "Reduce unnecessary delays by managing internal movement, receiving, and dispatch activities through planned workflows.",
-          },
-          {
-            icon: "BarChart3",
-            title: "Improved Visibility",
-            text: "Maintain better control over logistics activities through organized records, tracking, and operational reporting.",
-          },
-          {
-            icon: "Layers",
-            title: "One Integrated Partner",
-            text: "Combine logistics support with housekeeping, mailroom, concierge, MEP, security, and other facility management services.",
-          },
-        ],
-      },
-      {
-        type: "cards",
         heading: "Our Logistics Services",
         items: [
           {
@@ -936,6 +900,42 @@ export const servicePages = {
             icon: "Truck",
             title: "Delivery Coordination",
             text: "Coordinate scheduled deliveries, internal distribution, and movement activities to help keep daily operations on track.",
+          },
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Why Businesses Choose Hazel India",
+        items: [
+          {
+            icon: "Truck",
+            title: "Efficient Material Movement",
+            text: "Keep materials, documents, and items moving smoothly between designated locations with organized handling and coordination.",
+          },
+          {
+            icon: "Layers",
+            title: "Better Operational Coordination",
+            text: "Coordinate receiving, movement, storage, and dispatch activities through structured processes and clear responsibilities.",
+          },
+          {
+            icon: "HardHat",
+            title: "Trained Logistics Teams",
+            text: "Deploy trained personnel to handle routine logistics activities safely, efficiently, and according to site requirements.",
+          },
+          {
+            icon: "Timer",
+            title: "Timely Handling",
+            text: "Reduce unnecessary delays by managing internal movement, receiving, and dispatch activities through planned workflows.",
+          },
+          {
+            icon: "BarChart3",
+            title: "Improved Visibility",
+            text: "Maintain better control over logistics activities through organized records, tracking, and operational reporting.",
+          },
+          {
+            icon: "Layers",
+            title: "One Integrated Partner",
+            text: "Combine logistics support with housekeeping, mailroom, concierge, MEP, security, and other facility management services.",
           },
         ],
       },
@@ -1042,42 +1042,6 @@ export const servicePages = {
       },
       {
         type: "cards",
-        heading: "Why Businesses Choose Hazel India",
-        items: [
-          {
-            icon: "Recycle",
-            title: "Structured Segregation",
-            text: "Colour-coded streams and on-site habits that keep wet, dry, and hazardous waste separated from day one.",
-          },
-          {
-            icon: "Leaf",
-            title: "Sustainability Outcomes",
-            text: "Programmes designed to raise diversion rates and reduce landfill dependency over time.",
-          },
-          {
-            icon: "HardHat",
-            title: "Trained Waste Teams",
-            text: "Staff trained in safe handling, hygiene protocols, and facility-specific disposal rules.",
-          },
-          {
-            icon: "BarChart3",
-            title: "Measurable Reporting",
-            text: "Track volumes, diversion, and pickup cycles with reporting you can share with stakeholders.",
-          },
-          {
-            icon: "Shield",
-            title: "Compliant Handling",
-            text: "Responsible coordination for general, recyclable, and sensitive waste streams as required by site policy.",
-          },
-          {
-            icon: "Layers",
-            title: "Integrated Facility Support",
-            text: "Combine waste programmes with housekeeping, pest control, landscaping, and IFM under one partner.",
-          },
-        ],
-      },
-      {
-        type: "cards",
         heading: "Our Waste Management Services",
         items: [
           {
@@ -1109,6 +1073,42 @@ export const servicePages = {
             icon: "RefreshCw",
             title: "Continuous Improvement",
             text: "Periodic reviews to reduce contamination and improve recovery rates.",
+          },
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Why Businesses Choose Hazel India",
+        items: [
+          {
+            icon: "Recycle",
+            title: "Structured Segregation",
+            text: "Colour-coded streams and on-site habits that keep wet, dry, and hazardous waste separated from day one.",
+          },
+          {
+            icon: "Leaf",
+            title: "Sustainability Outcomes",
+            text: "Programmes designed to raise diversion rates and reduce landfill dependency over time.",
+          },
+          {
+            icon: "HardHat",
+            title: "Trained Waste Teams",
+            text: "Staff trained in safe handling, hygiene protocols, and facility-specific disposal rules.",
+          },
+          {
+            icon: "BarChart3",
+            title: "Measurable Reporting",
+            text: "Track volumes, diversion, and pickup cycles with reporting you can share with stakeholders.",
+          },
+          {
+            icon: "Shield",
+            title: "Compliant Handling",
+            text: "Responsible coordination for general, recyclable, and sensitive waste streams as required by site policy.",
+          },
+          {
+            icon: "Layers",
+            title: "Integrated Facility Support",
+            text: "Combine waste programmes with housekeeping, pest control, landscaping, and IFM under one partner.",
           },
         ],
       },
@@ -1214,42 +1214,6 @@ export const servicePages = {
       },
       {
         type: "cards",
-        heading: "Why Businesses Choose Hazel India",
-        items: [
-          {
-            icon: "UtensilsCrossed",
-            title: "Reliable F&B Operations",
-            text: "Consistent pantry and cafeteria support that employees can count on every workday.",
-          },
-          {
-            icon: "Shield",
-            title: "Hygiene First",
-            text: "Service routines designed around food-safe handling, clean counters, and tidy service areas.",
-          },
-          {
-            icon: "HardHat",
-            title: "Trained Hospitality Teams",
-            text: "Staff trained in guest service, pantry workflows, and workplace etiquette.",
-          },
-          {
-            icon: "Clock",
-            title: "Coverage That Fits Shifts",
-            text: "Service windows aligned to office hours, peaks, and multi-shift campuses.",
-          },
-          {
-            icon: "ClipboardList",
-            title: "Clear Operating Standards",
-            text: "Defined checklists for setup, replenishment, closing, and escalation.",
-          },
-          {
-            icon: "Layers",
-            title: "Integrated Facility Support",
-            text: "Combine F&B with housekeeping, waste, concierge, and IFM under one accountable partner.",
-          },
-        ],
-      },
-      {
-        type: "cards",
         heading: "Our Food & Beverage Services",
         items: [
           {
@@ -1281,6 +1245,42 @@ export const servicePages = {
             icon: "Settings",
             title: "Custom F&B Programmes",
             text: "Manpower and service design tailored to offices, parks, and industrial campuses.",
+          },
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Why Businesses Choose Hazel India",
+        items: [
+          {
+            icon: "UtensilsCrossed",
+            title: "Reliable F&B Operations",
+            text: "Consistent pantry and cafeteria support that employees can count on every workday.",
+          },
+          {
+            icon: "Shield",
+            title: "Hygiene First",
+            text: "Service routines designed around food-safe handling, clean counters, and tidy service areas.",
+          },
+          {
+            icon: "HardHat",
+            title: "Trained Hospitality Teams",
+            text: "Staff trained in guest service, pantry workflows, and workplace etiquette.",
+          },
+          {
+            icon: "Clock",
+            title: "Coverage That Fits Shifts",
+            text: "Service windows aligned to office hours, peaks, and multi-shift campuses.",
+          },
+          {
+            icon: "ClipboardList",
+            title: "Clear Operating Standards",
+            text: "Defined checklists for setup, replenishment, closing, and escalation.",
+          },
+          {
+            icon: "Layers",
+            title: "Integrated Facility Support",
+            text: "Combine F&B with housekeeping, waste, concierge, and IFM under one accountable partner.",
           },
         ],
       },
@@ -1376,42 +1376,6 @@ export const servicePages = {
       },
       {
         type: "cards",
-        heading: "Three pillars of workplace emergency readiness",
-        items: [
-          {
-            icon: "Ambulance",
-            title: "Emergency Medical Services",
-            text: "Trained emergency medical personnel, first response, and ambulance coordination so medical emergencies get prompt on-site care and hospital transfer support.",
-          },
-          {
-            icon: "Shield",
-            title: "Emergency Preparedness",
-            text: "Site emergency plans covering medical incidents, fire safety, and evacuation — with defined roles, assembly points, and escalation pathways.",
-          },
-          {
-            icon: "Radio",
-            title: "Response Coordination",
-            text: "Call handling, dispatch discipline, and communication protocols that keep responders, security, and facility teams aligned under pressure.",
-          },
-          {
-            icon: "HardHat",
-            title: "Trained Response Teams",
-            text: "Emergency personnel prepared for workplace incidents — calm under pressure, clear in procedure, and practised through regular drills.",
-          },
-          {
-            icon: "ClipboardList",
-            title: "HSE-Aligned Protocols",
-            text: "Response plans written to complement your HSE policy, site risk profile, and statutory safety requirements.",
-          },
-          {
-            icon: "Layers",
-            title: "Integrated with IFM",
-            text: "Emergency readiness delivered alongside security, facility operations, and full IFM — one accountable partner when seconds count.",
-          },
-        ],
-      },
-      {
-        type: "cards",
         heading: "Our Ambulance & Emergency Preparedness Services",
         items: [
           {
@@ -1453,6 +1417,42 @@ export const servicePages = {
             icon: "Settings",
             title: "Site-Specific Emergency Programmes",
             text: "Coverage sized to your risk profile, headcount, shift pattern, and industry — from offices to industrial campuses.",
+          },
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Three pillars of workplace emergency readiness",
+        items: [
+          {
+            icon: "Ambulance",
+            title: "Emergency Medical Services",
+            text: "Trained emergency medical personnel, first response, and ambulance coordination so medical emergencies get prompt on-site care and hospital transfer support.",
+          },
+          {
+            icon: "Shield",
+            title: "Emergency Preparedness",
+            text: "Site emergency plans covering medical incidents, fire safety, and evacuation — with defined roles, assembly points, and escalation pathways.",
+          },
+          {
+            icon: "Radio",
+            title: "Response Coordination",
+            text: "Call handling, dispatch discipline, and communication protocols that keep responders, security, and facility teams aligned under pressure.",
+          },
+          {
+            icon: "HardHat",
+            title: "Trained Response Teams",
+            text: "Emergency personnel prepared for workplace incidents — calm under pressure, clear in procedure, and practised through regular drills.",
+          },
+          {
+            icon: "ClipboardList",
+            title: "HSE-Aligned Protocols",
+            text: "Response plans written to complement your HSE policy, site risk profile, and statutory safety requirements.",
+          },
+          {
+            icon: "Layers",
+            title: "Integrated with IFM",
+            text: "Emergency readiness delivered alongside security, facility operations, and full IFM — one accountable partner when seconds count.",
           },
         ],
       },
@@ -1562,42 +1562,6 @@ export const servicePages = {
       },
       {
         type: "cards",
-        heading: "Why Businesses Choose Hazel India",
-        items: [
-          {
-            icon: "Bus",
-            title: "Reliable Staff Mobility",
-            text: "Commute and shuttle support that helps teams reach work on time across Hyderabad routes.",
-          },
-          {
-            icon: "Clock",
-            title: "Shift-Ready Scheduling",
-            text: "Transport windows aligned to office hours, night shifts, and staggered start times.",
-          },
-          {
-            icon: "Shield",
-            title: "Safer Travel Practices",
-            text: "Driver and vehicle coordination with attention to employee safety and site access rules.",
-          },
-          {
-            icon: "ClipboardList",
-            title: "Clear Route Planning",
-            text: "Pickup points and routes designed around employee clusters and campus gates.",
-          },
-          {
-            icon: "BarChart3",
-            title: "Operational Visibility",
-            text: "Simple tracking of trips, occupancy, and exception handling for facility teams.",
-          },
-          {
-            icon: "Layers",
-            title: "Integrated Facility Support",
-            text: "Combine transport with logistics, security, and IFM for one accountable workplace partner.",
-          },
-        ],
-      },
-      {
-        type: "cards",
         heading: "Our Employee Transportation Services",
         items: [
           {
@@ -1629,6 +1593,42 @@ export const servicePages = {
             icon: "Settings",
             title: "Custom Transport Programmes",
             text: "Fleet and manpower models tailored to headcount, geography, and shift load.",
+          },
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Why Businesses Choose Hazel India",
+        items: [
+          {
+            icon: "Bus",
+            title: "Reliable Staff Mobility",
+            text: "Commute and shuttle support that helps teams reach work on time across Hyderabad routes.",
+          },
+          {
+            icon: "Clock",
+            title: "Shift-Ready Scheduling",
+            text: "Transport windows aligned to office hours, night shifts, and staggered start times.",
+          },
+          {
+            icon: "Shield",
+            title: "Safer Travel Practices",
+            text: "Driver and vehicle coordination with attention to employee safety and site access rules.",
+          },
+          {
+            icon: "ClipboardList",
+            title: "Clear Route Planning",
+            text: "Pickup points and routes designed around employee clusters and campus gates.",
+          },
+          {
+            icon: "BarChart3",
+            title: "Operational Visibility",
+            text: "Simple tracking of trips, occupancy, and exception handling for facility teams.",
+          },
+          {
+            icon: "Layers",
+            title: "Integrated Facility Support",
+            text: "Combine transport with logistics, security, and IFM for one accountable workplace partner.",
           },
         ],
       },

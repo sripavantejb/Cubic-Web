@@ -91,8 +91,10 @@ export function AppProviders({ children }: { children: ReactNode }) {
     }
 
     const lenis = new Lenis({
-      duration: 1.15,
+      duration: 1.35,
       smoothWheel: true,
+      wheelMultiplier: 0.9,
+      touchMultiplier: 1.1,
       autoRaf: false,
     });
     lenisRef.current = lenis;

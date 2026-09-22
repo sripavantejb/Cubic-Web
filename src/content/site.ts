@@ -27,7 +27,6 @@ export const nav = {
   links: [
     { label: "Why Hazel", href: "#problem" },
     { label: "Transparency", href: "#trust" },
-    { label: "How it works", href: "#walkthrough" },
     { label: "FAQ", href: "#faq" },
     { label: "Career", href: "/careers" },
     { label: "Contact Us", href: "#contact" },
@@ -267,6 +266,15 @@ export const solutions = {
       href: "/pages/logistics-services-in-hyderabad",
     },
   ],
+} as const;
+
+export const meetTeam = {
+  eyebrow: "Meet the team",
+  heading: "The people behind every Hazel site.",
+  lede: "Trained, fairly paid Hazel India teams — one accountable group across housekeeping, technical care, soft services and emergency readiness.",
+  image: "/images/services/logistics-team.jpg",
+  alt: "Hazel India team in branded uniforms posing together at a managed facility",
+  caption: "One team. Every service line.",
 } as const;
 
 export const cinema = {
@@ -548,29 +556,29 @@ export const problem = {
       icon: "ClipboardList",
       title: "No proof of work",
       text: "You pay for cleaning with no record it happened.",
-      image: "/images/process-prove.jpg",
-      alt: "Checklist and proof of completed facility work",
+      image: "/images/sensors.jpg",
+      alt: "On-site sensors and monitoring with no clear service proof for the client",
     },
     {
       icon: "Wrench",
       title: "Reactive maintenance",
       text: "Breakdowns show up as emergencies, not warnings.",
-      image: "/images/machine-plumb.jpg",
-      alt: "Facility mechanical systems needing proactive care",
+      image: "/images/services/mep-panel.jpg",
+      alt: "Technician working on building systems after a reactive maintenance call",
     },
     {
       icon: "TrendingDown",
       title: "No sustainability data",
       text: "ESG reporting means chasing five vendors for numbers.",
-      image: "/images/planet.jpg",
-      alt: "Green canopy representing missing sustainability metrics",
+      image: "/images/intelligence.jpg",
+      alt: "Operations dashboard missing clear sustainability and ESG metrics",
     },
     {
       icon: "RefreshCw",
       title: "Staff churn",
       text: "A new, untrained team every few months.",
-      image: "/images/people.jpg",
-      alt: "Facility team members at work",
+      image: "/images/people-2.jpg",
+      alt: "Facility team members whose turnover leaves sites constantly re-training",
     },
   ],
   transition:
@@ -1005,12 +1013,10 @@ export const careers = {
 } as const;
 
 export const footer = {
-  // Kept in sync with `nav.ifm` — rendered from that list in Footer.tsx
+  // Services column is rendered from `nav.ifm.items` in Footer.tsx (same as navbar).
   company: [
     { label: "Why Hazel", href: "#problem" },
     { label: "Transparency", href: "#trust" },
-    { label: "How it works", href: "#walkthrough" },
-    { label: "Pricing", href: "#pricing" },
     { label: "FAQ", href: "#faq" },
     { label: "Career", href: "/careers" },
     { label: "Contact Us", href: "#contact" },

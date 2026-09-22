@@ -17,8 +17,8 @@ const NARROW = `not all and ${WIDE}`;
 const REDUCED = "(prefers-reduced-motion: reduce)";
 
 // Seconds the film takes to catch up with the scroll position: the glide in GSAP's scrub.
-// Keep this short so the playhead stays close to the scroll; the all-intra encode seeks fast enough.
-const SCRUB_SMOOTHING = 0.45;
+// A slightly longer lag smooths frame jumps without feeling disconnected from the wheel.
+const SCRUB_SMOOTHING = 0.95;
 
 const FILM = "hero-film absolute inset-0 size-full object-cover";
 
@@ -213,7 +213,7 @@ export function Hero() {
                 before React hydrates; that attribute noise is harmless. */}
             <video
               ref={videoRef}
-              className={cn(FILM, "opacity-0 motion-reduce:hidden")}
+              className={cn(FILM, "opacity-0 motion-reduce:hidden will-change-[opacity] [transform:translateZ(0)]")}
               muted
               playsInline
               preload="auto"

@@ -1717,8 +1717,9 @@ export const servicePages = {
     visible: true,
     header: {
       eyebrow: "IFM Services",
-      heading: "Integrated Facility Management Services in Hyderabad",
-      description: "Comprehensive facility management covering housekeeping, security, maintenance, landscaping, and other essential support services for seamless daily operations.",
+      heading: "Integrated Facility Management in Hyderabad",
+      description:
+        "One accountable partner for housekeeping, MEP, landscaping, waste, F&B, emergency readiness, transport, mailroom & concierge, and logistics — coordinated under a single contract.",
     },
     sections: [
       {

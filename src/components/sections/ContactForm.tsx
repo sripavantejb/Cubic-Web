@@ -84,7 +84,7 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
         value={values[id as keyof typeof values]}
         onChange={(e) => set(id, e.target.value)}
         className={cn(
-          "mt-1 w-full border-b border-line bg-transparent py-1.5 text-[15px] outline-none transition-colors focus:border-leaf",
+          "mt-0.5 w-full border-b border-line bg-transparent py-1.5 text-[14px] outline-none transition-colors focus:border-leaf",
           errors[id] && "border-red-700",
         )}
         {...extra}
@@ -94,12 +94,12 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
   );
 
   return (
-    <form onSubmit={onSubmit} noValidate className="grid gap-4">
-      <div className={cn("grid gap-4", compact ? "sm:grid-cols-2" : "sm:grid-cols-2")}>
-        {field("name", "Name", { autoComplete: "name" })}
-        {field("company", "Company", { autoComplete: "organization" })}
-        {field("email", "Email", { type: "email", autoComplete: "email" })}
-        {field("phone", "Phone", { type: "tel", autoComplete: "tel" })}
+    <form onSubmit={onSubmit} noValidate className="grid gap-3.5">
+      <div className="grid gap-3.5 sm:grid-cols-2">
+        {field("name", "Name", { autoComplete: "name", required: true })}
+        {field("company", "Company", { autoComplete: "organization", required: true })}
+        {field("email", "Email", { type: "email", autoComplete: "email", required: true })}
+        {field("phone", "Phone", { type: "tel", autoComplete: "tel", required: true })}
         {field("city", "City (optional)", { autoComplete: "address-level2" })}
         <label className="block">
           <span className="meta text-[0.62rem] text-muted">Space type</span>
@@ -108,7 +108,7 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
             value={values.spaceType}
             onChange={(e) => set("spaceType", e.target.value)}
             className={cn(
-              "mt-1 w-full border-b border-line bg-paper py-1.5 text-[15px] outline-none focus:border-leaf",
+              "mt-0.5 w-full border-b border-line bg-transparent py-1.5 text-[14px] outline-none transition-colors focus:border-leaf",
               errors.spaceType && "border-red-700",
             )}
           >
@@ -131,9 +131,9 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
           rows={2}
           value={values.message}
           onChange={(e) => set("message", e.target.value)}
-          placeholder="A few words about your space"
+          placeholder="A few words about your space, size, and what you need"
           className={cn(
-            "mt-1 w-full resize-none border-b border-line bg-transparent py-1.5 text-[15px] outline-none focus:border-leaf",
+            "mt-0.5 w-full resize-none border-b border-line bg-transparent py-1.5 text-[14px] outline-none transition-colors focus:border-leaf",
             errors.message && "border-red-700",
           )}
         />
@@ -142,11 +142,19 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
         ) : null}
       </label>
 
-      <div className="flex flex-wrap items-center gap-3 pt-1">
-        <Button type="submit" magnetic arrow={false} disabled={status === "loading"}>
+      <div className="flex flex-col gap-2.5 pt-0.5 sm:flex-row sm:items-center sm:justify-between">
+        <Button
+          type="submit"
+          magnetic
+          arrow={false}
+          disabled={status === "loading"}
+          className="h-10 !text-[13px]"
+        >
           {status === "loading" ? "Sending…" : contact.submit}
         </Button>
-        <p className="text-[12px] text-muted">{contact.formNote}</p>
+        <p className="text-[11.5px] leading-snug text-muted sm:max-w-[16rem] sm:text-right">
+          {contact.formNote}
+        </p>
       </div>
 
       <AnimatePresence mode="wait">
@@ -155,7 +163,7 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
             key="ok"
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-[14px] text-leaf"
+            className="text-[13px] text-leaf"
           >
             Received. We&apos;ll send a free facility audit and a green plan within 48 hours.
           </motion.p>
@@ -165,7 +173,7 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
             key="err"
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-[14px] text-red-800"
+            className="text-[13px] text-red-800"
           >
             {serverError}{" "}
             <a className="underline" href={site.emailHref}>

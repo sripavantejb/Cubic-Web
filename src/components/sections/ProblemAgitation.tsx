@@ -6,27 +6,29 @@ import { AnimatedContent, BlurText, FadeContent } from "@/components/react-bits"
 
 export function ProblemAgitation() {
   return (
-    <section id="problem" className="section-x section-y bg-paper">
+    <section id="problem" className="section-x bg-paper py-16 md:py-24">
       <div className="mx-auto max-w-[1440px]">
-        <FadeContent>
-          <p className="meta text-leaf">{problem.eyebrow}</p>
-        </FadeContent>
-        <BlurText
-          as="h2"
-          text={problem.heading}
-          className="mt-3 max-w-[18ch] text-[clamp(1.85rem,4vw,3.25rem)] leading-[1.05] font-semibold tracking-[-0.03em] text-hero-ink"
-        />
-        <FadeContent delay={0.12} className="mt-5">
-          <p className="max-w-[46rem] text-[16px] leading-relaxed text-muted md:text-[18px]">
-            {problem.body}
-          </p>
-        </FadeContent>
+        <div className="max-w-[46rem]">
+          <FadeContent>
+            <p className="meta text-leaf">{problem.eyebrow}</p>
+          </FadeContent>
+          <BlurText
+            as="h2"
+            text={problem.heading}
+            className="mt-3 text-[clamp(1.7rem,3.4vw,2.65rem)] leading-[1.06] font-semibold tracking-[-0.03em] text-hero-ink"
+          />
+          <FadeContent delay={0.1} className="mt-4">
+            <p className="text-[15px] leading-relaxed text-muted md:text-[16px]">
+              {problem.body}
+            </p>
+          </FadeContent>
+        </div>
 
-        <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4">
+        <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:mt-12 lg:grid-cols-4 lg:gap-5">
           {problem.pains.map((pain, i) => (
-            <AnimatedContent key={pain.title} delay={i * 0.08} distance={36}>
-              <li className="overflow-hidden rounded-[20px] bg-white ring-1 ring-hero-ink/8">
-                <div className="relative aspect-[4/3] bg-mint">
+            <AnimatedContent key={pain.title} delay={i * 0.06} distance={28}>
+              <li className="flex h-full flex-col overflow-hidden rounded-[18px] bg-white ring-1 ring-hero-ink/8">
+                <div className="relative aspect-[16/11] bg-mint">
                   <Image
                     src={pain.image}
                     alt={pain.alt}
@@ -35,19 +37,24 @@ export function ProblemAgitation() {
                     className="object-cover"
                   />
                 </div>
-                <div className="p-5 md:p-6">
-                  <h3 className="text-[15px] font-semibold tracking-tight text-hero-ink">
+                <div className="flex flex-1 flex-col px-4 py-4 md:px-5 md:py-5">
+                  <span className="font-mono text-[11px] tracking-[0.14em] text-leaf/70">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-2 text-[15px] leading-snug font-semibold tracking-tight text-hero-ink md:text-[16px]">
                     {pain.title}
                   </h3>
-                  <p className="mt-1.5 text-[14px] leading-relaxed text-muted">{pain.text}</p>
+                  <p className="mt-1.5 text-[13.5px] leading-relaxed text-muted md:text-[14px]">
+                    {pain.text}
+                  </p>
                 </div>
               </li>
             </AnimatedContent>
           ))}
         </ul>
 
-        <FadeContent delay={0.1} className="mt-10 md:mt-14">
-          <p className="max-w-[40rem] border-l-2 border-leaf pl-4 text-[16px] leading-relaxed font-medium text-hero-ink md:text-[18px]">
+        <FadeContent delay={0.12} className="mt-10 md:mt-12">
+          <p className="max-w-[38rem] border-l-2 border-leaf pl-4 text-[15px] leading-relaxed font-medium text-hero-ink md:pl-5 md:text-[16px]">
             {problem.transition}
           </p>
         </FadeContent>

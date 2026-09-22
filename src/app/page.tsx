@@ -2,9 +2,10 @@ import { Navbar } from "@/components/chrome/Navbar";
 import { Footer } from "@/components/chrome/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { FacilitySolutions } from "@/components/sections/FacilitySolutions";
+import { MeetTheTeam } from "@/components/sections/MeetTheTeam";
+import { IfmGroupPortrait } from "@/components/sections/IfmGroupPortrait";
 import { ProblemAgitation } from "@/components/sections/ProblemAgitation";
 import { TrustStrip } from "@/components/sections/TrustStrip";
-import { SiteWalkthrough } from "@/components/sections/SiteWalkthrough";
 import { PricingModels } from "@/components/sections/PricingModels";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { LeadForm } from "@/components/sections/LeadForm";
@@ -22,9 +23,10 @@ export default function Home() {
       <main>
         <Hero />
         <FacilitySolutions />
+        <MeetTheTeam />
+        <IfmGroupPortrait asSection />
         <ProblemAgitation />
         <TrustStrip />
-        <SiteWalkthrough />
         <PricingModels />
         <FaqSection />
         <LeadForm />

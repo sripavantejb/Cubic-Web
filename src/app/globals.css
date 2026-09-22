@@ -57,6 +57,7 @@
   --font-mono: var(--font-geist-mono);
   --font-deva: var(--font-deva);
   --animate-marquee: marquee 42s linear infinite;
+  --animate-marquee-reverse: marquee 42s linear infinite reverse;
 }
 
 html {
@@ -72,11 +73,18 @@ body {
 
 @keyframes marquee {
   from {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
+}
+
+.animate-marquee,
+.animate-marquee-reverse {
+  will-change: transform;
+  backface-visibility: hidden;
+  animation-play-state: running;
 }
 
 @keyframes trace {
@@ -188,12 +196,12 @@ body {
    after hydration and the browser can restore the scroll position on reload. */
 .hero-track {
   /* Extra scroll room = fewer seeks per pixel of scroll = smoother scrub. */
-  height: 420svh;
+  height: 500svh;
 }
 
 @media (min-width: 768px) and (min-aspect-ratio: 5/4) {
   .hero-track {
-    height: 480svh;
+    height: 580svh;
   }
 }
 

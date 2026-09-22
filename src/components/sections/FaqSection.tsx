@@ -11,68 +11,78 @@ export function FaqSection() {
   const [open, setOpen] = useState(0);
 
   return (
-    <section id="faq" className="section-x section-y bg-paper">
-      <div className="mx-auto grid max-w-[1440px] gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
-        <div>
+    <section id="faq" className="section-x bg-paper py-16 md:py-24">
+      <div className="mx-auto max-w-[1440px]">
+        <div className="max-w-[40rem]">
           <FadeContent>
             <p className="meta text-leaf">{faq.eyebrow}</p>
           </FadeContent>
           <BlurText
             as="h2"
             text={faq.heading}
-            className="mt-3 max-w-[12ch] text-[clamp(1.85rem,4vw,3.25rem)] leading-[1.05] font-semibold tracking-[-0.03em] text-hero-ink"
+            className="mt-3 text-[clamp(1.7rem,3.4vw,2.65rem)] leading-[1.06] font-semibold tracking-[-0.03em] text-hero-ink"
           />
-          <FadeContent delay={0.12} className="mt-8 hidden lg:block">
+        </div>
+
+        <div className="mt-10 grid items-start gap-8 lg:mt-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14 xl:gap-16">
+          <FadeContent delay={0.08} className="hidden lg:block lg:sticky lg:top-28">
             <MediaFrame
               src={faq.image}
               alt={faq.alt}
-              className="aspect-[4/5] rounded-[24px]"
-              sizes="32vw"
+              className="aspect-[5/6] max-h-[560px] rounded-[20px] md:rounded-[22px]"
+              sizes="(min-width: 1024px) 38vw, 100vw"
               kenBurns
             />
           </FadeContent>
-        </div>
 
-        <FadeContent delay={0.08}>
-          <div className="divide-y divide-hero-ink/10 border-y border-hero-ink/10">
-            {faq.items.map((item, i) => {
-              const isOpen = open === i;
-              return (
-                <AnimatedContent key={item.q} delay={i * 0.04} distance={20} duration={0.55}>
-                  <div>
-                    <button
-                      type="button"
-                      aria-expanded={isOpen}
-                      onClick={() => setOpen(isOpen ? -1 : i)}
-                      className="flex w-full items-start justify-between gap-4 py-5 text-left"
-                    >
-                      <span className="text-[16px] font-semibold tracking-tight text-hero-ink md:text-[17px]">
-                        {item.q}
-                      </span>
-                      <ChevronDown
+          <FadeContent delay={0.1}>
+            <div className="border-t border-hero-ink/10">
+              {faq.items.map((item, i) => {
+                const isOpen = open === i;
+                return (
+                  <AnimatedContent
+                    key={item.q}
+                    delay={i * 0.03}
+                    distance={16}
+                    duration={0.5}
+                  >
+                    <div className="border-b border-hero-ink/10">
+                      <button
+                        type="button"
+                        aria-expanded={isOpen}
+                        onClick={() => setOpen(isOpen ? -1 : i)}
+                        className="flex w-full items-center justify-between gap-5 py-4 text-left md:py-[1.15rem]"
+                      >
+                        <span className="pr-2 text-[15px] leading-snug font-semibold tracking-tight text-hero-ink md:text-[16px]">
+                          {item.q}
+                        </span>
+                        <ChevronDown
+                          className={cn(
+                            "size-4 shrink-0 text-hero-ink/35 transition-transform duration-200",
+                            isOpen && "rotate-180 text-leaf",
+                          )}
+                          aria-hidden="true"
+                        />
+                      </button>
+                      <div
                         className={cn(
-                          "mt-1 size-4 shrink-0 text-hero-ink/40 transition-transform duration-200",
-                          isOpen && "rotate-180",
+                          "grid transition-[grid-template-rows] duration-300 ease-out",
+                          isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
                         )}
-                        aria-hidden="true"
-                      />
-                    </button>
-                    <div
-                      className={cn(
-                        "grid transition-[grid-template-rows] duration-300",
-                        isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
-                      )}
-                    >
-                      <div className="overflow-hidden">
-                        <p className="pb-5 text-[15px] leading-relaxed text-muted">{item.a}</p>
+                      >
+                        <div className="overflow-hidden">
+                          <p className="max-w-[40rem] pb-4 text-[14px] leading-relaxed text-muted md:pb-5 md:text-[15px]">
+                            {item.a}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </AnimatedContent>
-              );
-            })}
-          </div>
-        </FadeContent>
+                  </AnimatedContent>
+                );
+              })}
+            </div>
+          </FadeContent>
+        </div>
       </div>
     </section>
   );

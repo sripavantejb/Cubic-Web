@@ -8,7 +8,7 @@ import { site } from "@/content/site";
 import { Navbar } from "@/components/chrome/Navbar";
 import { Footer } from "@/components/chrome/Footer";
 import { ServiceCardIcon } from "@/components/ui/ServiceCardIcon";
-import { IfmGroupPortrait } from "@/components/sections/IfmGroupPortrait";
+import { IfmServicesPage } from "@/components/sections/IfmServicesPage";
 
 const slugs = Object.keys(servicePages) as ServicePageSlug[];
 
@@ -39,8 +39,17 @@ export default async function ServicePage({
   const page = servicePages[slug as ServicePageSlug];
   if (!page || !page.visible) notFound();
 
+  if (slug === "ifm-services") {
+    return (
+      <>
+        <Navbar />
+        <IfmServicesPage />
+        <Footer />
+      </>
+    );
+  }
+
   const media = servicePageMedia[slug as ServiceMediaSlug];
-  let cardImageIndex = 0;
 
   return (
     <>
@@ -140,11 +149,7 @@ export default async function ServicePage({
                       </div>
                     </div>
 
-                    {slug === "ifm-services" ? (
-                      <div className="mt-10 lg:mt-0">
-                        <IfmGroupPortrait showCopy={false} />
-                      </div>
-                    ) : gallery.length > 0 ? (
+                    {gallery.length > 0 ? (
                       <div className="mt-10 space-y-5 lg:mt-0 lg:space-y-6">
                         {gallery.map((src, idx) => (
                           <div
@@ -182,30 +187,12 @@ export default async function ServicePage({
                       {section.type === "cards" && "items" in section ? (
                         <ul className="mt-8 grid gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-3">
                           {section.items.map((item) => {
-                            const useServicePhoto = Boolean(
-                              media && slug === "ifm-services" && media.gallery.length > 1,
-                            );
-                            const img = useServicePhoto
-                              ? media.gallery[cardImageIndex % media.gallery.length]
-                              : null;
-                            if (useServicePhoto) cardImageIndex += 1;
                             const href = "href" in item ? item.href : "";
                             const cardClass =
                               "group flex h-full flex-col rounded-[20px] bg-white p-5 ring-1 ring-hero-ink/8 transition-[box-shadow,transform,color] duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-24px_rgba(17,35,27,0.35)] hover:ring-leaf/25 md:p-6";
                             const inner = (
                               <>
-                                {img ? (
-                                  <div className="relative mb-4 aspect-[16/10] overflow-hidden rounded-[14px] bg-mint">
-                                    <Image
-                                      src={img}
-                                      alt={"title" in item && item.title ? item.title : ""}
-                                      fill
-                                      sizes="(min-width: 1280px) 22vw, (min-width: 640px) 40vw, 100vw"
-                                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                                    />
-                                  </div>
-                                ) : null}
-                                {"icon" in item && item.icon && !img ? (
+                                {"icon" in item && item.icon ? (
                                   <ServiceCardIcon name={item.icon} />
                                 ) : null}
                                 {"title" in item && item.title ? (

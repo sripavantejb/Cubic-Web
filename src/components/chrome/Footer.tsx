@@ -13,19 +13,18 @@ function isPageHref(href: string) {
   return href.startsWith("/") && !href.startsWith("/#");
 }
 
-const serviceLinks = [
-  { label: nav.ifm.overview.label.replace(/^See all\s+/i, ""), href: nav.ifm.overview.href },
-  ...nav.ifm.items.map(({ label, href }) => ({ label, href })),
-];
+const serviceLinks = nav.ifm.items.map(({ label, href }) => ({ label, href }));
+
+const connectLinks = [...footer.social, ...footer.portals.slice(0, 2)];
 
 function FooterLink({
   href,
   children,
   className,
 }: {
-  href: string
-  children: ReactNode
-  className?: string
+  href: string;
+  children: ReactNode;
+  className?: string;
 }) {
   const { scrollTo } = useApp();
 
@@ -83,19 +82,16 @@ function FooterLink({
   );
 }
 
-const columns = [
-  { heading: "Company", links: footer.company },
-  { heading: "Services", links: serviceLinks },
-  {
-    heading: "Connect",
-    links: [
-      { label: "Contact Us", href: "#contact" },
-      { label: "Career", href: "/careers" },
-      ...footer.social,
-      ...footer.portals.slice(0, 2),
-    ],
-  },
-] as const;
+function ColumnHeading({ children }: { children: ReactNode }) {
+  return <p className="meta mb-4 text-mist/55">{children}</p>;
+}
+
+function linkClassName(withArrow = false) {
+  return cn(
+    "group inline-flex items-center gap-1 text-[13.5px] leading-snug text-paper/60",
+    withArrow && "pr-0.5",
+  );
+}
 
 export function Footer() {
   const { openContact } = useApp();
@@ -114,8 +110,7 @@ export function Footer() {
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-mist/25 to-transparent" />
       </div>
 
-      <div className="section-x relative mx-auto max-w-[1440px] pt-14 pb-[max(1.25rem,env(safe-area-inset-bottom))] md:pt-20 md:pb-8">
-        {/* CTA band */}
+      <div className="section-x relative mx-auto max-w-[1440px] pt-14 pb-[max(1.25rem,env(safe-area-inset-bottom))] md:pt-16 md:pb-8">
         <div className="flex flex-col gap-6 border-b border-white/10 pb-10 md:flex-row md:items-end md:justify-between md:pb-12">
           <div className="max-w-[34rem]">
             <Logo className="h-14 md:h-16" />
@@ -137,102 +132,141 @@ export function Footer() {
           </button>
         </div>
 
-        {/* Link grid + contact */}
-        <div className="mt-10 grid gap-10 md:mt-14 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
-          <div className="grid grid-cols-2 gap-8 min-[520px]:grid-cols-3 sm:gap-10">
-            {columns.map((col) => (
-              <div key={col.heading}>
-                <p className="meta mb-4 text-mist/55">{col.heading}</p>
-                <ul className="space-y-2.5">
-                  {col.links.map((l) => (
-                    <li key={l.label}>
-                      <FooterLink
-                        href={l.href}
-                        className="group inline-flex items-center gap-1 text-[13.5px] text-paper/60"
-                      >
-                        <span>{l.label}</span>
-                        {isPageHref(l.href) || l.href.startsWith("http") ? (
-                          <ArrowUpRight
-                            className="size-3 opacity-0 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-70"
-                            aria-hidden="true"
-                          />
-                        ) : null}
-                      </FooterLink>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+        <div className="mt-10 grid gap-10 sm:grid-cols-2 md:mt-12 lg:grid-cols-12 lg:gap-8 xl:gap-10">
+          {/* Company */}
+          <div className="lg:col-span-2">
+            <ColumnHeading>Company</ColumnHeading>
+            <ul className="space-y-2.5">
+              {footer.company.map((l) => (
+                <li key={l.label}>
+                  <FooterLink href={l.href} className={linkClassName()}>
+                    <span>{l.label}</span>
+                  </FooterLink>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm md:p-7">
-            <p className="meta text-mist/55">Reach us</p>
-            <ul className="mt-5 space-y-4">
-              <li>
-                <a
-                  href={site.emailHref}
-                  className="group flex items-start gap-3 text-[14px] text-paper/75 transition-colors hover:text-mist"
-                >
-                  <span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-full bg-mist/10 text-mist">
-                    <Mail className="size-3.5" aria-hidden="true" />
-                  </span>
-                  <span>
-                    <span className="block text-[11px] tracking-[0.14em] text-paper/40 uppercase">
-                      Email
-                    </span>
-                    <span className="mt-0.5 block font-medium">{site.email}</span>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={site.phoneHref}
-                  className="group flex items-start gap-3 text-[14px] text-paper/75 transition-colors hover:text-mist"
-                >
-                  <span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-full bg-mist/10 text-mist">
-                    <Phone className="size-3.5" aria-hidden="true" />
-                  </span>
-                  <span>
-                    <span className="block text-[11px] tracking-[0.14em] text-paper/40 uppercase">
-                      Phone
-                    </span>
-                    <span className="mt-0.5 block font-medium">{site.phone}</span>
-                  </span>
-                </a>
-              </li>
-              <li className="flex items-start gap-3 text-[14px] text-paper/75">
-                <span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-full bg-mist/10 text-mist">
-                  <MapPin className="size-3.5" aria-hidden="true" />
-                </span>
-                <span>
-                  <span className="block text-[11px] tracking-[0.14em] text-paper/40 uppercase">
-                    Based in
-                  </span>
-                  <span className="mt-0.5 block font-medium">Hyderabad, India</span>
-                </span>
-              </li>
+          {/* Connect */}
+          <div className="lg:col-span-2">
+            <ColumnHeading>Connect</ColumnHeading>
+            <ul className="space-y-2.5">
+              {connectLinks.map((l) => (
+                <li key={l.label}>
+                  <FooterLink href={l.href} className={linkClassName(true)}>
+                    <span>{l.label}</span>
+                    {isPageHref(l.href) || l.href.startsWith("http") ? (
+                      <ArrowUpRight
+                        className="size-3 opacity-0 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-70"
+                        aria-hidden="true"
+                      />
+                    ) : null}
+                  </FooterLink>
+                </li>
+              ))}
             </ul>
+          </div>
 
-            <div className="mt-6 border-t border-white/10 pt-5">
-              <p className="text-[11px] tracking-[0.14em] text-paper/40 uppercase">
-                {footer.assocLabel}
-              </p>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {footer.assocBadges.map((badge) => (
-                  <span
-                    key={badge}
-                    className="rounded-full border border-mist/20 bg-mist/5 px-3 py-1.5 text-[11px] font-medium tracking-wide text-mist/90"
+          {/* IFM Services */}
+          <div className="sm:col-span-2 lg:col-span-5">
+            <div className="mb-4 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
+              <p className="meta text-mist/55">{nav.ifm.label}</p>
+              <FooterLink
+                href={nav.ifm.overview.href}
+                className="group inline-flex items-center gap-1 text-[12px] text-mist/70"
+              >
+                <span>{nav.ifm.overview.label}</span>
+                <ArrowUpRight
+                  className="size-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  aria-hidden="true"
+                />
+              </FooterLink>
+            </div>
+            <ul className="grid grid-cols-1 gap-x-6 gap-y-2.5 min-[480px]:grid-cols-2">
+              {serviceLinks.map((l) => (
+                <li key={l.href}>
+                  <FooterLink href={l.href} className={linkClassName(true)}>
+                    <span>{l.label}</span>
+                    <ArrowUpRight
+                      className="size-3 opacity-0 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-70"
+                      aria-hidden="true"
+                    />
+                  </FooterLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Reach us */}
+          <div className="sm:col-span-2 lg:col-span-3">
+            <div className="h-full rounded-[20px] border border-white/10 bg-white/[0.03] p-5 backdrop-blur-sm md:p-6">
+              <ColumnHeading>Reach us</ColumnHeading>
+              <ul className="space-y-4">
+                <li>
+                  <a
+                    href={site.emailHref}
+                    className="group flex items-start gap-3 text-[14px] text-paper/75 transition-colors hover:text-mist"
                   >
-                    {badge}
+                    <span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-full bg-mist/10 text-mist">
+                      <Mail className="size-3.5" aria-hidden="true" />
+                    </span>
+                    <span>
+                      <span className="block text-[11px] tracking-[0.14em] text-paper/40 uppercase">
+                        Email
+                      </span>
+                      <span className="mt-0.5 block font-medium">{site.email}</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={site.phoneHref}
+                    className="group flex items-start gap-3 text-[14px] text-paper/75 transition-colors hover:text-mist"
+                  >
+                    <span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-full bg-mist/10 text-mist">
+                      <Phone className="size-3.5" aria-hidden="true" />
+                    </span>
+                    <span>
+                      <span className="block text-[11px] tracking-[0.14em] text-paper/40 uppercase">
+                        Phone
+                      </span>
+                      <span className="mt-0.5 block font-medium">{site.phone}</span>
+                    </span>
+                  </a>
+                </li>
+                <li className="flex items-start gap-3 text-[14px] text-paper/75">
+                  <span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-full bg-mist/10 text-mist">
+                    <MapPin className="size-3.5" aria-hidden="true" />
                   </span>
-                ))}
+                  <span>
+                    <span className="block text-[11px] tracking-[0.14em] text-paper/40 uppercase">
+                      Based in
+                    </span>
+                    <span className="mt-0.5 block font-medium">Hyderabad, India</span>
+                  </span>
+                </li>
+              </ul>
+
+              <div className="mt-5 border-t border-white/10 pt-4">
+                <p className="text-[11px] tracking-[0.14em] text-paper/40 uppercase">
+                  {footer.assocLabel}
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {footer.assocBadges.map((badge) => (
+                    <span
+                      key={badge}
+                      className="rounded-full border border-mist/20 bg-mist/5 px-3 py-1.5 text-[11px] font-medium tracking-wide text-mist/90"
+                    >
+                      {badge}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Wordmark */}
-        <div className="relative mt-14 overflow-x-clip md:mt-20">
+        <div className="relative mt-12 overflow-x-clip md:mt-14">
           <p className="display select-none pb-[0.06em] text-[clamp(3.2rem,22vw,14.5rem)] leading-none tracking-[-0.06em] text-paper/[0.14]">
             <span className="relative inline-block bg-gradient-to-b from-paper/35 to-paper/[0.08] bg-clip-text text-transparent">
               HAZEL

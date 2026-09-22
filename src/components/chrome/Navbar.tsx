@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
-import { faq, nav, problem, site, siteWalkthrough, trustStrip } from "@/content/site";
+import { faq, nav, problem, site, trustStrip } from "@/content/site";
 import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/brand/Logo";
@@ -42,15 +42,6 @@ const panels: Record<string, Panel> = {
         text: trustStrip.ahead.label,
       })),
     ],
-  },
-  "#walkthrough": {
-    eyebrow: siteWalkthrough.eyebrow,
-    heading: siteWalkthrough.heading,
-    items: siteWalkthrough.images.slice(0, 6).map((image) => ({
-      label: image.alt,
-      href: "#walkthrough",
-      text: "Tap to expand in the site gallery.",
-    })),
   },
   "#faq": {
     eyebrow: faq.eyebrow,
@@ -123,10 +114,14 @@ export function Navbar() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  const go = (href: string) => {
+  const closeMenus = () => {
     setOpen(false);
     setActive(null);
     setMobileIfmOpen(false);
+  };
+
+  const go = (href: string) => {
+    closeMenus();
     if (isPageHref(href)) return;
     if (href.startsWith("#") && !onHome) {
       window.location.href = `/${href}`;
@@ -135,18 +130,26 @@ export function Navbar() {
     scrollTo(href);
   };
 
-  const openPanel = (href: string) => {
+  const openPanel = (key: string) => {
     if (closeTimer.current) window.clearTimeout(closeTimer.current);
-    setActive(href);
+    setActive(key);
   };
 
   const scheduleClose = () => {
     if (closeTimer.current) window.clearTimeout(closeTimer.current);
-    closeTimer.current = window.setTimeout(() => setActive(null), 180);
+    closeTimer.current = window.setTimeout(() => setActive(null), 160);
   };
 
   const panel = active ? panels[active] : null;
   const ifmOpen = active === IFM_KEY;
+
+  const navItemClass = (isOn: boolean) =>
+    cn(
+      "rounded-full px-3 py-2 text-[12.5px] leading-none font-medium tracking-[-0.015em] whitespace-nowrap transition-colors duration-200 xl:px-3.5 xl:text-[13px]",
+      isOn
+        ? "bg-leaf/10 text-leaf"
+        : "text-hero-ink/60 hover:bg-mint/80 hover:text-hero-ink",
+    );
 
   return (
     <header
@@ -163,8 +166,8 @@ export function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3, ease: appleEase }}
-            className="fixed inset-0 z-0 bg-ink/20"
+            transition={{ duration: 0.28, ease: appleEase }}
+            className="fixed inset-0 z-0 bg-ink/15"
             onClick={() => setActive(null)}
           />
         ) : null}
@@ -179,28 +182,29 @@ export function Navbar() {
       >
         <div
           className={cn(
-            "flex h-14 items-center gap-3 rounded-full bg-white/72 pr-2 pl-3 text-hero-ink shadow-[0_1px_2px_rgba(17,35,27,0.04),0_10px_30px_-14px_rgba(17,35,27,0.16)] ring-1 ring-hero-ink/6 backdrop-blur-md transition-[background-color,box-shadow] duration-300 md:h-16 md:gap-8 md:pr-2.5 md:pl-4",
-            scrolled && "bg-white/85 shadow-[0_1px_2px_rgba(17,35,27,0.05),0_14px_36px_-16px_rgba(17,35,27,0.22)]",
+            "flex h-[3.5rem] items-center gap-4 rounded-full bg-white/80 pr-2 pl-3.5 text-hero-ink shadow-[0_1px_2px_rgba(17,35,27,0.04),0_12px_32px_-16px_rgba(17,35,27,0.18)] ring-1 ring-hero-ink/6 backdrop-blur-md transition-[background-color,box-shadow,height] duration-300 md:h-16 md:gap-6 md:pr-2.5 md:pl-5",
+            scrolled && "bg-white/92 shadow-[0_1px_2px_rgba(17,35,27,0.05),0_16px_40px_-18px_rgba(17,35,27,0.24)]",
           )}
         >
           <Link
             href="/"
             aria-label={`${site.name} home`}
             onClick={(e) => {
-              setOpen(false);
-              setActive(null);
-              setMobileIfmOpen(false);
+              closeMenus();
               if (onHome) {
                 e.preventDefault();
                 scrollTo("#top");
               }
             }}
-            className="flex min-w-0 shrink items-center"
+            className="flex shrink-0 items-center"
           >
-            <Logo priority className="h-9 md:h-10" />
+            <Logo priority className="h-8 md:h-9" />
           </Link>
 
-          <nav className="hidden min-w-0 items-center gap-0.5 lg:flex xl:gap-1" aria-label="Primary">
+          <nav
+            className="hidden min-w-0 flex-1 items-center justify-center gap-0.5 lg:flex"
+            aria-label="Primary"
+          >
             {desktopLinks.map((link) => {
               const isOn = active === link.href;
               const hasPanel = link.href in panels;
@@ -210,11 +214,9 @@ export function Navbar() {
                   <Link
                     key={link.href + link.label}
                     href={link.href}
-                    onClick={() => {
-                      setOpen(false);
-                      setActive(null);
-                    }}
-                    className="rounded-full px-2.5 py-2 text-[13px] leading-none font-medium tracking-[-0.01em] whitespace-nowrap text-hero-ink/70 transition-colors hover:text-hero-ink xl:px-3 xl:text-[13.5px]"
+                    onMouseEnter={scheduleClose}
+                    onClick={closeMenus}
+                    className={navItemClass(false)}
                   >
                     {link.label}
                   </Link>
@@ -224,7 +226,7 @@ export function Navbar() {
               return (
                 <a
                   key={link.href + link.label}
-                  href={link.href.startsWith("#") ? `/${link.href}` : link.href}
+                  href={onHome ? link.href : `/${link.href}`}
                   aria-expanded={hasPanel ? isOn : undefined}
                   aria-haspopup={hasPanel ? "true" : undefined}
                   onMouseEnter={() => {
@@ -238,34 +240,41 @@ export function Navbar() {
                     e.preventDefault();
                     go(link.href);
                   }}
-                  className={cn(
-                    "rounded-full px-2.5 py-2 text-[13px] leading-none font-medium tracking-[-0.01em] whitespace-nowrap transition-colors xl:px-3 xl:text-[13.5px]",
-                    isOn ? "bg-hero-ink/5 text-hero-ink" : "text-hero-ink/70 hover:text-hero-ink",
-                  )}
+                  className={navItemClass(isOn)}
                 >
                   {link.label}
                 </a>
               );
             })}
 
-            <button
-              type="button"
-              aria-haspopup="true"
-              aria-expanded={ifmOpen}
-              onMouseEnter={() => openPanel(IFM_KEY)}
-              onFocus={() => openPanel(IFM_KEY)}
-              onClick={() => setActive(ifmOpen ? null : IFM_KEY)}
-              className={cn(
-                "inline-flex items-center gap-1 rounded-full px-2.5 py-2 text-[13px] leading-none font-medium tracking-[-0.01em] whitespace-nowrap transition-colors xl:px-3 xl:text-[13.5px]",
-                ifmOpen ? "bg-hero-ink/5 text-hero-ink" : "text-hero-ink/70 hover:text-hero-ink",
-              )}
-            >
-              {nav.ifm.label}
-              <ChevronDown className={cn("size-3.5 transition-transform duration-200", ifmOpen && "rotate-180")} />
-            </button>
+            <span
+              className="mx-1.5 hidden h-4 w-px bg-hero-ink/10 xl:block"
+              aria-hidden="true"
+            />
+
+            <div className="relative" onMouseEnter={() => openPanel(IFM_KEY)}>
+              <Link
+                href={nav.ifm.overview.href}
+                aria-haspopup="true"
+                aria-expanded={ifmOpen}
+                onClick={closeMenus}
+                className={cn(
+                  navItemClass(ifmOpen),
+                  "inline-flex items-center gap-1",
+                )}
+              >
+                {nav.ifm.label}
+                <ChevronDown
+                  className={cn(
+                    "size-3.5 opacity-60 transition-transform duration-200",
+                    ifmOpen && "rotate-180 opacity-100",
+                  )}
+                />
+              </Link>
+            </div>
           </nav>
 
-          <div className="ml-auto hidden items-center gap-5 lg:flex">
+          <div className="ml-auto hidden shrink-0 items-center lg:flex">
             <Button
               href={nav.cta.href}
               magnetic
@@ -273,7 +282,7 @@ export function Navbar() {
                 e.preventDefault();
                 go(nav.cta.href);
               }}
-              className="h-11 !py-0 !text-[13.5px]"
+              className="h-10 !px-5 !py-0 !text-[13px] md:h-11"
               arrow={
                 <ArrowRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
               }
@@ -284,7 +293,7 @@ export function Navbar() {
 
           <button
             type="button"
-            className="ml-auto flex size-11 shrink-0 items-center justify-center rounded-full border border-hero-ink/10 lg:hidden"
+            className="ml-auto flex size-10 shrink-0 items-center justify-center rounded-full border border-hero-ink/10 transition-colors hover:bg-mint lg:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
@@ -297,78 +306,98 @@ export function Navbar() {
           {panel ? (
             <motion.div
               key="nav-dropdown"
-              initial={{ opacity: 0, y: -10 }}
+              initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.38, ease: appleEase }}
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ duration: 0.32, ease: appleEase }}
               className="absolute inset-x-0 top-full z-20 hidden pt-2 lg:block"
             >
-              <div className="overflow-hidden rounded-[24px] bg-white/92 text-hero-ink shadow-[0_18px_50px_-20px_rgba(17,35,27,0.25)] ring-1 ring-hero-ink/6 backdrop-blur-md">
+              <div className="overflow-hidden rounded-[22px] bg-white/95 text-hero-ink shadow-[0_18px_50px_-20px_rgba(17,35,27,0.28)] ring-1 ring-hero-ink/8 backdrop-blur-md">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={active}
-                    initial={{ opacity: 0, y: 8 }}
+                    initial={{ opacity: 0, y: 6 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -6 }}
-                    transition={{ duration: 0.28, ease: appleEase }}
+                    exit={{ opacity: 0, y: -4 }}
+                    transition={{ duration: 0.24, ease: appleEase }}
                     className="px-6 py-6 md:px-8 md:py-7"
                   >
-                    <div className="mb-5 flex items-end justify-between gap-6">
+                    <div className="mb-5 flex items-end justify-between gap-6 border-b border-hero-ink/8 pb-5">
                       <div>
                         <p className="meta text-leaf">{panel.eyebrow}</p>
-                        <p className="display mt-2 max-w-[22ch] text-[clamp(1.4rem,2.4vw,2.1rem)]">{panel.heading}</p>
+                        <p className="mt-2 max-w-[28ch] text-[clamp(1.2rem,2vw,1.55rem)] leading-snug font-semibold tracking-[-0.025em] text-hero-ink">
+                          {panel.heading}
+                        </p>
                       </div>
                       {panel.exploreHref ? (
                         <Link
                           href={panel.exploreHref}
-                          onClick={() => setActive(null)}
-                          className="mb-1 hidden items-center gap-1 text-[13px] font-medium text-ink/70 hover:text-leaf xl:flex"
+                          onClick={closeMenus}
+                          className="mb-0.5 hidden items-center gap-1.5 rounded-full bg-mint px-3.5 py-2 text-[12px] font-semibold tracking-tight text-hero-ink transition-colors hover:bg-leaf/15 hover:text-leaf xl:inline-flex"
                         >
                           {nav.ifm.overview.label}
                           <ArrowUpRight className="size-3.5" />
                         </Link>
-                      ) : (
+                      ) : active ? (
                         <button
                           type="button"
-                          onClick={() => go(active!)}
-                          className="mb-1 hidden items-center gap-1 text-[13px] font-medium text-ink/70 hover:text-leaf xl:flex"
+                          onClick={() => go(active)}
+                          className="mb-0.5 hidden items-center gap-1.5 rounded-full bg-mint px-3.5 py-2 text-[12px] font-semibold tracking-tight text-hero-ink transition-colors hover:bg-leaf/15 hover:text-leaf xl:inline-flex"
                         >
-                          Explore
+                          Go to section
                           <ArrowUpRight className="size-3.5" />
                         </button>
-                      )}
+                      ) : null}
                     </div>
-                    <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-2 xl:grid-cols-3">
+
+                    <ul
+                      className={cn(
+                        "grid gap-1.5",
+                        ifmOpen
+                          ? "sm:grid-cols-2 xl:grid-cols-3"
+                          : "sm:grid-cols-2",
+                      )}
+                    >
                       {panel.items.map((item) => (
                         <li key={item.label}>
                           {isPageHref(item.href) ? (
                             <Link
                               href={item.href}
-                              onClick={() => setActive(null)}
-                              className="group block rounded-xl py-1.5 transition-colors hover:text-leaf"
+                              onClick={closeMenus}
+                              className="group flex items-start justify-between gap-3 rounded-[14px] px-3.5 py-3 transition-colors hover:bg-mint"
                             >
-                              <span className="block text-[15px] font-medium tracking-tight">{item.label}</span>
-                              {item.text ? (
-                                <span className="mt-1 block max-w-[36ch] text-[12px] leading-snug text-muted group-hover:text-ink/60">
-                                  {item.text}
+                              <span>
+                                <span className="block text-[14px] font-semibold tracking-tight text-hero-ink transition-colors group-hover:text-leaf">
+                                  {item.label}
                                 </span>
-                              ) : null}
+                                {item.text ? (
+                                  <span className="mt-1 block max-w-[36ch] text-[12.5px] leading-snug text-muted">
+                                    {item.text}
+                                  </span>
+                                ) : null}
+                              </span>
+                              <ArrowUpRight className="mt-0.5 size-3.5 shrink-0 text-hero-ink/20 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-leaf" />
                             </Link>
                           ) : (
                             <a
-                              href={item.href}
+                              href={onHome ? item.href : `/${item.href}`}
                               onClick={(e) => {
                                 e.preventDefault();
                                 go(item.href);
                               }}
-                              className="group block rounded-xl py-1.5 transition-colors hover:text-leaf"
+                              className="group flex items-start justify-between gap-3 rounded-[14px] px-3.5 py-3 transition-colors hover:bg-mint"
                             >
-                              <span className="block text-[15px] font-medium tracking-tight">{item.label}</span>
-                              {item.text ? (
-                                <span className="mt-1 block max-w-[36ch] text-[12px] leading-snug text-muted group-hover:text-ink/60">
-                                  {item.text}
+                              <span>
+                                <span className="block text-[14px] font-semibold tracking-tight text-hero-ink transition-colors group-hover:text-leaf">
+                                  {item.label}
                                 </span>
-                              ) : null}
+                                {item.text ? (
+                                  <span className="mt-1 block max-w-[36ch] text-[12.5px] leading-snug text-muted">
+                                    {item.text}
+                                  </span>
+                                ) : null}
+                              </span>
+                              <ArrowUpRight className="mt-0.5 size-3.5 shrink-0 text-hero-ink/20 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-leaf" />
                             </a>
                           )}
                         </li>
@@ -415,7 +444,7 @@ export function Navbar() {
                   >
                     <Link
                       href={link.href}
-                      onClick={() => setOpen(false)}
+                      onClick={closeMenus}
                       className="display block py-2 text-[clamp(1.65rem,8vw,3rem)] leading-[1.05]"
                     >
                       {link.label}
@@ -444,21 +473,35 @@ export function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.05 * desktopLinks.length, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               >
-                <button
-                  type="button"
-                  aria-expanded={mobileIfmOpen}
-                  onClick={() => setMobileIfmOpen((v) => !v)}
-                  className="display flex w-full items-center justify-between py-2 text-left text-[clamp(1.65rem,8vw,3rem)] leading-[1.05]"
-                >
-                  {nav.ifm.label}
-                  <ChevronDown className={cn("size-6 shrink-0 transition-transform", mobileIfmOpen && "rotate-180")} />
-                </button>
+                <div className="flex items-center justify-between gap-3 py-2">
+                  <Link
+                    href={nav.ifm.overview.href}
+                    onClick={closeMenus}
+                    className="display text-[clamp(1.65rem,8vw,3rem)] leading-[1.05]"
+                  >
+                    {nav.ifm.label}
+                  </Link>
+                  <button
+                    type="button"
+                    aria-expanded={mobileIfmOpen}
+                    aria-label="Toggle IFM services list"
+                    onClick={() => setMobileIfmOpen((v) => !v)}
+                    className="grid size-11 place-items-center rounded-full border border-paper/15"
+                  >
+                    <ChevronDown
+                      className={cn(
+                        "size-5 transition-transform",
+                        mobileIfmOpen && "rotate-180",
+                      )}
+                    />
+                  </button>
+                </div>
                 {mobileIfmOpen ? (
-                  <div className="mb-4 space-y-1">
+                  <div className="mb-4 space-y-0.5 border-t border-paper/10 pt-3">
                     <Link
                       href={nav.ifm.overview.href}
-                      onClick={() => setOpen(false)}
-                      className="block rounded-xl py-2 text-[15px] font-medium text-mist"
+                      onClick={closeMenus}
+                      className="block rounded-xl px-2 py-2.5 text-[15px] font-medium text-mist"
                     >
                       {nav.ifm.overview.label}
                     </Link>
@@ -466,11 +509,15 @@ export function Navbar() {
                       <Link
                         key={item.href}
                         href={item.href}
-                        onClick={() => setOpen(false)}
-                        className="block rounded-xl py-2"
+                        onClick={closeMenus}
+                        className="block rounded-xl px-2 py-2.5"
                       >
-                        <span className="block text-[15px] font-medium text-paper">{item.label}</span>
-                        <span className="mt-1 block text-[12px] leading-snug text-paper/55">{item.text}</span>
+                        <span className="block text-[15px] font-medium text-paper">
+                          {item.label}
+                        </span>
+                        <span className="mt-1 block text-[12px] leading-snug text-paper/55">
+                          {item.text}
+                        </span>
                       </Link>
                     ))}
                   </div>

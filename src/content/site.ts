@@ -268,6 +268,38 @@ export const solutions = {
   ],
 } as const;
 
+export const whoWeServe = {
+  eyebrow: "Who we serve",
+  heading: "Built for every kind of space.",
+  lede: "We serve residential, corporate, hospitality, industrial, healthcare, and educational sectors.",
+  items: [
+    {
+      title: "Residential",
+      text: "Apartments, villas and gated communities that need reliable day-to-day care.",
+    },
+    {
+      title: "Corporate",
+      text: "Offices, tech parks and workplaces where presentation and uptime matter.",
+    },
+    {
+      title: "Hospitality",
+      text: "Hotels, clubs and guest spaces that run on polish and consistency.",
+    },
+    {
+      title: "Industrial",
+      text: "Factories, warehouses and plants that demand technical, safety-led FM.",
+    },
+    {
+      title: "Healthcare",
+      text: "Clinics, hospitals and care facilities where hygiene standards are non-negotiable.",
+    },
+    {
+      title: "Educational",
+      text: "Schools, colleges and campuses that need safe, well-kept learning environments.",
+    },
+  ],
+} as const;
+
 export const meetTeam = {
   eyebrow: "Meet the team",
   heading: "The people behind every Hazel site.",

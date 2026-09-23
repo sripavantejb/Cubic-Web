@@ -2,6 +2,7 @@ import { Navbar } from "@/components/chrome/Navbar";
 import { Footer } from "@/components/chrome/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { FacilitySolutions } from "@/components/sections/FacilitySolutions";
+import { WhoWeServe } from "@/components/sections/WhoWeServe";
 import { MeetTheTeam } from "@/components/sections/MeetTheTeam";
 import { IfmGroupPortrait } from "@/components/sections/IfmGroupPortrait";
 import { ProblemAgitation } from "@/components/sections/ProblemAgitation";
@@ -23,6 +24,7 @@ export default function Home() {
       <main>
         <Hero />
         <FacilitySolutions />
+        <WhoWeServe />
         <MeetTheTeam />
         <IfmGroupPortrait asSection />
         <ProblemAgitation />

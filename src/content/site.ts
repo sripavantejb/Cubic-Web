@@ -276,38 +276,26 @@ export const whoWeServe = {
     {
       title: "Residential",
       text: "Apartments, villas and gated communities that need reliable day-to-day care.",
-      image: "/images/residential.jpg",
-      alt: "Calm residential interior with natural light",
     },
     {
       title: "Corporate",
       text: "Offices, tech parks and workplaces where presentation and uptime matter.",
-      image: "/images/office.jpg",
-      alt: "Contemporary corporate office interior",
     },
     {
       title: "Hospitality",
       text: "Hotels, clubs and guest spaces that run on polish and consistency.",
-      image: "/images/interior.jpg",
-      alt: "Polished hospitality interior ready for guests",
     },
     {
       title: "Industrial",
       text: "Factories, warehouses and plants that demand technical, safety-led FM.",
-      image: "/images/industrial.jpg",
-      alt: "Industrial technical facility environment",
     },
     {
       title: "Healthcare",
       text: "Clinics, hospitals and care facilities where hygiene standards are non-negotiable.",
-      image: "/images/cleaning.jpg",
-      alt: "Clean, carefully maintained healthcare-ready space",
     },
     {
       title: "Educational",
       text: "Schools, colleges and campuses that need safe, well-kept learning environments.",
-      image: "/images/architecture.jpg",
-      alt: "Campus architecture and learning environment",
     },
   ],
 } as const;

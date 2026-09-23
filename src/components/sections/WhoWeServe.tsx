@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { whoWeServe } from "@/content/site";
 import { AnimatedContent, BlurText, FadeContent } from "@/components/react-bits";
 
@@ -31,28 +30,19 @@ export function WhoWeServe() {
           </FadeContent>
         </div>
 
-        <ul className="mt-10 grid gap-5 sm:grid-cols-2 md:mt-14 lg:grid-cols-3 lg:gap-6">
+        <ul className="mt-10 grid gap-x-8 gap-y-0 sm:grid-cols-2 md:mt-14 lg:grid-cols-3">
           {whoWeServe.items.map((item, i) => (
-            <AnimatedContent key={item.title} delay={i * 0.05} distance={28}>
-              <li className="group flex h-full flex-col overflow-hidden rounded-[20px] bg-white ring-1 ring-hero-ink/8">
-                <div className="relative aspect-[4/3] overflow-hidden bg-mint">
-                  <Image
-                    src={item.image}
-                    alt={item.alt}
-                    fill
-                    sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                  />
-                  <span className="absolute top-3 left-3 rounded-full bg-white/92 px-2.5 py-1 font-mono text-[10px] tracking-[0.14em] text-hero-ink/55 backdrop-blur-sm">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                </div>
-                <div className="flex flex-1 flex-col px-4 py-4 md:px-5 md:py-5">
-                  <h3 className="text-[16px] leading-snug font-semibold tracking-tight text-hero-ink md:text-[17px]">
-                    {item.title}
-                  </h3>
-                  <p className="mt-1.5 text-[14px] leading-relaxed text-muted">{item.text}</p>
-                </div>
+            <AnimatedContent key={item.title} delay={i * 0.05} distance={24}>
+              <li className="border-t border-hero-ink/10 py-6 md:py-7">
+                <span className="font-mono text-[11px] tracking-[0.14em] text-leaf/70">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-2 text-[18px] leading-snug font-semibold tracking-tight text-hero-ink md:text-[20px]">
+                  {item.title}
+                </h3>
+                <p className="mt-2 max-w-[32ch] text-[14px] leading-relaxed text-muted md:text-[15px]">
+                  {item.text}
+                </p>
               </li>
             </AnimatedContent>
           ))}

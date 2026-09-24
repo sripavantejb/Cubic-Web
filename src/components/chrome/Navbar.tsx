@@ -5,14 +5,21 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
-import { faq, nav, problem, site, trustStrip } from "@/content/site";
+import { faq, groupByServiceCategory, nav, problem, site, trustStrip } from "@/content/site";
 import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/brand/Logo";
 import { useApp } from "@/components/providers/AppProviders";
 
 type PanelItem = { label: string; href: string; text?: string };
-type Panel = { eyebrow: string; heading: string; items: PanelItem[]; exploreHref?: string };
+type PanelGroup = { label?: string; items: PanelItem[] };
+type Panel = {
+  eyebrow: string;
+  heading: string;
+  items: PanelItem[];
+  groups?: PanelGroup[];
+  exploreHref?: string;
+};
 
 const appleEase = [0.32, 0.08, 0.24, 1] as const;
 const IFM_KEY = "ifm";
@@ -61,8 +68,18 @@ const panels: Record<string, Panel> = {
       href: item.href,
       text: item.text,
     })),
+    groups: groupByServiceCategory(nav.ifm.items).map((group) => ({
+      label: group.label,
+      items: group.items.map((item) => ({
+        label: item.label,
+        href: item.href,
+        text: item.text,
+      })),
+    })),
   },
 };
+
+const ifmGroups = groupByServiceCategory(nav.ifm.items);
 
 const desktopLinks = nav.links;
 
@@ -350,59 +367,70 @@ export function Navbar() {
                       ) : null}
                     </div>
 
-                    <ul
-                      className={cn(
-                        "grid gap-1.5",
-                        ifmOpen
-                          ? "sm:grid-cols-2 xl:grid-cols-3"
-                          : "sm:grid-cols-2",
-                      )}
-                    >
-                      {panel.items.map((item) => (
-                        <li key={item.label}>
-                          {isPageHref(item.href) ? (
-                            <Link
-                              href={item.href}
-                              onClick={closeMenus}
-                              className="group flex items-start justify-between gap-3 rounded-[14px] px-3.5 py-3 transition-colors hover:bg-mint"
-                            >
-                              <span>
-                                <span className="block text-[14px] font-semibold tracking-tight text-hero-ink transition-colors group-hover:text-leaf">
-                                  {item.label}
-                                </span>
-                                {item.text ? (
-                                  <span className="mt-1 block max-w-[36ch] text-[12.5px] leading-snug text-muted">
-                                    {item.text}
-                                  </span>
-                                ) : null}
-                              </span>
-                              <ArrowUpRight className="mt-0.5 size-3.5 shrink-0 text-hero-ink/20 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-leaf" />
-                            </Link>
-                          ) : (
-                            <a
-                              href={onHome ? item.href : `/${item.href}`}
-                              onClick={(e) => {
-                                e.preventDefault();
-                                go(item.href);
-                              }}
-                              className="group flex items-start justify-between gap-3 rounded-[14px] px-3.5 py-3 transition-colors hover:bg-mint"
-                            >
-                              <span>
-                                <span className="block text-[14px] font-semibold tracking-tight text-hero-ink transition-colors group-hover:text-leaf">
-                                  {item.label}
-                                </span>
-                                {item.text ? (
-                                  <span className="mt-1 block max-w-[36ch] text-[12.5px] leading-snug text-muted">
-                                    {item.text}
-                                  </span>
-                                ) : null}
-                              </span>
-                              <ArrowUpRight className="mt-0.5 size-3.5 shrink-0 text-hero-ink/20 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-leaf" />
-                            </a>
-                          )}
-                        </li>
+                    <div className="space-y-5">
+                      {(panel.groups ?? [{ items: panel.items }]).map((group) => (
+                        <div key={group.label ?? "items"}>
+                          {group.label ? (
+                            <p className="mb-2 px-3.5 text-[11px] font-semibold tracking-[0.14em] text-leaf uppercase">
+                              {group.label}
+                            </p>
+                          ) : null}
+                          <ul
+                            className={cn(
+                              "grid gap-1.5",
+                              ifmOpen
+                                ? "sm:grid-cols-2 xl:grid-cols-3"
+                                : "sm:grid-cols-2",
+                            )}
+                          >
+                            {group.items.map((item) => (
+                              <li key={item.label}>
+                                {isPageHref(item.href) ? (
+                                  <Link
+                                    href={item.href}
+                                    onClick={closeMenus}
+                                    className="group flex items-start justify-between gap-3 rounded-[14px] px-3.5 py-3 transition-colors hover:bg-mint"
+                                  >
+                                    <span>
+                                      <span className="block text-[14px] font-semibold tracking-tight text-hero-ink transition-colors group-hover:text-leaf">
+                                        {item.label}
+                                      </span>
+                                      {item.text ? (
+                                        <span className="mt-1 block max-w-[36ch] text-[12.5px] leading-snug text-muted">
+                                          {item.text}
+                                        </span>
+                                      ) : null}
+                                    </span>
+                                    <ArrowUpRight className="mt-0.5 size-3.5 shrink-0 text-hero-ink/20 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-leaf" />
+                                  </Link>
+                                ) : (
+                                  <a
+                                    href={onHome ? item.href : `/${item.href}`}
+                                    onClick={(e) => {
+                                      e.preventDefault();
+                                      go(item.href);
+                                    }}
+                                    className="group flex items-start justify-between gap-3 rounded-[14px] px-3.5 py-3 transition-colors hover:bg-mint"
+                                  >
+                                    <span>
+                                      <span className="block text-[14px] font-semibold tracking-tight text-hero-ink transition-colors group-hover:text-leaf">
+                                        {item.label}
+                                      </span>
+                                      {item.text ? (
+                                        <span className="mt-1 block max-w-[36ch] text-[12.5px] leading-snug text-muted">
+                                          {item.text}
+                                        </span>
+                                      ) : null}
+                                    </span>
+                                    <ArrowUpRight className="mt-0.5 size-3.5 shrink-0 text-hero-ink/20 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-leaf" />
+                                  </a>
+                                )}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </motion.div>
                 </AnimatePresence>
               </div>
@@ -505,20 +533,27 @@ export function Navbar() {
                     >
                       {nav.ifm.overview.label}
                     </Link>
-                    {nav.ifm.items.map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        onClick={closeMenus}
-                        className="block rounded-xl px-2 py-2.5"
-                      >
-                        <span className="block text-[15px] font-medium text-paper">
-                          {item.label}
-                        </span>
-                        <span className="mt-1 block text-[12px] leading-snug text-paper/55">
-                          {item.text}
-                        </span>
-                      </Link>
+                    {ifmGroups.map((group) => (
+                      <div key={group.id} className="pt-3">
+                        <p className="px-2 pb-1 text-[11px] font-semibold tracking-[0.14em] text-mist/70 uppercase">
+                          {group.label}
+                        </p>
+                        {group.items.map((item) => (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            onClick={closeMenus}
+                            className="block rounded-xl px-2 py-2.5"
+                          >
+                            <span className="block text-[15px] font-medium text-paper">
+                              {item.label}
+                            </span>
+                            <span className="mt-1 block text-[12px] leading-snug text-paper/55">
+                              {item.text}
+                            </span>
+                          </Link>
+                        ))}
+                      </div>
                     ))}
                   </div>
                 ) : null}

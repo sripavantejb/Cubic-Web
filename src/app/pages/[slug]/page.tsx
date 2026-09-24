@@ -154,14 +154,15 @@ export default async function ServicePage({
                         {gallery.map((src, idx) => (
                           <div
                             key={`${src}-${idx}`}
-                            className="relative aspect-[4/5] overflow-hidden rounded-[22px] bg-mint shadow-[0_18px_40px_-28px_rgba(17,35,27,0.35)] sm:aspect-[5/6] lg:aspect-[4/5]"
+                            className="overflow-hidden rounded-[22px] bg-mint shadow-[0_18px_40px_-28px_rgba(17,35,27,0.35)]"
                           >
                             <Image
                               src={src}
                               alt={media?.heroAlt ?? ""}
-                              fill
+                              width={1536}
+                              height={1024}
                               sizes="(min-width: 1024px) 46vw, 100vw"
-                              className="object-cover"
+                              className="block h-auto w-full"
                               priority={idx === 0}
                             />
                           </div>

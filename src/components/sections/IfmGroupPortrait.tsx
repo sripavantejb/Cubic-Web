@@ -1,11 +1,19 @@
 "use client";
 
-import { ifmGroup } from "@/content/site";
+import { ifmGroup, nav, serviceCategories } from "@/content/site";
 import { BlurText, FadeContent } from "@/components/react-bits";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import { cn } from "@/lib/cn";
 
 type Portrait = (typeof ifmGroup.portraits)[number];
+
+const categoryByHref = new Map<string, string>(
+  nav.ifm.items.map((item) => [item.href, item.category]),
+);
+
+const portraitRows = serviceCategories.map((category) =>
+  ifmGroup.portraits.filter((portrait) => categoryByHref.get(portrait.href) === category.id),
+);
 
 type Props = {
   className?: string;
@@ -29,9 +37,7 @@ export function IfmGroupPortrait({
   layout = "marquee",
 }: Props) {
   const reduced = usePrefersReducedMotion();
-  const mid = Math.ceil(ifmGroup.portraits.length / 2);
-  const topRow = ifmGroup.portraits.slice(0, mid);
-  const bottomRow = ifmGroup.portraits.slice(mid);
+  const [topRow, bottomRow] = portraitRows;
   const withCopy = asSection || showCopy;
   const useWrap = layout === "wrap" || reduced;
 
@@ -63,7 +69,7 @@ export function IfmGroupPortrait({
           className="flex flex-wrap content-start gap-2 sm:gap-2.5"
           aria-label="IFM Services"
         >
-          {ifmGroup.portraits.map((portrait) => (
+          {portraitRows.flat().map((portrait) => (
             <li key={portrait.href}>
               <PortraitCard portrait={portrait} />
             </li>
@@ -103,7 +109,8 @@ function PortraitMarquee({
   portraits: readonly Portrait[];
   direction: "ltr" | "rtl";
 }) {
-  const unit = [...portraits, ...portraits, ...portraits];
+  const repeats = Math.max(3, Math.ceil(18 / portraits.length));
+  const unit = Array.from({ length: repeats }, () => portraits).flat();
   const loop = [...unit, ...unit];
   const animateClass =
     direction === "ltr" ? "animate-marquee-reverse" : "animate-marquee";

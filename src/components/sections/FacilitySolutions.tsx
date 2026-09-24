@@ -3,13 +3,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { solutions } from "@/content/site";
+import { groupByServiceCategory, solutions } from "@/content/site";
 import { AnimatedContent, BlurText, FadeContent } from "@/components/react-bits";
 
 /**
  * Follows the pinned hero. Its negative top margin lets the sheet rise over the film's
  * final frame as the pin releases (dropped for reduced motion, where the hero isn't pinned).
  */
+const serviceGroups = groupByServiceCategory(solutions.items);
+
 export function FacilitySolutions() {
   return (
     <section
@@ -43,43 +45,55 @@ export function FacilitySolutions() {
           </FadeContent>
         </div>
 
-        <ul className="mt-10 grid gap-5 sm:grid-cols-2 md:mt-14 lg:grid-cols-4 lg:gap-6">
-          {solutions.items.map((item, i) => (
-            <AnimatedContent key={item.title} delay={i * 0.06} distance={32}>
-              <li>
-                <Link
-                  href={item.href}
-                  className="group flex h-full flex-col outline-offset-4"
-                >
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-[18px] bg-mint">
-                    <Image
-                      src={item.image}
-                      alt={item.alt}
-                      fill
-                      sizes="(min-width: 1024px) 22vw, (min-width: 640px) 45vw, 100vw"
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                    />
-                    <span className="absolute top-3 left-3 rounded-full bg-white/92 px-2.5 py-1 font-mono text-[10px] tracking-[0.14em] text-hero-ink/55 backdrop-blur-sm">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                  </div>
-                  <div className="flex flex-1 flex-col pt-4">
-                    <div className="flex items-start justify-between gap-3">
-                      <h3 className="text-[16px] leading-snug font-semibold tracking-tight text-hero-ink transition-colors group-hover:text-leaf md:text-[17px]">
-                        {item.title}
-                      </h3>
-                      <ArrowUpRight
-                        className="mt-0.5 size-4 shrink-0 text-hero-ink/30 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-leaf"
-                        aria-hidden="true"
-                      />
-                    </div>
-                    <p className="mt-1.5 text-[14px] leading-relaxed text-muted">{item.text}</p>
-                  </div>
-                </Link>
-              </li>
-            </AnimatedContent>
+        <div className="mt-10 space-y-12 md:mt-14 md:space-y-16">
+          {serviceGroups.map((group) => (
+            <div key={group.id}>
+              <div className="flex flex-col gap-1 border-b border-hero-ink/10 pb-4 md:flex-row md:items-end md:justify-between md:gap-8">
+                <h3 className="text-[clamp(1.25rem,2vw,1.6rem)] leading-tight font-semibold tracking-[-0.02em] text-hero-ink">
+                  {group.label}
+                </h3>
+                <p className="max-w-md text-[14px] leading-relaxed text-muted">{group.text}</p>
+              </div>
+              <ul className="mt-6 grid gap-5 sm:grid-cols-2 md:mt-8 lg:grid-cols-4 lg:gap-6">
+                {group.items.map((item, i) => (
+                  <AnimatedContent key={item.title} delay={i * 0.06} distance={32}>
+                    <li>
+                      <Link
+                        href={item.href}
+                        className="group flex h-full flex-col outline-offset-4"
+                      >
+                        <div className="relative aspect-[4/3] overflow-hidden rounded-[18px] bg-mint">
+                          <Image
+                            src={item.image}
+                            alt={item.alt}
+                            fill
+                            sizes="(min-width: 1024px) 22vw, (min-width: 640px) 45vw, 100vw"
+                            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                          />
+                          <span className="absolute top-3 left-3 rounded-full bg-white/92 px-2.5 py-1 font-mono text-[10px] tracking-[0.14em] text-hero-ink/55 backdrop-blur-sm">
+                            {String(i + 1).padStart(2, "0")}
+                          </span>
+                        </div>
+                        <div className="flex flex-1 flex-col pt-4">
+                          <div className="flex items-start justify-between gap-3">
+                            <h3 className="text-[16px] leading-snug font-semibold tracking-tight text-hero-ink transition-colors group-hover:text-leaf md:text-[17px]">
+                              {item.title}
+                            </h3>
+                            <ArrowUpRight
+                              className="mt-0.5 size-4 shrink-0 text-hero-ink/30 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-leaf"
+                              aria-hidden="true"
+                            />
+                          </div>
+                          <p className="mt-1.5 text-[14px] leading-relaxed text-muted">{item.text}</p>
+                        </div>
+                      </Link>
+                    </li>
+                  </AnimatedContent>
+                ))}
+              </ul>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );

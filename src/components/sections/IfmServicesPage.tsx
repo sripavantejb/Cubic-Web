@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { servicePages } from "@/content/service-pages";
 import { servicePageMedia } from "@/content/service-media";
-import { nav, solutions } from "@/content/site";
+import { groupByServiceCategory, nav, solutions } from "@/content/site";
 import { useApp } from "@/components/providers/AppProviders";
 import { cn } from "@/lib/cn";
 
@@ -23,7 +23,7 @@ const properties =
 const faq = page.sections.find((s) => s.type === "faq");
 const intro = page.sections.find((s) => s.type === "text");
 
-const services = solutions.items;
+const serviceGroups = groupByServiceCategory(solutions.items);
 
 export function IfmServicesPage() {
   const { openContact } = useApp();
@@ -124,45 +124,57 @@ export function IfmServicesPage() {
             </p>
           </div>
 
-          <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:mt-14 xl:grid-cols-2">
-            {services.map((item, i) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="group grid h-full grid-cols-[112px_1fr] overflow-hidden rounded-[18px] bg-white ring-1 ring-hero-ink/8 transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_-22px_rgba(17,35,27,0.32)] hover:ring-leaf/20 sm:grid-cols-[132px_1fr]"
-                >
-                  <div className="relative min-h-[112px] bg-mint sm:min-h-full">
-                    <Image
-                      src={item.image}
-                      alt={item.alt}
-                      fill
-                      sizes="132px"
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                    />
-                  </div>
-                  <div className="flex flex-col justify-center px-4 py-4 sm:px-5 sm:py-5">
-                    <div className="flex items-start justify-between gap-3">
-                      <div>
-                        <span className="font-mono text-[10px] tracking-[0.14em] text-leaf/70">
-                          {String(i + 1).padStart(2, "0")}
-                        </span>
-                        <h3 className="mt-1 text-[15px] font-semibold tracking-tight text-hero-ink transition-colors group-hover:text-leaf sm:text-[16px]">
-                          {item.title}
-                        </h3>
-                      </div>
-                      <ArrowUpRight
-                        className="mt-1 size-4 shrink-0 text-hero-ink/25 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-leaf"
-                        aria-hidden="true"
-                      />
-                    </div>
-                    <p className="mt-1.5 text-[13px] leading-relaxed text-muted sm:text-[14px]">
-                      {item.text}
-                    </p>
-                  </div>
-                </Link>
-              </li>
+          <div className="mt-10 space-y-12 lg:mt-14">
+            {serviceGroups.map((group) => (
+              <div key={group.id}>
+                <div className="flex flex-col gap-1 md:flex-row md:items-end md:justify-between md:gap-8">
+                  <h3 className="text-[clamp(1.2rem,2vw,1.5rem)] leading-tight font-semibold tracking-[-0.02em] text-hero-ink">
+                    {group.label}
+                  </h3>
+                  <p className="max-w-md text-[14px] leading-relaxed text-muted">{group.text}</p>
+                </div>
+                <ul className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-2">
+                  {group.items.map((item, i) => (
+                    <li key={item.href}>
+                      <Link
+                        href={item.href}
+                        className="group grid h-full grid-cols-[112px_1fr] overflow-hidden rounded-[18px] bg-white ring-1 ring-hero-ink/8 transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_-22px_rgba(17,35,27,0.32)] hover:ring-leaf/20 sm:grid-cols-[132px_1fr]"
+                      >
+                        <div className="relative min-h-[112px] bg-mint sm:min-h-full">
+                          <Image
+                            src={item.image}
+                            alt={item.alt}
+                            fill
+                            sizes="132px"
+                            className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                          />
+                        </div>
+                        <div className="flex flex-col justify-center px-4 py-4 sm:px-5 sm:py-5">
+                          <div className="flex items-start justify-between gap-3">
+                            <div>
+                              <span className="font-mono text-[10px] tracking-[0.14em] text-leaf/70">
+                                {String(i + 1).padStart(2, "0")}
+                              </span>
+                              <h3 className="mt-1 text-[15px] font-semibold tracking-tight text-hero-ink transition-colors group-hover:text-leaf sm:text-[16px]">
+                                {item.title}
+                              </h3>
+                            </div>
+                            <ArrowUpRight
+                              className="mt-1 size-4 shrink-0 text-hero-ink/25 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-leaf"
+                              aria-hidden="true"
+                            />
+                          </div>
+                          <p className="mt-1.5 text-[13px] leading-relaxed text-muted sm:text-[14px]">
+                            {item.text}
+                          </p>
+                        </div>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 

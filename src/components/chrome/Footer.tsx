@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ArrowRight, ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
-import { footer, nav, site } from "@/content/site";
+import { footer, groupByServiceCategory, nav, site } from "@/content/site";
 import { Logo } from "@/components/brand/Logo";
 import { useApp } from "@/components/providers/AppProviders";
 import { cn } from "@/lib/cn";
@@ -13,7 +13,7 @@ function isPageHref(href: string) {
   return href.startsWith("/") && !href.startsWith("/#");
 }
 
-const serviceLinks = nav.ifm.items.map(({ label, href }) => ({ label, href }));
+const serviceGroups = groupByServiceCategory(nav.ifm.items);
 
 const connectLinks = [...footer.social, ...footer.portals.slice(0, 2)];
 
@@ -182,19 +182,28 @@ export function Footer() {
                 />
               </FooterLink>
             </div>
-            <ul className="grid grid-cols-1 gap-x-6 gap-y-2.5 min-[480px]:grid-cols-2">
-              {serviceLinks.map((l) => (
-                <li key={l.href}>
-                  <FooterLink href={l.href} className={linkClassName(true)}>
-                    <span>{l.label}</span>
-                    <ArrowUpRight
-                      className="size-3 opacity-0 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-70"
-                      aria-hidden="true"
-                    />
-                  </FooterLink>
-                </li>
+            <div className="space-y-5">
+              {serviceGroups.map((group) => (
+                <div key={group.id}>
+                  <p className="mb-2.5 text-[11px] font-semibold tracking-[0.14em] text-mist/70 uppercase">
+                    {group.label}
+                  </p>
+                  <ul className="grid grid-cols-1 gap-x-6 gap-y-2.5 min-[480px]:grid-cols-2">
+                    {group.items.map((l) => (
+                      <li key={l.href}>
+                        <FooterLink href={l.href} className={linkClassName(true)}>
+                          <span>{l.label}</span>
+                          <ArrowUpRight
+                            className="size-3 opacity-0 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-70"
+                            aria-hidden="true"
+                          />
+                        </FooterLink>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
 
           {/* Reach us */}

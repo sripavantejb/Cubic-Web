@@ -172,6 +172,178 @@ export const servicePages = {
       },
     ],
   },
+  "security-services-in-hyderabad": {
+    slug: "security-services-in-hyderabad",
+    path: "/pages/security-services-in-hyderabad",
+    title: "Security Services",
+    visible: true,
+    header: {
+      eyebrow: "Safer Sites, Calmer Operations",
+      heading: "Security Services in Hyderabad",
+      description: "Trained security personnel, access control, patrolling, and CCTV-backed monitoring that protect people, property, and daily operations across every type of facility.",
+    },
+    sections: [
+      {
+        type: "text",
+        heading: "Security that stays alert, every shift.",
+        body: "Verified, trained guards and supervisors backed by clear post orders, visitor management, and technology-assisted monitoring — so your site stays protected around the clock.",
+        highlights: [
+          "Trained & verified guards",
+          "Access & visitor control",
+          "Patrols & CCTV monitoring",
+          "24/7 supervision & reporting",
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Our Security Services",
+        items: [
+          {
+            icon: "Shield",
+            title: "Manned Guarding",
+            text: "Uniformed, trained security guards for gates, lobbies, perimeters, and critical areas.",
+          },
+          {
+            icon: "Lock",
+            title: "Access Control",
+            text: "Entry and exit management with ID checks, badge systems, and restricted-zone enforcement.",
+          },
+          {
+            icon: "ClipboardList",
+            title: "Visitor Management",
+            text: "Front-gate and reception visitor registration, passes, and escort protocols.",
+          },
+          {
+            icon: "Eye",
+            title: "CCTV Monitoring",
+            text: "Surveillance monitoring and incident review to detect and respond to risks early.",
+          },
+          {
+            icon: "Compass",
+            title: "Patrolling",
+            text: "Scheduled and random patrols across floors, parking, perimeters, and campus grounds.",
+          },
+          {
+            icon: "Flame",
+            title: "Fire & Emergency Response",
+            text: "Guards trained in fire safety, evacuation support, and first response coordination.",
+          },
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Why Businesses Choose Hazel India",
+        items: [
+          {
+            icon: "BadgeCheck",
+            title: "Verified & Trained Personnel",
+            text: "Background-verified guards trained in site protocols, conduct, and emergency handling.",
+          },
+          {
+            icon: "Clock",
+            title: "Round-the-Clock Coverage",
+            text: "Shift-based deployment with relievers so every post stays covered 24/7.",
+          },
+          {
+            icon: "HardHat",
+            title: "On-Site Supervision",
+            text: "Supervisors and field officers who audit posts, brief teams, and handle escalations.",
+          },
+          {
+            icon: "Radio",
+            title: "Technology-Assisted Security",
+            text: "Guard tour tracking, digital visitor logs, and CCTV integration through HazelAI.",
+          },
+          {
+            icon: "BarChart3",
+            title: "Clear Incident Reporting",
+            text: "Daily logs, incident reports, and periodic reviews that keep management informed.",
+          },
+          {
+            icon: "Layers",
+            title: "Integrated Facility Support",
+            text: "Combine security with housekeeping, MEP, concierge, and other services through one partner.",
+          },
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Security Solutions for Every Property",
+        items: [
+          {
+            icon: "Building2",
+            title: "Corporate Offices",
+            text: "Lobby, reception, and floor security for offices and business centres.",
+          },
+          {
+            icon: "Briefcase",
+            title: "IT Parks & Campuses",
+            text: "Multi-gate access control and patrols for large tech parks and shared campuses.",
+          },
+          {
+            icon: "Factory",
+            title: "Manufacturing & Factories",
+            text: "Perimeter, material-gate, and shift-change security for industrial sites.",
+          },
+          {
+            icon: "Home",
+            title: "Residential Communities",
+            text: "Gate security, visitor checks, and patrols for apartments, villas, and gated communities.",
+          },
+          {
+            icon: "Hospital",
+            title: "Hospitals & Healthcare",
+            text: "Calm, people-first security for patient areas, emergency entries, and visitor flow.",
+          },
+          {
+            icon: "Store",
+            title: "Retail & Commercial Spaces",
+            text: "Loss-prevention and crowd management for malls, stores, and commercial complexes.",
+          },
+        ],
+      },
+      {
+        type: "steps",
+        heading: "From site survey to secure operations.",
+        items: [
+          {
+            title: "Assess",
+            text: "We survey your site, entry points, risks, and occupancy to understand security needs.",
+          },
+          {
+            title: "Plan",
+            text: "Post orders, manpower, shift patterns, and access protocols are designed for your site.",
+          },
+          {
+            title: "Deploy",
+            text: "Trained guards and supervisors are deployed with clear briefings and reporting lines.",
+          },
+          {
+            title: "Review",
+            text: "Regular audits, incident reviews, and feedback keep security standards improving.",
+          },
+        ],
+      },
+      {
+        type: "faq",
+        heading: "Frequently Asked Questions",
+        items: [
+          {
+            q: "What security services does Hazel India provide?",
+            a: "We provide manned guarding, access control, visitor management, CCTV monitoring, patrolling, and fire and emergency response support for facilities in Hyderabad.",
+          },
+          {
+            q: "Are Hazel India security guards verified and trained?",
+            a: "Yes. Our guards are background-verified and trained in site protocols, conduct, fire safety, and emergency response before deployment.",
+          },
+          {
+            q: "Can security be combined with other facility services?",
+            a: "Yes. Security can be integrated with housekeeping, MEP, mailroom and concierge, and full IFM programmes under one accountable partner.",
+          },
+        ],
+      },
+    ],
+  },
   "landscaping-services-in-hyderabad": {
     slug: "landscaping-services-in-hyderabad",
     path: "/pages/landscaping-services-in-hyderabad",
@@ -671,6 +843,522 @@ export const servicePages = {
           },
         ],
       },
+    ],
+  },
+  "hvac-services-in-hyderabad": {
+    slug: "hvac-services-in-hyderabad",
+    path: "/pages/hvac-services-in-hyderabad",
+    title: "HVAC Services",
+    visible: true,
+    header: {
+      eyebrow: "Comfortable Air, Lower Energy",
+      heading: "HVAC Services in Hyderabad",
+      description: "Operation and maintenance of chillers, AHUs, VRF systems, split ACs, and ventilation — keeping indoor spaces comfortable, healthy, and energy efficient.",
+    },
+    sections: [
+      {
+        type: "text",
+        heading: "Cool, clean air — without the breakdowns.",
+        body: "Trained HVAC technicians run, monitor, and maintain your cooling and ventilation systems with preventive schedules, quick fault response, and energy-conscious operation.",
+        highlights: [
+          "Chiller & AHU operation",
+          "Preventive maintenance",
+          "Indoor air quality",
+          "Energy optimisation",
+        ]
+      },
+      {
+        type: "cards",
+        heading: "Our HVAC Services",
+        items: [
+          {
+            icon: "Thermometer",
+            title: "Chiller Plant Operation",
+            text: "Shift-based operation of chillers, cooling towers, and pumps with daily parameter logs.",
+          },
+          {
+            icon: "Settings",
+            title: "AHU & FCU Maintenance",
+            text: "Filter cleaning, belt and bearing checks, and coil care for air handling and fan coil units.",
+          },
+          {
+            icon: "Zap",
+            title: "VRF & Split AC Servicing",
+            text: "Routine servicing, gas top-ups, and repairs for VRF, ductable, and split air conditioners.",
+          },
+          {
+            icon: "Sparkles",
+            title: "Duct Cleaning & IAQ",
+            text: "Duct and grille cleaning with indoor air quality checks for healthier workspaces.",
+          },
+          {
+            icon: "Wrench",
+            title: "Breakdown Support",
+            text: "Fast response to cooling failures, leaks, and abnormal noise to minimise downtime.",
+          },
+          {
+            icon: "FileText",
+            title: "AMC & Compliance Records",
+            text: "Annual maintenance plans with service logs ready for audits and OEM warranties.",
+          }
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Why Businesses Choose Hazel India",
+        items: [
+          {
+            icon: "HardHat",
+            title: "Skilled HVAC Technicians",
+            text: "Technicians trained on chillers, AHUs, VRF systems, and building management controls.",
+          },
+          {
+            icon: "Clock",
+            title: "Round-the-Clock Coverage",
+            text: "Shift support so critical cooling stays monitored day and night.",
+          },
+          {
+            icon: "Leaf",
+            title: "Energy-Efficient Operation",
+            text: "Set-point tuning, scheduling, and preventive care that cut power consumption.",
+          },
+          {
+            icon: "Radio",
+            title: "Smart Monitoring",
+            text: "HazelAI-backed tracking of temperatures, run hours, and early fault alerts.",
+          },
+          {
+            icon: "BarChart3",
+            title: "Clear Reporting",
+            text: "Regular reports on performance, energy use, and maintenance activity.",
+          },
+          {
+            icon: "Layers",
+            title: "Integrated Technical Support",
+            text: "Combine HVAC with MEP, WTP, STP, and other facility services under one partner.",
+          }
+        ],
+      },
+      {
+        type: "cards",
+        heading: "HVAC Solutions for Every Facility",
+        items: [
+          {
+            icon: "Building2",
+            title: "Corporate Offices",
+            text: "Comfortable, efficient cooling for offices and business centres.",
+          },
+          {
+            icon: "Briefcase",
+            title: "IT Parks & Data Rooms",
+            text: "Reliable cooling for campuses, server rooms, and critical spaces.",
+          },
+          {
+            icon: "Factory",
+            title: "Manufacturing & Factories",
+            text: "Ventilation and cooling support for production and utility areas.",
+          },
+          {
+            icon: "Hospital",
+            title: "Hospitals & Healthcare",
+            text: "Controlled temperature and air quality for sensitive environments.",
+          },
+          {
+            icon: "Store",
+            title: "Retail & Malls",
+            text: "Consistent comfort for shoppers across large commercial spaces.",
+          },
+          {
+            icon: "Hotel",
+            title: "Hotels & Hospitality",
+            text: "Quiet, dependable cooling for guest rooms and public areas.",
+          }
+        ],
+      },
+      {
+        type: "steps",
+        heading: "From system audit to steady comfort.",
+        items: [
+          {
+            title: "Assess",
+            text: "We audit your HVAC equipment, loads, controls, and current performance.",
+          },
+          {
+            title: "Plan",
+            text: "Operating schedules, preventive maintenance, and spares plans are set for your site.",
+          },
+          {
+            title: "Operate",
+            text: "Trained technicians run and maintain systems with daily logs and quick fault response.",
+          },
+          {
+            title: "Optimise",
+            text: "We tune set points and schedules to improve comfort and reduce energy use.",
+          }
+        ],
+      },
+      {
+        type: "faq",
+        heading: "Frequently Asked Questions",
+        items: [
+          {
+            q: "What HVAC services does Hazel India provide?",
+            a: "We provide chiller plant operation, AHU and FCU maintenance, VRF and split AC servicing, duct cleaning, indoor air quality checks, and breakdown support for facilities in Hyderabad.",
+          },
+          {
+            q: "Do you offer HVAC annual maintenance contracts?",
+            a: "Yes. We offer AMC plans with scheduled preventive maintenance, service logs, and priority breakdown response.",
+          },
+          {
+            q: "Can HVAC be combined with MEP and other technical services?",
+            a: "Yes. HVAC can be integrated with MEP, WTP, STP, and full IFM programmes under one accountable partner.",
+          }
+        ],
+      }
+    ],
+  },
+  "water-treatment-plant-services-in-hyderabad": {
+    slug: "water-treatment-plant-services-in-hyderabad",
+    path: "/pages/water-treatment-plant-services-in-hyderabad",
+    title: "WTP Services",
+    visible: true,
+    header: {
+      eyebrow: "Safe Water, Every Day",
+      heading: "Water Treatment Plant Services in Hyderabad",
+      description: "Operation and maintenance of water treatment plants, softeners, RO systems, and filtration units — so your facility gets safe, consistent water with fewer breakdowns.",
+    },
+    sections: [
+      {
+        type: "text",
+        heading: "Clean water, reliably delivered.",
+        body: "Trained WTP operators run, monitor, and maintain your treatment systems with daily logs, routine testing, and preventive care that keep water quality within specification.",
+        highlights: [
+          "Daily plant operation",
+          "Water-quality testing",
+          "Preventive maintenance",
+          "Chemical dosing control",
+        ]
+      },
+      {
+        type: "cards",
+        heading: "Our WTP Services",
+        items: [
+          {
+            icon: "Droplets",
+            title: "WTP Operation",
+            text: "Shift-based operators who run your water treatment plant and log key parameters every day.",
+          },
+          {
+            icon: "Settings",
+            title: "RO & Softener Maintenance",
+            text: "Upkeep of RO units, softeners, and filters including backwash, regeneration, and membrane care.",
+          },
+          {
+            icon: "FlaskConical",
+            title: "Water-Quality Testing",
+            text: "Routine checks for pH, TDS, hardness, and turbidity to keep water within safe limits.",
+          },
+          {
+            icon: "Thermometer",
+            title: "Chemical Dosing Management",
+            text: "Controlled dosing of treatment chemicals with stock tracking and safe handling.",
+          },
+          {
+            icon: "Wrench",
+            title: "Preventive & Breakdown Maintenance",
+            text: "Scheduled servicing of pumps, valves, and filters plus quick response to faults.",
+          },
+          {
+            icon: "FileText",
+            title: "Logs & Compliance Records",
+            text: "Daily operation logs and test records ready for audits and management review.",
+          }
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Why Businesses Choose Hazel India",
+        items: [
+          {
+            icon: "HardHat",
+            title: "Trained Plant Operators",
+            text: "Operators trained in water treatment processes, safety, and daily plant routines.",
+          },
+          {
+            icon: "Clock",
+            title: "Round-the-Clock Operation",
+            text: "Shift coverage so critical water systems stay monitored at all hours.",
+          },
+          {
+            icon: "Leaf",
+            title: "Water Conservation Focus",
+            text: "Optimised backwash, recovery, and reuse practices that reduce water wastage.",
+          },
+          {
+            icon: "Radio",
+            title: "Smart Monitoring",
+            text: "HazelAI-backed tracking of plant parameters and early alerts on abnormal readings.",
+          },
+          {
+            icon: "BarChart3",
+            title: "Clear Reporting",
+            text: "Regular reports on water quality, consumption, and maintenance activity.",
+          },
+          {
+            icon: "Layers",
+            title: "Integrated Technical Support",
+            text: "Combine WTP with STP, MEP, and other facility services under one partner.",
+          }
+        ],
+      },
+      {
+        type: "cards",
+        heading: "WTP Solutions for Every Facility",
+        items: [
+          {
+            icon: "Building2",
+            title: "Corporate Offices",
+            text: "Reliable treated water for washrooms, pantries, and HVAC make-up.",
+          },
+          {
+            icon: "Briefcase",
+            title: "IT Parks & Campuses",
+            text: "Central plant operation for large multi-building campuses.",
+          },
+          {
+            icon: "Factory",
+            title: "Manufacturing & Factories",
+            text: "Process and utility water treatment for industrial operations.",
+          },
+          {
+            icon: "Home",
+            title: "Residential Communities",
+            text: "Softener and RO plant care for apartments and gated communities.",
+          },
+          {
+            icon: "Hospital",
+            title: "Hospitals & Healthcare",
+            text: "Consistent water quality for sensitive healthcare environments.",
+          },
+          {
+            icon: "Hotel",
+            title: "Hotels & Hospitality",
+            text: "Treated water for guest rooms, kitchens, and laundry operations.",
+          }
+        ],
+      },
+      {
+        type: "steps",
+        heading: "From site survey to steady water quality.",
+        items: [
+          {
+            title: "Assess",
+            text: "We review your plant, source water, capacity, and current performance.",
+          },
+          {
+            title: "Plan",
+            text: "Operating schedules, testing frequency, and maintenance plans are set for your site.",
+          },
+          {
+            title: "Operate",
+            text: "Trained operators run the plant with daily logs, testing, and dosing control.",
+          },
+          {
+            title: "Improve",
+            text: "We track results and fine-tune operations to improve quality and cut wastage.",
+          }
+        ],
+      },
+      {
+        type: "faq",
+        heading: "Frequently Asked Questions",
+        items: [
+          {
+            q: "What WTP services does Hazel India provide?",
+            a: "We provide water treatment plant operation, RO and softener maintenance, water-quality testing, chemical dosing management, and preventive maintenance for facilities in Hyderabad.",
+          },
+          {
+            q: "Do you provide trained operators for our plant?",
+            a: "Yes. We deploy trained WTP operators on shifts to run, monitor, and log your plant every day.",
+          },
+          {
+            q: "Can WTP be combined with STP and MEP services?",
+            a: "Yes. WTP can be integrated with STP, MEP, and full IFM programmes under one accountable partner.",
+          }
+        ],
+      }
+    ],
+  },
+  "sewage-treatment-plant-services-in-hyderabad": {
+    slug: "sewage-treatment-plant-services-in-hyderabad",
+    path: "/pages/sewage-treatment-plant-services-in-hyderabad",
+    title: "STP Services",
+    visible: true,
+    header: {
+      eyebrow: "Treated Water, Cleaner Discharge",
+      heading: "Sewage Treatment Plant Services in Hyderabad",
+      description: "Operation and maintenance of sewage treatment plants with effluent testing, sludge handling, and treated-water reuse that help your facility stay compliant and conserve water.",
+    },
+    sections: [
+      {
+        type: "text",
+        heading: "STPs that run clean and compliant.",
+        body: "Trained STP operators manage daily plant operation, monitor treatment stages, and maintain equipment so treated water meets discharge and reuse standards.",
+        highlights: [
+          "Daily STP operation",
+          "Effluent testing",
+          "Sludge management",
+          "Treated-water reuse",
+        ]
+      },
+      {
+        type: "cards",
+        heading: "Our STP Services",
+        items: [
+          {
+            icon: "Recycle",
+            title: "STP Operation & Maintenance",
+            text: "Shift-based operators who run aeration, clarification, and filtration stages every day.",
+          },
+          {
+            icon: "FlaskConical",
+            title: "Effluent Testing",
+            text: "Routine checks for BOD, COD, TSS, and pH to keep treated water within norms.",
+          },
+          {
+            icon: "Settings",
+            title: "Equipment Upkeep",
+            text: "Maintenance of blowers, pumps, diffusers, and filters to prevent breakdowns.",
+          },
+          {
+            icon: "Package",
+            title: "Sludge Handling",
+            text: "Safe removal, drying, and disposal coordination for plant sludge.",
+          },
+          {
+            icon: "Droplet",
+            title: "Treated-Water Reuse",
+            text: "Supply of treated water for flushing, landscaping, and cooling-tower make-up.",
+          },
+          {
+            icon: "FileText",
+            title: "Compliance Records",
+            text: "Daily logs and test reports that support pollution control board audits.",
+          }
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Why Businesses Choose Hazel India",
+        items: [
+          {
+            icon: "HardHat",
+            title: "Trained STP Operators",
+            text: "Operators trained in biological treatment processes, safety, and plant routines.",
+          },
+          {
+            icon: "BadgeCheck",
+            title: "Compliance-Focused",
+            text: "Operations aligned to pollution control board discharge and reuse standards.",
+          },
+          {
+            icon: "Leaf",
+            title: "Water Reuse & Savings",
+            text: "Maximise treated-water reuse to reduce fresh water demand.",
+          },
+          {
+            icon: "Radio",
+            title: "Smart Monitoring",
+            text: "HazelAI-backed tracking of plant parameters and early alerts on process issues.",
+          },
+          {
+            icon: "BarChart3",
+            title: "Clear Reporting",
+            text: "Regular reports on treatment performance, reuse volumes, and maintenance.",
+          },
+          {
+            icon: "Layers",
+            title: "Integrated Technical Support",
+            text: "Combine STP with WTP, MEP, and other facility services under one partner.",
+          }
+        ],
+      },
+      {
+        type: "cards",
+        heading: "STP Solutions for Every Facility",
+        items: [
+          {
+            icon: "Building2",
+            title: "Corporate Offices",
+            text: "STP operation for commercial buildings and business centres.",
+          },
+          {
+            icon: "Briefcase",
+            title: "IT Parks & Campuses",
+            text: "Large-capacity plant management for multi-building campuses.",
+          },
+          {
+            icon: "Factory",
+            title: "Manufacturing & Factories",
+            text: "Domestic sewage treatment for industrial sites and townships.",
+          },
+          {
+            icon: "Home",
+            title: "Residential Communities",
+            text: "STP care for apartments, villas, and gated communities.",
+          },
+          {
+            icon: "Hospital",
+            title: "Hospitals & Healthcare",
+            text: "Reliable treatment and records for healthcare facilities.",
+          },
+          {
+            icon: "Hotel",
+            title: "Hotels & Hospitality",
+            text: "STP operation that supports reuse for landscaping and flushing.",
+          }
+        ],
+      },
+      {
+        type: "steps",
+        heading: "From site survey to compliant discharge.",
+        items: [
+          {
+            title: "Assess",
+            text: "We review your STP design, capacity, load, and current treatment performance.",
+          },
+          {
+            title: "Plan",
+            text: "Operating routines, testing schedules, and maintenance plans are set for your plant.",
+          },
+          {
+            title: "Operate",
+            text: "Trained operators run the plant with daily logs, testing, and sludge management.",
+          },
+          {
+            title: "Improve",
+            text: "We track results and optimise operations to improve quality and reuse.",
+          }
+        ],
+      },
+      {
+        type: "faq",
+        heading: "Frequently Asked Questions",
+        items: [
+          {
+            q: "What STP services does Hazel India provide?",
+            a: "We provide sewage treatment plant operation and maintenance, effluent testing, sludge handling, treated-water reuse, and compliance records for facilities in Hyderabad.",
+          },
+          {
+            q: "Can you help us meet pollution control board norms?",
+            a: "Yes. We operate plants to discharge standards and maintain test records that support compliance audits.",
+          },
+          {
+            q: "Can STP be combined with WTP and MEP services?",
+            a: "Yes. STP can be integrated with WTP, MEP, and full IFM programmes under one accountable partner.",
+          }
+        ],
+      }
     ],
   },
   "pest-control-services-in-hyderabad": {
@@ -1719,16 +2407,16 @@ export const servicePages = {
       eyebrow: "IFM Services",
       heading: "Integrated Facility Management in Hyderabad",
       description:
-        "One accountable partner for housekeeping, MEP, landscaping, waste, F&B, emergency readiness, transport, mailroom & concierge, and logistics — coordinated under a single contract.",
+        "One accountable partner for housekeeping, security, MEP, HVAC, WTP & STP, landscaping, waste, F&B, emergency readiness, transport, mailroom & concierge, and logistics — coordinated under a single contract.",
     },
     sections: [
       {
         type: "text",
         heading: "One partner. Every facility need.",
-        body: "Housekeeping, MEP, landscaping, waste, F&B, emergency preparedness, transport, mailroom & concierge, logistics and more — coordinated under one accountable team.",
+        body: "Housekeeping, security, MEP, HVAC, WTP & STP, landscaping, waste, F&B, emergency preparedness, transport, mailroom & concierge, logistics and more — coordinated under one accountable team.",
         highlights: [
-            "Housekeeping & soft services",
-            "MEP, waste & green ops",
+            "Housekeeping, security & soft services",
+            "MEP, HVAC, WTP, STP & green ops",
             "F&B, transport & emergency preparedness",
             "Mailroom, concierge & logistics",
           ],
@@ -1744,10 +2432,34 @@ export const servicePages = {
             href: "/pages/housekeeping-services-in-hyderabad",
           },
           {
+            icon: "Shield",
+            title: "Security Services",
+            text: "Protect people, property, and operations with trained security guards, access control, visitor management, patrolling, and CCTV-backed monitoring — supervised around the clock.",
+            href: "/pages/security-services-in-hyderabad",
+          },
+          {
             icon: "Wrench",
             title: "MEP Services",
             text: "Ensure your building systems operate safely and efficiently with comprehensive MEP services covering mechanical, electrical, and plumbing requirements. Our technical teams support preventive maintenance, inspections, repairs, and ongoing system upkeep to minimize disruptions and maintain facility performance.",
             href: "/pages/mechanical-electrical-plumbing-services-in-hyderabad",
+          },
+          {
+            icon: "Thermometer",
+            title: "HVAC Services",
+            text: "Keep indoor spaces comfortable and efficient with chiller plant operation, AHU and VRF maintenance, split AC servicing, duct cleaning, and indoor air quality checks.",
+            href: "/pages/hvac-services-in-hyderabad",
+          },
+          {
+            icon: "Droplets",
+            title: "WTP Services",
+            text: "Keep water safe and consistent with water treatment plant operation, RO and softener maintenance, chemical dosing, and routine water-quality testing by trained operators.",
+            href: "/pages/water-treatment-plant-services-in-hyderabad",
+          },
+          {
+            icon: "Recycle",
+            title: "STP Services",
+            text: "Run sewage treatment plants clean and compliant with daily operation, effluent testing, sludge handling, and treated-water reuse for flushing and landscaping.",
+            href: "/pages/sewage-treatment-plant-services-in-hyderabad",
           },
           {
             icon: "Trees",

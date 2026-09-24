@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "910000000000";
+const WHATSAPP_NUMBER = "919505553855";
 const WHATSAPP_MESSAGE =
   "Hello Hazel India, I'd like a free facility audit for my space.";
 
@@ -8,10 +8,10 @@ export const site = {
   title: "Hazel India — AI-Powered Green Facility Management",
   description:
     "Hazel India brings intelligent, eco-first facility management to every home, office, factory and community — powered by AI that predicts, optimises and proves a lighter footprint on the planet.",
-  email: "hello@hazelindia.com",
-  phone: "+91 00000 00000",
-  phoneHref: "tel:+910000000000",
-  emailHref: "mailto:hello@hazelindia.com",
+  email: "sulochana.b@hazelindia.com",
+  phone: "+91 95055 53855",
+  phoneHref: "tel:+919505553855",
+  emailHref: "mailto:sulochana.b@hazelindia.com",
   whatsapp: {
     number: WHATSAPP_NUMBER,
     message: WHATSAPP_MESSAGE,
@@ -40,57 +40,116 @@ export const nav = {
       {
         label: "Housekeeping",
         href: "/pages/housekeeping-services-in-hyderabad",
+        category: "non-technical",
         text: "Daily cleaning, sanitation and common-area upkeep with trained teams.",
+      },
+      {
+        label: "Security Services",
+        href: "/pages/security-services-in-hyderabad",
+        category: "non-technical",
+        text: "Trained guards, access control, patrols and CCTV-backed site security.",
       },
       {
         label: "MEP Services",
         href: "/pages/mechanical-electrical-plumbing-services-in-hyderabad",
+        category: "technical",
         text: "HVAC, electrical and plumbing maintenance to keep systems reliable.",
+      },
+      {
+        label: "HVAC Services",
+        href: "/pages/hvac-services-in-hyderabad",
+        category: "technical",
+        text: "Chiller, AHU, VRF and split AC maintenance for efficient, comfortable air.",
+      },
+      {
+        label: "WTP Services",
+        href: "/pages/water-treatment-plant-services-in-hyderabad",
+        category: "technical",
+        text: "Water treatment plant operation, softeners, RO and water-quality testing.",
+      },
+      {
+        label: "STP Services",
+        href: "/pages/sewage-treatment-plant-services-in-hyderabad",
+        category: "technical",
+        text: "Sewage treatment plant O&M, effluent testing and treated-water reuse.",
       },
       {
         label: "Landscaping",
         href: "/pages/landscaping-services-in-hyderabad",
+        category: "non-technical",
         text: "Native gardens, grounds care and water-conscious outdoor maintenance.",
       },
       {
         label: "Pest Control Services",
         href: "/pages/pest-control-services-in-hyderabad",
+        category: "non-technical",
         text: "Safe, scheduled pest management for homes, offices and industry.",
       },
       {
         label: "Waste Management",
         href: "/pages/waste-management-services-in-hyderabad",
+        category: "non-technical",
         text: "Segregation, recycling, composting and diversion reporting.",
       },
       {
         label: "Food & Beverage",
         href: "/pages/food-and-beverage-services-in-hyderabad",
+        category: "non-technical",
         text: "Pantry, cafeteria and F&B support that keeps workplaces running.",
       },
       {
         label: "Ambulance & Emergency Preparedness",
         href: "/pages/ambulance-and-paramedic-services-in-hyderabad",
+        category: "non-technical",
         text: "EMS standby, ambulance response, fire/evac plans and emergency drills.",
       },
       {
         label: "Employee Transportation",
         href: "/pages/employee-transportation-services-in-hyderabad",
+        category: "non-technical",
         text: "Staff commute, shift shuttles and campus transport coordination.",
       },
       {
         label: "Mailroom & Concierge",
         href: "/pages/mailroom-services-in-hyderabad",
+        category: "non-technical",
         text: "Front desk, visitor handling, mail, courier and parcel coordination.",
       },
       {
         label: "Logistics Services",
         href: "/pages/logistics-services-in-hyderabad",
+        category: "non-technical",
         text: "Material handling, receiving, dispatch and internal movement.",
       },
     ],
   },
   cta: { label: "Get a Free Audit", href: "#contact" },
 } as const;
+
+/** Service groupings used by the IFM menu, footer, home cards and IFM page. */
+export const serviceCategories = [
+  {
+    id: "non-technical",
+    label: "Non-Technical Services",
+    text: "Soft services that keep people, spaces and daily operations running smoothly.",
+  },
+  {
+    id: "technical",
+    label: "Technical Services",
+    text: "Engineering, plant operations and building systems run by certified technicians.",
+  },
+] as const;
+
+export type ServiceCategory = (typeof serviceCategories)[number]["id"];
+
+export function groupByServiceCategory<T extends { category: ServiceCategory }>(
+  items: readonly T[],
+) {
+  return serviceCategories.map((category) => ({
+    ...category,
+    items: items.filter((item) => item.category === category.id),
+  }));
+}
 
 /** Group portrait mosaic of IFM service teams — kept in line with `nav.ifm.items`. */
 export const ifmGroup = {
@@ -105,16 +164,40 @@ export const ifmGroup = {
       alt: "Hazel India housekeeping attendant wiping down a lobby counter beside a cleaning trolley",
     },
     {
+      label: "Security",
+      href: "/pages/security-services-in-hyderabad",
+      image: "/images/services/security-hazel.jpg",
+      alt: "Hazel India uniformed security guards on duty at a corporate lobby reception with a front-desk officer",
+    },
+    {
       label: "MEP Services",
       href: "/pages/mechanical-electrical-plumbing-services-in-hyderabad",
-      image: "/images/services/mep-panel.jpg",
-      alt: "Hazel India MEP technician testing an electrical distribution panel beside HVAC chillers",
+      image: "/images/services/mep-hvac-panel.jpg",
+      alt: "Hazel India MEP technician servicing an electrical distribution panel beside HVAC units",
+    },
+    {
+      label: "HVAC Services",
+      href: "/pages/hvac-services-in-hyderabad",
+      image: "/images/services/hvac-plant.jpg",
+      alt: "HVAC chiller plant room with water-cooled chillers, insulated chilled-water pipes, pumps and overhead ductwork",
+    },
+    {
+      label: "WTP Services",
+      href: "/pages/water-treatment-plant-services-in-hyderabad",
+      image: "/images/services/wtp-plant.jpg",
+      alt: "Water treatment plant room with pressure sand and carbon filters, an RO membrane skid and control panel",
+    },
+    {
+      label: "STP Services",
+      href: "/pages/sewage-treatment-plant-services-in-hyderabad",
+      image: "/images/services/stp-plant.jpg",
+      alt: "Sewage treatment plant with aeration tanks, a circular clarifier, blowers and safety walkways on a corporate campus",
     },
     {
       label: "Landscaping",
       href: "/pages/landscaping-services-in-hyderabad",
-      image: "/images/services/landscaping-team.jpg",
-      alt: "Hazel India landscaping team pruning hedges, planting beds and mowing lawns on a corporate campus",
+      image: "/images/services/landscaping-grounds.jpg",
+      alt: "Hazel India landscaping team trimming hedges and raking leaves on a corporate campus lawn",
     },
     {
       label: "Pest Control",
@@ -125,31 +208,31 @@ export const ifmGroup = {
     {
       label: "Waste Management",
       href: "/pages/waste-management-services-in-hyderabad",
-      image: "/images/services/waste-segregation.jpg",
-      alt: "Hazel India waste management team sorting dry, wet, recyclable and hazardous waste",
+      image: "/images/services/waste-bins.jpg",
+      alt: "Hazel India waste management lead explaining food, paper and plastic segregation bins to staff",
     },
     {
       label: "Food & Beverage",
       href: "/pages/food-and-beverage-services-in-hyderabad",
-      image: "/images/services/food-service.jpg",
-      alt: "Hazel India food service team plating meals on a workplace cafeteria counter",
+      image: "/images/services/food-cafeteria.jpg",
+      alt: "Hazel India food service team serving meals at a workplace cafeteria counter",
     },
     {
       label: "Emergency Preparedness",
       href: "/pages/ambulance-and-paramedic-services-in-hyderabad",
-      image: "/images/services/emergency-preparedness.jpg",
-      alt: "Hazel India emergency response team running a CPR and first-aid drill",
+      image: "/images/services/ambulance-emergency.jpg",
+      alt: "Hazel India paramedic team moving a patient on a stretcher from an ambulance into emergency",
     },
     {
       label: "Employee Transport",
       href: "/pages/employee-transportation-services-in-hyderabad",
-      image: "/images/services/employee-transport.jpg",
+      image: "/images/services/employee-shuttle.jpg",
       alt: "Hazel India staff boarding an employee shuttle with a transport marshal on duty",
     },
     {
       label: "Mailroom & Concierge",
       href: "/pages/mailroom-services-in-hyderabad",
-      image: "/images/services/mailroom-sorting.jpg",
+      image: "/images/services/mailroom-team.jpg",
       alt: "Hazel India mailroom attendant sorting internal mail and parcels",
     },
     {
@@ -192,22 +275,61 @@ export const solutions = {
       image: "/images/services/housekeeping-team.jpg",
       alt: "Hazel India housekeeping attendant wiping down a lobby counter beside a cleaning trolley",
       href: "/pages/housekeeping-services-in-hyderabad",
+      category: "non-technical",
+    },
+    {
+      title: "Security Services",
+      text: "Trained guards, access control, patrols and CCTV monitoring that keep people and property safe.",
+      icon: "Shield",
+      image: "/images/services/security-hazel.jpg",
+      alt: "Hazel India uniformed security guards on duty at a corporate lobby reception with a front-desk officer",
+      href: "/pages/security-services-in-hyderabad",
+      category: "non-technical",
     },
     {
       title: "MEP Services",
       text: "HVAC, electrical and plumbing maintenance to keep building systems reliable.",
       icon: "Wrench",
-      image: "/images/services/mep-panel.jpg",
-      alt: "Hazel India MEP technician testing an electrical distribution panel beside HVAC chillers",
+      image: "/images/services/mep-hvac-panel.jpg",
+      alt: "Hazel India MEP technician servicing an electrical distribution panel beside HVAC units",
       href: "/pages/mechanical-electrical-plumbing-services-in-hyderabad",
+      category: "technical",
+    },
+    {
+      title: "HVAC Services",
+      text: "Chiller, AHU, VRF and split AC operation and maintenance that keeps air comfortable and energy use in check.",
+      icon: "Thermometer",
+      image: "/images/services/hvac-plant.jpg",
+      alt: "HVAC chiller plant room with water-cooled chillers, insulated chilled-water pipes, pumps and overhead ductwork",
+      href: "/pages/hvac-services-in-hyderabad",
+      category: "technical",
+    },
+    {
+      title: "WTP Services",
+      text: "Water treatment plant operation, softeners, RO systems and routine water-quality testing.",
+      icon: "Droplets",
+      image: "/images/services/wtp-plant.jpg",
+      alt: "Water treatment plant room with pressure sand and carbon filters, an RO membrane skid and control panel",
+      href: "/pages/water-treatment-plant-services-in-hyderabad",
+      category: "technical",
+    },
+    {
+      title: "STP Services",
+      text: "Sewage treatment plant O&M, effluent testing and treated-water reuse that meets PCB norms.",
+      icon: "Recycle",
+      image: "/images/services/stp-plant.jpg",
+      alt: "Sewage treatment plant with aeration tanks, a circular clarifier, blowers and safety walkways on a corporate campus",
+      href: "/pages/sewage-treatment-plant-services-in-hyderabad",
+      category: "technical",
     },
     {
       title: "Landscaping",
       text: "Native gardens, grounds care and water-conscious outdoor maintenance.",
       icon: "Trees",
-      image: "/images/services/landscaping-team.jpg",
-      alt: "Hazel India landscaping team pruning hedges, planting beds and mowing lawns on a corporate campus",
+      image: "/images/services/landscaping-grounds.jpg",
+      alt: "Hazel India landscaping team trimming hedges and raking leaves on a corporate campus lawn",
       href: "/pages/landscaping-services-in-hyderabad",
+      category: "non-technical",
     },
     {
       title: "Pest Control Services",
@@ -216,46 +338,52 @@ export const solutions = {
       image: "/images/services/pest-control-team.jpg",
       alt: "Hazel India pest control technician treating a corridor skirting with a pressure sprayer",
       href: "/pages/pest-control-services-in-hyderabad",
+      category: "non-technical",
     },
     {
       title: "Waste Management",
       text: "Segregation, composting and diversion programmes with clear reporting.",
       icon: "Recycle",
-      image: "/images/services/waste-segregation.jpg",
-      alt: "Hazel India waste management team sorting dry, wet, recyclable and hazardous waste",
+      image: "/images/services/waste-bins.jpg",
+      alt: "Hazel India waste management lead explaining food, paper and plastic segregation bins to staff",
       href: "/pages/waste-management-services-in-hyderabad",
+      category: "non-technical",
     },
     {
       title: "Food & Beverage",
       text: "Pantry, cafeteria and F&B support that keeps workplaces running.",
       icon: "UtensilsCrossed",
-      image: "/images/services/food-service.jpg",
-      alt: "Hazel India food service team plating meals on a workplace cafeteria counter",
+      image: "/images/services/food-cafeteria.jpg",
+      alt: "Hazel India food service team serving meals at a workplace cafeteria counter",
       href: "/pages/food-and-beverage-services-in-hyderabad",
+      category: "non-technical",
     },
     {
       title: "Ambulance & Emergency Preparedness",
       text: "EMS standby, ambulance response, fire and evacuation plans, and emergency drills.",
       icon: "Ambulance",
-      image: "/images/services/emergency-preparedness.jpg",
-      alt: "Hazel India emergency response team running a CPR and first-aid drill",
+      image: "/images/services/ambulance-emergency.jpg",
+      alt: "Hazel India paramedic team moving a patient on a stretcher from an ambulance into emergency",
       href: "/pages/ambulance-and-paramedic-services-in-hyderabad",
+      category: "non-technical",
     },
     {
       title: "Employee Transportation",
       text: "Staff commute, shift shuttles and campus transport coordination.",
       icon: "Bus",
-      image: "/images/services/employee-transport.jpg",
+      image: "/images/services/employee-shuttle.jpg",
       alt: "Hazel India staff boarding an employee shuttle with a transport marshal on duty",
       href: "/pages/employee-transportation-services-in-hyderabad",
+      category: "non-technical",
     },
     {
       title: "Mailroom & Concierge",
       text: "Front desk, visitor handling, mail, courier and parcel coordination.",
       icon: "ConciergeBell",
-      image: "/images/services/mailroom-sorting.jpg",
+      image: "/images/services/mailroom-team.jpg",
       alt: "Hazel India mailroom attendant sorting internal mail and parcels",
       href: "/pages/mailroom-services-in-hyderabad",
+      category: "non-technical",
     },
     {
       title: "Logistics Services",
@@ -264,6 +392,7 @@ export const solutions = {
       image: "/images/services/logistics-warehouse.jpg",
       alt: "Hazel India logistics operator moving a loaded pallet with a pallet jack",
       href: "/pages/logistics-services-in-hyderabad",
+      category: "non-technical",
     },
   ],
 } as const;
@@ -304,7 +433,7 @@ export const meetTeam = {
   eyebrow: "Meet the team",
   heading: "The people behind every Hazel site.",
   lede: "Trained, fairly paid Hazel India teams — one accountable group across housekeeping, technical care, soft services and emergency readiness.",
-  image: "/images/services/logistics-team.jpg",
+  image: "/images/services/hazel-team.jpg",
   alt: "Hazel India team in branded uniforms posing together at a managed facility",
   caption: "One team. Every service line.",
 } as const;
@@ -588,29 +717,29 @@ export const problem = {
       icon: "ClipboardList",
       title: "No proof of work",
       text: "You pay for cleaning with no record it happened.",
-      image: "/images/sensors.jpg",
-      alt: "On-site sensors and monitoring with no clear service proof for the client",
+      image: "/images/services/housekeeping-team.jpg",
+      alt: "Housekeeping attendant wiping a lobby counter — cleaning that usually goes unrecorded",
     },
     {
       icon: "Wrench",
       title: "Reactive maintenance",
       text: "Breakdowns show up as emergencies, not warnings.",
-      image: "/images/services/mep-panel.jpg",
-      alt: "Technician working on building systems after a reactive maintenance call",
+      image: "/images/services/hvac-plant.jpg",
+      alt: "HVAC chiller plant room whose breakdowns surface as emergencies without predictive maintenance",
     },
     {
       icon: "TrendingDown",
       title: "No sustainability data",
       text: "ESG reporting means chasing five vendors for numbers.",
-      image: "/images/intelligence.jpg",
-      alt: "Operations dashboard missing clear sustainability and ESG metrics",
+      image: "/images/services/waste-bins.jpg",
+      alt: "Waste segregation bins for food, paper and plastic — sustainability data that rarely gets reported",
     },
     {
       icon: "RefreshCw",
       title: "Staff churn",
       text: "A new, untrained team every few months.",
-      image: "/images/people-2.jpg",
-      alt: "Facility team members whose turnover leaves sites constantly re-training",
+      image: "/images/services/hazel-team.jpg",
+      alt: "Hazel India facility team in uniform — a stable, trained crew instead of constant turnover",
     },
   ],
   transition:

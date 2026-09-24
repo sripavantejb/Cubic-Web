@@ -164,7 +164,7 @@ export const ifmGroup = {
     {
       label: "Housekeeping",
       href: "/pages/housekeeping-services-in-hyderabad",
-      image: "/images/services/housekeeping-team.jpg",
+      image: "/images/services/housekeeping-hazel.jpg",
       alt: "Hazel India housekeeping attendant wiping down a lobby counter beside a cleaning trolley",
     },
     {
@@ -276,7 +276,7 @@ export const solutions = {
       title: "Housekeeping",
       text: "Daily cleaning, sanitation and common-area upkeep with trained teams and green chemistry.",
       icon: "SprayCan",
-      image: "/images/services/housekeeping-team.jpg",
+      image: "/images/services/housekeeping-hazel.jpg",
       alt: "Hazel India housekeeping attendant wiping down a lobby counter beside a cleaning trolley",
       href: "/pages/housekeeping-services-in-hyderabad",
       category: "non-technical",
@@ -721,7 +721,7 @@ export const problem = {
       icon: "ClipboardList",
       title: "No proof of work",
       text: "You pay for cleaning with no record it happened.",
-      image: "/images/services/housekeeping-team.jpg",
+      image: "/images/services/housekeeping-hazel.jpg",
       alt: "Housekeeping attendant wiping a lobby counter — cleaning that usually goes unrecorded",
     },
     {

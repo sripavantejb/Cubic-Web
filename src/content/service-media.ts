@@ -1,9 +1,9 @@
 /** Exact service visuals for `/pages/[slug]` detail pages. */
 export const servicePageMedia = {
   "housekeeping-services-in-hyderabad": {
-    hero: "/images/services/housekeeping-team.jpg",
+    hero: "/images/services/housekeeping-hazel.jpg",
     heroAlt: "Hazel India housekeeping attendant wiping down a lobby counter beside a cleaning trolley",
-    gallery: ["/images/services/housekeeping-team.jpg"],
+    gallery: ["/images/services/housekeeping-hazel.jpg"],
   },
   "security-services-in-hyderabad": {
     hero: "/images/services/security-hazel.jpg",
@@ -83,7 +83,7 @@ export const servicePageMedia = {
     hero: "/images/services/hazel-team.jpg",
     heroAlt: "Hazel India IFM team — integrated facility management across every service line",
     gallery: [
-      "/images/services/housekeeping-team.jpg",
+      "/images/services/housekeeping-hazel.jpg",
       "/images/services/security-hazel.jpg",
       "/images/services/mep-hvac-panel.jpg",
       "/images/services/mep-plantroom.jpg",

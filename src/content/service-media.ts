@@ -52,12 +52,9 @@ export const servicePageMedia = {
     gallery: ["/images/services/pest-control-team.jpg"],
   },
   "logistics-services-in-hyderabad": {
-    hero: "/images/services/logistics-warehouse.jpg",
-    heroAlt: "Hazel India logistics operator moving a loaded pallet with a pallet jack",
-    gallery: [
-      "/images/services/logistics-warehouse.jpg",
-      "/images/services/logistics-team.jpg",
-    ],
+    hero: "/images/services/logistics-hub.jpg",
+    heroAlt: "Organised logistics warehouse with pallet racking, a forklift, pallet jack and loading dock bays",
+    gallery: ["/images/services/logistics-hub.jpg"],
   },
   "waste-management-services-in-hyderabad": {
     hero: "/images/services/waste-bins.jpg",
@@ -102,7 +99,7 @@ export const servicePageMedia = {
       "/images/services/employee-shuttle.jpg",
       "/images/services/mailroom-team.jpg",
       "/images/services/concierge-desk.jpg",
-      "/images/services/logistics-warehouse.jpg",
+      "/images/services/logistics-hub.jpg",
       "/images/services/logistics-team.jpg",
       "/images/services/hazel-team.jpg",
     ],

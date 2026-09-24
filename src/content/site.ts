@@ -238,8 +238,8 @@ export const ifmGroup = {
     {
       label: "Logistics",
       href: "/pages/logistics-services-in-hyderabad",
-      image: "/images/services/logistics-warehouse.jpg",
-      alt: "Hazel India logistics operator moving a loaded pallet with a pallet jack",
+      image: "/images/services/logistics-hub.jpg",
+      alt: "Organised logistics warehouse with pallet racking, a forklift, pallet jack and loading dock bays",
     },
   ],
 } as const;
@@ -389,8 +389,8 @@ export const solutions = {
       title: "Logistics Services",
       text: "Material handling, receiving, dispatch and internal movement.",
       icon: "Truck",
-      image: "/images/services/logistics-warehouse.jpg",
-      alt: "Hazel India logistics operator moving a loaded pallet with a pallet jack",
+      image: "/images/services/logistics-hub.jpg",
+      alt: "Organised logistics warehouse with pallet racking, a forklift, pallet jack and loading dock bays",
       href: "/pages/logistics-services-in-hyderabad",
       category: "non-technical",
     },

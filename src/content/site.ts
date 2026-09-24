@@ -1167,10 +1167,9 @@ export const careers = {
     "Logistics, transport, and support staff",
     "Operations, HSE, and coordination roles",
   ],
-  ctaHeading: "Ready to apply?",
-  ctaText: "Send your resume and a short note about the role you're interested in. Our team will get back to you if there's a match.",
-  ctaLabel: "Email careers team",
-  ctaNote: "Include your preferred role, city, and years of experience in the subject line.",
+  ctaHeading: "Be A Part Of Our Team",
+  ctaText: "Share your details and upload your resume. Our team will get back to you if there's a match.",
+  ctaLabel: "Apply now",
 } as const;
 
 export const footer = {

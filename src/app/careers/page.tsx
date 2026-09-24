@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { careers, site } from "@/content/site";
 import { Navbar } from "@/components/chrome/Navbar";
 import { Footer } from "@/components/chrome/Footer";
+import { CareerForm } from "@/components/sections/CareerForm";
 
 export const metadata: Metadata = {
   title: `Careers — ${site.name}`,
@@ -12,8 +12,6 @@ export const metadata: Metadata = {
 };
 
 export default function CareersPage() {
-  const mailHref = `mailto:${site.email}?subject=${encodeURIComponent("Career application — Hazel India")}`;
-
   return (
     <>
       <Navbar />
@@ -42,7 +40,7 @@ export default function CareersPage() {
               {careers.lede}
             </p>
             <a
-              href={mailHref}
+              href="#apply"
               className="mt-8 inline-flex h-12 items-center gap-2 rounded-full bg-sun px-6 text-[14px] font-semibold text-hero-ink transition-colors hover:bg-sun-deep"
             >
               {careers.ctaLabel}
@@ -82,30 +80,17 @@ export default function CareersPage() {
           </div>
         </section>
 
-        <section className="section-x mx-auto max-w-[1280px] py-14 md:py-20">
-          <div className="max-w-2xl">
-            <h2 className="text-[clamp(1.6rem,3vw,2.25rem)] font-semibold tracking-[-0.03em] text-ink">
+        <section id="apply" className="section-x mx-auto max-w-[1280px] scroll-mt-28 py-14 md:py-20">
+          <div className="mx-auto max-w-[52rem] text-center">
+            <h2 className="text-[clamp(1.75rem,3.4vw,2.5rem)] font-semibold tracking-[-0.03em] text-hero-ink">
               {careers.ctaHeading}
             </h2>
             <p className="mt-3 text-[15px] leading-relaxed text-muted md:text-[16px]">
               {careers.ctaText}
             </p>
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a
-                href={mailHref}
-                className="inline-flex h-12 items-center gap-2 rounded-full bg-sun px-6 text-[14px] font-semibold text-hero-ink transition-colors hover:bg-sun-deep"
-              >
-                {careers.ctaLabel}
-                <ArrowUpRight className="size-3.5" aria-hidden="true" />
-              </a>
-              <Link
-                href="/#contact"
-                className="inline-flex h-12 items-center rounded-full border border-line px-6 text-[14px] font-semibold text-ink transition-colors hover:border-leaf hover:text-leaf"
-              >
-                Contact Us
-              </Link>
-            </div>
-            <p className="mt-4 text-[13px] text-muted">{careers.ctaNote}</p>
+          </div>
+          <div className="mt-10">
+            <CareerForm />
           </div>
         </section>
       </main>

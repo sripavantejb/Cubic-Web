@@ -12,6 +12,10 @@ export const site = {
   phone: "+91 95055 53855",
   phoneHref: "tel:+919505553855",
   emailHref: "mailto:sulochana.b@hazelindia.com",
+  address:
+    "320 Fifth Floor, East Avenue, Ayyappa Society Main Rd, near YSR Statue, SBH Officers Colony, Mega Hills, Madhapur, Hyderabad, Telangana",
+  addressHref:
+    "https://www.google.com/maps/search/?api=1&query=320+Fifth+Floor+East+Avenue+Ayyappa+Society+Main+Rd+Madhapur+Hyderabad",
   whatsapp: {
     number: WHATSAPP_NUMBER,
     message: WHATSAPP_MESSAGE,

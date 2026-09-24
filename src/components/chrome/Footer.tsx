@@ -243,16 +243,25 @@ export function Footer() {
                     </span>
                   </a>
                 </li>
-                <li className="flex items-start gap-3 text-[14px] text-paper/75">
-                  <span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-full bg-mist/10 text-mist">
-                    <MapPin className="size-3.5" aria-hidden="true" />
-                  </span>
-                  <span>
-                    <span className="block text-[11px] tracking-[0.14em] text-paper/40 uppercase">
-                      Based in
+                <li>
+                  <a
+                    href={site.addressHref}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group flex items-start gap-3 text-[14px] text-paper/75 transition-colors hover:text-mist"
+                  >
+                    <span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-full bg-mist/10 text-mist">
+                      <MapPin className="size-3.5" aria-hidden="true" />
                     </span>
-                    <span className="mt-0.5 block font-medium">Hyderabad, India</span>
-                  </span>
+                    <span>
+                      <span className="block text-[11px] tracking-[0.14em] text-paper/40 uppercase">
+                        Address
+                      </span>
+                      <address className="mt-0.5 block leading-relaxed font-medium not-italic">
+                        {site.address}
+                      </address>
+                    </span>
+                  </a>
                 </li>
               </ul>
 

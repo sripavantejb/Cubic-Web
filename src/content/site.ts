@@ -207,7 +207,7 @@ export const ifmGroup = {
       label: "Pest Control",
       href: "/pages/pest-control-services-in-hyderabad",
       image: "/images/services/pest-control-team.jpg",
-      alt: "Hazel India pest control technician treating a corridor skirting with a pressure sprayer",
+      alt: "Hazel India pest control technician fogging garden beds along a walkway",
     },
     {
       label: "Waste Management",
@@ -340,7 +340,7 @@ export const solutions = {
       text: "Safe, scheduled pest management for homes, offices, factories and communities.",
       icon: "Bug",
       image: "/images/services/pest-control-team.jpg",
-      alt: "Hazel India pest control technician treating a corridor skirting with a pressure sprayer",
+      alt: "Hazel India pest control technician fogging garden beds along a walkway",
       href: "/pages/pest-control-services-in-hyderabad",
       category: "non-technical",
     },
@@ -735,8 +735,8 @@ export const problem = {
       icon: "TrendingDown",
       title: "No sustainability data",
       text: "ESG reporting means chasing five vendors for numbers.",
-      image: "/images/services/waste-bins.jpg",
-      alt: "Waste segregation bins for food, paper and plastic — sustainability data that rarely gets reported",
+      image: "/images/services/esg-dashboard.jpg",
+      alt: "Laptop showing a reporting dashboard — sustainability numbers pieced together from multiple vendors",
     },
     {
       icon: "RefreshCw",

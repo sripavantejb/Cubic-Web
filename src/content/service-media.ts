@@ -47,9 +47,9 @@ export const servicePageMedia = {
     gallery: ["/images/services/stp-plant.jpg"],
   },
   "pest-control-services-in-hyderabad": {
-    hero: "/images/services/pest-control-team.jpg",
-    heroAlt: "Hazel India pest control technician treating a corridor skirting with a pressure sprayer",
-    gallery: ["/images/services/pest-control-team.jpg"],
+    hero: "/images/services/pest-control-fogging.jpg",
+    heroAlt: "Hazel India pest control technician fogging garden beds along a walkway",
+    gallery: ["/images/services/pest-control-fogging.jpg"],
   },
   "logistics-services-in-hyderabad": {
     hero: "/images/services/logistics-hub.jpg",
@@ -91,7 +91,7 @@ export const servicePageMedia = {
       "/images/services/wtp-plant.jpg",
       "/images/services/stp-plant.jpg",
       "/images/services/landscaping-grounds.jpg",
-      "/images/services/pest-control-team.jpg",
+      "/images/services/pest-control-fogging.jpg",
       "/images/services/waste-bins.jpg",
       "/images/services/waste-collection.jpg",
       "/images/services/food-cafeteria.jpg",

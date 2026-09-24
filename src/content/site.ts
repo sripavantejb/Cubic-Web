@@ -170,8 +170,8 @@ export const ifmGroup = {
     {
       label: "Security",
       href: "/pages/security-services-in-hyderabad",
-      image: "/images/services/security-hazel.jpg",
-      alt: "Hazel India uniformed security guards on duty at a corporate lobby reception with a front-desk officer",
+      image: "/images/services/security-gate.jpg",
+      alt: "Hazel India security guards checking a vehicle at a corporate entrance boom barrier",
     },
     {
       label: "MEP Services",
@@ -285,8 +285,8 @@ export const solutions = {
       title: "Security Services",
       text: "Trained guards, access control, patrols and CCTV monitoring that keep people and property safe.",
       icon: "Shield",
-      image: "/images/services/security-hazel.jpg",
-      alt: "Hazel India uniformed security guards on duty at a corporate lobby reception with a front-desk officer",
+      image: "/images/services/security-gate.jpg",
+      alt: "Hazel India security guards checking a vehicle at a corporate entrance boom barrier",
       href: "/pages/security-services-in-hyderabad",
       category: "non-technical",
     },

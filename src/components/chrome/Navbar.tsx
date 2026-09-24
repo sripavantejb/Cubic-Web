@@ -337,20 +337,27 @@ export function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -4 }}
                     transition={{ duration: 0.24, ease: appleEase }}
-                    className="px-6 py-6 md:px-8 md:py-7"
+                    className={cn(ifmOpen ? "px-6 py-5 md:px-7" : "px-6 py-6 md:px-8 md:py-7")}
                   >
-                    <div className="mb-5 flex items-end justify-between gap-6 border-b border-hero-ink/8 pb-5">
+                    <div
+                      className={cn(
+                        "flex justify-between gap-6 border-b border-hero-ink/8",
+                        ifmOpen ? "mb-4 items-center pb-3.5" : "mb-5 items-end pb-5",
+                      )}
+                    >
                       <div>
                         <p className="meta text-leaf">{panel.eyebrow}</p>
-                        <p className="mt-2 max-w-[28ch] text-[clamp(1.2rem,2vw,1.55rem)] leading-snug font-semibold tracking-[-0.025em] text-hero-ink">
-                          {panel.heading}
-                        </p>
+                        {ifmOpen ? null : (
+                          <p className="mt-2 max-w-[28ch] text-[clamp(1.2rem,2vw,1.55rem)] leading-snug font-semibold tracking-[-0.025em] text-hero-ink">
+                            {panel.heading}
+                          </p>
+                        )}
                       </div>
                       {panel.exploreHref ? (
                         <Link
                           href={panel.exploreHref}
                           onClick={closeMenus}
-                          className="mb-0.5 hidden items-center gap-1.5 rounded-full bg-mint px-3.5 py-2 text-[12px] font-semibold tracking-tight text-hero-ink transition-colors hover:bg-leaf/15 hover:text-leaf xl:inline-flex"
+                          className="inline-flex items-center gap-1.5 rounded-full bg-mint px-3 py-1.5 text-[12px] font-semibold tracking-tight text-hero-ink transition-colors hover:bg-leaf/15 hover:text-leaf"
                         >
                           {nav.ifm.overview.label}
                           <ArrowUpRight className="size-3.5" />
@@ -367,6 +374,34 @@ export function Navbar() {
                       ) : null}
                     </div>
 
+                    {ifmOpen && panel.groups ? (
+                      <div className="grid grid-cols-[2fr_1fr] gap-8">
+                        {panel.groups.map((group, gi) => (
+                          <div
+                            key={group.label ?? gi}
+                            className={cn(gi > 0 && "border-l border-hero-ink/8 pl-8")}
+                          >
+                            <p className="mb-2 text-[10.5px] font-semibold tracking-[0.14em] text-leaf uppercase">
+                              {group.label}
+                            </p>
+                            <ul className={cn("grid gap-x-6", gi === 0 && "grid-cols-2")}>
+                              {group.items.map((item) => (
+                                <li key={item.href}>
+                                  <Link
+                                    href={item.href}
+                                    onClick={closeMenus}
+                                    className="group -mx-2 flex items-center justify-between gap-2 rounded-[10px] px-2 py-1.5 text-[13.5px] font-medium tracking-tight text-hero-ink/85 transition-colors hover:bg-mint hover:text-leaf"
+                                  >
+                                    {item.label}
+                                    <ArrowUpRight className="size-3 shrink-0 opacity-0 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-70" />
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
                     <div className="space-y-5">
                       {(panel.groups ?? [{ items: panel.items }]).map((group) => (
                         <div key={group.label ?? "items"}>
@@ -431,6 +466,7 @@ export function Navbar() {
                         </div>
                       ))}
                     </div>
+                    )}
                   </motion.div>
                 </AnimatePresence>
               </div>

@@ -41,9 +41,6 @@ export function TrustStrip() {
                         {item.value}
                       </p>
                       <p className="mt-2 text-[15px] font-medium text-hero-ink/80">{item.label}</p>
-                      {"note" in item && item.note ? (
-                        <p className="mt-1.5 text-[13px] leading-relaxed text-muted">{item.note}</p>
-                      ) : null}
                     </li>
                   ))}
                 </ul>

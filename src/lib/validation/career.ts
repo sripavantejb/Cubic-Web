@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { careers } from "@/content/site";
 
 export const RESUME_MAX_BYTES = 5 * 1024 * 1024;
 export const RESUME_EXTENSIONS = [".pdf", ".doc", ".docx"] as const;
@@ -13,6 +14,9 @@ export const careerSchema = z.object({
     .min(8, "Enter a valid phone number.")
     .max(20)
     .regex(/^[+\d][\d\s()-]{7,}$/, "Enter a valid phone number."),
+  role: z
+    .string()
+    .refine((value) => (careers.roles as readonly string[]).includes(value), "Please select a role."),
 });
 
 export type CareerInput = z.infer<typeof careerSchema>;

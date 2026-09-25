@@ -41,7 +41,7 @@ const panels: Record<string, Panel> = {
       ...trustStrip.today.items.map((item) => ({
         label: `${item.value} · ${item.label}`,
         href: "#trust",
-        text: "note" in item && item.note ? item.note : trustStrip.today.label,
+        text: trustStrip.today.label,
       })),
       ...trustStrip.ahead.items.map((item) => ({
         label: `${item.value} · ${item.label}`,

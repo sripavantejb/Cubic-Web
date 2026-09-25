@@ -1,8 +1,8 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { Upload } from "lucide-react";
-import { site } from "@/content/site";
+import { ChevronDown, Upload } from "lucide-react";
+import { careers, site } from "@/content/site";
 import {
   RESUME_ACCEPT,
   careerSchema,
@@ -13,7 +13,7 @@ import { cn } from "@/lib/cn";
 
 type Status = "idle" | "loading" | "success" | "error";
 
-const empty = { name: "", email: "", phone: "" };
+const empty = { name: "", email: "", phone: "", role: "" };
 
 const inputClass =
   "h-14 w-full rounded-[10px] border border-hero-ink/25 bg-white px-4 text-[15px] text-ink outline-none transition-colors placeholder:text-muted focus:border-leaf focus:ring-2 focus:ring-leaf/15";
@@ -55,6 +55,7 @@ export function CareerForm() {
     body.set("name", parsed.data.name);
     body.set("email", parsed.data.email);
     body.set("phone", parsed.data.phone);
+    body.set("role", parsed.data.role);
     body.set("resume", file);
 
     setStatus("loading");
@@ -79,7 +80,7 @@ export function CareerForm() {
   }
 
   const field = (
-    id: keyof typeof empty,
+    id: Exclude<keyof typeof empty, "role">,
     placeholder: string,
     extra?: React.InputHTMLAttributes<HTMLInputElement>,
   ) => (
@@ -106,6 +107,42 @@ export function CareerForm() {
       {field("name", "Name", { autoComplete: "name", required: true })}
       {field("email", "Email", { type: "email", autoComplete: "email", required: true })}
       {field("phone", "Phone Number", { type: "tel", autoComplete: "tel", required: true })}
+
+      <div>
+        <label htmlFor="career-role" className="sr-only">
+          Role
+        </label>
+        <div className="relative">
+          <select
+            id="career-role"
+            name="role"
+            required
+            value={values.role}
+            onChange={(e) => set("role", e.target.value)}
+            aria-invalid={Boolean(errors.role) || undefined}
+            className={cn(
+              inputClass,
+              "cursor-pointer appearance-none pr-11",
+              !values.role && "text-muted",
+              errors.role && "border-red-700",
+            )}
+          >
+            <option value="" disabled>
+              Select Role
+            </option>
+            {careers.roles.map((role) => (
+              <option key={role} value={role} className="text-ink">
+                {role}
+              </option>
+            ))}
+          </select>
+          <ChevronDown
+            className="pointer-events-none absolute top-1/2 right-4 size-4 -translate-y-1/2 text-muted"
+            aria-hidden="true"
+          />
+        </div>
+        {errors.role ? <p className="mt-1.5 text-[13px] text-red-800">{errors.role}</p> : null}
+      </div>
 
       <div>
         <label

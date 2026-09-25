@@ -26,6 +26,7 @@ export async function POST(request: Request) {
     name: form.get("name"),
     email: form.get("email"),
     phone: form.get("phone"),
+    role: form.get("role"),
   });
   const resume = form.get("resume");
   const file = resume instanceof File ? resume : null;
@@ -43,7 +44,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const { name, email, phone } = parsed.data;
+  const { name, email, phone, role } = parsed.data;
   const to = process.env.CAREERS_TO_EMAIL || site.email;
   const from = process.env.CAREERS_FROM_EMAIL || "Hazel India Careers <onboarding@resend.dev>";
   const content = Buffer.from(await file.arrayBuffer()).toString("base64");
@@ -59,9 +60,10 @@ export async function POST(request: Request) {
         from,
         to: [to],
         reply_to: email,
-        subject: `Career application — ${name}`,
+        subject: `Career application — ${role} — ${name}`,
         html: `
           <h2>New career application</h2>
+          <p><strong>Role:</strong> ${escapeHtml(role)}</p>
           <p><strong>Name:</strong> ${escapeHtml(name)}</p>
           <p><strong>Email:</strong> ${escapeHtml(email)}</p>
           <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>

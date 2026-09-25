@@ -6,9 +6,9 @@ export const servicePageMedia = {
     gallery: ["/images/services/housekeeping-hazel.jpg"],
   },
   "security-services-in-hyderabad": {
-    hero: "/images/services/security-gate.jpg",
-    heroAlt: "Hazel India security guards checking a vehicle at a corporate entrance boom barrier",
-    gallery: ["/images/services/security-gate.jpg"],
+    hero: "/images/services/security-control-room.jpg",
+    heroAlt: "Hazel India security officers monitoring CCTV feeds and logging checks in a site control room",
+    gallery: ["/images/services/security-control-room.jpg"],
   },
   "landscaping-services-in-hyderabad": {
     hero: "/images/services/landscaping-grounds.jpg",
@@ -84,7 +84,7 @@ export const servicePageMedia = {
     heroAlt: "Hazel India IFM team — integrated facility management across every service line",
     gallery: [
       "/images/services/housekeeping-hazel.jpg",
-      "/images/services/security-gate.jpg",
+      "/images/services/security-control-room.jpg",
       "/images/services/mep-hvac-panel.jpg",
       "/images/services/mep-plantroom.jpg",
       "/images/services/hvac-plant.jpg",

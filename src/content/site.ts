@@ -206,8 +206,8 @@ export const ifmGroup = {
     {
       label: "Pest Control",
       href: "/pages/pest-control-services-in-hyderabad",
-      image: "/images/services/pest-control-fogging.jpg",
-      alt: "Hazel India pest control technician fogging garden beds along a walkway",
+      image: "/images/services/pest-control-hazel.jpg",
+      alt: "Masked Hazel India pest control technician thermal-fogging planted beds along a campus walkway",
     },
     {
       label: "Waste Management",
@@ -339,8 +339,8 @@ export const solutions = {
       title: "Pest Control Services",
       text: "Safe, scheduled pest management for homes, offices, factories and communities.",
       icon: "Bug",
-      image: "/images/services/pest-control-fogging.jpg",
-      alt: "Hazel India pest control technician fogging garden beds along a walkway",
+      image: "/images/services/pest-control-hazel.jpg",
+      alt: "Masked Hazel India pest control technician thermal-fogging planted beds along a campus walkway",
       href: "/pages/pest-control-services-in-hyderabad",
       category: "non-technical",
     },

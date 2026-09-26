@@ -8,10 +8,10 @@ export const site = {
   title: "Hazel India — AI-Powered Green Facility Management",
   description:
     "Hazel India brings intelligent, eco-first facility management to every home, office, factory and community — powered by AI that predicts, optimises and proves a lighter footprint on the planet.",
-  email: "sulochana.b@hazelindia.com",
+  email: "hi@hazelindia.com",
   phone: "+91 95055 53855",
   phoneHref: "tel:+919505553855",
-  emailHref: "mailto:sulochana.b@hazelindia.com",
+  emailHref: "mailto:hi@hazelindia.com",
   address:
     "320 Fifth Floor, East Avenue, Ayyappa Society Main Rd, near YSR Statue, SBH Officers Colony, Mega Hills, Madhapur, Hyderabad, Telangana",
   addressHref:

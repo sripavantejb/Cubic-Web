@@ -437,7 +437,7 @@ export const meetTeam = {
   eyebrow: "Meet the team",
   heading: "The people behind every Hazel site.",
   lede: "Trained, fairly paid Hazel India teams — one accountable group across housekeeping, technical care, soft services and emergency readiness.",
-  image: "/images/services/hazel-team.jpg",
+  image: "/images/services/hazel-team-group.jpg",
   alt: "Hazel India team in branded uniforms posing together at a managed facility",
   caption: "One team. Every service line.",
 } as const;

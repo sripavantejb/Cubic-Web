@@ -80,7 +80,7 @@ export const servicePageMedia = {
     gallery: ["/images/services/employee-shuttle.jpg"],
   },
   "ifm-services": {
-    hero: "/images/services/hazel-team.jpg",
+    hero: "/images/services/hazel-team-group.jpg",
     heroAlt: "Hazel India IFM team — integrated facility management across every service line",
     gallery: [
       "/images/services/housekeeping-hazel.jpg",
@@ -101,7 +101,7 @@ export const servicePageMedia = {
       "/images/services/concierge-desk.jpg",
       "/images/services/logistics-hub.jpg",
       "/images/services/logistics-team.jpg",
-      "/images/services/hazel-team.jpg",
+      "/images/services/hazel-team-group.jpg",
     ],
   },
 } as const;
